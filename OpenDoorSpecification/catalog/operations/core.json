@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "operations": [
+    {
+      "id": "terminal.write",
+      "stability": "core",
+      "summary": "Write bytes or text to the caller terminal.",
+      "inputs": [
+        "data"
+      ],
+      "result": "void",
+      "disconnect_behavior": "must_surface"
+    },
+    {
+      "id": "terminal.read_key",
+      "stability": "core",
+      "summary": "Wait for and return one terminal input unit.",
+      "inputs": [],
+      "result": "key",
+      "disconnect_behavior": "must_surface"
+    },
+    {
+      "id": "terminal.read_line",
+      "stability": "optional",
+      "summary": "Read an edited line of terminal input.",
+      "inputs": [
+        "max_length"
+      ],
+      "result": "text",
+      "disconnect_behavior": "must_surface"
+    },
+    {
+      "id": "session.identity",
+      "stability": "core",
+      "summary": "Return stable caller identity fields available from the host.",
+      "inputs": [],
+      "result": "identity",
+      "disconnect_behavior": "not_applicable"
+    },
+    {
+      "id": "session.node",
+      "stability": "core",
+      "summary": "Return the host node identifier for the door session.",
+      "inputs": [],
+      "result": "node",
+      "disconnect_behavior": "not_applicable"
+    },
+    {
+      "id": "session.time_left",
+      "stability": "optional",
+      "summary": "Return remaining session time in seconds when known.",
+      "inputs": [],
+      "result": "seconds",
+      "disconnect_behavior": "not_applicable"
+    },
+    {
+      "id": "session.connection_state",
+      "stability": "core",
+      "summary": "Report whether the remote caller connection remains usable.",
+      "inputs": [],
+      "result": "connection_state",
+      "disconnect_behavior": "not_applicable"
+    },
+    {
+      "id": "status.set",
+      "stability": "optional",
+      "summary": "Set a short host-visible activity description.",
+      "inputs": [
+        "text"
+      ],
+      "result": "void",
+      "disconnect_behavior": "not_applicable"
+    },
+    {
+      "id": "bbs.command",
+      "stability": "optional",
+      "summary": "Request execution of a host command through an adapter-defined command namespace.",
+      "inputs": [
+        "command",
+        "arguments"
+      ],
+      "result": "command_result",
+      "disconnect_behavior": "must_surface"
+    },
+    {
+      "id": "lifecycle.exit",
+      "stability": "core",
+      "summary": "Finish normally and return control to the host.",
+      "inputs": [
+        "status"
+      ],
+      "result": "never",
+      "disconnect_behavior": "not_applicable"
+    },
+    {
+      "id": "lifecycle.disconnect",
+      "stability": "core",
+      "summary": "Terminate promptly after carrier loss or equivalent connection failure.",
+      "inputs": [
+        "reason"
+      ],
+      "result": "never",
+      "disconnect_behavior": "not_applicable"
+    }
+  ]
+}

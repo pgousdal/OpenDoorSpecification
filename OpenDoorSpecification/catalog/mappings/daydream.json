@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "api": "daydream",
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "DDPutStr",
+        "DDPrintf"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "DDGetKey"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "Prompt"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "GetAccount"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "session.time_left",
+      "symbols": [
+        "TimeLeft"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "status.set",
+      "symbols": [
+        "ChangeActivity"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "InternalCommand"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "Carrier"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    }
+  ]
+}

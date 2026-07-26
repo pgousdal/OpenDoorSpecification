@@ -1,0 +1,9 @@
+{
+  "id": "amiexpress-aedoor",
+  "name": "AmiExpress-compatible AEDoor",
+  "status": "verified",
+  "transport": "shared library",
+  "evidence": [
+    "aedoor28.lha"
+  ]
+}

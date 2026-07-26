@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "api": "door-io",
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "DoorPrint"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "DoorGetKey"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "DoorGetString"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    }
+  ]
+}
