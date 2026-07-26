@@ -3,6 +3,7 @@ import argparse, json
 from pathlib import Path
 from .parsers.lha import inspect
 from .semantic import compare, load_mapping, load_operations
+from .simulator import load_scenario, run_scenario
 
 
 def repo_root() -> Path:
@@ -36,6 +37,11 @@ def validate(root: Path) -> tuple[int, int, int]:
             assert mapping["operation"] in operation_ids, path
             assert mapping["symbols"], path
             mapping_count += 1
+    for path in sorted((root / "catalog" / "adapters").glob("*.json")):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        assert data["operations"], path
+        assert len(data["operations"]) == len(set(data["operations"])), path
+        assert set(data["operations"]).issubset(operation_ids), path
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count
 
 
@@ -52,7 +58,19 @@ def main() -> int:
     cmp = sub.add_parser("compare", help="compare historical APIs against ODS operations")
     cmp.add_argument("apis", nargs="+")
     cmp.add_argument("--json", action="store_true")
+    sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
+    sim.add_argument("scenario", type=Path)
+    sim.add_argument("--transcript", action="store_true", help="print complete JSON execution result")
     args = parser.parse_args()
+    if args.command == "simulate":
+        result = run_scenario(load_scenario(args.scenario))
+        if args.transcript:
+            print(json.dumps(result, indent=2))
+        else:
+            print(result["output"], end="")
+            if result["termination"]:
+                print(f"\n[{result['termination']['kind']}]", file=__import__("sys").stderr)
+        return 0
     if args.command == "inventory":
         result = inspect(args.archive)
         if args.json:

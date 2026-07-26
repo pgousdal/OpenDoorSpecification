@@ -23,3 +23,10 @@
 - Added provisional semantic mappings for seven historical API families.
 - Added `ods inspect` and `ods compare`.
 - Extended repository validation to cover operations and mappings.
+
+## M1.9
+
+- Added a deterministic reference host adapter covering all ODS Core 0.1 operations.
+- Added prompt disconnect and lifecycle termination behavior.
+- Added the JSON scenario simulator and `ods simulate`.
+- Added adapter metadata, scenario schema, examples, documentation, and conformance tests.

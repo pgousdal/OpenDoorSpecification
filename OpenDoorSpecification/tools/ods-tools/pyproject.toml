@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ods-tools"
-version = "0.1.0"
+version = "0.4.0"
 description = "Research and validation tools for Open Door Specification"
 requires-python = ">=3.11"
 dependencies = []
