@@ -4,11 +4,19 @@
   "spec_version": "0.1",
   "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
   "operations": [
-    "terminal.write", "terminal.read_key", "terminal.read_line",
-    "session.identity", "session.node", "session.time_left",
-    "session.connection_state", "status.set", "bbs.command",
-    "lifecycle.exit", "lifecycle.disconnect"
+    "terminal.write",
+    "terminal.read_key",
+    "terminal.read_line",
+    "session.identity",
+    "session.node",
+    "session.time_left",
+    "session.connection_state",
+    "status.set",
+    "bbs.command",
+    "lifecycle.exit",
+    "lifecycle.disconnect"
   ],
-  "native_backend": "planned",
-  "conformance": "host-tested"
+  "native_backend": "portable-c-binding-table",
+  "conformance": "host-and-c-tested",
+  "native_path": "native/daydream"
 }

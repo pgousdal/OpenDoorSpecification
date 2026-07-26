@@ -36,3 +36,9 @@
 - Added the first historical reference adapter for DayDream DreamDoor.
 - Added a portable recording backend and shared conformance tests.
 - Defined explicit carrier-loss and lifecycle translation behavior.
+
+## M2.1
+
+- Added a portable C implementation of the DayDream adapter.
+- Added a narrow binding table for compiler- and SDK-specific DreamDoor calls.
+- Added carrier-safe lifecycle handling, a minimal native door example, and host C conformance tests.

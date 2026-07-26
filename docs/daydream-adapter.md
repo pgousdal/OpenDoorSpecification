@@ -22,5 +22,6 @@ terminal I/O and BBS commands. Loss of carrier raises the common
 `DoorDisconnected` termination signal immediately.
 
 The included recording backend is a portable test double, not an emulator of
-DayDream. A later native backend will call `dddoor.library` on AmigaOS without
-changing door-facing ODS code.
+DayDream. M2.1 adds the portable C backend under `native/daydream`. A narrow binding
+table isolates historical compiler and SDK calling conventions from ODS-facing
+door code; see `docs/native-daydream-backend.md`.
