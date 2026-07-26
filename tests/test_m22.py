@@ -4,11 +4,11 @@ ROOT=Path(__file__).resolve().parents[1]
 class M22Tests(unittest.TestCase):
  def test_archive_expansion(self):
   d=json.loads((ROOT/'catalog/archive-index.json').read_text())
-  self.assertEqual(d['archive_count'],17)
-  self.assertEqual(d['entry_count'],429)
+  self.assertEqual(d['archive_count'],22)
+  self.assertEqual(d['entry_count'],713)
  def test_duplicate_evidence(self):
   d=json.loads((ROOT/'catalog/evidence/duplicate-archives.json').read_text())
-  self.assertEqual(len(d['duplicates']),2)
+  self.assertEqual(len(d['duplicates']),3)
   self.assertTrue(all(x['status']=='byte-identical' for x in d['duplicates']))
  def test_paragon_evidence(self):
   d=json.loads((ROOT/'catalog/evidence/paragon-message-protocol.json').read_text())

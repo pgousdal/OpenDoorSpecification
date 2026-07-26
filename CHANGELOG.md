@@ -54,3 +54,10 @@
 - Verified a concrete MAXs/Paragon-compatible message protocol subset.
 - Expanded the reviewed Paragon semantic mapping and command table.
 - Fixed embedded-NUL filename handling in LHA inventories.
+
+## M2.3
+
+- Added five unique historical door/source archives and one duplicate record.
+- Added observed API-usage corpus with documented/observed/inferred evidence classes.
+- Added independent MAXs/Paragon protocol evidence from C and Amiga E doors.
+- Added historical corpus reports and repository tests.

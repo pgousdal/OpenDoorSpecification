@@ -12,6 +12,12 @@
       "canonical": "door_io12.lha",
       "sha256": "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
       "status": "byte-identical"
+    },
+    {
+      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
+      "status": "byte-identical",
+      "uploaded": "aedoor28(1).lha",
+      "canonical": "aedoor28.lha"
     }
   ]
 }

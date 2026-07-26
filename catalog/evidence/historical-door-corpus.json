@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "status_model": [
+    "documented",
+    "observed",
+    "inferred"
+  ],
+  "archives": [
+    {
+      "archive": "ucdoor10.lha",
+      "kind": "sdk-and-example",
+      "source_files": [
+        "ucdoor/demo/cd_test1.c",
+        "ucdoor/include/ucdoor.h"
+      ],
+      "observed_calls": {
+        "terminal.write": 33,
+        "terminal.read_line": 2,
+        "terminal.read_key": 5,
+        "session.identity": 12,
+        "session.time_left": 1,
+        "bbs.command": 5,
+        "lifecycle.disconnect": 2
+      },
+      "evidence_status": "observed"
+    },
+    {
+      "archive": "CDoorExample.lha",
+      "kind": "minimal-c-door-example",
+      "source_files": [
+        "door.c"
+      ],
+      "observed_calls": {
+        "terminal.write": 13,
+        "terminal.read_line": 9,
+        "terminal.read_key": 3,
+        "session.identity": 10,
+        "bbs.command": 7,
+        "lifecycle.exit": 3
+      },
+      "evidence_status": "observed"
+    },
+    {
+      "archive": "ArisDoors4MAXs.lha",
+      "kind": "historical-source-corpus",
+      "source_files": [
+        "arisdoors4maxs/*/*.c",
+        "arisdoors4maxs/*/Aridoorstuff.h"
+      ],
+      "observed_calls": {
+        "terminal.write": 1055,
+        "terminal.read_line": 100,
+        "terminal.read_key": 123,
+        "session.identity": 47,
+        "session.time_left": 64,
+        "bbs.command": 221,
+        "lifecycle.exit": 152
+      },
+      "evidence_status": "observed"
+    },
+    {
+      "archive": "MCesrc.lha",
+      "kind": "amiga-e-door-source",
+      "source_files": [
+        "MagnumChat.e"
+      ],
+      "observed_calls": {
+        "terminal.write": 1,
+        "session.identity": 7,
+        "bbs.command": 2,
+        "lifecycle.exit": 4
+      },
+      "evidence_status": "observed"
+    },
+    {
+      "archive": "runraw.lha",
+      "kind": "door-launch-utility",
+      "source_files": [
+        "docs/runraw.guide",
+        "s/runraw1",
+        "s/runraw2",
+        "s/runraw3"
+      ],
+      "observed_calls": {},
+      "note": "Launcher/runtime material; no source-level BBS API call corpus was present.",
+      "evidence_status": "observed"
+    }
+  ]
+}

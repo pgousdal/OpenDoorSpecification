@@ -1,12 +1,18 @@
 {
-  "archive_count": 17,
-  "entry_count": 429,
+  "archive_count": 22,
+  "entry_count": 713,
   "archives": [
     {
       "archive": "ABBS320_999.lha",
       "sha256": "5e9fd4cbf871a2bbd4579a3f9b35a0cd2187676cab8886b16adbfe8b038380e4",
       "entries": 222,
       "size": 751581
+    },
+    {
+      "archive": "aedoor28.lha",
+      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
+      "entries": 45,
+      "size": 47139
     },
     {
       "archive": "AmBoS_doc_dev.lha",
@@ -21,10 +27,22 @@
       "size": 4828
     },
     {
+      "archive": "ArisDoors4MAXs.lha",
+      "sha256": "df13b1aa671f4534be08d6e065e62a6061cfe4c1e00d13365962e05932fa584c",
+      "entries": 206,
+      "size": 714884
+    },
+    {
       "archive": "BBSLib-Asm.lha",
       "sha256": "848331d9e0b8941e37472bd8b3e20d7c772cdf2e13827880df879f54e85470b4",
       "entries": 5,
       "size": 4473
+    },
+    {
+      "archive": "CDoorExample.lha",
+      "sha256": "097b33d57cef234b959bfb4ff5972a6c73a81077f1ea8d5d75ed2407ff4fee06",
+      "entries": 2,
+      "size": 2733
     },
     {
       "archive": "DayDreamBBSDev.lha",
@@ -33,34 +51,16 @@
       "size": 99685
     },
     {
-      "archive": "DoorRunner.lha",
-      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
-      "entries": 14,
-      "size": 23791
-    },
-    {
-      "archive": "HydraBBSdc.lha",
-      "sha256": "0d18a9fdb3331e6f2d8db334f4e380cea808efcc14954be91d410e7750d961c6",
-      "entries": 4,
-      "size": 3194
-    },
-    {
-      "archive": "Life1_2.lha",
-      "sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc",
-      "entries": 6,
-      "size": 13421
-    },
-    {
-      "archive": "aedoor28.lha",
-      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
-      "entries": 45,
-      "size": 47139
-    },
-    {
       "archive": "door_io12.lha",
       "sha256": "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
       "entries": 9,
       "size": 8582
+    },
+    {
+      "archive": "DoorRunner.lha",
+      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
+      "entries": 14,
+      "size": 23791
     },
     {
       "archive": "fame_dh.lha",
@@ -87,10 +87,28 @@
       "size": 6575
     },
     {
+      "archive": "HydraBBSdc.lha",
+      "sha256": "0d18a9fdb3331e6f2d8db334f4e380cea808efcc14954be91d410e7750d961c6",
+      "entries": 4,
+      "size": 3194
+    },
+    {
+      "archive": "Life1_2.lha",
+      "sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc",
+      "entries": 6,
+      "size": 13421
+    },
+    {
       "archive": "max_e.lha",
       "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
       "entries": 2,
       "size": 2641
+    },
+    {
+      "archive": "MCesrc.lha",
+      "sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba",
+      "entries": 3,
+      "size": 8127
     },
     {
       "archive": "par2dlg.lha",
@@ -103,6 +121,18 @@
       "sha256": "abb8d333daedd9eb7d83f0754e1910ab93c532a840180c2e1a8f5ab6a07b289b",
       "entries": 3,
       "size": 10414
+    },
+    {
+      "archive": "runraw.lha",
+      "sha256": "d42ada96bbf70bca59e4f4c13d0802f306681b4fa89808c7d93cc3cb704ca68c",
+      "entries": 9,
+      "size": 160424
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "sha256": "a895ce805c98a38b7c33830bd30fa71a68f8cfbe1a89863735aa3565462ef05e",
+      "entries": 64,
+      "size": 72316
     }
   ]
 }
