@@ -40,7 +40,7 @@ def inspect(path: Path) -> dict:
                 ) = struct.unpack("<BB5sII4sBBB", _read_exact(stream, 22))
                 filename = _read_exact(stream, filename_length).decode(
                     "latin-1", "replace"
-                )
+                ).split("\x00", 1)[0]
                 _crc = struct.unpack("<H", _read_exact(stream, 2))[0]
                 directory = None
                 if level == 1:
@@ -79,7 +79,7 @@ def inspect(path: Path) -> dict:
                 payload = _read_exact(stream, extended_size - 3)
                 extended_size = struct.unpack("<H", _read_exact(stream, 2))[0]
                 if extension_type == 0x01:
-                    filename = payload.decode("latin-1", "replace")
+                    filename = payload.decode("latin-1", "replace").split("\x00", 1)[0]
                 elif extension_type == 0x02:
                     directory = payload.decode("latin-1", "replace").replace(
                         "\xff", "/"

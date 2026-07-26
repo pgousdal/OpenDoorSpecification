@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "duplicates": [
+    {
+      "uploaded": "DoorRunner(1).lha",
+      "canonical": "DoorRunner.lha",
+      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "door_io12(1).lha",
+      "canonical": "door_io12.lha",
+      "sha256": "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
+      "status": "byte-identical"
+    }
+  ]
+}

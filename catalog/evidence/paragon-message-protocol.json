@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "subject": "paragon-message-protocol",
+  "status": "verified-partial",
+  "findings": [
+    {
+      "id": "message-ports",
+      "claim": "MAXs-compatible doors derive DoorControl<N> and DoorReply<N> port names from the launch argument.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "20-43"
+        }
+      ]
+    },
+    {
+      "id": "message-layout",
+      "claim": "The message contains an Exec Message, command integer, data integer, 80-byte string, and carrier integer.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "10-18"
+        }
+      ]
+    },
+    {
+      "id": "command-1",
+      "claim": "Command 1 writes a string.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "223-229"
+        }
+      ]
+    },
+    {
+      "id": "command-6",
+      "claim": "Command 6 reads a bounded line into the message string.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "231-241"
+        }
+      ]
+    },
+    {
+      "id": "command-8",
+      "claim": "Command 8 reads a key and reports local/remote origin.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "243-252"
+        }
+      ]
+    },
+    {
+      "id": "command-9",
+      "claim": "Command 9 disconnects/twits the user.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "254-258"
+        }
+      ]
+    },
+    {
+      "id": "command-10",
+      "claim": "Command 10 displays a text file.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "260-267"
+        }
+      ]
+    },
+    {
+      "id": "command-11",
+      "claim": "Command 11 checks file availability and returns 1 or -1 in data.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "269-276"
+        }
+      ]
+    },
+    {
+      "id": "command-13",
+      "claim": "Command 13 retrieves integer user information.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "278-285"
+        }
+      ]
+    },
+    {
+      "id": "command-14",
+      "claim": "Command 14 retrieves user or BBS string information.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "287-294"
+        }
+      ]
+    },
+    {
+      "id": "command-20",
+      "claim": "Command 20 is sent during normal door shutdown.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "45-48"
+        }
+      ]
+    },
+    {
+      "id": "carrier-field",
+      "claim": "The carrier field is copied after each reply and used as the lost-carrier state.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "lines": "318-327"
+        }
+      ]
+    },
+    {
+      "id": "parod-limit",
+      "claim": "ParoD emulates Paragon commands through 21, with documented limitations.",
+      "status": "verified",
+      "sources": [
+        {
+          "archive": "parod123.lha",
+          "path": "ParoD.DOC",
+          "section": "Compatibility"
+        }
+      ]
+    }
+  ]
+}

@@ -42,3 +42,11 @@
 - Added a portable C implementation of the DayDream adapter.
 - Added a narrow binding table for compiler- and SDK-specific DreamDoor calls.
 - Added carrier-safe lifecycle handling, a minimal native door example, and host C conformance tests.
+
+## M2.2
+
+- Added six unique forensic archive inventories.
+- Recorded two byte-identical duplicate uploads.
+- Verified a concrete MAXs/Paragon-compatible message protocol subset.
+- Expanded the reviewed Paragon semantic mapping and command table.
+- Fixed embedded-NUL filename handling in LHA inventories.

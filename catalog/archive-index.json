@@ -1,6 +1,6 @@
 {
-  "archive_count": 11,
-  "entry_count": 406,
+  "archive_count": 17,
+  "entry_count": 429,
   "archives": [
     {
       "archive": "ABBS320_999.lha",
@@ -39,6 +39,18 @@
       "size": 23791
     },
     {
+      "archive": "HydraBBSdc.lha",
+      "sha256": "0d18a9fdb3331e6f2d8db334f4e380cea808efcc14954be91d410e7750d961c6",
+      "entries": 4,
+      "size": 3194
+    },
+    {
+      "archive": "Life1_2.lha",
+      "sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc",
+      "entries": 6,
+      "size": 13421
+    },
+    {
       "archive": "aedoor28.lha",
       "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
       "entries": 45,
@@ -67,6 +79,30 @@
       "sha256": "9b010d4c807fe2fca82f784f2fadc31e5f21231f355c9c609a0e0db31e5462db",
       "entries": 9,
       "size": 48913
+    },
+    {
+      "archive": "fprun11.lha",
+      "sha256": "073e506c87314a88bed60b4d8091b5fe37207b75b54e9801b3be968cee6127bd",
+      "entries": 6,
+      "size": 6575
+    },
+    {
+      "archive": "max_e.lha",
+      "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
+      "entries": 2,
+      "size": 2641
+    },
+    {
+      "archive": "par2dlg.lha",
+      "sha256": "c92ce04f6baf528e581d977fbbedb26351f37a30d5408b99b3b6a93a82366d3e",
+      "entries": 2,
+      "size": 47183
+    },
+    {
+      "archive": "parod123.lha",
+      "sha256": "abb8d333daedd9eb7d83f0754e1910ab93c532a840180c2e1a8f5ab6a07b289b",
+      "entries": 3,
+      "size": 10414
     }
   ]
 }

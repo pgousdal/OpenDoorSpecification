@@ -4,8 +4,10 @@ ROOT=Path(__file__).resolve().parents[1]
 class CatalogTests(unittest.TestCase):
     def test_archive_counts(self):
         manifests=[json.loads(p.read_text()) for p in (ROOT/'catalog/archives').glob('*.json')]
-        self.assertEqual(len(manifests),11)
-        self.assertEqual(sum(m['entry_count'] for m in manifests),406)
+        self.assertGreaterEqual(len(manifests),11)
+        index=json.loads((ROOT/'catalog/archive-index.json').read_text())
+        self.assertEqual(len(manifests),index['archive_count'])
+        self.assertEqual(sum(m['entry_count'] for m in manifests),index['entry_count'])
         for m in manifests:
             self.assertEqual(m['entry_count'],len(m['entries']))
     def test_api_ids_unique(self):

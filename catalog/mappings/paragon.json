@@ -3,20 +3,68 @@
   "api": "paragon",
   "mappings": [
     {
-      "operation": "bbs.command",
+      "operation": "terminal.write",
       "symbols": [
-        "DoorCommand"
+        "command 1",
+        "mxPrint"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "command 6",
+        "mxInput"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "command 8",
+        "mxHotKey"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "command 13",
+        "command 14",
+        "mxGetIntInfo",
+        "mxGetStrInfo"
       ],
       "status": "partial",
-      "semantic_review": "provisional"
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "mxMenuFunct",
+        "message command field"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
     },
     {
       "operation": "lifecycle.disconnect",
       "symbols": [
-        "Carrier"
+        "command 9",
+        "carrier field"
       ],
       "status": "verified",
-      "semantic_review": "provisional"
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "lifecycle.exit",
+      "symbols": [
+        "command 20"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
     }
   ]
 }
