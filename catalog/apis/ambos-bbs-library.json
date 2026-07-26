@@ -1,0 +1,11 @@
+{
+  "id": "ambos-bbs-library",
+  "name": "AmBoS bbs.library",
+  "status": "verified",
+  "transport": "shared library",
+  "evidence": [
+    "AmBoS_doc_dev.lha",
+    "AmBoS_mod_E.lha",
+    "BBSLib-Asm.lha"
+  ]
+}
