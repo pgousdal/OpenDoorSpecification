@@ -43,6 +43,10 @@
 - Added a narrow binding table for compiler- and SDK-specific DreamDoor calls.
 - Added carrier-safe lifecycle handling, a minimal native door example, and host C conformance tests.
 
+## M2.2.1
+
+- Fixed native DayDream host tests to select the system GCC, archiver, and assembler toolchain even when an Amiga cross-toolchain appears earlier in `PATH`.
+
 ## M2.2
 
 - Added six unique forensic archive inventories.

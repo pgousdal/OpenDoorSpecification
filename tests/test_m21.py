@@ -1,10 +1,15 @@
 import json
+import os
 import shutil
 import subprocess
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+HOST_PATH = "/usr/bin:/bin"
+HOST_CC = shutil.which("gcc", path=HOST_PATH)
+HOST_AR = shutil.which("ar", path=HOST_PATH)
+HOST_MAKE = shutil.which("make", path=HOST_PATH)
 
 
 class NativeDayDreamTests(unittest.TestCase):
@@ -17,14 +22,23 @@ class NativeDayDreamTests(unittest.TestCase):
         self.assertEqual(manifest["native_backend"], "portable-c-binding-table")
         self.assertEqual(manifest["conformance"], "host-and-c-tested")
 
-    @unittest.skipUnless(shutil.which("make") and shutil.which("cc"), "C toolchain unavailable")
+    @unittest.skipUnless(
+        HOST_MAKE and HOST_CC and HOST_AR,
+        "host GCC toolchain unavailable",
+    )
     def test_native_adapter_builds_and_passes(self):
+        env = os.environ.copy()
+        env["PATH"] = HOST_PATH
+        env["CC"] = HOST_CC
+        env["AR"] = HOST_AR
+
         subprocess.run(
-            ["make", "-C", str(ROOT / "native/daydream"), "clean", "test"],
+            [HOST_MAKE, "-C", str(ROOT / "native/daydream"), "clean", "test"],
             check=True,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            env=env,
         )
 
 
