@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "host-simulator",
+  "spec_version": "0.1.0",
+  "implementation": "ods_tools.adapters.host.HostAdapter",
+  "kind": "reference",
+  "operations": [
+    "terminal.write",
+    "terminal.read_key",
+    "terminal.read_line",
+    "session.identity",
+    "session.node",
+    "session.time_left",
+    "session.connection_state",
+    "status.set",
+    "bbs.command",
+    "lifecycle.exit",
+    "lifecycle.disconnect"
+  ],
+  "notes": "Deterministic in-memory adapter for conformance testing; not a historical BBS adapter."
+}

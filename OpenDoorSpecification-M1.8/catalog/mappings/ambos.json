@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "api": "ambos",
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "BBSWrite",
+        "BBSPrintf"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "BBSCarrier"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    }
+  ]
+}

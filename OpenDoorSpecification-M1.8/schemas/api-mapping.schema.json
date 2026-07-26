@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/api-mapping.schema.json",
+  "type": "object",
+  "required": ["schema_version", "api", "mappings"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "api": {"type": "string", "minLength": 1},
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["operation", "symbols", "status", "semantic_review"],
+        "properties": {
+          "operation": {"type": "string"},
+          "symbols": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "status": {"enum": ["verified", "partial", "inferred", "unknown"]},
+          "semantic_review": {"enum": ["provisional", "reviewed"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

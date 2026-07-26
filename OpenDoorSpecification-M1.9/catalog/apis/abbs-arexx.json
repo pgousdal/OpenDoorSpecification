@@ -1,0 +1,9 @@
+{
+  "id": "abbs-arexx",
+  "name": "ABBS ARexx",
+  "status": "verified",
+  "transport": "ARexx message port",
+  "evidence": [
+    "ABBS320_999.lha"
+  ]
+}

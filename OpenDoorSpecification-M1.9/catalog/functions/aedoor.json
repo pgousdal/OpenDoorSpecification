@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "api": "aedoor",
+  "function_count": 14,
+  "functions": [
+    {
+      "name": "alreadyoff",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 274
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "alreadyon",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 281
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "askpw",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 158
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "aufbau",
+      "parameters": [
+        {
+          "name": "mesg"
+        }
+      ],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 146
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "changepw",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 182
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "func",
+      "parameters": [
+        {
+          "name": "str"
+        },
+        {
+          "name": "wait"
+        }
+      ],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/HKManager.e",
+        "line": 110
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "header",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 140
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "insertflag",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 227
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "listoptions",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 213
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "newuser",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 109
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "pwfail",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 288
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "subprg",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/exception.e",
+        "line": 96
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "turnpwoff",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 236
+      },
+      "status": "verified-from-example"
+    },
+    {
+      "name": "turnpwon",
+      "parameters": [],
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 263
+      },
+      "status": "verified-from-example"
+    }
+  ]
+}

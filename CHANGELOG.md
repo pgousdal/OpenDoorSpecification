@@ -16,3 +16,23 @@
 - Added verified symbol manifests from historical SDK files.
 - Added Paragon and FAME research contracts.
 - Added initial capability matrix.
+
+## M1.8
+
+- Added the normative ODS Core 0.1 operation catalog.
+- Added provisional semantic mappings for seven historical API families.
+- Added `ods inspect` and `ods compare`.
+- Extended repository validation to cover operations and mappings.
+
+## M1.9
+
+- Added a deterministic reference host adapter covering all ODS Core 0.1 operations.
+- Added prompt disconnect and lifecycle termination behavior.
+- Added the JSON scenario simulator and `ods simulate`.
+- Added adapter metadata, scenario schema, examples, documentation, and conformance tests.
+
+## M2.0
+
+- Added the first historical reference adapter for DayDream DreamDoor.
+- Added a portable recording backend and shared conformance tests.
+- Defined explicit carrier-loss and lifecycle translation behavior.

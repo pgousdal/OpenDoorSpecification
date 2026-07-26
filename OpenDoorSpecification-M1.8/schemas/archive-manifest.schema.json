@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/archive-manifest.schema.json",
+  "title": "ODS archive manifest",
+  "type": "object",
+  "required": [
+    "source_filename",
+    "source_size",
+    "source_sha256",
+    "entry_count",
+    "entries"
+  ],
+  "properties": {
+    "source_filename": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "entry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "method",
+          "uncompressed_size",
+          "compressed_size",
+          "data_offset"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string"
+          },
+          "uncompressed_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "compressed_size": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "data_offset": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

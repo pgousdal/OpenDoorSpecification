@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "api": "paragon",
+  "mappings": [
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "DoorCommand"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "Carrier"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    }
+  ]
+}
