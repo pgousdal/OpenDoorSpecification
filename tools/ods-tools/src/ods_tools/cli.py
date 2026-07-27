@@ -10,6 +10,7 @@ from .profiles import build_conformance_report, write_conformance_report
 from .simulator import load_scenario, run_scenario
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
 from .crosswalk import format_crosswalk, select_crosswalk, validate_crosswalk
+from .crosswalk_coverage import build_crosswalk_coverage, format_crosswalk_coverage, write_crosswalk_coverage
 
 
 def repo_root() -> Path:
@@ -187,6 +188,21 @@ def main() -> int:
     conf.add_argument("--write", type=Path, help="write the executable report to a JSON file")
     crosswalk = sub.add_parser("crosswalk", help="inspect M6.1 host and operation crosswalks")
     crosswalk.add_argument("target", nargs="?", help="host ID, operation ID, host:<id>, or operation:<id>")
+    crosswalk.add_argument(
+        "--coverage",
+        action="store_true",
+        help="show evidence coverage instead of crosswalk records",
+    )
+    crosswalk.add_argument(
+        "--gaps",
+        action="store_true",
+        help="show only unassessed evidence gaps",
+    )
+    crosswalk.add_argument(
+        "--write",
+        type=Path,
+        help="write the complete evidence coverage report to JSON",
+    )
     crosswalk.add_argument("--json", action="store_true", help="print machine-readable JSON")
     crosswalk.add_argument("--all", action="store_true", help="include unassessed cells in text output")
     sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
@@ -232,13 +248,40 @@ def main() -> int:
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
     if args.command == "crosswalk":
+        if args.coverage or args.gaps or args.write:
+            report = (
+                write_crosswalk_coverage(root, args.write)
+                if args.write
+                else build_crosswalk_coverage(root)
+            )
+            if args.json:
+                print(json.dumps(report, indent=2))
+            else:
+                try:
+                    print(
+                        format_crosswalk_coverage(
+                            report,
+                            target=args.target,
+                            gaps_only=args.gaps,
+                        )
+                    )
+                except KeyError:
+                    raise SystemExit(
+                        f"unknown crosswalk coverage target: {args.target}"
+                    )
+            return 0
+
         try:
             record = select_crosswalk(root, args.target)
         except KeyError:
             raise SystemExit(f"unknown crosswalk target: {args.target}")
         except ValueError as exc:
             raise SystemExit(str(exc))
-        print(json.dumps(record, indent=2) if args.json else format_crosswalk(record, include_unassessed=args.all))
+        print(
+            json.dumps(record, indent=2)
+            if args.json
+            else format_crosswalk(record, include_unassessed=args.all)
+        )
         return 0
     if args.command == "gaps":
         report = write_adapter_gap_report(root, args.write) if args.write else build_adapter_gap_report(root)

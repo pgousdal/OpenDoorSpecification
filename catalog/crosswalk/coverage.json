@@ -1,0 +1,396 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "kind": "evidence-coverage",
+  "semantics": {
+    "unassessed": "No reviewed mapping is recorded; this does not mean unsupported.",
+    "partial": "A reviewed mapping exists, but coverage is incomplete."
+  },
+  "summary": {
+    "verified": 20,
+    "partial": 6,
+    "unassessed": 64,
+    "reviewed": 26,
+    "total": 90
+  },
+  "hosts": [
+    {
+      "id": "abbs",
+      "name": "ABBS ARexx",
+      "evidence_class": "documented-sdk",
+      "summary": {
+        "verified": 5,
+        "partial": 1,
+        "unassessed": 3,
+        "reviewed": 6,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit"
+      ]
+    },
+    {
+      "id": "aedoor",
+      "name": "AmiExpress/AEDoor",
+      "evidence_class": "documented-sdk",
+      "summary": {
+        "verified": 0,
+        "partial": 0,
+        "unassessed": 9,
+        "reviewed": 0,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set",
+        "terminal.read_key",
+        "terminal.read_line",
+        "terminal.write"
+      ]
+    },
+    {
+      "id": "ambos",
+      "name": "AmBoS bbs.library",
+      "evidence_class": "documented-sdk",
+      "summary": {
+        "verified": 1,
+        "partial": 1,
+        "unassessed": 7,
+        "reviewed": 2,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set",
+        "terminal.read_key",
+        "terminal.read_line"
+      ]
+    },
+    {
+      "id": "daydream",
+      "name": "DayDream DreamDoor",
+      "evidence_class": "documented-sdk",
+      "summary": {
+        "verified": 5,
+        "partial": 3,
+        "unassessed": 1,
+        "reviewed": 8,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "lifecycle.exit"
+      ]
+    },
+    {
+      "id": "door-io",
+      "name": "door_io.library",
+      "evidence_class": "documented-sdk",
+      "summary": {
+        "verified": 3,
+        "partial": 0,
+        "unassessed": 6,
+        "reviewed": 3,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set"
+      ]
+    },
+    {
+      "id": "fame",
+      "name": "FAME DoorPort",
+      "evidence_class": "documented-sdk",
+      "summary": {
+        "verified": 0,
+        "partial": 0,
+        "unassessed": 9,
+        "reviewed": 0,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set",
+        "terminal.read_key",
+        "terminal.read_line",
+        "terminal.write"
+      ]
+    },
+    {
+      "id": "paragon",
+      "name": "MAXs/Paragon message protocol",
+      "evidence_class": "documented-protocol",
+      "summary": {
+        "verified": 6,
+        "partial": 1,
+        "unassessed": 2,
+        "reviewed": 7,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "session.time_left",
+        "status.set"
+      ]
+    },
+    {
+      "id": "ucdoor",
+      "name": "UCDoor compatibility wrapper",
+      "evidence_class": "wrapper-binding",
+      "summary": {
+        "verified": 0,
+        "partial": 0,
+        "unassessed": 9,
+        "reviewed": 0,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set",
+        "terminal.read_key",
+        "terminal.read_line",
+        "terminal.write"
+      ]
+    },
+    {
+      "id": "wwbbs",
+      "name": "WWBBS ARexx doors corpus",
+      "evidence_class": "observed-doors",
+      "summary": {
+        "verified": 0,
+        "partial": 0,
+        "unassessed": 9,
+        "reviewed": 0,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set",
+        "terminal.read_key",
+        "terminal.read_line",
+        "terminal.write"
+      ]
+    },
+    {
+      "id": "zeus",
+      "name": "Zeus doors corpus",
+      "evidence_class": "observed-doors",
+      "summary": {
+        "verified": 0,
+        "partial": 0,
+        "unassessed": 9,
+        "reviewed": 0,
+        "total": 9
+      },
+      "unassessed_operations": [
+        "bbs.command",
+        "lifecycle.disconnect",
+        "lifecycle.exit",
+        "session.identity",
+        "session.time_left",
+        "status.set",
+        "terminal.read_key",
+        "terminal.read_line",
+        "terminal.write"
+      ]
+    }
+  ],
+  "operations": [
+    {
+      "id": "bbs.command",
+      "summary": {
+        "verified": 2,
+        "partial": 0,
+        "unassessed": 8,
+        "reviewed": 2,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "abbs",
+        "aedoor",
+        "ambos",
+        "door-io",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "lifecycle.disconnect",
+      "summary": {
+        "verified": 1,
+        "partial": 2,
+        "unassessed": 7,
+        "reviewed": 3,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "abbs",
+        "aedoor",
+        "door-io",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "lifecycle.exit",
+      "summary": {
+        "verified": 1,
+        "partial": 0,
+        "unassessed": 9,
+        "reviewed": 1,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "abbs",
+        "aedoor",
+        "ambos",
+        "daydream",
+        "door-io",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "session.identity",
+      "summary": {
+        "verified": 1,
+        "partial": 2,
+        "unassessed": 7,
+        "reviewed": 3,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "aedoor",
+        "ambos",
+        "door-io",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "session.time_left",
+      "summary": {
+        "verified": 2,
+        "partial": 0,
+        "unassessed": 8,
+        "reviewed": 2,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "aedoor",
+        "ambos",
+        "door-io",
+        "fame",
+        "paragon",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "status.set",
+      "summary": {
+        "verified": 2,
+        "partial": 0,
+        "unassessed": 8,
+        "reviewed": 2,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "aedoor",
+        "ambos",
+        "door-io",
+        "fame",
+        "paragon",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "terminal.read_key",
+      "summary": {
+        "verified": 4,
+        "partial": 0,
+        "unassessed": 6,
+        "reviewed": 4,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "aedoor",
+        "ambos",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "terminal.read_line",
+      "summary": {
+        "verified": 3,
+        "partial": 1,
+        "unassessed": 6,
+        "reviewed": 4,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "aedoor",
+        "ambos",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    },
+    {
+      "id": "terminal.write",
+      "summary": {
+        "verified": 4,
+        "partial": 1,
+        "unassessed": 5,
+        "reviewed": 5,
+        "total": 10
+      },
+      "unassessed_hosts": [
+        "aedoor",
+        "fame",
+        "ucdoor",
+        "wwbbs",
+        "zeus"
+      ]
+    }
+  ]
+}
