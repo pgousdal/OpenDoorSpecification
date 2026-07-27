@@ -2,36 +2,39 @@
 
 ## Current state
 
-M6.3 is in progress. PR1 established the language-neutral architecture for
+M6.3 is complete. PR1 established the language-neutral architecture for
 Compatibility Profiles, Adapter Contracts, and Capability Declarations. PR2
 added the Compatibility Profile schema, source catalog, and validation CLI.
-PR3 added the Adapter Contract schema and canonical catalog. PR4 adds the
+PR3 added the Adapter Contract schema and canonical catalog. PR4 added the
 Capability Declaration schema, reference catalog, CLI commands, and
-validation.
+validation. PR5 added deterministic cross-model validation between
+declarations, profiles, and contracts. PR6 performed the formal milestone
+review, created the completion document, and verified internal consistency.
 
 M6.2 remains complete. Its generated research backlog is preserved for future
 evidence milestones and is not modified by M6.3 architecture work.
 
-## Active milestone — M6.3
+## Completed milestone — M6.3
 
-Status: in progress.
+Status: complete.
 
-M6.3 defines deterministic, implementation-independent contracts that future
+M6.3 defined deterministic, implementation-independent contracts that future
 runtimes can consume and validate. ODS remains a specification project; M6.3
-does not introduce adapter runtime code.
+did not introduce adapter runtime code.
 
-Planned sequence:
+Completed sequence:
 
 - PR1: Compatibility Profile, Adapter Contract, and Capability Declaration
   architecture;
 - PR2: Compatibility Profile schema and source catalog;
 - PR3: Adapter Contract schema and canonical catalog;
-- PR4: Capability Declaration schema, reference catalog, CLI, and validation; (complete)
-- PR5: CLI validation;
-- PR6: reference examples;
-- PR7: acceptance criteria and M6.3 completion.
+- PR4: Capability Declaration schema, reference catalog, CLI, and validation;
+- PR5: Capability and Profile cross-model validation;
+- PR6: milestone review and completion.
 
-See [M6.3 compatibility architecture](m63-compatibility-profile-architecture.md).
+Architectural documentation for [M6.3 compatibility architecture](m63-compatibility-profile-architecture.md)
+and the [M6.3 milestone completion](m63-completion.md) document the
+deliverables, architectural layering, and deferred work.
 
 ## M6.2 research backlog
 

@@ -4,6 +4,10 @@
 
 ### Changed
 
+- Completed M6.3 with the final milestone review, consistency audit, and
+  completion document (`docs/m63-completion.md`). Updated README, documentation
+  index, roadmap, and changelog to mark M6.3 complete. No schemas, catalogs,
+  validation rules, generators, or crosswalk artifacts were modified.
 - Started M6.3 with language-neutral architecture for Compatibility Profiles,
   Adapter Contracts, and Capability Declarations.
 - Added the machine-readable Compatibility Profile schema and catalog for the
@@ -17,6 +21,13 @@
   and validation commands (`ods capabilities list|show|validate`), and
   deterministic catalog validation. Capability statuses are kept separate from
   Adapter Contract outcome values.
+- Added deterministic cross-model validation between Capability Declarations,
+  Compatibility Profiles, and Adapter Contracts with profile-satisfaction
+  checking, partial-required-operation reporting, and contract-reference
+  validation. Extended `ods capabilities validate` and `ods capabilities show`
+  to include validation summaries with human-readable and JSON output. Profile
+  satisfaction requires every required operation to be declared as `supported`;
+  `partial` does not satisfy a profile claim.
 - Refreshed repository, contributor, CLI, and milestone documentation after
   M6.2 completion.
 - Consolidated the roadmap into current, next, backlog, completed, and future

@@ -8,11 +8,14 @@ implementation.
 
 ## Current status
 
-M6.3 is in progress. PR1 defined the language-neutral architecture for
+M6.3 is complete. PR1 defined the language-neutral architecture for
 Compatibility Profiles, Adapter Contracts, and Capability Declarations. PR2
 added the Compatibility Profile schema and catalog. PR3 added the Adapter
-Contract schema and canonical contract catalog. PR4 now adds the Capability
-Declaration schema, reference catalog, and CLI commands.
+Contract schema and canonical contract catalog. PR4 added the Capability
+Declaration schema, reference catalog, and CLI commands. PR5 added
+deterministic cross-model validation between declarations, profiles, and
+contracts. PR6 performed the final milestone review and documentation
+consistency update.
 
 M6.2 is complete. The repository contains ODS Core 0.1, deterministic archive
 and API catalogs, reference adapters, executable conformance checks, a complete
@@ -146,8 +149,10 @@ without making ODS language- or runtime-specific:
   supports, or intentionally leaves unsupported.
 
 PR1 provides the architecture, PR2 provides the profile catalog and
-validation, PR3 provides the Adapter Contract catalog, and PR4 provides the
-Capability Declaration schema. See
+validation, PR3 provides the Adapter Contract catalog, PR4 provides the
+Capability Declaration schema, PR5 adds deterministic cross-model
+validation between declarations, profiles, and contracts, and PR6 completes
+the milestone with a formal review and consistency update. See
 [M6.3 compatibility profile architecture](docs/m63-compatibility-profile-architecture.md).
 The [M6.3 profile schema and catalog](docs/m63-compatibility-profile-schema.md)
 documents the current machine-readable profile model.
@@ -155,6 +160,10 @@ The [M6.3 Adapter Contract schema](docs/m63-adapter-contract-schema.md)
 defines canonical operation behavior and outcomes.
 The [M6.3 Capability Declaration schema](docs/m63-capability-declarations.md)
 documents implementation capability declarations.
+The [M6.3 capability validation](docs/m63-capability-validation.md)
+documents cross-model validation between declarations, profiles, and contracts.
+The [M6.3 milestone completion](docs/m63-completion.md)
+summarizes the deliverables, architectural layering, and deferred work.
 
 ## Generators
 
@@ -205,5 +214,5 @@ and strict validation.
 
 ## Roadmap
 
-Completed milestones and the active M6.3 sequence are tracked in
+Completed milestones and milestone sequences are tracked in
 [docs/roadmap.md](docs/roadmap.md).
