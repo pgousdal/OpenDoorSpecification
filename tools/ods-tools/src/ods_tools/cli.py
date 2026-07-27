@@ -9,6 +9,7 @@ from .gaps import build_adapter_gap_report, write_adapter_gap_report
 from .profiles import build_conformance_report, write_conformance_report
 from .simulator import load_scenario, run_scenario
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
+from .crosswalk import format_crosswalk, select_crosswalk, validate_crosswalk
 
 
 def repo_root() -> Path:
@@ -184,6 +185,10 @@ def main() -> int:
     conf.add_argument("--profile", choices=["minimal", "interactive", "complete"], help="limit display to one profile")
     conf.add_argument("--json", action="store_true", help="print machine-readable JSON")
     conf.add_argument("--write", type=Path, help="write the executable report to a JSON file")
+    crosswalk = sub.add_parser("crosswalk", help="inspect M6.1 host and operation crosswalks")
+    crosswalk.add_argument("target", nargs="?", help="host ID, operation ID, host:<id>, or operation:<id>")
+    crosswalk.add_argument("--json", action="store_true", help="print machine-readable JSON")
+    crosswalk.add_argument("--all", action="store_true", help="include unassessed cells in text output")
     sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
     sim.add_argument("scenario", type=Path)
     sim.add_argument("--transcript", action="store_true", help="print complete JSON execution result")
@@ -226,6 +231,15 @@ def main() -> int:
             args.json.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
+    if args.command == "crosswalk":
+        try:
+            record = select_crosswalk(root, args.target)
+        except KeyError:
+            raise SystemExit(f"unknown crosswalk target: {args.target}")
+        except ValueError as exc:
+            raise SystemExit(str(exc))
+        print(json.dumps(record, indent=2) if args.json else format_crosswalk(record, include_unassessed=args.all))
+        return 0
     if args.command == "gaps":
         report = write_adapter_gap_report(root, args.write) if args.write else build_adapter_gap_report(root)
         targets = [*report["historical_apis"], *report["adapters"]]
@@ -318,7 +332,11 @@ def main() -> int:
     if args.command == "validate":
         archives, entries, mappings, provenance = validate(root, strict=args.strict)
         suffix = f", {provenance} provenance records, strict provenance" if args.strict else ""
-        print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}")
+        crosswalk_suffix = ""
+        if (root / "catalog" / "crosswalk" / "index.json").exists():
+            hosts, operations, cells = validate_crosswalk(root)
+            crosswalk_suffix = f", {hosts} crosswalk hosts, {operations} operations, {cells} reviewed crosswalk mappings"
+        print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}{crosswalk_suffix}")
         return 0
     if args.command == "inspect":
         operations = {o["id"]: o for o in load_operations(root)["operations"]}
