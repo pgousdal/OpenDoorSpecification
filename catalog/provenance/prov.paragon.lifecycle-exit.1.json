@@ -19,6 +19,7 @@
     {
       "archive": "ArisDoors4MAXs.lha",
       "path": "arisdoors4maxs/view/View.c",
+      "symbol": "command 20",
       "note": "Observed normal termination in historical source."
     }
   ]

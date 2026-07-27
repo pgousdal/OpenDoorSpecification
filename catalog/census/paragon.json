@@ -666,7 +666,10 @@
         "mxGetStrInfo"
       ],
       "status": "partial",
-      "semantic_review": "reviewed"
+      "semantic_review": "reviewed",
+      "limitations": [
+        "Commands 13 and 14 expose caller fields, but the complete stable ODS identity field set is not established."
+      ]
     },
     {
       "operation": "bbs.command",

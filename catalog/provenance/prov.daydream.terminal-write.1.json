@@ -19,6 +19,7 @@
     {
       "archive": "DayDreamBBSDev.lha",
       "path": "DayDream/Developer/DreamDoor/Sas_C/Example/testlib.c",
+      "symbol": "DDPutStr",
       "note": "Observed SDK example usage."
     }
   ]

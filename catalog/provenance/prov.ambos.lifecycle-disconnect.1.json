@@ -1,0 +1,15 @@
+{
+  "id": "prov.ambos.lifecycle-disconnect.1",
+  "claim_type": "operation-mapping",
+  "operation": "lifecycle.disconnect",
+  "api": "ambos",
+  "status": "documented",
+  "summary": "AmBoS documents BBSCarrier for caller connection-state detection",
+  "sources": [
+    {
+      "archive": "AmBoS_doc_dev.lha",
+      "path": "Dokumentation/BBS.lib.guide",
+      "symbol": "BBSCarrier"
+    }
+  ]
+}

@@ -895,7 +895,10 @@
         "BBSCarrier"
       ],
       "status": "partial",
-      "semantic_review": "provisional"
+      "semantic_review": "provisional",
+      "limitations": [
+        "BBSCarrier reports connection state; prompt door termination remains caller-controlled."
+      ]
     },
     {
       "operation": "terminal.read_key",

@@ -34,9 +34,13 @@
       ],
       "status": "partial",
       "semantic_review": "provisional",
-      "evidence_statuses": [],
-      "provenance_ids": [],
-      "covered": false
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.session-identity.1"
+      ],
+      "covered": true
     },
     {
       "api": "paragon",
@@ -75,7 +79,7 @@
   ],
   "summary": {
     "historical_implementation_count": 3,
-    "covered_historical_implementation_count": 2,
+    "covered_historical_implementation_count": 3,
     "adapter_count": 2
   }
 }

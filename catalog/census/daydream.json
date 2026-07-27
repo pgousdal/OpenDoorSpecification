@@ -2539,7 +2539,10 @@
         "Prompt"
       ],
       "status": "partial",
-      "semantic_review": "provisional"
+      "semantic_review": "provisional",
+      "limitations": [
+        "Prompt provides line input, but the reviewed mapping does not establish the complete editing and disconnect contract."
+      ]
     },
     {
       "operation": "session.identity",
@@ -2547,7 +2550,10 @@
         "GetAccount"
       ],
       "status": "partial",
-      "semantic_review": "provisional"
+      "semantic_review": "provisional",
+      "limitations": [
+        "GetAccount exposes account data, but the complete stable ODS identity field set is not established."
+      ]
     },
     {
       "operation": "session.time_left",
@@ -2579,7 +2585,10 @@
         "Carrier"
       ],
       "status": "partial",
-      "semantic_review": "provisional"
+      "semantic_review": "provisional",
+      "limitations": [
+        "Carrier reports connection state; prompt door termination remains adapter-controlled."
+      ]
     },
     {
       "operation": "lifecycle.exit",

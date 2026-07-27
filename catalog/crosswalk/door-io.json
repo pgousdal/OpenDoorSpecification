@@ -64,6 +64,8 @@
     },
     {
       "operation": "terminal.read_key",
+      "id": "door-io:terminal.read_key",
+      "host": "door-io",
       "status": "verified",
       "symbols": [
         "DoorGetKey"
@@ -71,10 +73,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.doc",
+          "symbol": "DoorGetKey"
+        }
+      ],
+      "rationale": "door_io.library documents DoorGetKey keyboard input",
+      "limitations": [],
+      "provenance": [
+        "prov.door-io.terminal-read-key.1"
+      ]
     },
     {
       "operation": "terminal.read_line",
+      "id": "door-io:terminal.read_line",
+      "host": "door-io",
       "status": "verified",
       "symbols": [
         "DoorGetString"
@@ -82,10 +98,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.doc",
+          "symbol": "DoorGetString"
+        }
+      ],
+      "rationale": "door_io.library documents DoorGetString line input",
+      "limitations": [],
+      "provenance": [
+        "prov.door-io.terminal-read-line.1"
+      ]
     },
     {
       "operation": "terminal.write",
+      "id": "door-io:terminal.write",
+      "host": "door-io",
       "status": "verified",
       "symbols": [
         "DoorPrint"
@@ -93,7 +123,19 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.doc",
+          "symbol": "DoorPrint"
+        }
+      ],
+      "rationale": "door_io.library documents DoorPrint terminal output",
+      "limitations": [],
+      "provenance": [
+        "prov.door-io.terminal-write.1"
+      ]
     }
   ],
   "limitations": []

@@ -10,6 +10,8 @@
   "operations": [
     {
       "operation": "bbs.command",
+      "id": "daydream:bbs.command",
+      "host": "daydream",
       "status": "verified",
       "symbols": [
         "InternalCommand"
@@ -17,10 +19,30 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "InternalCommand"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/Example/FileChain.c",
+          "symbol": "InternalCommand",
+          "note": "Observed SDK example usage."
+        }
+      ],
+      "rationale": "DreamDoor InternalCommand invokes a DayDream internal command",
+      "limitations": [],
+      "provenance": [
+        "prov.daydream.bbs-command.1"
+      ]
     },
     {
       "operation": "lifecycle.disconnect",
+      "id": "daydream:lifecycle.disconnect",
+      "host": "daydream",
       "status": "partial",
       "symbols": [
         "Carrier"
@@ -28,10 +50,31 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "Carrier"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+          "symbol": "Carrier"
+        }
+      ],
+      "rationale": "DreamDoor Carrier reports whether the caller remains connected",
+      "limitations": [
+        "Carrier reports connection state; prompt door termination remains adapter-controlled."
+      ],
+      "provenance": [
+        "prov.daydream.lifecycle-disconnect.1"
+      ]
     },
     {
       "operation": "lifecycle.exit",
+      "id": "daydream:lifecycle.exit",
+      "host": "daydream",
       "status": "verified",
       "symbols": [
         "CloseDoor"
@@ -57,6 +100,8 @@
     },
     {
       "operation": "session.identity",
+      "id": "daydream:session.identity",
+      "host": "daydream",
       "status": "partial",
       "symbols": [
         "GetAccount"
@@ -64,10 +109,31 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "GetAccount"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+          "symbol": "GetAccount"
+        }
+      ],
+      "rationale": "DreamDoor GetAccount exposes caller account identity data",
+      "limitations": [
+        "GetAccount exposes account data, but the complete stable ODS identity field set is not established."
+      ],
+      "provenance": [
+        "prov.daydream.session-identity.1"
+      ]
     },
     {
       "operation": "session.time_left",
+      "id": "daydream:session.time_left",
+      "host": "daydream",
       "status": "verified",
       "symbols": [
         "TimeLeft"
@@ -75,10 +141,29 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "TimeLeft"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+          "symbol": "TimeLeft"
+        }
+      ],
+      "rationale": "DreamDoor TimeLeft returns remaining caller time",
+      "limitations": [],
+      "provenance": [
+        "prov.daydream.session-time-left.1"
+      ]
     },
     {
       "operation": "status.set",
+      "id": "daydream:status.set",
+      "host": "daydream",
       "status": "verified",
       "symbols": [
         "ChangeActivity"
@@ -86,10 +171,30 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "ChangeActivity"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/Example/Stat.C",
+          "symbol": "ChangeActivity",
+          "note": "Observed SDK example usage."
+        }
+      ],
+      "rationale": "DreamDoor ChangeActivity updates the node activity text",
+      "limitations": [],
+      "provenance": [
+        "prov.daydream.status-set.1"
+      ]
     },
     {
       "operation": "terminal.read_key",
+      "id": "daydream:terminal.read_key",
+      "host": "daydream",
       "status": "verified",
       "symbols": [
         "DDGetKey"
@@ -97,10 +202,35 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "DDGetKey"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+          "symbol": "DDGetKey"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/AmigaE/Example.e",
+          "symbol": "DDGetKey",
+          "note": "Observed language-binding example."
+        }
+      ],
+      "rationale": "DreamDoor DDGetKey reads a terminal key",
+      "limitations": [],
+      "provenance": [
+        "prov.daydream.terminal-read-key.1"
+      ]
     },
     {
       "operation": "terminal.read_line",
+      "id": "daydream:terminal.read_line",
+      "host": "daydream",
       "status": "partial",
       "symbols": [
         "Prompt"
@@ -108,10 +238,31 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "Prompt"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+          "symbol": "Prompt"
+        }
+      ],
+      "rationale": "DreamDoor Prompt supplies line-oriented input behavior",
+      "limitations": [
+        "Prompt provides line input, but the reviewed mapping does not establish the complete editing and disconnect contract."
+      ],
+      "provenance": [
+        "prov.daydream.terminal-read-line.1"
+      ]
     },
     {
       "operation": "terminal.write",
+      "id": "daydream:terminal.write",
+      "host": "daydream",
       "status": "verified",
       "symbols": [
         "DDPutStr",
@@ -120,7 +271,30 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "DDPutStr/DDPrintf"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+          "symbol": "DDPutStr/DDPrintf"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/Example/testlib.c",
+          "symbol": "DDPutStr",
+          "note": "Observed SDK example usage."
+        }
+      ],
+      "rationale": "DreamDoor provides DDPutStr and DDPrintf for terminal output",
+      "limitations": [],
+      "provenance": [
+        "prov.daydream.terminal-write.1"
+      ]
     }
   ],
   "limitations": []

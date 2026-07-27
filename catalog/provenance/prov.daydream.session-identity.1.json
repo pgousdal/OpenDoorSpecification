@@ -1,0 +1,20 @@
+{
+  "id": "prov.daydream.session-identity.1",
+  "claim_type": "operation-mapping",
+  "operation": "session.identity",
+  "api": "daydream",
+  "status": "documented",
+  "summary": "DreamDoor GetAccount exposes caller account identity data",
+  "sources": [
+    {
+      "archive": "DayDreamBBSDev.lha",
+      "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+      "symbol": "GetAccount"
+    },
+    {
+      "archive": "DayDreamBBSDev.lha",
+      "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+      "symbol": "GetAccount"
+    }
+  ]
+}

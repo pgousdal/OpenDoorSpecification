@@ -142,4 +142,6 @@ in M6.2.
   filtering, and stale-data validation.
 - PR2: first eight-cell primary-evidence batch across ABBS, AmBoS, DayDream,
   and UCDoor; reviewed coverage increased while M6.2 remains in progress.
+- PR3: machine validation for stable mapping identities, evidence references,
+  rationales, partial limitations, and provenance cross-references.
 - Future work: research and review queued host-operation cells.

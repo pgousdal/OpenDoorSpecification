@@ -20,9 +20,13 @@
       ],
       "status": "partial",
       "semantic_review": "provisional",
-      "evidence_statuses": [],
-      "provenance_ids": [],
-      "covered": false
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.ambos.lifecycle-disconnect.1"
+      ],
+      "covered": true
     },
     {
       "api": "daydream",
@@ -74,7 +78,7 @@
   ],
   "summary": {
     "historical_implementation_count": 3,
-    "covered_historical_implementation_count": 2,
+    "covered_historical_implementation_count": 3,
     "adapter_count": 2
   }
 }

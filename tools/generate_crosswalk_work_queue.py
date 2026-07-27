@@ -11,6 +11,10 @@ TOOLS_SRC = ROOT / "tools" / "ods-tools" / "src"
 sys.path.insert(0, str(TOOLS_SRC))
 
 from ods_tools.crosswalk_work_queue import build_crosswalk_work_queue
+from ods_tools.crosswalk_evidence import (
+    EvidenceValidationError,
+    validate_crosswalk_evidence,
+)
 
 
 def render(root: Path) -> str:
@@ -22,6 +26,11 @@ def render(root: Path) -> str:
 
 
 def generate(root: Path, output: Path, check: bool = False) -> int:
+    try:
+        validate_crosswalk_evidence(root)
+    except EvidenceValidationError as exc:
+        print(f"Crosswalk evidence validation failed: {exc}")
+        return 1
     content = render(root)
     if check:
         if not output.exists():

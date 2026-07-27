@@ -19,6 +19,8 @@
     },
     {
       "operation": "lifecycle.disconnect",
+      "id": "ambos:lifecycle.disconnect",
+      "host": "ambos",
       "status": "partial",
       "symbols": [
         "BBSCarrier"
@@ -26,7 +28,21 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/BBS.lib.guide",
+          "symbol": "BBSCarrier"
+        }
+      ],
+      "rationale": "AmBoS documents BBSCarrier for caller connection-state detection",
+      "limitations": [
+        "BBSCarrier reports connection state; prompt door termination remains caller-controlled."
+      ],
+      "provenance": [
+        "prov.ambos.lifecycle-disconnect.1"
+      ]
     },
     {
       "operation": "lifecycle.exit",
@@ -66,6 +82,8 @@
     },
     {
       "operation": "terminal.read_key",
+      "id": "ambos:terminal.read_key",
+      "host": "ambos",
       "status": "partial",
       "symbols": [
         "bbs_getc",
@@ -95,6 +113,8 @@
     },
     {
       "operation": "terminal.read_line",
+      "id": "ambos:terminal.read_line",
+      "host": "ambos",
       "status": "partial",
       "symbols": [
         "bbs_gets",
@@ -125,6 +145,8 @@
     },
     {
       "operation": "terminal.write",
+      "id": "ambos:terminal.write",
+      "host": "ambos",
       "status": "verified",
       "symbols": [
         "BBSWrite",
@@ -133,7 +155,19 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/include/clib/BBS_protos.h",
+          "symbol": "BBSWrite/BBSPrintf"
+        }
+      ],
+      "rationale": "AmBoS BBS library declares BBSWrite and BBSPrintf terminal output calls",
+      "limitations": [],
+      "provenance": [
+        "prov.ambos.terminal-write.1"
+      ]
     }
   ],
   "limitations": [

@@ -30,6 +30,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:bbs.command",
+          "host": "daydream",
           "status": "verified",
           "symbols": [
             "InternalCommand"
@@ -37,7 +39,25 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "InternalCommand"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/Example/FileChain.c",
+              "symbol": "InternalCommand",
+              "note": "Observed SDK example usage."
+            }
+          ],
+          "rationale": "DreamDoor InternalCommand invokes a DayDream internal command",
+          "limitations": [],
+          "provenance": [
+            "prov.daydream.bbs-command.1"
+          ]
         },
         "door-io": {
           "status": "unassessed",
@@ -56,6 +76,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:bbs.command",
+          "host": "paragon",
           "status": "verified",
           "symbols": [
             "mxMenuFunct",
@@ -64,7 +86,30 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "mxMenuFunct"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/dofuncti.htm",
+              "symbol": "DoFunction"
+            },
+            {
+              "archive": "ArisDoors4MAXs.lha",
+              "path": "arisdoors4maxs/clicontrol/Control.c",
+              "symbol": "message command field",
+              "note": "Observed in historical door source."
+            }
+          ],
+          "rationale": "The message command field invokes supported BBS-side functions",
+          "limitations": [],
+          "provenance": [
+            "prov.paragon.bbs-command.1"
+          ]
         },
         "ucdoor": {
           "status": "unassessed",
@@ -96,6 +141,8 @@
       "id": "lifecycle.disconnect",
       "hosts": {
         "abbs": {
+          "id": "abbs:lifecycle.disconnect",
+          "host": "abbs",
           "status": "partial",
           "symbols": [
             "GETCONSTAT"
@@ -126,6 +173,8 @@
           ]
         },
         "ambos": {
+          "id": "ambos:lifecycle.disconnect",
+          "host": "ambos",
           "status": "partial",
           "symbols": [
             "BBSCarrier"
@@ -133,9 +182,25 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/BBS.lib.guide",
+              "symbol": "BBSCarrier"
+            }
+          ],
+          "rationale": "AmBoS documents BBSCarrier for caller connection-state detection",
+          "limitations": [
+            "BBSCarrier reports connection state; prompt door termination remains caller-controlled."
+          ],
+          "provenance": [
+            "prov.ambos.lifecycle-disconnect.1"
+          ]
         },
         "daydream": {
+          "id": "daydream:lifecycle.disconnect",
+          "host": "daydream",
           "status": "partial",
           "symbols": [
             "Carrier"
@@ -143,7 +208,26 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "Carrier"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+              "symbol": "Carrier"
+            }
+          ],
+          "rationale": "DreamDoor Carrier reports whether the caller remains connected",
+          "limitations": [
+            "Carrier reports connection state; prompt door termination remains adapter-controlled."
+          ],
+          "provenance": [
+            "prov.daydream.lifecycle-disconnect.1"
+          ]
         },
         "door-io": {
           "status": "unassessed",
@@ -162,6 +246,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:lifecycle.disconnect",
+          "host": "paragon",
           "status": "verified",
           "symbols": [
             "command 9",
@@ -170,9 +256,33 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "carrier/command 9"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/carrier.htm",
+              "symbol": "Carrier"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/cdend.htm",
+              "symbol": "CDEnd"
+            }
+          ],
+          "rationale": "Command 9 and the carrier field represent disconnect state and action",
+          "limitations": [],
+          "provenance": [
+            "prov.paragon.lifecycle-disconnect.1"
+          ]
         },
         "ucdoor": {
+          "id": "ucdoor:lifecycle.disconnect",
+          "host": "ucdoor",
           "status": "verified",
           "symbols": [
             "cd_CarrierLost",
@@ -251,6 +361,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:lifecycle.exit",
+          "host": "daydream",
           "status": "verified",
           "symbols": [
             "CloseDoor"
@@ -291,6 +403,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:lifecycle.exit",
+          "host": "paragon",
           "status": "verified",
           "symbols": [
             "command 20"
@@ -298,7 +412,30 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "command 20"
+            },
+            {
+              "archive": "CDoorExample.lha",
+              "path": "door.c",
+              "symbol": "command 20"
+            },
+            {
+              "archive": "ArisDoors4MAXs.lha",
+              "path": "arisdoors4maxs/view/View.c",
+              "symbol": "command 20",
+              "note": "Observed normal termination in historical source."
+            }
+          ],
+          "rationale": "Command 20 performs normal door termination",
+          "limitations": [],
+          "provenance": [
+            "prov.paragon.lifecycle-exit.1"
+          ]
         },
         "ucdoor": {
           "status": "unassessed",
@@ -330,6 +467,8 @@
       "id": "session.identity",
       "hosts": {
         "abbs": {
+          "id": "abbs:session.identity",
+          "host": "abbs",
           "status": "verified",
           "symbols": [
             "UserName",
@@ -338,7 +477,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "UserName/UserNumber"
+            }
+          ],
+          "rationale": "ABBS exposes UserName and UserNumber through its documented ARexx interface",
+          "limitations": [],
+          "provenance": [
+            "prov.abbs.session-identity.1"
+          ]
         },
         "aedoor": {
           "status": "unassessed",
@@ -357,6 +508,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:session.identity",
+          "host": "daydream",
           "status": "partial",
           "symbols": [
             "GetAccount"
@@ -364,7 +517,26 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "GetAccount"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+              "symbol": "GetAccount"
+            }
+          ],
+          "rationale": "DreamDoor GetAccount exposes caller account identity data",
+          "limitations": [
+            "GetAccount exposes account data, but the complete stable ODS identity field set is not established."
+          ],
+          "provenance": [
+            "prov.daydream.session-identity.1"
+          ]
         },
         "door-io": {
           "status": "unassessed",
@@ -383,6 +555,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:session.identity",
+          "host": "paragon",
           "status": "partial",
           "symbols": [
             "command 13",
@@ -393,7 +567,31 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "mxGetIntInfo/mxGetStrInfo"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/getuseri.htm",
+              "symbol": "GetUserInfo"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/getuserd.htm",
+              "symbol": "GetUserData"
+            }
+          ],
+          "rationale": "Commands 13 and 14 expose numeric and textual caller information",
+          "limitations": [
+            "Commands 13 and 14 expose caller fields, but the complete stable ODS identity field set is not established."
+          ],
+          "provenance": [
+            "prov.paragon.session-identity.1"
+          ]
         },
         "ucdoor": {
           "status": "unassessed",
@@ -425,6 +623,8 @@
       "id": "session.time_left",
       "hosts": {
         "abbs": {
+          "id": "abbs:session.time_left",
+          "host": "abbs",
           "status": "verified",
           "symbols": [
             "TimeLeft"
@@ -432,7 +632,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "TimeLeft"
+            }
+          ],
+          "rationale": "ABBS exposes TimeLeft through its documented ARexx interface",
+          "limitations": [],
+          "provenance": [
+            "prov.abbs.session-time-left.1"
+          ]
         },
         "aedoor": {
           "status": "unassessed",
@@ -451,6 +663,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:session.time_left",
+          "host": "daydream",
           "status": "verified",
           "symbols": [
             "TimeLeft"
@@ -458,7 +672,24 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "TimeLeft"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+              "symbol": "TimeLeft"
+            }
+          ],
+          "rationale": "DreamDoor TimeLeft returns remaining caller time",
+          "limitations": [],
+          "provenance": [
+            "prov.daydream.session-time-left.1"
+          ]
         },
         "door-io": {
           "status": "unassessed",
@@ -485,6 +716,8 @@
           ]
         },
         "ucdoor": {
+          "id": "ucdoor:session.time_left",
+          "host": "ucdoor",
           "status": "partial",
           "symbols": [
             "cd_GetNumInfo",
@@ -535,6 +768,8 @@
       "id": "status.set",
       "hosts": {
         "abbs": {
+          "id": "abbs:status.set",
+          "host": "abbs",
           "status": "verified",
           "symbols": [
             "SetStatus"
@@ -542,7 +777,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "SetStatus"
+            }
+          ],
+          "rationale": "ABBS exposes SetStatus through its documented ARexx interface",
+          "limitations": [],
+          "provenance": [
+            "prov.abbs.status-set.1"
+          ]
         },
         "aedoor": {
           "status": "unassessed",
@@ -561,6 +808,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:status.set",
+          "host": "daydream",
           "status": "verified",
           "symbols": [
             "ChangeActivity"
@@ -568,7 +817,25 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "ChangeActivity"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/Example/Stat.C",
+              "symbol": "ChangeActivity",
+              "note": "Observed SDK example usage."
+            }
+          ],
+          "rationale": "DreamDoor ChangeActivity updates the node activity text",
+          "limitations": [],
+          "provenance": [
+            "prov.daydream.status-set.1"
+          ]
         },
         "door-io": {
           "status": "unassessed",
@@ -624,6 +891,8 @@
       "id": "terminal.read_key",
       "hosts": {
         "abbs": {
+          "id": "abbs:terminal.read_key",
+          "host": "abbs",
           "status": "verified",
           "symbols": [
             "GetKey"
@@ -631,7 +900,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "GetKey"
+            }
+          ],
+          "rationale": "ABBS exposes GetKey through its documented ARexx interface",
+          "limitations": [],
+          "provenance": [
+            "prov.abbs.terminal-read-key.1"
+          ]
         },
         "aedoor": {
           "status": "unassessed",
@@ -642,6 +923,8 @@
           ]
         },
         "ambos": {
+          "id": "ambos:terminal.read_key",
+          "host": "ambos",
           "status": "partial",
           "symbols": [
             "bbs_getc",
@@ -670,6 +953,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:terminal.read_key",
+          "host": "daydream",
           "status": "verified",
           "symbols": [
             "DDGetKey"
@@ -677,9 +962,34 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "DDGetKey"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+              "symbol": "DDGetKey"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/AmigaE/Example.e",
+              "symbol": "DDGetKey",
+              "note": "Observed language-binding example."
+            }
+          ],
+          "rationale": "DreamDoor DDGetKey reads a terminal key",
+          "limitations": [],
+          "provenance": [
+            "prov.daydream.terminal-read-key.1"
+          ]
         },
         "door-io": {
+          "id": "door-io:terminal.read_key",
+          "host": "door-io",
           "status": "verified",
           "symbols": [
             "DoorGetKey"
@@ -687,7 +997,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "door_io12.lha",
+              "path": "doorio/door_io.doc",
+              "symbol": "DoorGetKey"
+            }
+          ],
+          "rationale": "door_io.library documents DoorGetKey keyboard input",
+          "limitations": [],
+          "provenance": [
+            "prov.door-io.terminal-read-key.1"
+          ]
         },
         "fame": {
           "status": "unassessed",
@@ -698,6 +1020,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:terminal.read_key",
+          "host": "paragon",
           "status": "verified",
           "symbols": [
             "command 8",
@@ -706,7 +1030,29 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "mxHotKey"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/getchar.htm",
+              "symbol": "GetChar"
+            },
+            {
+              "archive": "CDoorExample.lha",
+              "path": "door.c",
+              "symbol": "command 8"
+            }
+          ],
+          "rationale": "Paragon/MAXs command 8 reads a key from the caller",
+          "limitations": [],
+          "provenance": [
+            "prov.paragon.terminal-read-key.1"
+          ]
         },
         "ucdoor": {
           "status": "unassessed",
@@ -738,6 +1084,8 @@
       "id": "terminal.read_line",
       "hosts": {
         "abbs": {
+          "id": "abbs:terminal.read_line",
+          "host": "abbs",
           "status": "verified",
           "symbols": [
             "GetString"
@@ -745,7 +1093,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "GetString"
+            }
+          ],
+          "rationale": "ABBS exposes GetString through its documented ARexx interface",
+          "limitations": [],
+          "provenance": [
+            "prov.abbs.terminal-read-line.1"
+          ]
         },
         "aedoor": {
           "status": "unassessed",
@@ -756,6 +1116,8 @@
           ]
         },
         "ambos": {
+          "id": "ambos:terminal.read_line",
+          "host": "ambos",
           "status": "partial",
           "symbols": [
             "bbs_gets",
@@ -785,6 +1147,8 @@
           ]
         },
         "daydream": {
+          "id": "daydream:terminal.read_line",
+          "host": "daydream",
           "status": "partial",
           "symbols": [
             "Prompt"
@@ -792,9 +1156,30 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "Prompt"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+              "symbol": "Prompt"
+            }
+          ],
+          "rationale": "DreamDoor Prompt supplies line-oriented input behavior",
+          "limitations": [
+            "Prompt provides line input, but the reviewed mapping does not establish the complete editing and disconnect contract."
+          ],
+          "provenance": [
+            "prov.daydream.terminal-read-line.1"
+          ]
         },
         "door-io": {
+          "id": "door-io:terminal.read_line",
+          "host": "door-io",
           "status": "verified",
           "symbols": [
             "DoorGetString"
@@ -802,7 +1187,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "door_io12.lha",
+              "path": "doorio/door_io.doc",
+              "symbol": "DoorGetString"
+            }
+          ],
+          "rationale": "door_io.library documents DoorGetString line input",
+          "limitations": [],
+          "provenance": [
+            "prov.door-io.terminal-read-line.1"
+          ]
         },
         "fame": {
           "status": "unassessed",
@@ -813,6 +1210,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:terminal.read_line",
+          "host": "paragon",
           "status": "verified",
           "symbols": [
             "command 6",
@@ -821,9 +1220,33 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "mxInput"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/cdgetstr.htm",
+              "symbol": "CDGetStr"
+            },
+            {
+              "archive": "CDoorExample.lha",
+              "path": "door.c",
+              "symbol": "command 6"
+            }
+          ],
+          "rationale": "Paragon/MAXs command 6 reads a line of terminal input",
+          "limitations": [],
+          "provenance": [
+            "prov.paragon.terminal-read-line.1"
+          ]
         },
         "ucdoor": {
+          "id": "ucdoor:terminal.read_line",
+          "host": "ucdoor",
           "status": "partial",
           "symbols": [
             "cd_GetStr",
@@ -877,6 +1300,8 @@
       "id": "terminal.write",
       "hosts": {
         "abbs": {
+          "id": "abbs:terminal.write",
+          "host": "abbs",
           "status": "partial",
           "symbols": [
             "Writeln",
@@ -885,7 +1310,21 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "Writeln/Write"
+            }
+          ],
+          "rationale": "ABBS documents Writeln and Write terminal output operations",
+          "limitations": [
+            "The reviewed mapping does not establish complete output-mode and disconnect behavior."
+          ],
+          "provenance": [
+            "prov.abbs.terminal-write.1"
+          ]
         },
         "aedoor": {
           "status": "unassessed",
@@ -896,6 +1335,8 @@
           ]
         },
         "ambos": {
+          "id": "ambos:terminal.write",
+          "host": "ambos",
           "status": "verified",
           "symbols": [
             "BBSWrite",
@@ -904,9 +1345,23 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/include/clib/BBS_protos.h",
+              "symbol": "BBSWrite/BBSPrintf"
+            }
+          ],
+          "rationale": "AmBoS BBS library declares BBSWrite and BBSPrintf terminal output calls",
+          "limitations": [],
+          "provenance": [
+            "prov.ambos.terminal-write.1"
+          ]
         },
         "daydream": {
+          "id": "daydream:terminal.write",
+          "host": "daydream",
           "status": "verified",
           "symbols": [
             "DDPutStr",
@@ -915,9 +1370,34 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "DDPutStr/DDPrintf"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+              "symbol": "DDPutStr/DDPrintf"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/Example/testlib.c",
+              "symbol": "DDPutStr",
+              "note": "Observed SDK example usage."
+            }
+          ],
+          "rationale": "DreamDoor provides DDPutStr and DDPrintf for terminal output",
+          "limitations": [],
+          "provenance": [
+            "prov.daydream.terminal-write.1"
+          ]
         },
         "door-io": {
+          "id": "door-io:terminal.write",
+          "host": "door-io",
           "status": "verified",
           "symbols": [
             "DoorPrint"
@@ -925,7 +1405,19 @@
           "semantic_review": "provisional",
           "evidence_class": "documented-sdk",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "door_io12.lha",
+              "path": "doorio/door_io.doc",
+              "symbol": "DoorPrint"
+            }
+          ],
+          "rationale": "door_io.library documents DoorPrint terminal output",
+          "limitations": [],
+          "provenance": [
+            "prov.door-io.terminal-write.1"
+          ]
         },
         "fame": {
           "status": "unassessed",
@@ -936,6 +1428,8 @@
           ]
         },
         "paragon": {
+          "id": "paragon:terminal.write",
+          "host": "paragon",
           "status": "verified",
           "symbols": [
             "command 1",
@@ -944,9 +1438,36 @@
           "semantic_review": "reviewed",
           "evidence_class": "documented-protocol",
           "lossiness": "unknown",
-          "notes": []
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "max_e.lha",
+              "path": "MAXDoor.e",
+              "symbol": "mxPrint",
+              "note": "Language binding sends command 1."
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/cdputstr.htm",
+              "symbol": "CDPutStr",
+              "note": "SDK documentation for terminal output."
+            },
+            {
+              "archive": "CDoorExample.lha",
+              "path": "door.c",
+              "symbol": "command 1",
+              "note": "Minimal C door uses the message command in practice."
+            }
+          ],
+          "rationale": "Paragon/MAXs command 1 writes text to the caller terminal",
+          "limitations": [],
+          "provenance": [
+            "prov.paragon.terminal-write.1"
+          ]
         },
         "ucdoor": {
+          "id": "ucdoor:terminal.write",
+          "host": "ucdoor",
           "status": "verified",
           "symbols": [
             "cd_PutStr"

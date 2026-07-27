@@ -19,6 +19,7 @@
     {
       "archive": "DayDreamBBSDev.lha",
       "path": "DayDream/Developer/DreamDoor/AmigaE/Example.e",
+      "symbol": "DDGetKey",
       "note": "Observed language-binding example."
     }
   ]

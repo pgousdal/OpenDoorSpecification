@@ -176,6 +176,9 @@
   reasons, CLI filtering, generation, and strict stale-data validation.
 - M6.2 PR2 first evidence expansion batch: eight reviewed ABBS, AmBoS,
   DayDream, and UCDoor cells with resolvable primary-source references.
+- M6.2 PR3 provenance validation for every reviewed mapping, including stable
+  IDs, archive/document cross-references, rationales, concrete symbols, partial
+  limitations, generator enforcement, and CLI evidence inspection.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.

@@ -19,6 +19,8 @@
     },
     {
       "operation": "lifecycle.disconnect",
+      "id": "ucdoor:lifecycle.disconnect",
+      "host": "ucdoor",
       "status": "verified",
       "symbols": [
         "cd_CarrierLost",
@@ -71,6 +73,8 @@
     },
     {
       "operation": "session.time_left",
+      "id": "ucdoor:session.time_left",
+      "host": "ucdoor",
       "status": "partial",
       "symbols": [
         "cd_GetNumInfo",
@@ -119,6 +123,8 @@
     },
     {
       "operation": "terminal.read_line",
+      "id": "ucdoor:terminal.read_line",
+      "host": "ucdoor",
       "status": "partial",
       "symbols": [
         "cd_GetStr",
@@ -152,6 +158,8 @@
     },
     {
       "operation": "terminal.write",
+      "id": "ucdoor:terminal.write",
+      "host": "ucdoor",
       "status": "verified",
       "symbols": [
         "cd_PutStr"

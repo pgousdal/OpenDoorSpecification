@@ -10,6 +10,8 @@
   "operations": [
     {
       "operation": "bbs.command",
+      "id": "paragon:bbs.command",
+      "host": "paragon",
       "status": "verified",
       "symbols": [
         "mxMenuFunct",
@@ -18,10 +20,35 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "mxMenuFunct"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/dofuncti.htm",
+          "symbol": "DoFunction"
+        },
+        {
+          "archive": "ArisDoors4MAXs.lha",
+          "path": "arisdoors4maxs/clicontrol/Control.c",
+          "symbol": "message command field",
+          "note": "Observed in historical door source."
+        }
+      ],
+      "rationale": "The message command field invokes supported BBS-side functions",
+      "limitations": [],
+      "provenance": [
+        "prov.paragon.bbs-command.1"
+      ]
     },
     {
       "operation": "lifecycle.disconnect",
+      "id": "paragon:lifecycle.disconnect",
+      "host": "paragon",
       "status": "verified",
       "symbols": [
         "command 9",
@@ -30,10 +57,34 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "carrier/command 9"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/carrier.htm",
+          "symbol": "Carrier"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdend.htm",
+          "symbol": "CDEnd"
+        }
+      ],
+      "rationale": "Command 9 and the carrier field represent disconnect state and action",
+      "limitations": [],
+      "provenance": [
+        "prov.paragon.lifecycle-disconnect.1"
+      ]
     },
     {
       "operation": "lifecycle.exit",
+      "id": "paragon:lifecycle.exit",
+      "host": "paragon",
       "status": "verified",
       "symbols": [
         "command 20"
@@ -41,10 +92,35 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "command 20"
+        },
+        {
+          "archive": "CDoorExample.lha",
+          "path": "door.c",
+          "symbol": "command 20"
+        },
+        {
+          "archive": "ArisDoors4MAXs.lha",
+          "path": "arisdoors4maxs/view/View.c",
+          "symbol": "command 20",
+          "note": "Observed normal termination in historical source."
+        }
+      ],
+      "rationale": "Command 20 performs normal door termination",
+      "limitations": [],
+      "provenance": [
+        "prov.paragon.lifecycle-exit.1"
+      ]
     },
     {
       "operation": "session.identity",
+      "id": "paragon:session.identity",
+      "host": "paragon",
       "status": "partial",
       "symbols": [
         "command 13",
@@ -55,7 +131,31 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "mxGetIntInfo/mxGetStrInfo"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/getuseri.htm",
+          "symbol": "GetUserInfo"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/getuserd.htm",
+          "symbol": "GetUserData"
+        }
+      ],
+      "rationale": "Commands 13 and 14 expose numeric and textual caller information",
+      "limitations": [
+        "Commands 13 and 14 expose caller fields, but the complete stable ODS identity field set is not established."
+      ],
+      "provenance": [
+        "prov.paragon.session-identity.1"
+      ]
     },
     {
       "operation": "session.time_left",
@@ -77,6 +177,8 @@
     },
     {
       "operation": "terminal.read_key",
+      "id": "paragon:terminal.read_key",
+      "host": "paragon",
       "status": "verified",
       "symbols": [
         "command 8",
@@ -85,10 +187,34 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "mxHotKey"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/getchar.htm",
+          "symbol": "GetChar"
+        },
+        {
+          "archive": "CDoorExample.lha",
+          "path": "door.c",
+          "symbol": "command 8"
+        }
+      ],
+      "rationale": "Paragon/MAXs command 8 reads a key from the caller",
+      "limitations": [],
+      "provenance": [
+        "prov.paragon.terminal-read-key.1"
+      ]
     },
     {
       "operation": "terminal.read_line",
+      "id": "paragon:terminal.read_line",
+      "host": "paragon",
       "status": "verified",
       "symbols": [
         "command 6",
@@ -97,10 +223,34 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "mxInput"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdgetstr.htm",
+          "symbol": "CDGetStr"
+        },
+        {
+          "archive": "CDoorExample.lha",
+          "path": "door.c",
+          "symbol": "command 6"
+        }
+      ],
+      "rationale": "Paragon/MAXs command 6 reads a line of terminal input",
+      "limitations": [],
+      "provenance": [
+        "prov.paragon.terminal-read-line.1"
+      ]
     },
     {
       "operation": "terminal.write",
+      "id": "paragon:terminal.write",
+      "host": "paragon",
       "status": "verified",
       "symbols": [
         "command 1",
@@ -109,7 +259,32 @@
       "semantic_review": "reviewed",
       "evidence_class": "documented-protocol",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "max_e.lha",
+          "path": "MAXDoor.e",
+          "symbol": "mxPrint",
+          "note": "Language binding sends command 1."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdputstr.htm",
+          "symbol": "CDPutStr",
+          "note": "SDK documentation for terminal output."
+        },
+        {
+          "archive": "CDoorExample.lha",
+          "path": "door.c",
+          "symbol": "command 1",
+          "note": "Minimal C door uses the message command in practice."
+        }
+      ],
+      "rationale": "Paragon/MAXs command 1 writes text to the caller terminal",
+      "limitations": [],
+      "provenance": [
+        "prov.paragon.terminal-write.1"
+      ]
     }
   ],
   "limitations": [

@@ -1,0 +1,15 @@
+{
+  "id": "prov.abbs.terminal-write.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.write",
+  "api": "abbs",
+  "status": "documented",
+  "summary": "ABBS documents Writeln and Write terminal output operations",
+  "sources": [
+    {
+      "archive": "ABBS320_999.lha",
+      "path": "ABBS/Docs/abbsrexx.doc",
+      "symbol": "Writeln/Write"
+    }
+  ]
+}

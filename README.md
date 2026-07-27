@@ -92,6 +92,8 @@ ods crosswalk --coverage
 ods crosswalk --gaps
 ods crosswalk --work-queue
 ods crosswalk --work-queue --priority high
+ods crosswalk ucdoor terminal.write --evidence
+ods crosswalk --validate-evidence
 ods validate
 ```
 
@@ -99,3 +101,5 @@ ods validate
 mean unsupported. See [M6.1 API crosswalk](docs/m61-api-crosswalk.md).
 The [M6.2 evidence work queue](docs/m62-crosswalk-work-queue.md) prioritizes
 future research; priority is not a support claim.
+Reviewed mappings must satisfy the
+[M6.2 provenance requirements](docs/m62-evidence-provenance-validation.md).

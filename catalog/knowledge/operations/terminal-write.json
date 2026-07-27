@@ -21,9 +21,13 @@
       ],
       "status": "partial",
       "semantic_review": "provisional",
-      "evidence_statuses": [],
-      "provenance_ids": [],
-      "covered": false
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.terminal-write.1"
+      ],
+      "covered": true
     },
     {
       "api": "ambos",
@@ -107,7 +111,7 @@
   ],
   "summary": {
     "historical_implementation_count": 5,
-    "covered_historical_implementation_count": 4,
+    "covered_historical_implementation_count": 5,
     "adapter_count": 2
   }
 }

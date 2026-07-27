@@ -6,11 +6,19 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import sys
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+TOOLS_SRC = ROOT / "tools" / "ods-tools" / "src"
+sys.path.insert(0, str(TOOLS_SRC))
 DEFAULT_CENSUS = ROOT / "catalog" / "census"
 DEFAULT_OUTPUT = ROOT / "catalog" / "crosswalk"
+
+from ods_tools.crosswalk_evidence import (
+    EvidenceValidationError,
+    validate_crosswalk_evidence,
+)
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -46,7 +54,22 @@ def operation_ids(systems: list[dict[str, Any]]) -> list[str]:
     )
 
 
-def host_status(system: dict[str, Any], operation: str) -> dict[str, Any]:
+def collect_provenance() -> dict[tuple[str, str], list[dict[str, Any]]]:
+    records: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for path in sorted((ROOT / "catalog" / "provenance").glob("*.json")):
+        record = load_json(path)
+        if record.get("claim_type") != "operation-mapping":
+            continue
+        key = (record.get("api", ""), record.get("operation", ""))
+        records.setdefault(key, []).append(record)
+    return records
+
+
+def host_status(
+    system: dict[str, Any],
+    operation: str,
+    provenance: dict[tuple[str, str], list[dict[str, Any]]],
+) -> dict[str, Any]:
     matches = [
         mapping
         for mapping in system.get("mappings", [])
@@ -64,28 +87,46 @@ def host_status(system: dict[str, Any], operation: str) -> dict[str, Any]:
         }
 
     mapping = matches[0]
+    provenance_records = provenance.get((system["id"], operation), [])
+    evidence = list(mapping.get("evidence", []))
+    if not evidence:
+        evidence = [
+            source
+            for record in provenance_records
+            for source in record.get("sources", [])
+        ]
+    rationale = mapping.get("rationale")
+    if rationale is None and provenance_records:
+        rationale = provenance_records[0].get("summary")
     result = {
+        "id": f"{system['id']}:{operation}",
+        "host": system["id"],
         "status": mapping["status"],
         "symbols": mapping.get("symbols", []),
         "semantic_review": mapping.get("semantic_review", "unknown"),
         "evidence_class": system["evidence_class"],
         "lossiness": "unknown",
         "notes": [],
+        "evidence": evidence,
+        "rationale": rationale,
+        "limitations": list(mapping.get("limitations", [])),
     }
-    for field in ("evidence", "rationale", "limitations"):
-        if field in mapping:
-            result[field] = mapping[field]
+    if provenance_records:
+        result["provenance"] = [
+            record["id"] for record in provenance_records
+        ]
     return result
 
 
 def build(census_dir: Path) -> dict[str, Any]:
     census_index, systems = collect(census_dir)
     operations = operation_ids(systems)
+    provenance = collect_provenance()
 
     operation_records = []
     for operation in operations:
         hosts = {
-            system["id"]: host_status(system, operation)
+            system["id"]: host_status(system, operation, provenance)
             for system in systems
         }
         operation_records.append(
@@ -110,7 +151,7 @@ def build(census_dir: Path) -> dict[str, Any]:
                 "operations": [
                     {
                         "operation": operation,
-                        **host_status(system, operation),
+                        **host_status(system, operation, provenance),
                     }
                     for operation in operations
                 ],
@@ -154,6 +195,11 @@ def build(census_dir: Path) -> dict[str, Any]:
 
 def generate(census_dir: Path, output_dir: Path, check: bool = False) -> int:
     built = build(census_dir)
+    try:
+        validate_crosswalk_evidence(ROOT, built)
+    except EvidenceValidationError as exc:
+        print(f"Crosswalk evidence validation failed: {exc}")
+        return 1
     expected: dict[Path, Any] = {
         output_dir / "index.json": built["index"],
         output_dir / "operations.json": built["operations"],

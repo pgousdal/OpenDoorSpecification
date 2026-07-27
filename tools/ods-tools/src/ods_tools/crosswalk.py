@@ -95,6 +95,8 @@ def format_crosswalk(
     raise ValueError("unknown crosswalk record shape")
 
 def validate_crosswalk(root: Path) -> tuple[int, int, int]:
+    from .crosswalk_evidence import validate_crosswalk_evidence
+
     data = load_crosswalk(root)
     index = data["index"]
     hosts = data["hosts"]
@@ -126,4 +128,5 @@ def validate_crosswalk(root: Path) -> tuple[int, int, int]:
             matching = next(item for item in hosts[host_id]["operations"] if item["operation"] == operation["id"])
             assert cell == {key: value for key, value in matching.items() if key != "operation"}
     assert index["mapped_cell_count"] == mapped_cells
+    assert validate_crosswalk_evidence(root, data) == mapped_cells
     return len(hosts), len(operations), mapped_cells

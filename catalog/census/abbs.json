@@ -244,7 +244,10 @@
         "Write"
       ],
       "status": "partial",
-      "semantic_review": "provisional"
+      "semantic_review": "provisional",
+      "limitations": [
+        "The reviewed mapping does not establish complete output-mode and disconnect behavior."
+      ]
     },
     {
       "operation": "terminal.read_key",

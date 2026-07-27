@@ -19,6 +19,8 @@
     },
     {
       "operation": "lifecycle.disconnect",
+      "id": "abbs:lifecycle.disconnect",
+      "host": "abbs",
       "status": "partial",
       "symbols": [
         "GETCONSTAT"
@@ -51,6 +53,8 @@
     },
     {
       "operation": "session.identity",
+      "id": "abbs:session.identity",
+      "host": "abbs",
       "status": "verified",
       "symbols": [
         "UserName",
@@ -59,10 +63,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "UserName/UserNumber"
+        }
+      ],
+      "rationale": "ABBS exposes UserName and UserNumber through its documented ARexx interface",
+      "limitations": [],
+      "provenance": [
+        "prov.abbs.session-identity.1"
+      ]
     },
     {
       "operation": "session.time_left",
+      "id": "abbs:session.time_left",
+      "host": "abbs",
       "status": "verified",
       "symbols": [
         "TimeLeft"
@@ -70,10 +88,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "TimeLeft"
+        }
+      ],
+      "rationale": "ABBS exposes TimeLeft through its documented ARexx interface",
+      "limitations": [],
+      "provenance": [
+        "prov.abbs.session-time-left.1"
+      ]
     },
     {
       "operation": "status.set",
+      "id": "abbs:status.set",
+      "host": "abbs",
       "status": "verified",
       "symbols": [
         "SetStatus"
@@ -81,10 +113,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "SetStatus"
+        }
+      ],
+      "rationale": "ABBS exposes SetStatus through its documented ARexx interface",
+      "limitations": [],
+      "provenance": [
+        "prov.abbs.status-set.1"
+      ]
     },
     {
       "operation": "terminal.read_key",
+      "id": "abbs:terminal.read_key",
+      "host": "abbs",
       "status": "verified",
       "symbols": [
         "GetKey"
@@ -92,10 +138,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "GetKey"
+        }
+      ],
+      "rationale": "ABBS exposes GetKey through its documented ARexx interface",
+      "limitations": [],
+      "provenance": [
+        "prov.abbs.terminal-read-key.1"
+      ]
     },
     {
       "operation": "terminal.read_line",
+      "id": "abbs:terminal.read_line",
+      "host": "abbs",
       "status": "verified",
       "symbols": [
         "GetString"
@@ -103,10 +163,24 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "GetString"
+        }
+      ],
+      "rationale": "ABBS exposes GetString through its documented ARexx interface",
+      "limitations": [],
+      "provenance": [
+        "prov.abbs.terminal-read-line.1"
+      ]
     },
     {
       "operation": "terminal.write",
+      "id": "abbs:terminal.write",
+      "host": "abbs",
       "status": "partial",
       "symbols": [
         "Writeln",
@@ -115,7 +189,21 @@
       "semantic_review": "provisional",
       "evidence_class": "documented-sdk",
       "lossiness": "unknown",
-      "notes": []
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "Writeln/Write"
+        }
+      ],
+      "rationale": "ABBS documents Writeln and Write terminal output operations",
+      "limitations": [
+        "The reviewed mapping does not establish complete output-mode and disconnect behavior."
+      ],
+      "provenance": [
+        "prov.abbs.terminal-write.1"
+      ]
     }
   ],
   "limitations": [

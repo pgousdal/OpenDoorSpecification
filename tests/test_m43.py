@@ -20,11 +20,14 @@ class ProvenanceCoverageTests(unittest.TestCase):
         report = build_coverage(ROOT)
         self.assertEqual(report["summary"]["verified_without_provenance"], 0)
 
-    def test_report_exposes_uncovered_non_verified_mappings(self):
+    def test_every_mapping_has_provenance(self):
         report = build_coverage(ROOT)
         uncovered = [row for row in report["mappings"] if not row["covered"]]
-        self.assertTrue(uncovered)
-        self.assertTrue(all(row["mapping_status"] != "verified" for row in uncovered))
+        self.assertEqual(uncovered, [])
+        self.assertEqual(
+            report["summary"]["covered"],
+            report["summary"]["total"],
+        )
 
     def test_coverage_uses_machine_readable_evidence_classes(self):
         report = build_coverage(ROOT)

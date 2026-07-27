@@ -14,6 +14,7 @@
     {
       "archive": "DayDreamBBSDev.lha",
       "path": "DayDream/Developer/DreamDoor/Sas_C/Example/Stat.C",
+      "symbol": "ChangeActivity",
       "note": "Observed SDK example usage."
     }
   ]

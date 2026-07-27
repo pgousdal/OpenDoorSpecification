@@ -17,6 +17,12 @@ from .crosswalk_work_queue import (
     format_crosswalk_work_queue,
     select_crosswalk_work_queue,
 )
+from .crosswalk_evidence import (
+    EvidenceValidationError,
+    format_mapping_evidence,
+    select_mapping_evidence,
+    validate_crosswalk_evidence,
+)
 
 
 def repo_root() -> Path:
@@ -201,6 +207,11 @@ def main() -> int:
     crosswalk = sub.add_parser("crosswalk", help="inspect M6.1 host and operation crosswalks")
     crosswalk.add_argument("target", nargs="?", help="host ID, operation ID, host:<id>, or operation:<id>")
     crosswalk.add_argument(
+        "evidence_operation",
+        nargs="?",
+        help="canonical operation ID when inspecting one mapping's evidence",
+    )
+    crosswalk.add_argument(
         "--coverage",
         action="store_true",
         help="show evidence coverage instead of crosswalk records",
@@ -224,6 +235,16 @@ def main() -> int:
         "--priority",
         choices=PRIORITIES,
         help="limit the work queue to high, medium, or low priority",
+    )
+    crosswalk.add_argument(
+        "--evidence",
+        action="store_true",
+        help="show provenance for one reviewed host-operation mapping",
+    )
+    crosswalk.add_argument(
+        "--validate-evidence",
+        action="store_true",
+        help="validate provenance for every reviewed crosswalk mapping",
     )
     crosswalk.add_argument("--json", action="store_true", help="print machine-readable JSON")
     crosswalk.add_argument("--all", action="store_true", help="include unassessed cells in text output")
@@ -270,6 +291,71 @@ def main() -> int:
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
     if args.command == "crosswalk":
+        if args.evidence_operation and not args.evidence:
+            raise SystemExit(
+                "a second crosswalk target requires --evidence"
+            )
+        if args.validate_evidence:
+            if (
+                args.target
+                or args.evidence_operation
+                or args.evidence
+                or args.coverage
+                or args.gaps
+                or args.write
+                or args.work_queue
+                or args.priority
+                or args.all
+            ):
+                raise SystemExit(
+                    "--validate-evidence cannot be combined with other "
+                    "crosswalk selections"
+                )
+            try:
+                reviewed = validate_crosswalk_evidence(root)
+            except EvidenceValidationError as exc:
+                raise SystemExit(f"crosswalk evidence validation failed: {exc}")
+            if args.json:
+                print(json.dumps({"valid": True, "reviewed_mappings": reviewed}, indent=2))
+            else:
+                print(
+                    "Crosswalk evidence is valid: "
+                    f"{reviewed} reviewed mappings."
+                )
+            return 0
+        if args.evidence:
+            if not args.target or not args.evidence_operation:
+                raise SystemExit(
+                    "--evidence requires a host ID and canonical operation ID"
+                )
+            if (
+                args.coverage
+                or args.gaps
+                or args.write
+                or args.work_queue
+                or args.priority
+                or args.all
+            ):
+                raise SystemExit(
+                    "--evidence cannot be combined with coverage, gaps, "
+                    "work-queue, write, priority, or all"
+                )
+            try:
+                record = select_mapping_evidence(
+                    root,
+                    args.target,
+                    args.evidence_operation,
+                )
+            except KeyError as exc:
+                raise SystemExit(f"unknown crosswalk evidence target: {exc.args[0]}")
+            except EvidenceValidationError as exc:
+                raise SystemExit(str(exc))
+            print(
+                json.dumps(record, indent=2, ensure_ascii=False)
+                if args.json
+                else format_mapping_evidence(record)
+            )
+            return 0
         if args.priority and not args.work_queue:
             raise SystemExit("--priority requires --work-queue")
         if args.work_queue:
@@ -423,7 +509,12 @@ def main() -> int:
         suffix = f", {provenance} provenance records, strict provenance" if args.strict else ""
         crosswalk_suffix = ""
         if (root / "catalog" / "crosswalk" / "index.json").exists():
-            hosts, operations, cells = validate_crosswalk(root)
+            try:
+                hosts, operations, cells = validate_crosswalk(root)
+            except EvidenceValidationError as exc:
+                raise SystemExit(
+                    f"crosswalk evidence validation failed: {exc}"
+                )
             crosswalk_suffix = f", {hosts} crosswalk hosts, {operations} operations, {cells} reviewed crosswalk mappings"
         print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}{crosswalk_suffix}")
         return 0

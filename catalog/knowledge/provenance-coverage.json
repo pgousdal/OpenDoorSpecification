@@ -2,11 +2,11 @@
   "schema_version": 1,
   "summary": {
     "total": 26,
-    "covered": 23,
-    "uncovered": 3,
+    "covered": 26,
+    "uncovered": 0,
     "verified_without_provenance": 0,
     "by_evidence_status": {
-      "documented": 22,
+      "documented": 25,
       "observed": 1
     }
   },
@@ -15,9 +15,13 @@
       "api": "abbs",
       "operation": "terminal.write",
       "mapping_status": "partial",
-      "evidence_statuses": [],
-      "provenance_ids": [],
-      "covered": false
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.terminal-write.1"
+      ],
+      "covered": true
     },
     {
       "api": "abbs",
@@ -95,9 +99,13 @@
       "api": "ambos",
       "operation": "lifecycle.disconnect",
       "mapping_status": "partial",
-      "evidence_statuses": [],
-      "provenance_ids": [],
-      "covered": false
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.ambos.lifecycle-disconnect.1"
+      ],
+      "covered": true
     },
     {
       "api": "daydream",
@@ -139,9 +147,13 @@
       "api": "daydream",
       "operation": "session.identity",
       "mapping_status": "partial",
-      "evidence_statuses": [],
-      "provenance_ids": [],
-      "covered": false
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.session-identity.1"
+      ],
+      "covered": true
     },
     {
       "api": "daydream",
