@@ -65,7 +65,7 @@
       "name": "UCDoor compatibility wrapper",
       "evidence_class": "wrapper-binding",
       "entry_count": 0,
-      "mapping_count": 4,
+      "mapping_count": 8,
       "path": "catalog/census/ucdoor.json"
     },
     {
@@ -86,5 +86,5 @@
     }
   ],
   "entry_count": 230,
-  "mapping_count": 50
+  "mapping_count": 54
 }

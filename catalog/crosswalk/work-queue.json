@@ -13,9 +13,9 @@
     "low"
   ],
   "summary": {
-    "total": 40,
-    "high": 32,
-    "medium": 6,
+    "total": 36,
+    "high": 29,
+    "medium": 5,
     "low": 2
   },
   "items": [
@@ -267,51 +267,6 @@
       ]
     },
     {
-      "id": "ucdoor:lifecycle.exit",
-      "host": "ucdoor",
-      "host_name": "UCDoor compatibility wrapper",
-      "host_evidence_class": "wrapper-binding",
-      "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "operation has reviewed mappings in at least three other hosts",
-        "host has a related reviewed operation in the same family",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "ucdoor:session.identity",
-      "host": "ucdoor",
-      "host_name": "UCDoor compatibility wrapper",
-      "host_evidence_class": "wrapper-binding",
-      "operation": "session.identity",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "operation has reviewed mappings in at least three other hosts",
-        "host has a related reviewed operation in the same family",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "ucdoor:terminal.read_key",
-      "host": "ucdoor",
-      "host_name": "UCDoor compatibility wrapper",
-      "host_evidence_class": "wrapper-binding",
-      "operation": "terminal.read_key",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "operation has reviewed mappings in at least three other hosts",
-        "host has a related reviewed operation in the same family",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
       "id": "wwbbs:lifecycle.disconnect",
       "host": "wwbbs",
       "host_name": "WWBBS ARexx doors corpus",
@@ -465,19 +420,6 @@
       "reasons": [
         "operation has reviewed mappings in at least three other hosts",
         "operation is foundational for terminal, session, or lifecycle behavior"
-      ]
-    },
-    {
-      "id": "ucdoor:bbs.command",
-      "host": "ucdoor",
-      "host_name": "UCDoor compatibility wrapper",
-      "host_evidence_class": "wrapper-binding",
-      "operation": "bbs.command",
-      "status": "unassessed",
-      "priority": "medium",
-      "reasons": [
-        "operation has reviewed mappings in at least three other hosts",
-        "host census or archive evidence is already cataloged"
       ]
     },
     {

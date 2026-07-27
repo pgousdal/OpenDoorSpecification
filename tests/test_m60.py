@@ -20,7 +20,7 @@ class M60Tests(unittest.TestCase):
   self.assertEqual(by['ucdoor']['evidence_class'],'wrapper-binding')
   self.assertEqual(by['zeus']['evidence_class'],'observed-doors')
   self.assertEqual(by['wwbbs']['evidence_class'],'observed-doors')
-  self.assertEqual(by['ucdoor']['mapping_count'],4)
+  self.assertEqual(by['ucdoor']['mapping_count'],8)
  def test_all_sources_are_grounded(self):
   for item in self.index['systems']:
    r=json.loads((ROOT/item['path']).read_text())

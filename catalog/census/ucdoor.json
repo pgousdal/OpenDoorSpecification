@@ -8,7 +8,7 @@
     "ucdoor10.json"
   ],
   "entry_count": 0,
-  "mapping_count": 4,
+  "mapping_count": 8,
   "entries": [],
   "mappings": [
     {
@@ -120,9 +120,134 @@
       ],
       "rationale": "The SDK explicitly documents detecting carrier loss and ending with the carrier-loss reason.",
       "limitations": []
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "cd_GetChar",
+        "cd_GetCharPrompt"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_GetChar",
+          "note": "The SDK documents cd_GetChar as returning one character entered by the user."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/getcharp.htm",
+          "symbol": "cd_GetCharPrompt",
+          "note": "The prompted variant displays a supplied prompt and returns one character."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_GetCharPrompt",
+          "note": "The original SDK demo reads and displays a caller-entered character."
+        }
+      ],
+      "rationale": "The SDK provides callable single-character terminal input with optional prompting.",
+      "limitations": []
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "cd_GetStrInfo",
+        "UDC_USERNAME",
+        "cd_GetUserIndex"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/include/ucdoor.h",
+          "symbol": "UDC_USERNAME",
+          "note": "The public header defines the current-user name selector for cd_GetStrInfo."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_GetStrInfo/cd_GetUserIndex",
+          "note": "The guide documents string-info retrieval and stable user-index lookup by name."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_GetStrInfo(UDC_USERNAME)",
+          "note": "The original SDK demo retrieves and displays the current caller's username."
+        }
+      ],
+      "rationale": "UCDoor exposes the current caller's username and a documented lookup for its stable user index.",
+      "limitations": []
+    },
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "cd_DoFunction"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_DoFunction",
+          "note": "The SDK defines this call as performing a function from the MAX menu configuration."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/dofuncti.htm",
+          "symbol": "cd_DoFunction",
+          "note": "The HTML reference preserves the function signature and example invocation."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/include/ucdoor.h",
+          "symbol": "cd_DoFunction",
+          "note": "The public header declares the function, extra argument, and string parameters."
+        }
+      ],
+      "rationale": "cd_DoFunction directly invokes a numbered MAX menu-configured function from the door.",
+      "limitations": []
+    },
+    {
+      "operation": "lifecycle.exit",
+      "symbols": [
+        "cd_Main",
+        "cd_Door",
+        "OK"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_Main/cd_Door",
+          "note": "The guide defines cd_Main as the lifecycle entry point, calls user code through cd_Door, and reports OK when the door ends normally."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdmain.htm",
+          "symbol": "cd_Main",
+          "note": "The HTML reference identifies OK as the normal door-completion result."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_Main/cd_Door",
+          "note": "The original demo returns from its cd_Door callback to the cd_Main lifecycle wrapper."
+        }
+      ],
+      "rationale": "Returning from cd_Door through cd_Main is the SDK-documented normal completion path back to the host.",
+      "limitations": []
     }
   ],
   "limitations": [
-    "The corpus proves existence or practical use, but a complete public callable contract has not yet been normalized."
+    "Only operations directly documented by the cataloged SDK are reviewed; no canonical status.set operation is established."
   ]
 }

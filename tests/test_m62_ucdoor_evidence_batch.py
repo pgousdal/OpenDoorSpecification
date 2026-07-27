@@ -21,24 +21,20 @@ from ods_tools.crosswalk_work_queue import build_crosswalk_work_queue
 
 
 BATCH = {
-    "terminal.write": "verified",
     "terminal.read_key": "verified",
-    "terminal.read_line": "verified",
     "session.identity": "verified",
-    "session.time_left": "verified",
     "bbs.command": "verified",
     "lifecycle.exit": "verified",
-    "lifecycle.disconnect": "verified",
 }
-PR4_BASELINE = {
+PR5_BASELINE = {
     "coverage": {
         "total": 90,
-        "reviewed": 42,
-        "verified": 30,
+        "reviewed": 50,
+        "verified": 38,
         "partial": 12,
-        "unassessed": 48,
+        "unassessed": 40,
     },
-    "queue": {"total": 48, "high": 40, "medium": 6, "low": 2},
+    "queue": {"total": 40, "high": 32, "medium": 6, "low": 2},
 }
 
 
@@ -58,23 +54,23 @@ GENERATORS = {
 }
 
 
-class M62FAMEEvidenceBatchTests(unittest.TestCase):
+class M62UCDoorEvidenceBatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.crosswalk = load_crosswalk(ROOT)
         cls.coverage = build_crosswalk_coverage(ROOT)
         cls.queue = build_crosswalk_work_queue(ROOT)
-        cls.fame = {
+        cls.ucdoor = {
             row["operation"]: row
-            for row in cls.crosswalk["hosts"]["fame"]["operations"]
+            for row in cls.crosswalk["hosts"]["ucdoor"]["operations"]
         }
 
     def test_manifest_cells_have_complete_validated_provenance(self) -> None:
-        self.assertGreaterEqual(validate_crosswalk_evidence(ROOT), 50)
+        self.assertEqual(validate_crosswalk_evidence(ROOT), 54)
         for operation, status in BATCH.items():
             with self.subTest(operation=operation):
-                cell = self.fame[operation]
-                self.assertEqual(cell["id"], f"fame:{operation}")
+                cell = self.ucdoor[operation]
+                self.assertEqual(cell["id"], f"ucdoor:{operation}")
                 self.assertEqual(cell["status"], status)
                 self.assertEqual(cell["semantic_review"], "reviewed")
                 self.assertTrue(cell["symbols"])
@@ -82,53 +78,54 @@ class M62FAMEEvidenceBatchTests(unittest.TestCase):
                 self.assertTrue(cell["rationale"])
                 self.assertIn("limitations", cell)
 
-    def test_evidence_resolves_to_cataloged_fcomm130_archive(self) -> None:
+    def test_evidence_resolves_to_cataloged_ucdoor_archive(self) -> None:
         manifest = json.loads(
-            (ROOT / "catalog" / "archives" / "fcomm130.json").read_text(
+            (ROOT / "catalog" / "archives" / "ucdoor10.json").read_text(
                 encoding="utf-8"
             )
         )
         self.assertEqual(
             manifest["source_sha256"],
-            "9b010d4c807fe2fca82f784f2fadc31e5f21231f355c9c609a0e0db31e5462db",
+            "a895ce805c98a38b7c33830bd30fa71a68f8cfbe1a89863735aa3565462ef05e",
         )
         paths = {entry["path"] for entry in manifest["entries"]}
         for operation in BATCH:
-            for evidence in self.fame[operation]["evidence"]:
+            for evidence in self.ucdoor[operation]["evidence"]:
                 with self.subTest(operation=operation, evidence=evidence):
-                    self.assertEqual(evidence["archive"], "fcomm130.lha")
+                    self.assertEqual(evidence["archive"], "ucdoor10.lha")
                     self.assertIn(evidence["path"], paths)
                     self.assertTrue(evidence["symbol"])
 
     def test_batch_is_removed_from_queue_and_status_set_remains(self) -> None:
         queued = {item["id"] for item in self.queue["items"]}
         self.assertTrue(
-            all(f"fame:{operation}" not in queued for operation in BATCH)
+            all(f"ucdoor:{operation}" not in queued for operation in BATCH)
         )
-        self.assertIn("fame:status.set", queued)
+        self.assertIn("ucdoor:status.set", queued)
 
-    def test_coverage_and_queue_match_the_declared_pr4_delta(self) -> None:
+    def test_coverage_and_queue_match_the_declared_pr5_delta(self) -> None:
         summary = self.coverage["summary"]
-        self.assertEqual(summary["total"], PR4_BASELINE["coverage"]["total"])
-        self.assertGreaterEqual(
+        self.assertEqual(summary["total"], PR5_BASELINE["coverage"]["total"])
+        self.assertEqual(
             summary["reviewed"],
-            PR4_BASELINE["coverage"]["reviewed"] + len(BATCH),
+            PR5_BASELINE["coverage"]["reviewed"] + len(BATCH),
         )
-        self.assertGreaterEqual(
+        self.assertEqual(
             summary["verified"],
-            PR4_BASELINE["coverage"]["verified"] + len(BATCH),
+            PR5_BASELINE["coverage"]["verified"] + len(BATCH),
         )
-        self.assertGreaterEqual(
-            summary["partial"], PR4_BASELINE["coverage"]["partial"]
-        )
-        self.assertLessEqual(
+        self.assertEqual(summary["partial"], PR5_BASELINE["coverage"]["partial"])
+        self.assertEqual(
             summary["unassessed"],
-            PR4_BASELINE["coverage"]["unassessed"] - len(BATCH),
+            PR5_BASELINE["coverage"]["unassessed"] - len(BATCH),
         )
         self.assertEqual(summary["reviewed"], summary["verified"] + summary["partial"])
-        self.assertLessEqual(self.queue["summary"]["total"], 40)
+        self.assertEqual(
+            self.queue["summary"],
+            {"total": 36, "high": 29, "medium": 5, "low": 2},
+        )
 
-    def test_only_fame_mappings_are_new_in_this_batch(self) -> None:
+    def test_only_ucdoor_mappings_are_new_in_this_batch(self) -> None:
         earlier_batches = {
             ("abbs", "lifecycle.disconnect"),
             ("ambos", "terminal.read_key"),
@@ -146,6 +143,14 @@ class M62FAMEEvidenceBatchTests(unittest.TestCase):
             ("aedoor", "bbs.command"),
             ("aedoor", "lifecycle.exit"),
             ("aedoor", "lifecycle.disconnect"),
+            ("fame", "terminal.write"),
+            ("fame", "terminal.read_key"),
+            ("fame", "terminal.read_line"),
+            ("fame", "session.identity"),
+            ("fame", "session.time_left"),
+            ("fame", "bbs.command"),
+            ("fame", "lifecycle.exit"),
+            ("fame", "lifecycle.disconnect"),
         }
         m61_reviewed = set()
         for path in (ROOT / "catalog" / "mappings").glob("*.json"):
@@ -163,9 +168,9 @@ class M62FAMEEvidenceBatchTests(unittest.TestCase):
         expected = (
             m61_reviewed
             | earlier_batches
-            | {("fame", operation) for operation in BATCH}
+            | {("ucdoor", operation) for operation in BATCH}
         )
-        self.assertTrue(expected <= current_reviewed)
+        self.assertEqual(current_reviewed, expected)
 
     def test_all_generation_is_byte_identical_and_committed(self) -> None:
         with (

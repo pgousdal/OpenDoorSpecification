@@ -10,12 +10,38 @@
   "operations": [
     {
       "operation": "bbs.command",
-      "status": "unassessed",
-      "symbols": [],
+      "id": "ucdoor:bbs.command",
+      "host": "ucdoor",
+      "status": "verified",
+      "symbols": [
+        "cd_DoFunction"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "wrapper-binding",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-      ]
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_DoFunction",
+          "note": "The SDK defines this call as performing a function from the MAX menu configuration."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/dofuncti.htm",
+          "symbol": "cd_DoFunction",
+          "note": "The HTML reference preserves the function signature and example invocation."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/include/ucdoor.h",
+          "symbol": "cd_DoFunction",
+          "note": "The public header declares the function, extra argument, and string parameters."
+        }
+      ],
+      "rationale": "cd_DoFunction directly invokes a numbered MAX menu-configured function from the door.",
+      "limitations": []
     },
     {
       "operation": "lifecycle.disconnect",
@@ -55,21 +81,77 @@
     },
     {
       "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "symbols": [],
+      "id": "ucdoor:lifecycle.exit",
+      "host": "ucdoor",
+      "status": "verified",
+      "symbols": [
+        "cd_Main",
+        "cd_Door",
+        "OK"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "wrapper-binding",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-      ]
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_Main/cd_Door",
+          "note": "The guide defines cd_Main as the lifecycle entry point, calls user code through cd_Door, and reports OK when the door ends normally."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdmain.htm",
+          "symbol": "cd_Main",
+          "note": "The HTML reference identifies OK as the normal door-completion result."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_Main/cd_Door",
+          "note": "The original demo returns from its cd_Door callback to the cd_Main lifecycle wrapper."
+        }
+      ],
+      "rationale": "Returning from cd_Door through cd_Main is the SDK-documented normal completion path back to the host.",
+      "limitations": []
     },
     {
       "operation": "session.identity",
-      "status": "unassessed",
-      "symbols": [],
+      "id": "ucdoor:session.identity",
+      "host": "ucdoor",
+      "status": "verified",
+      "symbols": [
+        "cd_GetStrInfo",
+        "UDC_USERNAME",
+        "cd_GetUserIndex"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "wrapper-binding",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-      ]
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/include/ucdoor.h",
+          "symbol": "UDC_USERNAME",
+          "note": "The public header defines the current-user name selector for cd_GetStrInfo."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_GetStrInfo/cd_GetUserIndex",
+          "note": "The guide documents string-info retrieval and stable user-index lookup by name."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_GetStrInfo(UDC_USERNAME)",
+          "note": "The original SDK demo retrieves and displays the current caller's username."
+        }
+      ],
+      "rationale": "UCDoor exposes the current caller's username and a documented lookup for its stable user index.",
+      "limitations": []
     },
     {
       "operation": "session.time_left",
@@ -114,12 +196,39 @@
     },
     {
       "operation": "terminal.read_key",
-      "status": "unassessed",
-      "symbols": [],
+      "id": "ucdoor:terminal.read_key",
+      "host": "ucdoor",
+      "status": "verified",
+      "symbols": [
+        "cd_GetChar",
+        "cd_GetCharPrompt"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "wrapper-binding",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-      ]
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_GetChar",
+          "note": "The SDK documents cd_GetChar as returning one character entered by the user."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/getcharp.htm",
+          "symbol": "cd_GetCharPrompt",
+          "note": "The prompted variant displays a supplied prompt and returns one character."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_GetCharPrompt",
+          "note": "The original SDK demo reads and displays a caller-entered character."
+        }
+      ],
+      "rationale": "The SDK provides callable single-character terminal input with optional prompting.",
+      "limitations": []
     },
     {
       "operation": "terminal.read_line",
@@ -185,6 +294,6 @@
     }
   ],
   "limitations": [
-    "The corpus proves existence or practical use, but a complete public callable contract has not yet been normalized."
+    "Only operations directly documented by the cataloged SDK are reviewed; no canonical status.set operation is established."
   ]
 }

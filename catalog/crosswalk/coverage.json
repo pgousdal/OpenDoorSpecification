@@ -7,10 +7,10 @@
     "partial": "A reviewed mapping exists, but coverage is incomplete."
   },
   "summary": {
-    "verified": 38,
+    "verified": 42,
     "partial": 12,
-    "unassessed": 40,
-    "reviewed": 50,
+    "unassessed": 36,
+    "reviewed": 54,
     "total": 90
   },
   "hosts": [
@@ -133,18 +133,14 @@
       "name": "UCDoor compatibility wrapper",
       "evidence_class": "wrapper-binding",
       "summary": {
-        "verified": 2,
+        "verified": 6,
         "partial": 2,
-        "unassessed": 5,
-        "reviewed": 4,
+        "unassessed": 1,
+        "reviewed": 8,
         "total": 9
       },
       "unassessed_operations": [
-        "bbs.command",
-        "lifecycle.exit",
-        "session.identity",
-        "status.set",
-        "terminal.read_key"
+        "status.set"
       ]
     },
     {
@@ -198,17 +194,16 @@
     {
       "id": "bbs.command",
       "summary": {
-        "verified": 4,
+        "verified": 5,
         "partial": 0,
-        "unassessed": 6,
-        "reviewed": 4,
+        "unassessed": 5,
+        "reviewed": 5,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
         "ambos",
         "door-io",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
@@ -231,17 +226,16 @@
     {
       "id": "lifecycle.exit",
       "summary": {
-        "verified": 4,
+        "verified": 5,
         "partial": 0,
-        "unassessed": 6,
-        "reviewed": 4,
+        "unassessed": 5,
+        "reviewed": 5,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
         "ambos",
         "door-io",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
@@ -249,16 +243,15 @@
     {
       "id": "session.identity",
       "summary": {
-        "verified": 3,
+        "verified": 4,
         "partial": 2,
-        "unassessed": 5,
-        "reviewed": 5,
+        "unassessed": 4,
+        "reviewed": 6,
         "total": 10
       },
       "unassessed_hosts": [
         "ambos",
         "door-io",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
@@ -303,14 +296,13 @@
     {
       "id": "terminal.read_key",
       "summary": {
-        "verified": 6,
+        "verified": 7,
         "partial": 1,
-        "unassessed": 3,
-        "reviewed": 7,
+        "unassessed": 2,
+        "reviewed": 8,
         "total": 10
       },
       "unassessed_hosts": [
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
