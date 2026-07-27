@@ -4,8 +4,8 @@ ROOT=Path(__file__).resolve().parents[1]
 class M22Tests(unittest.TestCase):
  def test_archive_expansion(self):
   d=json.loads((ROOT/'catalog/archive-index.json').read_text())
-  self.assertEqual(d['archive_count'],26)
-  self.assertEqual(d['entry_count'],880)
+  self.assertEqual(d['archive_count'],29)
+  self.assertEqual(d['entry_count'],904)
  def test_duplicate_evidence(self):
   d=json.loads((ROOT/'catalog/evidence/duplicate-archives.json').read_text())
   self.assertGreaterEqual(len(d['duplicates']),3)

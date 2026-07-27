@@ -1,0 +1,17 @@
+{
+  "id": "prov.paragon.maxshell-source.1",
+  "claim_type": "behavior",
+  "api": "paragon",
+  "status": "observed",
+  "summary": "MAXShell 1.01 uses the MAXs/Paragon DoorMsg protocol for terminal I/O, user data, menu functions, user updates and orderly exit",
+  "sources": [
+    {
+      "archive": "MAXShell101.lha",
+      "path": "MAXShell.c"
+    },
+    {
+      "archive": "MAXShell101.lha",
+      "path": "MAXShell.DOC"
+    }
+  ]
+}

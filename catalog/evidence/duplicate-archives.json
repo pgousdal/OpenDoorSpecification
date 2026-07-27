@@ -48,6 +48,12 @@
       "canonical": "MaxPro2.lha",
       "sha256": "beff6bc9330c41f6ac4e847e9c5e4412b1060e11327b7ad7e1a28cab7e83f5bc",
       "status": "byte-identical"
+    },
+    {
+      "uploaded": "MAXs_Coders (1).lha",
+      "canonical": "MAXs_Coders.lha",
+      "sha256": "7afb0f53baf85a27ab7e2ef9cc14b6fc7b8456366cb907a920588d690a3bab73",
+      "status": "byte-identical"
     }
   ]
 }

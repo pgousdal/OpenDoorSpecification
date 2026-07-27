@@ -1,0 +1,60 @@
+{
+  "milestone": "M4.8",
+  "title": "MAXs documentation and executable door source expansion",
+  "archives": [
+    {
+      "archive": "MAXs_Coders.lha",
+      "classification": "historical-community-directory",
+      "evidence_status": "documented",
+      "key_files": [
+        "MAXs_Coders.guide",
+        "MAXs_Coders.appform",
+        "MAXs_Coders.readme"
+      ],
+      "findings": [
+        "1998 directory of MAXs door coders and contributors",
+        "Provides historical names, origins and BBS affiliations",
+        "Does not define a door ABI or add semantic mappings"
+      ],
+      "ods_result": "Catalogued as historical ecosystem context; no API mapping added."
+    },
+    {
+      "archive": "MAXsGUiDE.lha",
+      "classification": "bbs-operator-manual",
+      "evidence_status": "documented",
+      "key_files": [
+        "MaxsBBS.Guide"
+      ],
+      "findings": [
+        "Large MaxsBBS operator guide",
+        "Documents BBS operation, configuration and AutoInsert material",
+        "No source-level DoorMsg contract was identified by the focused door/API keyword review"
+      ],
+      "ods_result": "Catalogued as product documentation; no API mapping added."
+    },
+    {
+      "archive": "MAXShell101.lha",
+      "classification": "maxs-door-source",
+      "evidence_status": "observed",
+      "key_files": [
+        "MAXShell.c",
+        "MAXShell.DOC",
+        "fifo.h",
+        "fifopr.h"
+      ],
+      "findings": [
+        "Full C source for a MAXs BBS door that runs CLI applications through FIFO",
+        "Declares the canonical DoorMsg layout: Message, command, data, string[80], carrier",
+        "Observed commands 1, 6, 8, 10, 13, 14, 20, 100+, 200, 201 and 203",
+        "Documentation describes Function 34 invocation, AutoInsert expansion, remaining-time handling and lost-carrier behavior"
+      ],
+      "ods_result": "Added as a primary observed MAXs/Paragon behavior source and historical door corpus member."
+    }
+  ],
+  "methodology": [
+    "Parsed level 0/1/2 LHA headers with ods_tools",
+    "Decompressed -lh5- payloads with the repository LH5 implementation",
+    "Read documentation and source as Latin-1/ASCII",
+    "Added only claims directly supported by extracted text or source code"
+  ]
+}

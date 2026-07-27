@@ -4,7 +4,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class M47Tests(unittest.TestCase):
  def test_archive_totals(self):
   d=json.loads((ROOT/'catalog/archive-index.json').read_text())
-  self.assertEqual((d['archive_count'],d['entry_count']),(26,880))
+  self.assertEqual((d['archive_count'],d['entry_count']),(29,904))
  def test_manifests(self):
   expected={'acp300':34,'ax300':116,'magnum-chat-1.1':12,'multi-quest-1.1':5}
   for name,count in expected.items():

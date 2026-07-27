@@ -1,6 +1,6 @@
 {
-  "archive_count": 26,
-  "entry_count": 880,
+  "archive_count": 29,
+  "entry_count": 904,
   "archives": [
     {
       "archive": "ABBS320_999.lha",
@@ -127,6 +127,24 @@
       "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
       "entries": 2,
       "size": 2641
+    },
+    {
+      "archive": "MAXs_Coders.lha",
+      "sha256": "7afb0f53baf85a27ab7e2ef9cc14b6fc7b8456366cb907a920588d690a3bab73",
+      "entries": 5,
+      "size": 11611
+    },
+    {
+      "archive": "MAXsGUiDE.lha",
+      "sha256": "3367ea82010c5f4ce32b7749013526a308feaf2eeb3ea571315a9b6ef3a4ef10",
+      "entries": 4,
+      "size": 51056
+    },
+    {
+      "archive": "MAXShell101.lha",
+      "sha256": "3f3f04ebdf7702712612986fdf46e658552e41ac3371f47dfb7d2b2c5f57c600",
+      "entries": 15,
+      "size": 34246
     },
     {
       "archive": "MCesrc.lha",

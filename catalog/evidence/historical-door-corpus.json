@@ -106,6 +106,25 @@
       "observed_calls": {},
       "note": "Documentation confirms configurable line, hotkey and multiple-choice interaction on Maxs BBS 1.52+.",
       "evidence_status": "documented"
+    },
+    {
+      "archive": "MAXShell101.lha",
+      "kind": "maxs-cli-door-source",
+      "source_files": [
+        "MAXShell.c",
+        "MAXShell.DOC"
+      ],
+      "observed_calls": {
+        "terminal.write": 1,
+        "terminal.read_line": 1,
+        "terminal.read_key": 1,
+        "session.identity": 2,
+        "session.time_left": 1,
+        "bbs.command": 5,
+        "lifecycle.exit": 1
+      },
+      "note": "Full C source confirms DoorMsg layout and commands 1, 6, 8, 10, 13, 14, 20, 100+, 200, 201 and 203. Counts represent distinct wrapper/behavior categories, not raw call-site frequency.",
+      "evidence_status": "observed"
     }
   ]
 }

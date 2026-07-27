@@ -1,5 +1,13 @@
 # Changelog
 
+## M4.8
+
+- Added manifests for MAXs Coders, MAXs Guide, and MAXShell 1.01.
+- Added a primary-source MAXShell C analysis confirming the DoorMsg layout and commands 1, 6, 8, 10, 13, 14, 20, 100+, 200, 201, and 203.
+- Added MAXShell to the historical door corpus and canonical provenance catalog.
+- Recorded `MAXs_Coders (1).lha` as a byte-identical redistribution.
+- Expanded the catalog to 29 archives and 904 entries.
+
 ## M4.7
 
 - Added four archive manifests covering ACP 3.00, AX 3.00, mAGNUM cHAT 1.10, and Multi-Quest 1.1.

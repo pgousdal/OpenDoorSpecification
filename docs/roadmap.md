@@ -96,3 +96,11 @@ Status: complete.
 ## M4.7 — Historical corpus expansion
 
 Completed: four new archive inventories, duplicate-distribution evidence, and documented Maxs door findings.
+
+## M4.8 — MAXs source expansion
+
+Status: complete.
+
+- Catalog MAXs Coders, MAXs Guide, and MAXShell 1.01.
+- Add verified source-level MAXShell protocol evidence.
+- Preserve the evidence boundary by avoiding new mappings from contextual documentation alone.
