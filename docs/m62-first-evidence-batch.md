@@ -1,5 +1,9 @@
 # M6.2 PR2 — First crosswalk evidence expansion batch
 
+> Historical batch record: counts and “remaining” statements below describe
+> the repository immediately after PR2. M6.2 is now complete; use
+> `ods crosswalk --coverage` and `ods crosswalk --completion` for current state.
+
 This batch resolves eight foundational crosswalk cells backed by original SDK
 documentation, headers, declarations, and example source already cataloged by
 the repository. The selection favors a coherent terminal/session/lifecycle
@@ -57,5 +61,5 @@ PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
 ```
 
-M6.2 remains in progress. The remaining 56 cells require separate evidence
-review; none is classified as unsupported by this batch.
+At the PR2 snapshot, M6.2 remained in progress and 56 cells required separate
+evidence review; none was classified as unsupported by this batch.

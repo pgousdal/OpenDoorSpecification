@@ -5,7 +5,7 @@ door/BBS host APIs and the canonical Open Door Specification operation model.
 
 ## Scope
 
-The milestone covers:
+The M6.1 milestone baseline covers:
 
 - 10 historical hosts;
 - 9 canonical operations;
@@ -88,8 +88,9 @@ M6.1 is complete when:
 7. repository validation succeeds;
 8. the M6.1 acceptance test passes.
 
-## Next milestone
+## Subsequent work
 
-Further mapping research belongs in M6.2. M6.1 defines the model, generated
-artifacts, CLI, validation and coverage semantics; it does not claim complete
-coverage of every historical host API.
+M6.2 subsequently added evidence expansion, provenance validation, the work
+queue, triage, completion criteria, and the research backlog. M6.1 remains the
+data-model baseline and does not claim complete coverage of every historical
+host API. See [M6.2 completion](m62-completion.md) for current state.

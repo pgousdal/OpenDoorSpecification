@@ -1,7 +1,10 @@
 # M6.2 PR7 — Small evidence harvest
 
-M6.2 remains in progress. This intentionally small batch reviews two lifecycle
-operations for `door-io`.
+> Historical batch record: counts and queue statements describe the repository
+> immediately after PR7. M6.2 is now complete.
+
+This intentionally small batch reviewed two lifecycle operations for
+`door-io`.
 
 ## Selection
 

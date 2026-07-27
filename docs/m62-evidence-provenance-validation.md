@@ -5,8 +5,10 @@ machine-validatable. The same validator runs during crosswalk generation,
 coverage generation, work-queue generation, repository validation, and explicit
 CLI evidence validation.
 
-M6.2 remains in progress. This work changes evidence integrity, not coverage:
-the crosswalk remains at 34 reviewed and 56 unassessed cells.
+PR3 changed evidence integrity rather than coverage. The PR-time counts are
+historical; current coverage is reported by
+`catalog/crosswalk/coverage.json` and `ods crosswalk --coverage`. M6.2 is now
+complete.
 
 ## Reviewed mapping requirements
 
@@ -73,6 +75,8 @@ Evidence validation also runs automatically in:
 python3 tools/generate_crosswalk.py --check
 python3 tools/generate_crosswalk_coverage.py --check
 python3 tools/generate_crosswalk_work_queue.py --check
+python3 tools/generate_crosswalk_triage.py --check
+python3 tools/generate_crosswalk_completion.py --check
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
 ```

@@ -1,7 +1,10 @@
 # M6.2 PR6 — UCDoor evidence batch
 
-M6.2 remains in progress. This batch reviews one host only: the UCDoor
-compatibility wrapper for MAXs BBS doors.
+> Historical batch record: counts and queue statements describe the repository
+> immediately after PR6. M6.2 is now complete.
+
+This batch reviewed one host only: the UCDoor compatibility wrapper for MAXs
+BBS doors.
 
 ## Selection
 

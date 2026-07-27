@@ -1,7 +1,8 @@
 # M6.2 PR8 — Remaining evidence triage
 
-M6.2 remains in progress. PR8 classifies research work; it does not change
-mapping status, evidence coverage, or work-queue priority.
+PR8 introduced research classification without changing mapping status,
+evidence coverage, or work-queue priority. M6.2 is now complete; this document
+describes the current triage model and generated artifact.
 
 The generated artifact is `catalog/crosswalk/triage.json`. Every current
 work-queue item appears exactly once and retains its queue ID, host, operation,
@@ -57,11 +58,11 @@ estimate whether a host supports the operation.
 
 ## Current distributions
 
-The committed triage contains 34 items.
+The committed triage contains 32 items.
 
 Categories:
 
-- `documented-but-not-reviewed`: 2
+- `documented-but-not-reviewed`: 0
 - `insufficient-semantics`: 3
 - `missing-primary-source`: 18
 - `insufficient-sdk`: 6
@@ -71,13 +72,13 @@ Categories:
 Effort:
 
 - `trivial`: 0
-- `small`: 2
+- `small`: 0
 - `moderate`: 8
 - `extensive`: 24
 
 Confidence:
 
-- `high`: 2
+- `high`: 0
 - `medium`: 6
 - `low`: 26
 
@@ -87,7 +88,7 @@ Confidence:
 | --- | ---: | ---: | --- | --- | --- |
 | ABBS | 7 | 2 | comprehensive | medium | Review ARexx host-command dispatch and normal script completion. |
 | AEDoor | 8 | 1 | comprehensive | low | Seek a status-text setter beyond the reviewed public AEDoor calls. |
-| AmBoS | 4 | 5 | comprehensive | high | Review `bbs_close` and `bbs_open`/`ExternInfo` for lifecycle exit and caller identity. |
+| AmBoS | 6 | 3 | comprehensive | medium | Determine whether `bbs_menu` implements canonical host-command dispatch rather than menu presentation. |
 | Door-IO | 5 | 4 | targeted | low | Seek host-specific wrapper documentation; the public library exposes no remaining operation. |
 | FAME | 8 | 1 | comprehensive | medium | Check developer-only commands for node action-string mutation. |
 | Paragon | 7 | 2 | limited | medium | Locate a primary MAXs command table for time and activity fields. |
@@ -110,12 +111,14 @@ Before changing a mapping, inspect the cited archive manifest and the canonical
 operation definition. If the evidence remains ambiguous, leave the mapping
 unassessed and refine the triage only when new evidence justifies it.
 
-After a future evidence batch changes the queue, update the explicit triage
-assignment and regenerate:
+After a future milestone changes the queue, update the explicit triage
+assignment and regenerate triage and completion:
 
 ```bash
 python3 tools/generate_crosswalk_triage.py
 python3 tools/generate_crosswalk_triage.py --check
+python3 tools/generate_crosswalk_completion.py
+python3 tools/generate_crosswalk_completion.py --check
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
 ```

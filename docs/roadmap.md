@@ -1,162 +1,117 @@
 # Roadmap
 
-## M0 — Repository foundation
+## Current state
 
-- project structure
-- contribution and evidence rules
-- initial schemas and validation
-- unified `ods` CLI
+M6.2 is complete. The generated
+`catalog/crosswalk/m62-completion.json` report has no completion blockers and
+classifies every remaining unassessed cell as deferred research or archival
+source discovery.
 
-## M1.6 — API extraction
+The repository is ready to scope M6.3. No M6.3 evidence target is selected by
+this maintenance refresh; future work should start from
+`ods crosswalk --backlog`.
 
-- archive inventories
-- `.fd` parser
-- C header declaration parser
-- Amiga E and assembler symbol extraction
-- guide/document indexer
-- evidence manifests
+## Next milestone — M6.3
 
-## M1.7 — API comparison
+Status: planning.
 
-- normalized capability mappings
-- generated comparison matrix
-- equivalent and unique operations
+M6.3 should consume stable backlog IDs rather than reopening completed
+milestones. Candidate work falls into two generated classes:
 
-## M1.8 — ODS Core 0.1
+- deferred semantic or historical research;
+- archival and primary-source discovery.
 
-- session
-- terminal
-- lifecycle
-- status
-- optional file/message/storage services
+Selection must continue to prioritize primary evidence. An unassessed mapping
+is not unsupported, and backlog priority or confidence is not a support claim.
 
-## M1.9 — Adapter contracts
+## Research backlog
 
-- ABBS
-- Paragon/StarNet
-- DayDream
-- AmiExpress/AEDoor
-- AmBoS
-- door_io.library
-- FAME DoorPort
-- generic CLI/stdio
+The source of truth is `catalog/crosswalk/m62-completion.json`, inspected with:
 
-## M1.9 — Reference adapter
+```bash
+ods crosswalk --completion
+ods crosswalk --backlog
+ods crosswalk --backlog --json
+```
 
-Status: complete.
+Backlog grouping, expected value, affected hosts and operations, research
+effort, and recommended future milestone are generated from the queue and
+triage. The roadmap intentionally does not duplicate those changing totals.
 
-- Deterministic host/simulator adapter for all ODS Core 0.1 operations.
-- Machine-readable execution transcripts.
-- Disconnect and normal-exit conformance behavior.
+## Completed milestones
 
-## M2.0 — First historical adapter
-
-Next: implement one verified historical adapter, beginning with ABBS or DayDream,
-and execute shared conformance cases against both it and the host adapter.
-
-## M2.0 — DayDream adapter
-
-First host-tested historical adapter. A native Amiga backend follows in M2.1.
-
-
-## M4.0 — Architecture baseline
+### M6.2 — Crosswalk evidence expansion
 
 Status: complete.
 
-- Establish the normative specification as the primary product.
-- Separate specification, toolkit, catalog, and reference implementation responsibilities.
-- Define evidence, compatibility, and migration rules.
-- Avoid disruptive path changes until compatibility entry points exist.
+- deterministic research work queue and priority explanations;
+- evidence expansion batches using cataloged primary sources;
+- strict provenance validation and CLI evidence inspection;
+- deterministic triage by reason, effort, and confidence;
+- machine-readable completion criteria and classified research backlog.
 
-## M4.1 — Canonical knowledge model
+See [M6.2 completion criteria](m62-completion.md).
 
-- stable operation and structure identifiers
-- canonical provenance records
-- strict cross-reference validation
-- generated coverage and adapter-gap reports
-
-## M4.2 — Publication candidate
-
-- generated reference documentation
-- GitHub Pages publication
-- strict one-command validation
-- ODS 1.0 release-candidate checklist
-
-## M4.4 — Canonical operation records
+### M6.1 — API crosswalk
 
 Status: complete.
 
-- one generated machine-readable record per ODS operation
-- historical implementation and provenance aggregation
-- reference-adapter support status
-- strict stale-record validation
+- deterministic host and canonical-operation crosswalk;
+- host and operation CLI lookup;
+- evidence coverage and gap reporting;
+- stale generated-data validation.
 
-- [x] M4.6 — Conformance Profiles: cumulative adapter capability levels and generated conformance report.
+See [M6.1 API crosswalk](m61-api-crosswalk.md).
 
-## M4.7 — Historical corpus expansion
+### M6.0 — Complete API census
 
-Completed: four new archive inventories, duplicate-distribution evidence, and documented Maxs door findings.
+Status: complete. See [M6.0 complete API census](m60-complete-api-census.md).
 
-## M4.8 — MAXs source expansion
+### M5.0–M5.2 — Archive reanalysis
 
 Status: complete.
 
-- Catalog MAXs Coders, MAXs Guide, and MAXShell 1.01.
-- Add verified source-level MAXShell protocol evidence.
-- Preserve the evidence boundary by avoiding new mappings from contextual documentation alone.
+- comprehensive archive and source reanalysis;
+- duplicate-distribution identification;
+- AmiExpress, AmiX, MAXs, ABBS, and related corpus expansion.
 
-## M4.9 — Executable Conformance Suite
+See [M5.0](m50-comprehensive-archive-reanalysis.md),
+[M5.1](m51-second-corpus-reanalysis.md), and
+[M5.2](m52-comprehensive-amiexpress-reanalysis.md).
 
-Completed: executable profile tests for portable reference adapters.
+### M4.0–M4.9 — Architecture and conformance
 
+Status: complete.
 
-## M5.0 — Comprehensive archive reanalysis
+- specification/toolkit/catalog boundaries;
+- canonical knowledge and provenance model;
+- provenance coverage and canonical operation records;
+- adapter gap reporting;
+- cumulative and executable conformance profiles;
+- historical corpus and MAXs source expansion.
 
-Completed: all supplied archives were reprocessed, a preserved ABBS 2.0 source snapshot was added, and machine-readable archive-level research coverage was introduced.
+See [architecture](architecture.md),
+[canonical knowledge model](canonical-knowledge-model.md),
+[conformance profiles](m46-conformance-profiles.md), and
+[executable conformance](m49-executable-conformance-suite.md).
 
+### M0–M2.3 — Foundation, core, and adapters
 
-## M5.1 — Second comprehensive archive reanalysis
+Status: complete.
 
-Completed: reprocessed 20 additional archive uploads, confirmed their duplicate status, and recorded deeper cross-language API and protocol findings without inflating canonical archive or provenance counts.
+- repository foundation and archive/API extraction;
+- ODS Core 0.1 and historical adapter contracts;
+- deterministic reference host adapter;
+- DayDream portable and native adapter work;
+- forensic analysis and historical door corpus.
 
+See [ODS Core 0.1](ods-core-0.1.md),
+[reference host adapter](reference-host-adapter.md),
+[DayDream adapter](daydream-adapter.md), and
+[historical door corpus](m23-historical-door-corpus.md).
 
-## M5.2 — Comprehensive AmiExpress corpus reanalysis (complete)
+## Future publication work
 
-See `docs/m52-comprehensive-amiexpress-reanalysis.md`.
-
-
-## M6.0 — Complete API Census (complete)
-
-See `docs/m60-complete-api-census.md`.
-
-<!-- m61-status -->
-### M6.1 — API crosswalk: complete
-
-Delivered data model, deterministic generation, CLI lookup, validation,
-coverage reporting and milestone acceptance checks. Mapping expansion continues
-in M6.2.
-
-### M6.2 — Crosswalk evidence expansion: complete
-
-- PR1: deterministic evidence work queue, documented priority rules, CLI
-  filtering, and stale-data validation.
-- PR2: first eight-cell primary-evidence batch across ABBS, AmBoS, DayDream,
-  and UCDoor; reviewed coverage increased while M6.2 remains in progress.
-- PR3: machine validation for stable mapping identities, evidence references,
-  rationales, partial limitations, and provenance cross-references.
-- PR4: eight AEDoor mappings reviewed from the cataloged SDK archive; seven
-  verified and one partial, with M6.2 still in progress.
-- PR5: eight FAME DoorPort mappings verified from the cataloged v1.30 command
-  guide; ambiguous node-status mutation remains unassessed.
-- PR6: four UCDoor mappings verified from the cataloged programmer guide,
-  public header, and original demo; status mutation remains unassessed.
-- PR7: two Door-IO lifecycle mappings harvested from the cataloged SDK; one
-  verified and one partial, with unrelated gaps left unassessed.
-- PR8: deterministic triage for every remaining queue item, including reason,
-  research effort, confidence, and per-host next opportunities.
-- PR9: the two small-effort, high-confidence AmBoS items were verified from
-  the cataloged developer guide, public headers, and original example source.
-- PR10: deterministic completion criteria classify every remaining queue item
-  as a completion blocker, deferred research, or archival source discovery.
-- Future milestones consume the generated research backlog without treating
-  unassessed cells as unsupported.
+Generated reference documentation, public-site publication, and an ODS 1.0
+release-candidate checklist remain future release work. They are separate from
+the M6.3 research backlog.

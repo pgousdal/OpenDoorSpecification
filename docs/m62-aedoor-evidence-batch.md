@@ -1,6 +1,9 @@
 # M6.2 PR4 — AEDoor evidence batch
 
-M6.2 remains in progress. This batch reviews one host only: AEDoor.
+> Historical batch record: counts and queue statements describe the repository
+> immediately after PR4. M6.2 is now complete.
+
+This batch reviewed one host only: AEDoor.
 
 ## Selection
 

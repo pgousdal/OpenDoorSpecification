@@ -1,88 +1,94 @@
 # Open Door Specification
 
-Open Door Specification (ODS) is an implementation-neutral specification and evidence-backed catalog for BBS door interfaces. The initial research corpus focuses on Amiga BBS systems.
+Open Door Specification (ODS) is an implementation-neutral specification and
+evidence-backed catalog for BBS door interfaces. The historical corpus
+currently focuses on Amiga BBS systems. ODS specifies and catalogs interfaces;
+it does not implement a BBS, and DoorForge remains a separate reference
+implementation.
 
 ## Current status
 
-The repository is in the M4 architecture-baseline phase. It contains an evidence-backed historical catalog, ODS Core 0.1, host and DayDream reference adapters, and repository validation. It does not claim binary compatibility where ABI evidence remains incomplete.
+M6.2 is complete. The repository contains ODS Core 0.1, deterministic archive
+and API catalogs, reference adapters, executable conformance checks, a complete
+host-operation crosswalk, strict evidence provenance validation, and a
+classified research backlog for future milestones.
 
-## Quick start
-
-```bash
-python -m pip install -e tools/ods-tools
-ods inventory path/to/sdk.lha
-ods validate
-ods list-archives
-```
-
-## Architecture
-
-The normative specification is the primary product. Historical catalogs, the toolkit, and reference adapters support it without silently redefining it. See [`ARCHITECTURE.md`](ARCHITECTURE.md).
+The current generated completion state is
+`catalog/crosswalk/m62-completion.json`. Remaining `unassessed` cells are
+research backlog items, not claims of unsupported behavior.
 
 ## Principles
 
-- specification-first
-- implementation-neutral
-- evidence-backed
-- machine-readable
-- testable
-- preservation-oriented
+- specification-first and implementation-neutral;
+- evidence-backed and machine-readable;
+- deterministic and testable;
+- preservation-oriented;
+- conservative about incomplete historical evidence.
 
-DoorForge is planned as a reference implementation, but ODS is independent of DoorForge.
+The normative specification is the primary product. Catalogs, research tools,
+and adapters support it without silently redefining it. See
+[Architecture](docs/architecture.md) and the
+[research methodology](docs/research-methodology.md).
 
-## Semantic inspection
+## Repository structure
 
-```sh
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools inspect terminal.write
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools compare abbs daydream ambos
-```
+| Path | Purpose |
+| --- | --- |
+| `spec/` | Normative ODS specification text |
+| `catalog/` | Archives, APIs, mappings, provenance, census, and generated reports |
+| `schemas/` | JSON schemas for machine-readable repository data |
+| `tools/ods-tools/` | Installable Python CLI package |
+| `tools/generate_*.py` | Deterministic crosswalk generators |
+| `native/` | Native adapter sources |
+| `examples/` | Host-simulator scenarios |
+| `docs/` | Architecture, milestone, evidence, and contributor documentation |
+| `tests/` | Repository-wide regression and acceptance tests |
 
-Canonical knowledge model: [`docs/canonical-knowledge-model.md`](docs/canonical-knowledge-model.md)
+Directories named `OpenDoorSpecification-*` are preserved historical
+snapshots. Current development uses the top-level paths above.
 
-## Provenance coverage
+See the [documentation index](docs/README.md) for current guidance and
+historical milestone records.
 
-```sh
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools coverage
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools operations
-```
+## Installation
 
-See [`docs/provenance-coverage.md`](docs/provenance-coverage.md).
-
-### Adapter and historical API gaps
-
-```sh
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools gaps
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools gaps api:daydream
-```
-
-## Adapter conformance profiles
-
-ODS defines cumulative `minimal`, `interactive`, and `complete` adapter profiles. Inspect them with:
+Python 3.11 or newer is required.
 
 ```bash
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools profiles
+python3 -m pip install -e tools/ods-tools
+ods validate
 ```
 
-See [docs/m46-conformance-profiles.md](docs/m46-conformance-profiles.md).
-
-
-### Executable conformance
+Commands can also run directly from a checkout without installation:
 
 ```bash
-PYTHONPATH=tools/ods-tools/src python3 -m ods_tools conformance
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate
 ```
 
+## CLI overview
 
-## Complete API census
+```bash
+ods list-archives
+ods inventory path/to/sdk.lha
+ods inspect terminal.write
+ods compare abbs daydream ambos
+ods coverage
+ods operations
+ods gaps
+ods profiles
+ods conformance
+ods simulate examples/host-simulator/hello.json --transcript
+ods validate
+ods validate --strict
+```
 
-The machine-readable historical API census starts at `catalog/census/index.json`.
+Use `ods --help` and `ods <command> --help` for the complete option set.
 
-<!-- m61-api-crosswalk -->
-## API crosswalk
+## Crosswalk and evidence workflow
 
-The M6.1 crosswalk records reviewed evidence between historical door/BBS host
-APIs and nine canonical ODS operations.
+The M6.1 crosswalk relates ten historical hosts to nine canonical operations.
+M6.2 adds research ordering, evidence validation, triage, and milestone
+completion semantics.
 
 ```bash
 ods crosswalk
@@ -92,18 +98,79 @@ ods crosswalk --coverage
 ods crosswalk --gaps
 ods crosswalk --work-queue
 ods crosswalk --work-queue --priority high
-ods crosswalk --completion
-ods crosswalk --backlog
+ods crosswalk --triage
+ods crosswalk --triage --host ambos
 ods crosswalk ucdoor terminal.write --evidence
 ods crosswalk --validate-evidence
-ods validate
+ods crosswalk --completion
+ods crosswalk --backlog
+ods crosswalk --backlog --json
 ```
 
-`unassessed` means that no reviewed mapping is currently recorded; it does not
-mean unsupported. See [M6.1 API crosswalk](docs/m61-api-crosswalk.md).
-The [M6.2 evidence work queue](docs/m62-crosswalk-work-queue.md) prioritizes
-future research; priority is not a support claim.
-Reviewed mappings must satisfy the
-[M6.2 provenance requirements](docs/m62-evidence-provenance-validation.md).
-The [M6.2 completion report](docs/m62-completion.md) separates completed
-milestone work from deferred research and archival source discovery.
+Crosswalk terminology is deliberately strict:
+
+- `verified`: direct evidence fully supports the canonical operation;
+- `partial`: reviewed evidence supports only part of the operation or has a
+  documented limitation;
+- `unassessed`: no reviewed mapping is recorded;
+- work-queue priority recommends research order, not support likelihood;
+- triage confidence estimates whether sufficient evidence can be found, not
+  whether support exists.
+
+See the [M6.1 crosswalk](docs/m61-api-crosswalk.md),
+[work queue](docs/m62-crosswalk-work-queue.md),
+[provenance requirements](docs/m62-evidence-provenance-validation.md),
+[triage methodology](docs/m62-evidence-triage.md), and
+[completion and backlog workflow](docs/m62-completion.md).
+
+## Generators
+
+Crosswalk JSON under `catalog/crosswalk/` is derived data. Edit the census or
+classification source, then regenerate; do not hand-edit generated reports.
+
+```bash
+python3 tools/generate_crosswalk.py
+python3 tools/generate_crosswalk_coverage.py
+python3 tools/generate_crosswalk_work_queue.py
+python3 tools/generate_crosswalk_triage.py
+python3 tools/generate_crosswalk_completion.py
+```
+
+Every generator supports `--check`, which fails when its committed artifact is
+missing or stale.
+
+## Validation
+
+Before submitting changes, run:
+
+```bash
+python3 tools/generate_crosswalk.py --check
+python3 tools/generate_crosswalk_coverage.py --check
+python3 tools/generate_crosswalk_work_queue.py --check
+python3 tools/generate_crosswalk_triage.py --check
+python3 tools/generate_crosswalk_completion.py --check
+
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
+python3 scripts/check-repository.py
+```
+
+Strict validation checks archive and provenance cross-references, generated
+reports, conformance data, crosswalk evidence, queue/triage consistency, and
+the M6.2 completion report.
+
+## Contributing evidence
+
+Record archive identity, SHA-256, exact internal path, concrete symbol or
+protocol element, a concise rationale, and limitations for partial mappings.
+Do not commit proprietary archives or full third-party documentation.
+
+Start with [CONTRIBUTING.md](CONTRIBUTING.md). Future evidence work should
+select stable IDs from `ods crosswalk --backlog`, acquire or inspect primary
+sources, update source data, regenerate all affected artifacts, and run normal
+and strict validation.
+
+## Roadmap
+
+Completed milestones and preparation for M6.3 are tracked in
+[docs/roadmap.md](docs/roadmap.md).

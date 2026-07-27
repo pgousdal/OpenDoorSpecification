@@ -1,8 +1,11 @@
 # M6.2 PR9 — AmBoS high-confidence evidence batch
 
-M6.2 remains in progress. This batch reviews exactly the two AmBoS cells that
-the PR8 triage classified as `small` research effort and `high` confidence:
-`lifecycle.exit` and `session.identity`.
+> Historical batch record: counts and triage statements describe the repository
+> immediately after PR9. M6.2 is now complete.
+
+This batch reviewed exactly the two AmBoS cells that the PR8 triage classified
+as `small` research effort and `high` confidence: `lifecycle.exit` and
+`session.identity`.
 
 ## Selection
 

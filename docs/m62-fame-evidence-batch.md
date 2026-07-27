@@ -1,7 +1,9 @@
 # M6.2 PR5 — FAME evidence batch
 
-M6.2 remains in progress. This batch reviews one host only: the FAME
-DoorPort.
+> Historical batch record: counts and queue statements describe the repository
+> immediately after PR5. M6.2 is now complete.
+
+This batch reviewed one host only: FAME DoorPort.
 
 ## Selection
 
