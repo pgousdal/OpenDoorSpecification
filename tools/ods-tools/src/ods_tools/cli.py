@@ -3,6 +3,7 @@ import argparse, json
 from pathlib import Path
 from .parsers.lha import inspect
 from .semantic import compare, load_mapping, load_operations
+from .coverage import build_coverage, write_coverage
 from .simulator import load_scenario, run_scenario
 
 
@@ -79,6 +80,10 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
                 assert source["archive"] in archive_entries, path
                 assert source["path"] in archive_entries[source["archive"]], path
             provenance_count += 1
+        coverage = build_coverage(root)
+        assert coverage["summary"]["verified_without_provenance"] == 0, "verified mappings without provenance"
+        stored_coverage = json.loads((root / "catalog" / "knowledge" / "provenance-coverage.json").read_text(encoding="utf-8"))
+        assert stored_coverage == coverage, "stale provenance coverage report"
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
 
 
@@ -96,6 +101,9 @@ def main() -> int:
     cmp = sub.add_parser("compare", help="compare historical APIs against ODS operations")
     cmp.add_argument("apis", nargs="+")
     cmp.add_argument("--json", action="store_true")
+    cov = sub.add_parser("coverage", help="report provenance coverage for semantic mappings")
+    cov.add_argument("--json", action="store_true", help="print the complete machine-readable report")
+    cov.add_argument("--write", type=Path, help="write the report to a JSON file")
     sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
     sim.add_argument("scenario", type=Path)
     sim.add_argument("--transcript", action="store_true", help="print complete JSON execution result")
@@ -115,6 +123,18 @@ def main() -> int:
             args.json.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
+    if args.command == "coverage":
+        report = write_coverage(root, args.write) if args.write else build_coverage(root)
+        if args.json:
+            print(json.dumps(report, indent=2))
+        else:
+            summary = report["summary"]
+            print(f"Mappings: {summary['covered']}/{summary['total']} covered; {summary['uncovered']} uncovered")
+            print(f"Verified without provenance: {summary['verified_without_provenance']}")
+            for row in report["mappings"]:
+                evidence = ",".join(row["evidence_statuses"]) or "missing"
+                print(f"{row['api']:<12} {row['operation']:<28} {row['mapping_status']:<8} {evidence}")
+        return 0
     if args.command == "list-archives":
         for path in sorted((root / "catalog" / "archives").glob("*.json")):
             d = json.loads(path.read_text(encoding="utf-8"))

@@ -83,3 +83,10 @@
 - Added multi-source evidence for operation mappings, message structure, and observed behavior.
 - Extended strict validation with unique provenance IDs and population statistics.
 - Documented the provenance population and remaining coverage limits.
+
+## M4.3
+
+- Added generated provenance coverage for every semantic mapping.
+- Added documented primary-source records for verified ABBS, AmBoS, and door_io mappings.
+- Added `ods coverage` with text, JSON, and file output.
+- Made strict validation reject verified mappings without provenance and stale coverage reports.

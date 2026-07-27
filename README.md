@@ -38,3 +38,12 @@ PYTHONPATH=tools/ods-tools/src python3 -m ods_tools compare abbs daydream ambos
 ```
 
 Canonical knowledge model: [`docs/canonical-knowledge-model.md`](docs/canonical-knowledge-model.md)
+
+## Provenance coverage
+
+```sh
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools coverage
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
+```
+
+See [`docs/provenance-coverage.md`](docs/provenance-coverage.md).
