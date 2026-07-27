@@ -5,6 +5,8 @@ from pathlib import Path
 import re
 from typing import Any
 
+from .adapter_contracts import load_adapter_contracts
+from .compatibility_profiles import load_compatibility_profiles
 from .semantic import load_operations
 
 
@@ -175,4 +177,177 @@ def format_capability_declaration(declaration: dict[str, Any]) -> str:
         if "notes" in cap:
             line += f"  ({cap['notes']})"
         lines.append(line)
+    return "\n".join(lines)
+
+
+def validate_profile_satisfaction(
+    root: Path,
+    declaration: dict[str, Any],
+    profiles_data: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    profiles_source = (
+        profiles_data
+        if profiles_data is not None
+        else load_compatibility_profiles(root)
+    )
+    profiles_by_id = {p["id"]: p for p in profiles_source["profiles"]}
+    capability_by_op = {
+        c["operation"]: c["status"] for c in declaration["capabilities"]
+    }
+    impl_id = declaration["implementation_id"]
+    results: dict[str, Any] = {}
+    for profile_id in sorted(declaration["supported_profiles"]):
+        if profile_id not in profiles_by_id:
+            results[profile_id] = {
+                "exists": False,
+                "satisfied": False,
+                "missing_required": [],
+                "partial_required": [],
+            }
+            continue
+        profile = profiles_by_id[profile_id]
+        required = profile["required_operations"]
+        missing: list[str] = []
+        partial: list[str] = []
+        for op in required:
+            status = capability_by_op.get(op)
+            if status is None or status == "unsupported":
+                missing.append(op)
+            elif status == "partial":
+                partial.append(op)
+            elif status != "supported":
+                missing.append(op)
+        results[profile_id] = {
+            "exists": True,
+            "satisfied": not missing and not partial,
+            "missing_required": missing,
+            "partial_required": partial,
+        }
+    return results
+
+
+def validate_contract_references(
+    root: Path,
+    declaration: dict[str, Any],
+    contracts_data: dict[str, Any] | None = None,
+    canonical_ids: set[str] | None = None,
+) -> dict[str, Any]:
+    contracts_source = (
+        contracts_data
+        if contracts_data is not None
+        else load_adapter_contracts(root)
+    )
+    contract_ops = {c["operation"] for c in contracts_source["contracts"]}
+    if canonical_ids is None:
+        canonical_ids = {
+            op["id"] for op in load_operations(root)["operations"]
+        }
+    unknown_ops: list[str] = []
+    no_contract_ops: list[str] = []
+    for cap in declaration["capabilities"]:
+        op = cap["operation"]
+        if op not in canonical_ids:
+            unknown_ops.append(op)
+        if op not in contract_ops:
+            no_contract_ops.append(op)
+    if (root / "catalog" / "contracts" / "adapter-contracts.json").exists():
+        for contract in contracts_source["contracts"]:
+            op = contract["operation"]
+            if op not in canonical_ids:
+                if op not in unknown_ops:
+                    unknown_ops.append(op)
+    return {
+        "all_have_contracts": not no_contract_ops,
+        "operations_without_contract": sorted(no_contract_ops),
+        "unknown_canonical_operations": sorted(unknown_ops),
+    }
+
+
+def validate_capability_declaration(
+    root: Path,
+    declaration: dict[str, Any],
+    profiles_data: dict[str, Any] | None = None,
+    contracts_data: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    impl_id = declaration["implementation_id"]
+    profiles = validate_profile_satisfaction(
+        root, declaration, profiles_data
+    )
+    contracts = validate_contract_references(
+        root, declaration, contracts_data
+    )
+    satisfied_count = sum(
+        1 for p in profiles.values() if p.get("satisfied")
+    )
+    partial_count = sum(
+        1 for p in profiles.values()
+        if p.get("exists") and not p["satisfied"]
+    )
+    return {
+        "implementation_id": impl_id,
+        "profiles": profiles,
+        "contracts": contracts,
+        "profile_count": {
+            "satisfied": satisfied_count,
+            "partial": partial_count,
+            "unknown": sum(
+                1 for p in profiles.values() if not p.get("exists")
+            ),
+        },
+    }
+
+
+def validate_all_capability_declarations(
+    root: Path,
+    profiles_data: dict[str, Any] | None = None,
+    contracts_data: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    declarations = load_capability_declarations(root)
+    results = sorted(
+        (
+            validate_capability_declaration(
+                root, d, profiles_data, contracts_data
+            )
+            for d in declarations.values()
+        ),
+        key=lambda r: r["implementation_id"],
+    )
+    all_satisfied = all(
+        all(p.get("satisfied", False) for p in r["profiles"].values())
+        for r in results
+    )
+    return {
+        "declaration_count": len(declarations),
+        "all_satisfied": all_satisfied,
+        "results": results,
+    }
+
+
+def format_validation_text(result: dict[str, Any]) -> str:
+    lines: list[str] = []
+    profiles = result["profiles"]
+    for profile_id in sorted(profiles):
+        p = profiles[profile_id]
+        if not p.get("exists"):
+            lines.append(f"  {profile_id}: unknown profile")
+            continue
+        if p["satisfied"]:
+            lines.append(f"  {profile_id}: satisfies")
+        else:
+            lines.append(f"  {profile_id}: does not satisfy")
+            if p["missing_required"]:
+                lines.append("    missing:")
+                for op in p["missing_required"]:
+                    lines.append(f"      {op}")
+            if p["partial_required"]:
+                lines.append("    partial:")
+                for op in p["partial_required"]:
+                    lines.append(f"      {op}")
+    contracts = result["contracts"]
+    if not contracts["all_have_contracts"]:
+        lines.append("  contract issues:")
+        for op in contracts["operations_without_contract"]:
+            lines.append(f"    {op}: no adapter contract")
+        for op in contracts["unknown_canonical_operations"]:
+            lines.append(f"    {op}: not a canonical operation")
     return "\n".join(lines)

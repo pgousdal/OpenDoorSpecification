@@ -22,8 +22,11 @@ from .adapter_contracts import (
 from .simulator import load_scenario, run_scenario
 from .capability_declarations import (
     format_capability_declaration,
+    format_validation_text,
     list_capability_declarations,
     select_capability_declaration,
+    validate_all_capability_declarations,
+    validate_capability_declaration,
     validate_capability_declaration_document,
 )
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
@@ -748,25 +751,50 @@ def main() -> int:
                 count = validate_capability_declaration_document(root)
             except (KeyError, TypeError, ValueError) as exc:
                 raise SystemExit(f"capability declaration validation failed: {exc}")
+            try:
+                validation = validate_all_capability_declarations(root)
+            except (KeyError, TypeError, ValueError) as exc:
+                raise SystemExit(f"capability validation failed: {exc}")
             if args.json:
-                print(json.dumps({"valid": True, "declaration_count": count}, indent=2))
+                print(json.dumps(validation, indent=2))
             else:
-                print(f"Capability declaration catalog is valid: {count} declarations.")
+                print(f"Capability declarations ({validation['declaration_count']}):")
+                for result in sorted(
+                    validation["results"],
+                    key=lambda r: r["implementation_id"],
+                ):
+                    impl_id = result["implementation_id"]
+                    print(f"\n{impl_id}")
+                    print(format_validation_text(result))
+                    print()
+                if validation["all_satisfied"]:
+                    print("All declarations satisfy their claimed profiles.")
+                else:
+                    print(
+                        "Some declarations do not satisfy all claimed profiles."
+                    )
             return 0
         if args.action == "show":
             if not args.impl_id:
                 raise SystemExit("capabilities show requires an implementation ID")
             try:
                 declaration = select_capability_declaration(root, args.impl_id)
+                validation = validate_capability_declaration(root, declaration)
             except KeyError:
                 raise SystemExit(
                     f"unknown capability declaration: {args.impl_id}"
                 )
-            print(
-                json.dumps(declaration, indent=2)
-                if args.json
-                else format_capability_declaration(declaration)
-            )
+            if args.json:
+                print(
+                    json.dumps(
+                        {"declaration": declaration, "validation": validation},
+                        indent=2,
+                    )
+                )
+            else:
+                print(format_capability_declaration(declaration))
+                print("validation:")
+                print(format_validation_text(validation))
             return 0
         if args.impl_id:
             raise SystemExit("capabilities list does not take an implementation ID")
