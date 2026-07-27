@@ -1,3 +1,10 @@
+## M5.2
+
+- Reanalysed twelve AmiExpress, AmiX and MAXs archives from raw bytes.
+- Added AmiExpress and AmiX source snapshots plus DoorStatus and MDoors 1–5 manifests.
+- Added machine-readable evidence and source-corpus provenance.
+- Preserved strict separation between host internals, SDK contracts and behavioral evidence.
+
 # Changelog
 
 ## M5.1 - Second comprehensive archive reanalysis

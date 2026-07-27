@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class M48Tests(unittest.TestCase):
     def test_archive_totals(self):
         data = json.loads((ROOT / "catalog/archive-index.json").read_text())
-        self.assertEqual((data["archive_count"], data["entry_count"]), (30, 1150))
+        self.assertEqual((data["archive_count"], data["entry_count"]), (38, 1371))
 
     def test_new_manifests(self):
         expected = {

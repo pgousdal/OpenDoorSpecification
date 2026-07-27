@@ -1,0 +1,2532 @@
+{
+  "schema_version": 1,
+  "milestone": "M5.2",
+  "title": "Comprehensive AmiExpress, AmiX and MAXs corpus reanalysis",
+  "archive_count": 12,
+  "methodology": [
+    "Computed SHA-256 from every uploaded byte stream.",
+    "Parsed every ZIP member and every LHA header.",
+    "Decompressed every supported -lh0- and -lh5- payload.",
+    "Re-read source and documentation even for byte-identical redistributions.",
+    "Classified source languages and scanned symbols, structures, functions and numeric command usage.",
+    "Separated host implementation evidence, public SDK evidence, wrapper evidence and behavioral corpus evidence.",
+    "Did not promote command-number coincidences across API families to semantic equivalence."
+  ],
+  "archives": [
+    {
+      "archive": "AmiXDoors-master.zip",
+      "sha256": "bdff0d948efbb429f3b927d5001e053b7cf637bbd48940bb8399ba9d74e8a8dd",
+      "entries": 86,
+      "size": 266736,
+      "methods": [
+        "zip-0",
+        "zip-8"
+      ],
+      "extracted": 86,
+      "unextracted": 0,
+      "duplicate": null,
+      "file_types": {
+        "amiga-e": 16,
+        "arexx": 1,
+        "assembler": 1,
+        "configuration": 16,
+        "csharp": 20,
+        "documentation": 12,
+        "other": 20
+      },
+      "documentation_files": [
+        "AmiXDoors-master/BBSLink/file_id.diz",
+        "AmiXDoors-master/BBSLink/readme.txt",
+        "AmiXDoors-master/Conftop-II/ConfTopII-Readme.txt",
+        "AmiXDoors-master/Global Doors Backend/Website/data.htm",
+        "AmiXDoors-master/Global Doors Backend/Website/data2.htm",
+        "AmiXDoors-master/Global Doors Backend/Website/telnet.html",
+        "AmiXDoors-master/Global Doors Backend/Website/topaz/generator_config.txt",
+        "AmiXDoors-master/Global Doors Backend/Website/topaz/topaznew-demo.html",
+        "AmiXDoors-master/Global Doors Backend/Website/wall.htm",
+        "AmiXDoors-master/Global Last Callers/glc_readme.txt",
+        "AmiXDoors-master/MultiRelayChat/file_id.diz",
+        "AmiXDoors-master/MultiRelayChat/readme.txt"
+      ],
+      "api_symbols": [
+        {
+          "symbol": "DIFace",
+          "occurrences": 207
+        },
+        {
+          "symbol": "node",
+          "occurrences": 40
+        },
+        {
+          "symbol": "AEDoor",
+          "occurrences": 27
+        },
+        {
+          "symbol": "bbslink",
+          "occurrences": 23
+        },
+        {
+          "symbol": "GetString",
+          "occurrences": 21
+        },
+        {
+          "symbol": "DoorPort",
+          "occurrences": 6
+        },
+        {
+          "symbol": "carrier",
+          "occurrences": 4
+        },
+        {
+          "symbol": "GetKey",
+          "occurrences": 3
+        },
+        {
+          "symbol": "SendCmd",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "i",
+          "occurrences": 48
+        },
+        {
+          "name": "tempstr",
+          "occurrences": 40
+        },
+        {
+          "name": "tempStr",
+          "occurrences": 38
+        },
+        {
+          "name": "fh",
+          "occurrences": 28
+        },
+        {
+          "name": "n",
+          "occurrences": 15
+        },
+        {
+          "name": "sender",
+          "occurrences": 14
+        },
+        {
+          "name": "currDate",
+          "occurrences": 10
+        },
+        {
+          "name": "diface",
+          "occurrences": 10
+        },
+        {
+          "name": "p",
+          "occurrences": 10
+        },
+        {
+          "name": "s",
+          "occurrences": 10
+        },
+        {
+          "name": "user",
+          "occurrences": 9
+        },
+        {
+          "name": "tdat",
+          "occurrences": 9
+        },
+        {
+          "name": "tempName",
+          "occurrences": 8
+        },
+        {
+          "name": "addr",
+          "occurrences": 8
+        },
+        {
+          "name": "hostEnt",
+          "occurrences": 8
+        },
+        {
+          "name": "serverHost",
+          "occurrences": 7
+        },
+        {
+          "name": "startds",
+          "occurrences": 7
+        },
+        {
+          "name": "sa",
+          "occurrences": 7
+        },
+        {
+          "name": "res",
+          "occurrences": 7
+        },
+        {
+          "name": "d",
+          "occurrences": 7
+        },
+        {
+          "name": "dt",
+          "occurrences": 7
+        },
+        {
+          "name": "count",
+          "occurrences": 7
+        },
+        {
+          "name": "fds",
+          "occurrences": 6
+        },
+        {
+          "name": "tempValue",
+          "occurrences": 6
+        },
+        {
+          "name": "configNames",
+          "occurrences": 6
+        },
+        {
+          "name": "configValues",
+          "occurrences": 6
+        },
+        {
+          "name": "newstring",
+          "occurrences": 6
+        },
+        {
+          "name": "r",
+          "occurrences": 6
+        },
+        {
+          "name": "myargs",
+          "occurrences": 6
+        },
+        {
+          "name": "timeout",
+          "occurrences": 5
+        }
+      ],
+      "top_functions": [
+        {
+          "name": "main",
+          "occurrences": 15
+        },
+        {
+          "name": "fullTrim",
+          "occurrences": 6
+        },
+        {
+          "name": "parseConfigFile",
+          "occurrences": 6
+        },
+        {
+          "name": "getSystemTime",
+          "occurrences": 6
+        },
+        {
+          "name": "setSingleFDS",
+          "occurrences": 5
+        },
+        {
+          "name": "httpRequest",
+          "occurrences": 5
+        },
+        {
+          "name": "replacestr",
+          "occurrences": 5
+        },
+        {
+          "name": "getAEStringValue",
+          "occurrences": 4
+        },
+        {
+          "name": "transmit",
+          "occurrences": 4
+        },
+        {
+          "name": "splitBuffer",
+          "occurrences": 4
+        },
+        {
+          "name": "convertToBCD",
+          "occurrences": 3
+        },
+        {
+          "name": "getAEIntValue",
+          "occurrences": 3
+        },
+        {
+          "name": "cleanstr",
+          "occurrences": 3
+        },
+        {
+          "name": "randomString",
+          "occurrences": 2
+        },
+        {
+          "name": "httpGet",
+          "occurrences": 2
+        },
+        {
+          "name": "sendToServer",
+          "occurrences": 2
+        },
+        {
+          "name": "end",
+          "occurrences": 2
+        },
+        {
+          "name": "stdlist",
+          "occurrences": 2
+        },
+        {
+          "name": "item",
+          "occurrences": 2
+        },
+        {
+          "name": "clear",
+          "occurrences": 2
+        },
+        {
+          "name": "expand",
+          "occurrences": 2
+        },
+        {
+          "name": "add",
+          "occurrences": 2
+        },
+        {
+          "name": "setItem",
+          "occurrences": 2
+        },
+        {
+          "name": "remove",
+          "occurrences": 2
+        },
+        {
+          "name": "setSize",
+          "occurrences": 2
+        },
+        {
+          "name": "count",
+          "occurrences": 2
+        },
+        {
+          "name": "maxSize",
+          "occurrences": 2
+        },
+        {
+          "name": "sort",
+          "occurrences": 2
+        },
+        {
+          "name": "itemCompare",
+          "occurrences": 2
+        },
+        {
+          "name": "addBCD2",
+          "occurrences": 2
+        },
+        {
+          "name": "formatBCD",
+          "occurrences": 2
+        },
+        {
+          "name": "bcdCopy",
+          "occurrences": 2
+        },
+        {
+          "name": "bcdComp",
+          "occurrences": 2
+        },
+        {
+          "name": "formatseparators",
+          "occurrences": 2
+        },
+        {
+          "name": "postcomment",
+          "occurrences": 2
+        },
+        {
+          "name": "init",
+          "occurrences": 2
+        },
+        {
+          "name": "formatLongDate",
+          "occurrences": 2
+        },
+        {
+          "name": "check_separator",
+          "occurrences": 2
+        },
+        {
+          "name": "urlencode",
+          "occurrences": 1
+        },
+        {
+          "name": "writeText",
+          "occurrences": 1
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "** bbslink door - requires /X 5.4 and amissl.library"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "MODULE 'AEDoor'                 /* Include libcalls & constants */"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "StrCopy(serverHost,'games.bbslink.net')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "IF aedoorbase:=OpenLibrary('AEDoor.library',1)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "Raise('unable to open aedoor.library')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "parseConfigFile('PROGDIR:bbslink.cfg',configNames,configValues)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "parseConfigFile('bbslink.cfg',configNames,configValues)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "IF StrLen(syscode)=0 THEN Raise('syscode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "IF StrLen(authcode)=0 THEN Raise('authcode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "IF StrLen(schemecode)=0 THEN Raise('schemecode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "IF StrLen(doorcode)=0 THEN Raise('doorcode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslink.e",
+          "line": "IF aedoorbase<>0 THEN CloseLibrary(aedoorbase)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "** bbslink door - requires /X 5.4"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "MODULE 'AEDoor'                 /* Include libcalls & constants */"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "StrCopy(serverHost,'games.bbslink.net')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "IF aedoorbase:=OpenLibrary('AEDoor.library',1)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "Raise('unable to open aedoor.library')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "parseConfigFile('PROGDIR:bbslink.cfg',configNames,configValues)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "parseConfigFile('bbslink.cfg',configNames,configValues)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "IF StrLen(syscode)=0 THEN Raise('syscode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "IF StrLen(authcode)=0 THEN Raise('authcode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "IF StrLen(schemecode)=0 THEN Raise('schemecode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "IF StrLen(doorcode)=0 THEN Raise('doorcode entry missing from bbslink.cfg')"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "->lost carrier"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/bbslinkwall.e",
+          "line": "IF aedoorbase<>0 THEN CloseLibrary(aedoorbase)"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/file_id.diz",
+          "line": "BBSLink and linkwall connectors"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/file_id.diz",
+          "line": "bbslink server to allow you to"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/readme.txt",
+          "line": "BBSlink is a free InterBBS games server that allows any SysOp to"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/readme.txt",
+          "line": "1. Sign up for an account at http://www.bbslink.net/"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/readme.txt",
+          "line": "2. Update the bbslink.cfg with your syscode, authcode and schemecode."
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/readme.txt",
+          "line": "LINKWALL - view or write on the bbslink shared wall"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/readme.txt",
+          "line": "This door requires aedoor.library which can be downloaded from the aminet:"
+        },
+        {
+          "file": "AmiXDoors-master/BBSLink/readme.txt",
+          "line": "http://aminet.net/package/dev/misc/aedoor28"
+        },
+        {
+          "file": "AmiXDoors-master/Conftop-II/ctop.e",
+          "line": "MODULE 'AEDoor'                 /* Include libcalls & constants */"
+        },
+        {
+          "file": "AmiXDoors-master/Conftop-II/ctop.e",
+          "line": "IF aedoorbase:=OpenLibrary('AEDoor.library',1)"
+        },
+        {
+          "file": "AmiXDoors-master/Conftop-II/ctop.e",
+          "line": "IF aedoorbase<>0 THEN CloseLibrary(aedoorbase)"
+        },
+        {
+          "file": "AmiXDoors-master/DiscordAnnounce/dannounce.e",
+          "line": "MODULE 'AEDoor'                 /* Include libcalls & constants */"
+        },
+        {
+          "file": "AmiXDoors-master/DiscordAnnounce/dannounce.e",
+          "line": "DEF doorPort[20]:STRING"
+        },
+        {
+          "file": "AmiXDoors-master/DiscordAnnounce/dannounce.e",
+          "line": "StringF(doorPort,'\\s\\s','AEDoorPort',arg)"
+        },
+        {
+          "file": "AmiXDoors-master/DiscordAnnounce/dannounce.e",
+          "line": "IF FindPort(doorPort)"
+        }
+      ],
+      "reviewed_finding": {
+        "family": "AmiExpress/AmiX",
+        "role": "door-behavior-source",
+        "finding": "Source corpus of practical AmiExpress doors, primarily Amiga E, including BBSLink, global wall/last-callers and Discord announcements. It demonstrates contemporary door behavior, networking and use of host-facing calls, but mixes door clients with external web backends."
+      }
+    },
+    {
+      "archive": "AmiExpress-master.zip",
+      "sha256": "f4c6f2663c7be07731ed45eb2f84b28d4b061f0e07b1cdc1bbba6a8ddd850e91",
+      "entries": 81,
+      "size": 1199010,
+      "methods": [
+        "zip-0",
+        "zip-8"
+      ],
+      "extracted": 81,
+      "unextracted": 0,
+      "duplicate": null,
+      "file_types": {
+        "amiga-e": 62,
+        "configuration": 5,
+        "documentation": 5,
+        "other": 9
+      },
+      "documentation_files": [
+        "AmiExpress-master/README.md",
+        "AmiExpress-master/deployment/File_Id.Diz",
+        "AmiExpress-master/deployment/read_me.hdr",
+        "AmiExpress-master/deployment/read_me.txt",
+        "AmiExpress-master/ftn-readme.txt"
+      ],
+      "api_symbols": [
+        {
+          "symbol": "node",
+          "occurrences": 694
+        },
+        {
+          "symbol": "DoorMsg",
+          "occurrences": 107
+        },
+        {
+          "symbol": "carrier",
+          "occurrences": 28
+        },
+        {
+          "symbol": "DoorPort",
+          "occurrences": 5
+        },
+        {
+          "symbol": "GetKey",
+          "occurrences": 2
+        },
+        {
+          "symbol": "AEDoor",
+          "occurrences": 2
+        },
+        {
+          "symbol": "AMIEX",
+          "occurrences": 2
+        },
+        {
+          "symbol": "DoorControl",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "value": 0,
+          "occurrences": 4
+        },
+        {
+          "value": 1,
+          "occurrences": 1
+        },
+        {
+          "value": 2,
+          "occurrences": 1
+        },
+        {
+          "value": 3,
+          "occurrences": 1
+        },
+        {
+          "value": 5,
+          "occurrences": 1
+        },
+        {
+          "value": 8,
+          "occurrences": 1
+        },
+        {
+          "value": 100,
+          "occurrences": 1
+        },
+        {
+          "value": 130,
+          "occurrences": 1
+        },
+        {
+          "value": 136,
+          "occurrences": 1
+        },
+        {
+          "value": 200,
+          "occurrences": 1
+        },
+        {
+          "value": 508,
+          "occurrences": 1
+        },
+        {
+          "value": 544,
+          "occurrences": 1
+        },
+        {
+          "value": 605,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "i",
+          "occurrences": 203
+        },
+        {
+          "name": "tempStr",
+          "occurrences": 153
+        },
+        {
+          "name": "tempstr",
+          "occurrences": 145
+        },
+        {
+          "name": "str",
+          "occurrences": 74
+        },
+        {
+          "name": "stat",
+          "occurrences": 70
+        },
+        {
+          "name": "p",
+          "occurrences": 69
+        },
+        {
+          "name": "fh",
+          "occurrences": 54
+        },
+        {
+          "name": "tempstr2",
+          "occurrences": 54
+        },
+        {
+          "name": "temp",
+          "occurrences": 47
+        },
+        {
+          "name": "res",
+          "occurrences": 43
+        },
+        {
+          "name": "c",
+          "occurrences": 39
+        },
+        {
+          "name": "s",
+          "occurrences": 38
+        },
+        {
+          "name": "n",
+          "occurrences": 31
+        },
+        {
+          "name": "string",
+          "occurrences": 30
+        },
+        {
+          "name": "bbsPath",
+          "occurrences": 29
+        },
+        {
+          "name": "fLock",
+          "occurrences": 27
+        },
+        {
+          "name": "closeHook",
+          "occurrences": 26
+        },
+        {
+          "name": "count",
+          "occurrences": 26
+        },
+        {
+          "name": "cb",
+          "occurrences": 25
+        },
+        {
+          "name": "control",
+          "occurrences": 24
+        },
+        {
+          "name": "r",
+          "occurrences": 22
+        },
+        {
+          "name": "item",
+          "occurrences": 22
+        },
+        {
+          "name": "fname",
+          "occurrences": 20
+        },
+        {
+          "name": "datestr",
+          "occurrences": 19
+        },
+        {
+          "name": "fBlock",
+          "occurrences": 19
+        },
+        {
+          "name": "tempStr2",
+          "occurrences": 19
+        },
+        {
+          "name": "saveHook",
+          "occurrences": 19
+        },
+        {
+          "name": "buf",
+          "occurrences": 18
+        },
+        {
+          "name": "crc",
+          "occurrences": 18
+        },
+        {
+          "name": "t",
+          "occurrences": 17
+        }
+      ],
+      "top_functions": [
+        {
+          "name": "create",
+          "occurrences": 13
+        },
+        {
+          "name": "addNotifications",
+          "occurrences": 10
+        },
+        {
+          "name": "removeNotifications",
+          "occurrences": 10
+        },
+        {
+          "name": "main",
+          "occurrences": 8
+        },
+        {
+          "name": "canClose",
+          "occurrences": 7
+        },
+        {
+          "name": "unsavedChangesWarning",
+          "occurrences": 6
+        },
+        {
+          "name": "setChangedFlag",
+          "occurrences": 5
+        },
+        {
+          "name": "freeControl",
+          "occurrences": 5
+        },
+        {
+          "name": "getSystemTime",
+          "occurrences": 3
+        },
+        {
+          "name": "trimStr",
+          "occurrences": 3
+        },
+        {
+          "name": "getFileName",
+          "occurrences": 3
+        },
+        {
+          "name": "aePuts",
+          "occurrences": 3
+        },
+        {
+          "name": "sCheckInput",
+          "occurrences": 3
+        },
+        {
+          "name": "readChar",
+          "occurrences": 3
+        },
+        {
+          "name": "end",
+          "occurrences": 2
+        },
+        {
+          "name": "waitSocketLib",
+          "occurrences": 2
+        },
+        {
+          "name": "loadTranslators",
+          "occurrences": 2
+        },
+        {
+          "name": "unloadTranslators",
+          "occurrences": 2
+        },
+        {
+          "name": "startProcess",
+          "occurrences": 2
+        },
+        {
+          "name": "telnetSend",
+          "occurrences": 2
+        },
+        {
+          "name": "updateVersion",
+          "occurrences": 2
+        },
+        {
+          "name": "editAccess",
+          "occurrences": 2
+        },
+        {
+          "name": "editCommands",
+          "occurrences": 2
+        },
+        {
+          "name": "addControls",
+          "occurrences": 2
+        },
+        {
+          "name": "removeControls",
+          "occurrences": 2
+        },
+        {
+          "name": "saveChanges",
+          "occurrences": 2
+        },
+        {
+          "name": "loadAreaNames",
+          "occurrences": 2
+        },
+        {
+          "name": "formShow",
+          "occurrences": 2
+        },
+        {
+          "name": "conPuts",
+          "occurrences": 2
+        },
+        {
+          "name": "getSigs",
+          "occurrences": 2
+        },
+        {
+          "name": "processMessages",
+          "occurrences": 2
+        },
+        {
+          "name": "callersLog",
+          "occurrences": 2
+        },
+        {
+          "name": "saveA4",
+          "occurrences": 2
+        },
+        {
+          "name": "loadA4",
+          "occurrences": 2
+        },
+        {
+          "name": "exec",
+          "occurrences": 2
+        },
+        {
+          "name": "replacestr",
+          "occurrences": 2
+        },
+        {
+          "name": "trimRight",
+          "occurrences": 2
+        },
+        {
+          "name": "fillStrCopy",
+          "occurrences": 2
+        },
+        {
+          "name": "saveMh",
+          "occurrences": 2
+        },
+        {
+          "name": "getMsgBasePath",
+          "occurrences": 2
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "AmiExpress-master/README.md",
+          "line": "*  Option to allow timeout to be treated as a normal logoff instead of a carrier loss"
+        },
+        {
+          "file": "AmiExpress-master/axSetupTool/frmSettingsEdit.e",
+          "line": "NEW control.createCycle('Timeout Recorded as',SYS_TIMEOUT_LC,['Lost Carrier','Normal Logoff',0],self.app.app,self.setChangedHook,self)"
+        },
+        {
+          "file": "AmiExpress-master/axenums.e",
+          "line": "EXPORT ENUM RESULT_FAILURE=-1, RESULT_SUCCESS=0, RESULT_NOT_ALLOWED=1, RESULT_ABORT=-2, RESULT_TIMEOUT=-3, RESULT_NO_CARRIER=-4, RESULT_GOODBYE=-5, RESULT_SLEEP_LOGOFF=-6, RESULT_STANDARD_LOGOFF=-7, RESULT_CONNECT=-8, RESULT_NOT_TESTED=2, R"
+        },
+        {
+          "file": "AmiExpress-master/axobjects.e",
+          "line": "EXPORT OBJECT doorMsg"
+        },
+        {
+          "file": "AmiExpress-master/axobjects.e",
+          "line": "carrier:INT"
+        },
+        {
+          "file": "AmiExpress-master/deployment/Install Ami-Express",
+          "line": "(prompt \"Copying aedoor library\")"
+        },
+        {
+          "file": "AmiExpress-master/deployment/Install Ami-Express",
+          "line": "(source \"AmiExpress/libs/aedoor.library\")"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "DEF lostCarrier=FALSE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "DEF doormsgcode=0"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "DEF lastCarrierCheck=0"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF(reqState=REQ_STATE_LOGOFF) THEN RETURN RESULT_NO_CARRIER"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "stat:=checkCarrier()"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF(stat=FALSE) THEN RETURN RESULT_NO_CARRIER"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF checkCarrier()=FALSE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "PROC checkDoorMsg(mode)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "doorMsgLoadAccount(servermsg)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "doorMsgSaveAccount(servermsg)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF((c=RESULT_NO_CARRIER) OR (c=RESULT_TIMEOUT)) THEN RETURN c"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "PROC checkCarrier()"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "lostCarrier:=TRUE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "checkDoorMsg(0)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF(checkCarrier()=FALSE) THEN RETURN TRUE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF (ch=RESULT_ABORT) OR (ch=RESULT_NO_CARRIER)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF((logonType>=LOGON_TYPE_REMOTE) AND (checkCarrier()=FALSE)) THEN done:=TRUE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "doormsgcode:=1"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "doormsgcode:=0"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "msg.data:=doormsgcode"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF((logonType>=LOGON_TYPE_REMOTE) AND (checkCarrier()=FALSE)) THEN msg.data:=-2 ELSE msg.data:=ch"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF((logonType>=LOGON_TYPE_REMOTE) AND (checkCarrier()=FALSE)) THEN msg.data:=-2 ELSE msg.data:=ch"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF((logonType>=LOGON_TYPE_REMOTE) AND (checkCarrier()=FALSE)) THEN msg.data:=-2 ELSE msg.data:=ch"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "doorMsgLoadAccount(msg)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "doorMsgSaveAccount(msg)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF checkCarrier()=FALSE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF checkCarrier()=FALSE"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "DEF doorPort[12]:STRING"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "DEF doormsg: PTR TO doorMsg"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "StringF(doorPort,'\\s\\d','AEDoorPort',node)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "StringF(doorPort,'\\s\\d','DoorControl',node)"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "IF (mp:=FindPort(doorPort))"
+        },
+        {
+          "file": "AmiExpress-master/express.e",
+          "line": "mp:=createPort(doorPort,0)"
+        }
+      ],
+      "reviewed_finding": {
+        "family": "AmiExpress",
+        "role": "complete-host-source",
+        "finding": "Complete AmiExpress host source in Amiga E. It exposes the implementation context behind AEDoor-facing behavior, node/session state, command dispatch, transfer, HTTP/FTP and configuration subsystems. It is host implementation evidence, not by itself a stable public door API contract."
+      }
+    },
+    {
+      "archive": "DoorStatus(2).lha",
+      "sha256": "e77497dcf53e47059170b7c343ac6116c64e8bd78ce23c3c6b1fcee6c053bf3b",
+      "entries": 5,
+      "size": 21230,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 5,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "DoorStatus.lha",
+        "byte_identical": true,
+        "canonical_sha256": "e77497dcf53e47059170b7c343ac6116c64e8bd78ce23c3c6b1fcee6c053bf3b"
+      },
+      "file_types": {
+        "documentation": 1,
+        "other": 4
+      },
+      "documentation_files": [
+        "readme.doc"
+      ],
+      "api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "door-behavior",
+        "finding": "DoorStatus is a concrete MAXs door and confirms runtime use of the message protocol and status/session interactions."
+      }
+    },
+    {
+      "archive": "Mdoors5(2).lha",
+      "sha256": "ac874453071d37ae4c3885da66085433beb724a5b8237a7e9601addcaf621c31",
+      "entries": 6,
+      "size": 269303,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 6,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors5.lha",
+        "byte_identical": true,
+        "canonical_sha256": "ac874453071d37ae4c3885da66085433beb724a5b8237a7e9601addcaf621c31"
+      },
+      "file_types": {
+        "other": 6
+      },
+      "documentation_files": [],
+      "api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "historical-door-corpus",
+        "finding": "Volume 5 reanalysed from payloads; primarily implementation/deployment evidence."
+      }
+    },
+    {
+      "archive": "Mdoors4(2).lha",
+      "sha256": "04fef8ec9ebd208fbce3dedea59d9b12da65ce5e43508d29265a5d6d7bcdceb1",
+      "entries": 16,
+      "size": 292107,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 16,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors4.lha",
+        "byte_identical": true,
+        "canonical_sha256": "04fef8ec9ebd208fbce3dedea59d9b12da65ce5e43508d29265a5d6d7bcdceb1"
+      },
+      "file_types": {
+        "other": 16
+      },
+      "documentation_files": [],
+      "api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "historical-door-corpus",
+        "finding": "Volume 4 reanalysed from payloads; primarily implementation/deployment evidence."
+      }
+    },
+    {
+      "archive": "Mdoors3(2).lha",
+      "sha256": "f7738849d6a863c74175d90727c752c0e3d7415a9e7121907fd2a71de60541c0",
+      "entries": 12,
+      "size": 246900,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 12,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors3.lha",
+        "byte_identical": true,
+        "canonical_sha256": "f7738849d6a863c74175d90727c752c0e3d7415a9e7121907fd2a71de60541c0"
+      },
+      "file_types": {
+        "other": 12
+      },
+      "documentation_files": [],
+      "api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "historical-door-corpus",
+        "finding": "Volume 3 reanalysed from payloads; primarily implementation/deployment evidence."
+      }
+    },
+    {
+      "archive": "Mdoors2(1).lha",
+      "sha256": "ec21b3e2989911ab1303345acd6d8782c41a9349d8ee52900e05ac8300d14504",
+      "entries": 8,
+      "size": 343191,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 8,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors2.lha",
+        "byte_identical": true,
+        "canonical_sha256": "ec21b3e2989911ab1303345acd6d8782c41a9349d8ee52900e05ac8300d14504"
+      },
+      "file_types": {
+        "other": 8
+      },
+      "documentation_files": [],
+      "api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "historical-door-corpus",
+        "finding": "Volume 2 extends the MAXs ecosystem corpus and deployment evidence."
+      }
+    },
+    {
+      "archive": "Mdoors1(1).lha",
+      "sha256": "bb7be4043cedf9907e380ca484c7fab59787d1ffcd46595580eb75842f364111",
+      "entries": 7,
+      "size": 336037,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 7,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors1.lha",
+        "byte_identical": true,
+        "canonical_sha256": "bb7be4043cedf9907e380ca484c7fab59787d1ffcd46595580eb75842f364111"
+      },
+      "file_types": {
+        "documentation": 1,
+        "other": 6
+      },
+      "documentation_files": [
+        "file_id.diz"
+      ],
+      "api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "historical-door-corpus",
+        "finding": "Volume 1 of a large compiled/documented MAXs door collection; valuable for breadth and deployment conventions but weaker than source for API semantics."
+      }
+    },
+    {
+      "archive": "ucdoor10(2).lha",
+      "sha256": "a895ce805c98a38b7c33830bd30fa71a68f8cfbe1a89863735aa3565462ef05e",
+      "entries": 64,
+      "size": 72316,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 64,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "ucdoor10.lha",
+        "byte_identical": true,
+        "canonical_sha256": "a895ce805c98a38b7c33830bd30fa71a68f8cfbe1a89863735aa3565462ef05e"
+      },
+      "file_types": {
+        "c-cpp": 2,
+        "documentation": 35,
+        "other": 27
+      },
+      "documentation_files": [
+        "ucdoor/guide/UCDoor_V1.0.guide",
+        "ucdoor/html/bugs.htm",
+        "ucdoor/html/carrier.htm",
+        "ucdoor/html/cdcls.htm",
+        "ucdoor/html/cddoor.htm",
+        "ucdoor/html/cdend.htm",
+        "ucdoor/html/cdgetstr.htm",
+        "ucdoor/html/cdmain.htm",
+        "ucdoor/html/cdputstr.htm",
+        "ucdoor/html/cdsetbg.htm",
+        "ucdoor/html/cdsetfg.htm",
+        "ucdoor/html/changeac.htm",
+        "ucdoor/html/copyrigh.htm",
+        "ucdoor/html/disclaim.htm",
+        "ucdoor/html/dofuncti.htm",
+        "ucdoor/html/filehere.htm",
+        "ucdoor/html/getchar.htm",
+        "ucdoor/html/getcharp.htm",
+        "ucdoor/html/getnumin.htm",
+        "ucdoor/html/getstrin.htm",
+        "ucdoor/html/getstrpr.htm",
+        "ucdoor/html/getuserd.htm",
+        "ucdoor/html/getuseri.htm",
+        "ucdoor/html/history.htm",
+        "ucdoor/html/installa.htm",
+        "ucdoor/html/introduc.htm",
+        "ucdoor/html/last.htm",
+        "ucdoor/html/main.htm",
+        "ucdoor/html/printfil.htm",
+        "ucdoor/html/putuserd.htm",
+        "ucdoor/html/referenc.htm",
+        "ucdoor/html/setcolor.htm",
+        "ucdoor/html/twitcurr.htm",
+        "ucdoor/html/usage.htm",
+        "ucdoor/html/waitmsg.htm"
+      ],
+      "api_symbols": [
+        {
+          "symbol": "node",
+          "occurrences": 42
+        },
+        {
+          "symbol": "DoorControl",
+          "occurrences": 5
+        },
+        {
+          "symbol": "DoorReply",
+          "occurrences": 5
+        },
+        {
+          "symbol": "carrier",
+          "occurrences": 3
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "value": 13,
+          "occurrences": 2
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "MsgPort",
+          "occurrences": 8
+        },
+        {
+          "name": "ud_Data",
+          "occurrences": 7
+        },
+        {
+          "name": "Task",
+          "occurrences": 4
+        },
+        {
+          "name": "file",
+          "occurrences": 2
+        },
+        {
+          "name": "md_DoorMsg",
+          "occurrences": 1
+        },
+        {
+          "name": "Message",
+          "occurrences": 1
+        },
+        {
+          "name": "ui_Header",
+          "occurrences": 1
+        },
+        {
+          "name": "ui_Data",
+          "occurrences": 1
+        },
+        {
+          "name": "ud_Header",
+          "occurrences": 1
+        }
+      ],
+      "top_functions": [
+        {
+          "name": "cd_Door",
+          "occurrences": 3
+        },
+        {
+          "name": "main",
+          "occurrences": 3
+        },
+        {
+          "name": "cd_Main",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_End",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_WaitMsg",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_CarrierLost",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_Cls",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_SetFG",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_SetBG",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_SetColors",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_PutStr",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_GetStr",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_GetStrPrompt",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_TwitCurrent",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_PrintFile",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_FileHere",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_DoFunction",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_GetNumInfo",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_GetStrInfo",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_GetUserIndex",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_GetUserData",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_PutUserData",
+          "occurrences": 1
+        },
+        {
+          "name": "cd_ChangeAccess",
+          "occurrences": 1
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "struct MsgPort   *doorControl;"
+        },
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "struct MsgPort   *doorReply;"
+        },
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "BOOL             is_CarrierLost;"
+        },
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "return(ERROR_CARRIER);"
+        },
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "rc = cd_GetNumInfo(UDC_TIMELEFT);"
+        },
+        {
+          "file": "ucdoor/demo/cd_test1.c",
+          "line": "sprintf(str,\"Current time left    : %d\",rc);"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "struct MsgPort       *DoorControl;"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "struct MsgPort       *DoorReply;"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "BOOL                 is_carrierLost;"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "ERROR_CARRIERLOST  -> Transm. ended"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "@{\"  cd_CarrierLost   \" link cdcarrierlost }"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "ERROR_CARRIER       - transmission ended"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "Usage  :     if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "cd_End(ERROR_CARRIER);"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "@node cdcarrier \"cd_CarrierLost()\""
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "@{B}BOOL cd_CarrierLost(void);@{UB}"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "Purpose: test status of 'is_CarrierLost' variable."
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/guide/UCDoor_V1.0.guide",
+          "line": "cd_End(ERROR_CARRIER);"
+        },
+        {
+          "file": "ucdoor/html/carrier.htm",
+          "line": "<TITLE>cd_CarrierLost()</TITLE>"
+        },
+        {
+          "file": "ucdoor/html/carrier.htm",
+          "line": "<B>BOOL cd_CarrierLost(void);</B>"
+        },
+        {
+          "file": "ucdoor/html/carrier.htm",
+          "line": "Purpose: test status of 'is_CarrierLost' variable."
+        },
+        {
+          "file": "ucdoor/html/carrier.htm",
+          "line": "if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/html/carrier.htm",
+          "line": "cd_End(ERROR_CARRIER);"
+        },
+        {
+          "file": "ucdoor/html/cdcls.htm",
+          "line": "<A HREF=\"carrier.htm\"><IMG SRC=\"images/prev.gif\" ALT=\"[Browse &lt;]\" BORDER=\"0\"></A>"
+        },
+        {
+          "file": "ucdoor/html/cddoor.htm",
+          "line": "<A HREF=\"carrier.htm\"><IMG SRC=\"images/next.gif\" ALT=\"[Browse &gt;]\" BORDER=\"0\"></A>"
+        },
+        {
+          "file": "ucdoor/html/cdend.htm",
+          "line": "Usage  :     if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/html/cdend.htm",
+          "line": "cd_End(ERROR_CARRIER);"
+        },
+        {
+          "file": "ucdoor/html/cdmain.htm",
+          "line": "ERROR_CARRIER       - transmission ended"
+        },
+        {
+          "file": "ucdoor/html/referenc.htm",
+          "line": "<LI><A HREF=\"carrier.htm\">  cd_CarrierLost   </A>"
+        },
+        {
+          "file": "ucdoor/html/usage.htm",
+          "line": "struct MsgPort       *DoorControl;"
+        },
+        {
+          "file": "ucdoor/html/usage.htm",
+          "line": "struct MsgPort       *DoorReply;"
+        },
+        {
+          "file": "ucdoor/html/usage.htm",
+          "line": "BOOL                 is_carrierLost;"
+        },
+        {
+          "file": "ucdoor/html/usage.htm",
+          "line": "if(cd_CarrierLost())"
+        },
+        {
+          "file": "ucdoor/html/usage.htm",
+          "line": "ERROR_CARRIERLOST  -> Transm. ended"
+        },
+        {
+          "file": "ucdoor/include/ucdoor.h",
+          "line": "#define PORTNAME1       \"DoorControl\""
+        },
+        {
+          "file": "ucdoor/include/ucdoor.h",
+          "line": "#define PORTNAME2       \"DoorReply\""
+        },
+        {
+          "file": "ucdoor/include/ucdoor.h",
+          "line": "#define UDC_TIMELEFT            7       /* Minutes online left */"
+        }
+      ],
+      "reviewed_finding": {
+        "family": "Universal C Door",
+        "role": "SDK-source",
+        "finding": "Reanalysis confirms a documented C wrapper SDK with headers, libraries, demos and callable operations. It is a portability layer over host behavior and should remain distinct from the underlying host-native protocols."
+      }
+    },
+    {
+      "archive": "runraw(2).lha",
+      "sha256": "d42ada96bbf70bca59e4f4c13d0802f306681b4fa89808c7d93cc3cb704ca68c",
+      "entries": 9,
+      "size": 160424,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 9,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "runraw.lha",
+        "byte_identical": true,
+        "canonical_sha256": "d42ada96bbf70bca59e4f4c13d0802f306681b4fa89808c7d93cc3cb704ca68c"
+      },
+      "file_types": {
+        "documentation": 2,
+        "other": 7
+      },
+      "documentation_files": [
+        "runraw/docs/register.doc",
+        "runraw/docs/runraw.guide"
+      ],
+      "api_symbols": [
+        {
+          "symbol": "node",
+          "occurrences": 22
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_functions": [],
+      "high_value_lines": [],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "launcher-runtime",
+        "finding": "Launcher and scripts for raw programs; no new source-level door contract."
+      }
+    },
+    {
+      "archive": "MCesrc(2).lha",
+      "sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba",
+      "entries": 3,
+      "size": 8127,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 3,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MCesrc.lha",
+        "byte_identical": true,
+        "canonical_sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba"
+      },
+      "file_types": {
+        "amiga-e": 1,
+        "documentation": 1,
+        "other": 1
+      },
+      "documentation_files": [
+        "Document.txt"
+      ],
+      "api_symbols": [
+        {
+          "symbol": "mxPrint",
+          "occurrences": 160
+        },
+        {
+          "symbol": "mxHotKey",
+          "occurrences": 8
+        },
+        {
+          "symbol": "mxGetStrInfo",
+          "occurrences": 7
+        },
+        {
+          "symbol": "DoorMsg",
+          "occurrences": 4
+        },
+        {
+          "symbol": "timeleft",
+          "occurrences": 4
+        },
+        {
+          "symbol": "carrier",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DoorControl",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DoorReply",
+          "occurrences": 1
+        },
+        {
+          "symbol": "node",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "value": 1,
+          "occurrences": 1
+        },
+        {
+          "value": 2,
+          "occurrences": 1
+        },
+        {
+          "value": 3,
+          "occurrences": 1
+        },
+        {
+          "value": 4,
+          "occurrences": 1
+        },
+        {
+          "value": 5,
+          "occurrences": 1
+        },
+        {
+          "value": 6,
+          "occurrences": 1
+        },
+        {
+          "value": 8,
+          "occurrences": 1
+        },
+        {
+          "value": 9,
+          "occurrences": 1
+        },
+        {
+          "value": 10,
+          "occurrences": 1
+        },
+        {
+          "value": 11,
+          "occurrences": 1
+        },
+        {
+          "value": 13,
+          "occurrences": 1
+        },
+        {
+          "value": 14,
+          "occurrences": 1
+        },
+        {
+          "value": 16,
+          "occurrences": 1
+        },
+        {
+          "value": 17,
+          "occurrences": 1
+        },
+        {
+          "value": 18,
+          "occurrences": 1
+        },
+        {
+          "value": 19,
+          "occurrences": 1
+        },
+        {
+          "value": 20,
+          "occurrences": 5
+        },
+        {
+          "value": 21,
+          "occurrences": 1
+        },
+        {
+          "value": 101,
+          "occurrences": 1
+        },
+        {
+          "value": 102,
+          "occurrences": 1
+        },
+        {
+          "value": 103,
+          "occurrences": 1
+        },
+        {
+          "value": 104,
+          "occurrences": 1
+        },
+        {
+          "value": 105,
+          "occurrences": 1
+        },
+        {
+          "value": 106,
+          "occurrences": 1
+        },
+        {
+          "value": 107,
+          "occurrences": 1
+        },
+        {
+          "value": 108,
+          "occurrences": 1
+        },
+        {
+          "value": 109,
+          "occurrences": 1
+        },
+        {
+          "value": 110,
+          "occurrences": 1
+        },
+        {
+          "value": 111,
+          "occurrences": 1
+        },
+        {
+          "value": 112,
+          "occurrences": 1
+        },
+        {
+          "value": 114,
+          "occurrences": 1
+        },
+        {
+          "value": 115,
+          "occurrences": 1
+        },
+        {
+          "value": 116,
+          "occurrences": 1
+        },
+        {
+          "value": 117,
+          "occurrences": 1
+        },
+        {
+          "value": 118,
+          "occurrences": 1
+        },
+        {
+          "value": 123,
+          "occurrences": 1
+        },
+        {
+          "value": 124,
+          "occurrences": 1
+        },
+        {
+          "value": 128,
+          "occurrences": 1
+        },
+        {
+          "value": 133,
+          "occurrences": 1
+        },
+        {
+          "value": 135,
+          "occurrences": 1
+        },
+        {
+          "value": 136,
+          "occurrences": 1
+        },
+        {
+          "value": 138,
+          "occurrences": 1
+        },
+        {
+          "value": 200,
+          "occurrences": 1
+        },
+        {
+          "value": 201,
+          "occurrences": 1
+        },
+        {
+          "value": 202,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "goat",
+          "occurrences": 11
+        },
+        {
+          "name": "str",
+          "occurrences": 5
+        },
+        {
+          "name": "rt",
+          "occurrences": 4
+        },
+        {
+          "name": "doormsg",
+          "occurrences": 1
+        },
+        {
+          "name": "msgportname",
+          "occurrences": 1
+        },
+        {
+          "name": "n",
+          "occurrences": 1
+        },
+        {
+          "name": "rmsg",
+          "occurrences": 1
+        },
+        {
+          "name": "c",
+          "occurrences": 1
+        }
+      ],
+      "top_functions": [
+        {
+          "name": "theDoor",
+          "occurrences": 1
+        },
+        {
+          "name": "elitemode",
+          "occurrences": 1
+        },
+        {
+          "name": "voweled",
+          "occurrences": 1
+        },
+        {
+          "name": "bumpy",
+          "occurrences": 1
+        },
+        {
+          "name": "spacetag",
+          "occurrences": 1
+        },
+        {
+          "name": "chattype1",
+          "occurrences": 1
+        },
+        {
+          "name": "chatsix",
+          "occurrences": 1
+        },
+        {
+          "name": "mxAltertime",
+          "occurrences": 1
+        },
+        {
+          "name": "mxCentre",
+          "occurrences": 1
+        },
+        {
+          "name": "mxPrint",
+          "occurrences": 1
+        },
+        {
+          "name": "mxPrintLocal",
+          "occurrences": 1
+        },
+        {
+          "name": "mxCharSer",
+          "occurrences": 1
+        },
+        {
+          "name": "mxCharScr",
+          "occurrences": 1
+        },
+        {
+          "name": "mxCharbbs",
+          "occurrences": 1
+        },
+        {
+          "name": "mxInput",
+          "occurrences": 1
+        },
+        {
+          "name": "mxHotKey",
+          "occurrences": 1
+        },
+        {
+          "name": "mxNoWaitHotKey",
+          "occurrences": 1
+        },
+        {
+          "name": "mxTwit",
+          "occurrences": 1
+        },
+        {
+          "name": "mxPrintFile",
+          "occurrences": 1
+        },
+        {
+          "name": "mxCheckFile",
+          "occurrences": 1
+        },
+        {
+          "name": "mxGetIntInfo",
+          "occurrences": 1
+        },
+        {
+          "name": "mxGetStrInfo",
+          "occurrences": 1
+        },
+        {
+          "name": "mxChangeStr",
+          "occurrences": 1
+        },
+        {
+          "name": "mxRandom",
+          "occurrences": 1
+        },
+        {
+          "name": "mxResetCarr",
+          "occurrences": 1
+        },
+        {
+          "name": "mxShowGfx",
+          "occurrences": 1
+        },
+        {
+          "name": "mxShutDown",
+          "occurrences": 1
+        },
+        {
+          "name": "mxLogOff",
+          "occurrences": 1
+        },
+        {
+          "name": "mxGotoMenu",
+          "occurrences": 1
+        },
+        {
+          "name": "mxChatCall",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetAnsiFlag",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetCls",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetPause",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetFSE",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetLines",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetLoc",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetFone",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetCompDesc",
+          "occurrences": 1
+        },
+        {
+          "name": "mxSetPass",
+          "occurrences": 1
+        },
+        {
+          "name": "mxPrintFileNP",
+          "occurrences": 1
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "MagnumChat.e",
+          "line": "OBJECT doormsg"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "carrier:INT"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "ourtask,cport=NIL:PTR TO mp, lost_carrier=0, wherefrom:PTR TO CHAR,"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "p1:doormsg,chattype, xpos1, xpos2, ypos1, ypos2, freeze, key, wordtwo[80]:STRING,"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "city[30]:STRING, mins, length3, insert, timeleft, timenow,"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF(lost_carrier=1) THEN RETURN"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF(lost_carrier=1) THEN RETURN"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF(lost_carrier=1) THEN RETURN"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF(lost_carrier=1) THEN RETURN"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "timeleft:=mxGetIntInfo(7)"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF timenow<timeleft"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF(lost_carrier=1) THEN RETURN"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "IF timenow<timeleft"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "-> Reset Carrier PARAGON ONLY!"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "PROC putWaitMsg(msg:PTR TO doormsg)"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "lost_carrier:=p1.carrier"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "StringF(msgportname,'DoorControl\\c',Char(arg))"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "StringF(msgportname2,'DoorReply\\c',Char(arg))"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": "p1.door_msg.length:=SIZEOF doormsg"
+        }
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "wrapper-source",
+        "finding": "Amiga E wrapper source exposes a broad command namespace. Numeric observations remain non-normative unless semantic documentation is explicit."
+      }
+    },
+    {
+      "archive": "CDoorExample(2).lha",
+      "sha256": "097b33d57cef234b959bfb4ff5972a6c73a81077f1ea8d5d75ed2407ff4fee06",
+      "entries": 2,
+      "size": 2733,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 2,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "CDoorExample.lha",
+        "byte_identical": true,
+        "canonical_sha256": "097b33d57cef234b959bfb4ff5972a6c73a81077f1ea8d5d75ed2407ff4fee06"
+      },
+      "file_types": {
+        "c-cpp": 1,
+        "other": 1
+      },
+      "documentation_files": [],
+      "api_symbols": [
+        {
+          "symbol": "DoorMsg",
+          "occurrences": 46
+        },
+        {
+          "symbol": "DoorControl",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DoorReply",
+          "occurrences": 1
+        },
+        {
+          "symbol": "carrier",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "value": 1,
+          "occurrences": 1
+        },
+        {
+          "value": 6,
+          "occurrences": 1
+        },
+        {
+          "value": 8,
+          "occurrences": 1
+        },
+        {
+          "value": 10,
+          "occurrences": 1
+        },
+        {
+          "value": 14,
+          "occurrences": 1
+        },
+        {
+          "value": 20,
+          "occurrences": 1
+        },
+        {
+          "value": 200,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "Message",
+          "occurrences": 9
+        },
+        {
+          "name": "DoorMsg",
+          "occurrences": 3
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 3
+        },
+        {
+          "name": "Task",
+          "occurrences": 2
+        }
+      ],
+      "top_functions": [
+        {
+          "name": "end",
+          "occurrences": 1
+        },
+        {
+          "name": "getsvar",
+          "occurrences": 1
+        },
+        {
+          "name": "sendmessage",
+          "occurrences": 1
+        },
+        {
+          "name": "hotkey",
+          "occurrences": 1
+        },
+        {
+          "name": "prompt",
+          "occurrences": 1
+        },
+        {
+          "name": "showfile",
+          "occurrences": 1
+        },
+        {
+          "name": "domenu",
+          "occurrences": 1
+        },
+        {
+          "name": "changeuserint",
+          "occurrences": 1
+        },
+        {
+          "name": "main",
+          "occurrences": 1
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "door.c",
+          "line": "struct DoorMsg {"
+        },
+        {
+          "file": "door.c",
+          "line": "short carrier;"
+        },
+        {
+          "file": "door.c",
+          "line": "struct DoorMsg *doormsg,*garbage;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 20;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "FreeMem(doormsg,(long)sizeof(*doormsg));"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->data = typ;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 14;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(mstring,doormsg->string);"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->data = nl;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 1;"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(doormsg->string,mstring);"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(doormsg->string,mstring);"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 8;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(ostring,doormsg->string);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(doormsg->string,mstring);"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->data=len;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 6;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(ostring,doormsg->string);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(doormsg->string,mstring);"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 10;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "strcpy(doormsg->string,filename);"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = menu+100;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->data\t = extra;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "ptr = (long *)&doormsg->string;\t/* We need a long value not a ptr */"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->command = 200;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->data    = number;"
+        },
+        {
+          "file": "door.c",
+          "line": "PutMsg(MyPort,(struct Message *)doormsg);"
+        },
+        {
+          "file": "door.c",
+          "line": "sprintf(buffer,\"DoorReply%c\",line_number);"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg=(struct DoorMsg *)AllocMem((long)sizeof(*doormsg),MEMF_PUBLIC);"
+        },
+        {
+          "file": "door.c",
+          "line": "if(doormsg==0)"
+        },
+        {
+          "file": "door.c",
+          "line": "puts(\"Couldn't allocate DoorMsg!\");"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->Door_Msg.mn_Node.ln_Type = NT_MESSAGE;"
+        },
+        {
+          "file": "door.c",
+          "line": "doormsg->Door_Msg.mn_ReplyPort = replyport;"
+        }
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "minimal-source-example",
+        "finding": "Small C source example directly demonstrates DoorMsg/DoorControl/DoorReply and core commands; high-confidence behavioral evidence."
+      }
+    }
+  ]
+}

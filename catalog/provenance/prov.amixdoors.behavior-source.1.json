@@ -1,0 +1,19 @@
+{
+  "id": "prov.amixdoors.behavior-source.1",
+  "claim_type": "behavior-corpus",
+  "api": "aedoor",
+  "status": "observed",
+  "summary": "The AmiXDoors source snapshot demonstrates practical AmiExpress doors and network-backed door behavior",
+  "sources": [
+    {
+      "archive": "AmiXDoors-master.zip",
+      "path": "AmiXDoors-master/BBSLink/bbslink.e",
+      "symbol": "BBSLink door source"
+    },
+    {
+      "archive": "AmiXDoors-master.zip",
+      "path": "AmiXDoors-master/BBSLink/readme.txt",
+      "symbol": "door documentation"
+    }
+  ]
+}

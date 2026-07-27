@@ -1,6 +1,6 @@
 {
-  "archive_count": 30,
-  "entry_count": 1150,
+  "archive_count": 38,
+  "entry_count": 1371,
   "archives": [
     {
       "archive": "ABBS320_999.lha",
@@ -31,6 +31,18 @@
       "sha256": "12a6ad9d83d50cb0c6009d10bb1d5cc13d565ac00e35b25be4225fabc22471a1",
       "entries": 4,
       "size": 4828
+    },
+    {
+      "archive": "AmiExpress-master.zip",
+      "sha256": "f4c6f2663c7be07731ed45eb2f84b28d4b061f0e07b1cdc1bbba6a8ddd850e91",
+      "entries": 81,
+      "size": 1199010
+    },
+    {
+      "archive": "AmiXDoors-master.zip",
+      "sha256": "bdff0d948efbb429f3b927d5001e053b7cf637bbd48940bb8399ba9d74e8a8dd",
+      "entries": 86,
+      "size": 266736
     },
     {
       "archive": "ArisDoors4MAXs.lha",
@@ -73,6 +85,12 @@
       "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
       "entries": 14,
       "size": 23791
+    },
+    {
+      "archive": "DoorStatus.lha",
+      "sha256": "e77497dcf53e47059170b7c343ac6116c64e8bd78ce23c3c6b1fcee6c053bf3b",
+      "entries": 5,
+      "size": 21230
     },
     {
       "archive": "fame_dh.lha",
@@ -151,6 +169,36 @@
       "sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba",
       "entries": 3,
       "size": 8127
+    },
+    {
+      "archive": "Mdoors1.lha",
+      "sha256": "bb7be4043cedf9907e380ca484c7fab59787d1ffcd46595580eb75842f364111",
+      "entries": 7,
+      "size": 336037
+    },
+    {
+      "archive": "Mdoors2.lha",
+      "sha256": "ec21b3e2989911ab1303345acd6d8782c41a9349d8ee52900e05ac8300d14504",
+      "entries": 8,
+      "size": 343191
+    },
+    {
+      "archive": "Mdoors3.lha",
+      "sha256": "f7738849d6a863c74175d90727c752c0e3d7415a9e7121907fd2a71de60541c0",
+      "entries": 12,
+      "size": 246900
+    },
+    {
+      "archive": "Mdoors4.lha",
+      "sha256": "04fef8ec9ebd208fbce3dedea59d9b12da65ce5e43508d29265a5d6d7bcdceb1",
+      "entries": 16,
+      "size": 292107
+    },
+    {
+      "archive": "Mdoors5.lha",
+      "sha256": "ac874453071d37ae4c3885da66085433beb724a5b8237a7e9601addcaf621c31",
+      "entries": 6,
+      "size": 269303
     },
     {
       "archive": "par2dlg.lha",

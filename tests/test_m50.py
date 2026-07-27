@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class M50Tests(unittest.TestCase):
     def test_archive_totals(self):
         data=json.loads((ROOT / "catalog/archive-index.json").read_text())
-        self.assertEqual((data["archive_count"], data["entry_count"]), (30, 1150))
+        self.assertEqual((data["archive_count"], data["entry_count"]), (38, 1371))
 
     def test_reanalysis_covers_every_upload(self):
         data=json.loads((ROOT / "catalog/evidence/m50-comprehensive-archive-reanalysis.json").read_text())

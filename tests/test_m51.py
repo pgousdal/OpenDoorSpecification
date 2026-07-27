@@ -64,4 +64,4 @@ class M51Tests(unittest.TestCase):
 
     def test_canonical_totals_do_not_change(self):
         index = json.loads((ROOT / "catalog/archive-index.json").read_text())
-        self.assertEqual((index["archive_count"], index["entry_count"]), (30, 1150))
+        self.assertEqual((index["archive_count"], index["entry_count"]), (38, 1371))

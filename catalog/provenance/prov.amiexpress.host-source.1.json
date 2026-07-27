@@ -1,0 +1,19 @@
+{
+  "id": "prov.amiexpress.host-source.1",
+  "claim_type": "source-corroboration",
+  "api": "aedoor",
+  "status": "observed",
+  "summary": "The AmiExpress source snapshot provides host implementation context for node, session, command and transfer behavior",
+  "sources": [
+    {
+      "archive": "AmiExpress-master.zip",
+      "path": "AmiExpress-master/express.e",
+      "symbol": "AmiExpress host implementation"
+    },
+    {
+      "archive": "AmiExpress-master.zip",
+      "path": "AmiExpress-master/README.md",
+      "symbol": "repository documentation"
+    }
+  ]
+}

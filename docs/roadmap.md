@@ -118,3 +118,8 @@ Completed: all supplied archives were reprocessed, a preserved ABBS 2.0 source s
 ## M5.1 — Second comprehensive archive reanalysis
 
 Completed: reprocessed 20 additional archive uploads, confirmed their duplicate status, and recorded deeper cross-language API and protocol findings without inflating canonical archive or provenance counts.
+
+
+## M5.2 — Comprehensive AmiExpress corpus reanalysis (complete)
+
+See `docs/m52-comprehensive-amiexpress-reanalysis.md`.
