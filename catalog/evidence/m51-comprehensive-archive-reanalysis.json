@@ -1,0 +1,5769 @@
+{
+  "schema_version": 1,
+  "milestone": "M5.1",
+  "title": "Comprehensive reanalysis of second archive batch",
+  "archive_count": 20,
+  "methodology": [
+    "Computed SHA-256 from each uploaded byte stream.",
+    "Parsed every LHA/LZH entry header.",
+    "Decompressed -lh0- and -lh5- payloads with repository parsers.",
+    "Classified source and documentation files.",
+    "Scanned extracted text for API symbols, message commands, structures, includes, and lifecycle evidence.",
+    "Compared every upload with canonical archive bytes.",
+    "Did not infer semantics solely from filenames or undecoded payloads."
+  ],
+  "archives": [
+    {
+      "archive": "runraw(1).lha",
+      "sha256": "d42ada96bbf70bca59e4f4c13d0802f306681b4fa89808c7d93cc3cb704ca68c",
+      "entries": 9,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 9,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "runraw.lha",
+        "byte_identical": true,
+        "canonical_sha256": "d42ada96bbf70bca59e4f4c13d0802f306681b4fa89808c7d93cc3cb704ca68c"
+      },
+      "file_types": {
+        "other": 6,
+        "documentation": 3
+      },
+      "text_files": 7,
+      "text_characters": 131382,
+      "documentation_files": [
+        "runraw/docs/register.doc",
+        "runraw/docs/runraw.guide",
+        "runraw/docs/runraw.guide.BAK"
+      ],
+      "api_symbols": {},
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "runraw",
+          "occurrences": 2
+        },
+        {
+          "name": "miniatures",
+          "occurrences": 2
+        },
+        {
+          "name": "miniature",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "runraw/docs/runraw.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "runraw/docs/runraw.guide.BAK",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "runraw/c/colour_shift",
+        "runraw/c/runraw",
+        "runraw/docs/register.doc",
+        "runraw/docs/runraw.guide",
+        "runraw/docs/runraw.guide.BAK",
+        "runraw/other/ScreenFool30.lha",
+        "runraw/s/runraw1",
+        "runraw/s/runraw2",
+        "runraw/s/runraw3"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "launcher-runtime",
+        "finding": "Documentation and scripts describe launching raw external programs; no source-level door API implementation is present."
+      }
+    },
+    {
+      "archive": "MCesrc(1).lha",
+      "sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba",
+      "entries": 3,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 3,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "MCesrc.lha",
+        "byte_identical": true,
+        "canonical_sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba"
+      },
+      "file_types": {
+        "documentation": 2,
+        "amiga-e": 1
+      },
+      "text_files": 3,
+      "text_characters": 31304,
+      "documentation_files": [
+        "Document.txt",
+        "MCesrc.readme"
+      ],
+      "api_symbols": {
+        "paragon_maxs": [
+          {
+            "symbol": "mxPrint",
+            "occurrences": 160
+          },
+          {
+            "symbol": "mxGotoXY",
+            "occurrences": 136
+          },
+          {
+            "symbol": "mxColour",
+            "occurrences": 82
+          },
+          {
+            "symbol": "mxCharbbs",
+            "occurrences": 20
+          },
+          {
+            "symbol": "mxHotKey",
+            "occurrences": 8
+          },
+          {
+            "symbol": "mxCls",
+            "occurrences": 7
+          },
+          {
+            "symbol": "mxGetStrInfo",
+            "occurrences": 7
+          },
+          {
+            "symbol": "mxCentre",
+            "occurrences": 6
+          },
+          {
+            "symbol": "mxPrintLine",
+            "occurrences": 6
+          },
+          {
+            "symbol": "mxStyle",
+            "occurrences": 5
+          },
+          {
+            "symbol": "mxGetIntInfo",
+            "occurrences": 4
+          },
+          {
+            "symbol": "mxNoWaitHotKey",
+            "occurrences": 3
+          },
+          {
+            "symbol": "mxMenuFunct",
+            "occurrences": 3
+          },
+          {
+            "symbol": "mxAltertime",
+            "occurrences": 3
+          },
+          {
+            "symbol": "mxSetPageFlag",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxLogOff",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxPrintFile",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxPrintLocal",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxCharSer",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxCharScr",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxInput",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxTwit",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxCheckFile",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxChangeStr",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxRandom",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxResetCarr",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxShowGfx",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxShutDown",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxGotoMenu",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxChatCall",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetAnsiFlag",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetCls",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetPause",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetFSE",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetLines",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetLoc",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetFone",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetCompDesc",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxSetPass",
+            "occurrences": 1
+          },
+          {
+            "symbol": "mxPrintFileNP",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 1,
+          "occurrences": 1
+        },
+        {
+          "command": 2,
+          "occurrences": 1
+        },
+        {
+          "command": 3,
+          "occurrences": 1
+        },
+        {
+          "command": 4,
+          "occurrences": 1
+        },
+        {
+          "command": 5,
+          "occurrences": 1
+        },
+        {
+          "command": 6,
+          "occurrences": 1
+        },
+        {
+          "command": 8,
+          "occurrences": 1
+        },
+        {
+          "command": 9,
+          "occurrences": 1
+        },
+        {
+          "command": 10,
+          "occurrences": 1
+        },
+        {
+          "command": 11,
+          "occurrences": 1
+        },
+        {
+          "command": 13,
+          "occurrences": 1
+        },
+        {
+          "command": 14,
+          "occurrences": 1
+        },
+        {
+          "command": 16,
+          "occurrences": 1
+        },
+        {
+          "command": 17,
+          "occurrences": 1
+        },
+        {
+          "command": 18,
+          "occurrences": 1
+        },
+        {
+          "command": 19,
+          "occurrences": 1
+        },
+        {
+          "command": 20,
+          "occurrences": 5
+        },
+        {
+          "command": 21,
+          "occurrences": 1
+        },
+        {
+          "command": 101,
+          "occurrences": 1
+        },
+        {
+          "command": 102,
+          "occurrences": 1
+        },
+        {
+          "command": 103,
+          "occurrences": 1
+        },
+        {
+          "command": 104,
+          "occurrences": 1
+        },
+        {
+          "command": 105,
+          "occurrences": 1
+        },
+        {
+          "command": 106,
+          "occurrences": 1
+        },
+        {
+          "command": 107,
+          "occurrences": 1
+        },
+        {
+          "command": 108,
+          "occurrences": 1
+        },
+        {
+          "command": 109,
+          "occurrences": 1
+        },
+        {
+          "command": 110,
+          "occurrences": 1
+        },
+        {
+          "command": 111,
+          "occurrences": 1
+        },
+        {
+          "command": 112,
+          "occurrences": 1
+        },
+        {
+          "command": 114,
+          "occurrences": 1
+        },
+        {
+          "command": 115,
+          "occurrences": 1
+        },
+        {
+          "command": 116,
+          "occurrences": 1
+        },
+        {
+          "command": 117,
+          "occurrences": 1
+        },
+        {
+          "command": 118,
+          "occurrences": 1
+        },
+        {
+          "command": 123,
+          "occurrences": 1
+        },
+        {
+          "command": 124,
+          "occurrences": 1
+        },
+        {
+          "command": 128,
+          "occurrences": 1
+        },
+        {
+          "command": 133,
+          "occurrences": 1
+        },
+        {
+          "command": 135,
+          "occurrences": 1
+        },
+        {
+          "command": 136,
+          "occurrences": 1
+        },
+        {
+          "command": 138,
+          "occurrences": 1
+        },
+        {
+          "command": 200,
+          "occurrences": 1
+        },
+        {
+          "command": 201,
+          "occurrences": 1
+        },
+        {
+          "command": 202,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "p1",
+          "occurrences": 3
+        },
+        {
+          "name": "doormsg",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "MagnumChat.e",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "logoff"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "node"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "autoinsert"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "msgport"
+        },
+        {
+          "file": "MagnumChat.e",
+          "keyword": "door port"
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "MagnumChat.e",
+          "line": 1891,
+          "text": "StringF(msgportname,'DoorControl\\c',Char(arg))"
+        },
+        {
+          "file": "MagnumChat.e",
+          "line": 1892,
+          "text": "StringF(msgportname2,'DoorReply\\c',Char(arg))"
+        }
+      ],
+      "sample_files": [
+        "Document.txt",
+        "MCesrc.readme",
+        "MagnumChat.e"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "Amiga E door source",
+        "finding": "MagnumChat.e independently implements DoorControl/DoorReply IPC and wrappers covering commands 1-21, 101-138, and 200-202."
+      }
+    },
+    {
+      "archive": "CDoorExample(1).lha",
+      "sha256": "097b33d57cef234b959bfb4ff5972a6c73a81077f1ea8d5d75ed2407ff4fee06",
+      "entries": 2,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 2,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "CDoorExample.lha",
+        "byte_identical": true,
+        "canonical_sha256": "097b33d57cef234b959bfb4ff5972a6c73a81077f1ea8d5d75ed2407ff4fee06"
+      },
+      "file_types": {
+        "documentation": 1,
+        "c": 1
+      },
+      "text_files": 2,
+      "text_characters": 7542,
+      "documentation_files": [
+        "door.readme"
+      ],
+      "api_symbols": {
+        "paragon_maxs": [
+          {
+            "symbol": "DoorMsg",
+            "occurrences": 4
+          },
+          {
+            "symbol": "DoorControl",
+            "occurrences": 3
+          },
+          {
+            "symbol": "DoorReply",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 1,
+          "occurrences": 12
+        },
+        {
+          "command": 6,
+          "occurrences": 1
+        },
+        {
+          "command": 8,
+          "occurrences": 1
+        },
+        {
+          "command": 10,
+          "occurrences": 1
+        },
+        {
+          "command": 14,
+          "occurrences": 1
+        },
+        {
+          "command": 20,
+          "occurrences": 1
+        },
+        {
+          "command": 200,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "Message",
+          "occurrences": 9
+        },
+        {
+          "name": "DoorMsg",
+          "occurrences": 3
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 3
+        },
+        {
+          "name": "Task",
+          "occurrences": 2
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "clib/exec_protos.h",
+          "occurrences": 1
+        },
+        {
+          "name": "clib/alib_protos.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/exec.h",
+          "occurrences": 1
+        },
+        {
+          "name": "stdlib.h",
+          "occurrences": 1
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 1
+        },
+        {
+          "name": "string.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "door.c",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "door.c",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "door.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "door.c",
+          "keyword": "node"
+        },
+        {
+          "file": "door.c",
+          "keyword": "msgport"
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "door.c",
+          "line": 12,
+          "text": "struct DoorMsg {"
+        },
+        {
+          "file": "door.c",
+          "line": 20,
+          "text": "struct DoorMsg *doormsg,*garbage;"
+        },
+        {
+          "file": "door.c",
+          "line": 34,
+          "text": "doormsg->command = 20;"
+        },
+        {
+          "file": "door.c",
+          "line": 53,
+          "text": "doormsg->command = 14;"
+        },
+        {
+          "file": "door.c",
+          "line": 70,
+          "text": "doormsg->command = 1;"
+        },
+        {
+          "file": "door.c",
+          "line": 87,
+          "text": "doormsg->command = 8;"
+        },
+        {
+          "file": "door.c",
+          "line": 104,
+          "text": "doormsg->command = 6;"
+        },
+        {
+          "file": "door.c",
+          "line": 118,
+          "text": "doormsg->command = 10;"
+        },
+        {
+          "file": "door.c",
+          "line": 132,
+          "text": "doormsg->command = menu+100;"
+        },
+        {
+          "file": "door.c",
+          "line": 147,
+          "text": "doormsg->command = 200;"
+        },
+        {
+          "file": "door.c",
+          "line": 171,
+          "text": "sprintf(buffer,\"DoorReply%c\",line_number);"
+        },
+        {
+          "file": "door.c",
+          "line": 174,
+          "text": "doormsg=(struct DoorMsg *)AllocMem((long)sizeof(*doormsg),MEMF_PUBLIC);"
+        },
+        {
+          "file": "door.c",
+          "line": 186,
+          "text": "/* Locate the correct DoorControl port based on the line number */"
+        },
+        {
+          "file": "door.c",
+          "line": 188,
+          "text": "sprintf(cportname,\"DoorControl%c\",line_number);"
+        },
+        {
+          "file": "door.c",
+          "line": 192,
+          "text": "puts(\"DoorControl port not located!\");"
+        }
+      ],
+      "sample_files": [
+        "door.c",
+        "door.readme"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "minimal C example",
+        "finding": "Minimal C source defines DoorMsg and directly demonstrates commands 1, 6, 8, 10, 14, 20, and 200."
+      }
+    },
+    {
+      "archive": "ArisDoors4MAXs(1).lha",
+      "sha256": "df13b1aa671f4534be08d6e065e62a6061cfe4c1e00d13365962e05932fa584c",
+      "entries": 206,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 206,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "ArisDoors4MAXs.lha",
+        "byte_identical": true,
+        "canonical_sha256": "df13b1aa671f4534be08d6e065e62a6061cfe4c1e00d13365962e05932fa584c"
+      },
+      "file_types": {
+        "documentation": 33,
+        "c": 63,
+        "other": 104,
+        "asm": 1,
+        "amos": 4,
+        "library": 1
+      },
+      "text_files": 154,
+      "text_characters": 823287,
+      "documentation_files": [
+        "arisdoors4maxs/ReadmeFirst.OrDie",
+        "arisdoors4maxs/amos/ReadMe.First",
+        "arisdoors4maxs/ansee/ReadMe.First",
+        "arisdoors4maxs/ansi_art/ReadMe.First",
+        "arisdoors4maxs/arise/ReadMe.First",
+        "arisdoors4maxs/arise/SpcEmp.doc",
+        "arisdoors4maxs/bbs_lister/BBS_lister.doc",
+        "arisdoors4maxs/bbs_lister/ReadMe.First",
+        "arisdoors4maxs/cdrom_lister/ReadMe.First",
+        "arisdoors4maxs/cli/ReadMe.First",
+        "arisdoors4maxs/clicontrol/Control.doc",
+        "arisdoors4maxs/clicontrol/ReadMe.First",
+        "arisdoors4maxs/clicontrol/loguser.doc",
+        "arisdoors4maxs/config_killer/Distributor.doc",
+        "arisdoors4maxs/config_killer/ReadMe.First",
+        "arisdoors4maxs/crap_invaders/ReadMe.First",
+        "arisdoors4maxs/directdownload/ReadMe.First",
+        "arisdoors4maxs/file_lister/ReadMe.First",
+        "arisdoors4maxs/joke/ReadMe.First",
+        "arisdoors4maxs/joke/joke.doc",
+        "arisdoors4maxs/minrows/ReadMe.First",
+        "arisdoors4maxs/nice_chat/ReadMe.First",
+        "arisdoors4maxs/optimiser/Optimiser.doc",
+        "arisdoors4maxs/optimiser/Optimiser_Installer.doc",
+        "arisdoors4maxs/optimiser/ReadMe.First",
+        "arisdoors4maxs/othello/Othello.doc",
+        "arisdoors4maxs/othello/ReadMe.First",
+        "arisdoors4maxs/section_mover/ReadMe.First",
+        "arisdoors4maxs/settings/ReadMe.First",
+        "arisdoors4maxs/sysopactivity/ReadMe.First",
+        "arisdoors4maxs/upload_lister/ReadMe.First",
+        "arisdoors4maxs/upload_lister/Upload_lister.doc",
+        "arisdoors4maxs/view/ReadMe.First"
+      ],
+      "api_symbols": {
+        "paragon_maxs": [
+          {
+            "symbol": "DoorMsg",
+            "occurrences": 79
+          },
+          {
+            "symbol": "DoorControl",
+            "occurrences": 35
+          },
+          {
+            "symbol": "DoorReply",
+            "occurrences": 17
+          }
+        ],
+        "ambos": [
+          {
+            "symbol": "BBSPATH",
+            "occurrences": 2
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 0,
+          "occurrences": 281
+        },
+        {
+          "command": 1,
+          "occurrences": 486
+        },
+        {
+          "command": 2,
+          "occurrences": 64
+        },
+        {
+          "command": 3,
+          "occurrences": 66
+        },
+        {
+          "command": 4,
+          "occurrences": 43
+        },
+        {
+          "command": 5,
+          "occurrences": 42
+        },
+        {
+          "command": 6,
+          "occurrences": 42
+        },
+        {
+          "command": 7,
+          "occurrences": 52
+        },
+        {
+          "command": 8,
+          "occurrences": 41
+        },
+        {
+          "command": 9,
+          "occurrences": 39
+        },
+        {
+          "command": 10,
+          "occurrences": 37
+        },
+        {
+          "command": 11,
+          "occurrences": 36
+        },
+        {
+          "command": 12,
+          "occurrences": 37
+        },
+        {
+          "command": 13,
+          "occurrences": 38
+        },
+        {
+          "command": 14,
+          "occurrences": 35
+        },
+        {
+          "command": 15,
+          "occurrences": 35
+        },
+        {
+          "command": 20,
+          "occurrences": 35
+        },
+        {
+          "command": 21,
+          "occurrences": 35
+        },
+        {
+          "command": 32,
+          "occurrences": 2
+        },
+        {
+          "command": 200,
+          "occurrences": 35
+        },
+        {
+          "command": 201,
+          "occurrences": 35
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "Message",
+          "occurrences": 402
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 129
+        },
+        {
+          "name": "DoorMsg",
+          "occurrences": 34
+        },
+        {
+          "name": "Task",
+          "occurrences": 34
+        },
+        {
+          "name": "Library",
+          "occurrences": 18
+        },
+        {
+          "name": "IntuiMessage",
+          "occurrences": 16
+        },
+        {
+          "name": "Window",
+          "occurrences": 14
+        },
+        {
+          "name": "DateStamp",
+          "occurrences": 13
+        },
+        {
+          "name": "IntuitionBase",
+          "occurrences": 13
+        },
+        {
+          "name": "configure",
+          "occurrences": 13
+        },
+        {
+          "name": "ART_index",
+          "occurrences": 12
+        },
+        {
+          "name": "scores_struct",
+          "occurrences": 11
+        },
+        {
+          "name": "globals",
+          "occurrences": 10
+        },
+        {
+          "name": "Screen",
+          "occurrences": 9
+        },
+        {
+          "name": "Gadget",
+          "occurrences": 9
+        },
+        {
+          "name": "stat",
+          "occurrences": 8
+        },
+        {
+          "name": "move",
+          "occurrences": 7
+        },
+        {
+          "name": "of",
+          "occurrences": 6
+        },
+        {
+          "name": "StringInfo",
+          "occurrences": 5
+        },
+        {
+          "name": "Node",
+          "occurrences": 5
+        },
+        {
+          "name": "config_struct",
+          "occurrences": 4
+        },
+        {
+          "name": "IOAudio",
+          "occurrences": 4
+        },
+        {
+          "name": "NewGadget",
+          "occurrences": 4
+        },
+        {
+          "name": "DateTime",
+          "occurrences": 4
+        },
+        {
+          "name": "IORequest",
+          "occurrences": 3
+        },
+        {
+          "name": "MinList",
+          "occurrences": 3
+        },
+        {
+          "name": "RastPort",
+          "occurrences": 3
+        },
+        {
+          "name": "MinNode",
+          "occurrences": 3
+        },
+        {
+          "name": "InputEvent",
+          "occurrences": 3
+        },
+        {
+          "name": "othello_struct",
+          "occurrences": 2
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "string.h",
+          "occurrences": 33
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 32
+        },
+        {
+          "name": "stdlib.h",
+          "occurrences": 31
+        },
+        {
+          "name": "Aridoorstuff.h",
+          "occurrences": 30
+        },
+        {
+          "name": "clib/exec_protos.h",
+          "occurrences": 22
+        },
+        {
+          "name": "exec/exec.h",
+          "occurrences": 21
+        },
+        {
+          "name": "fcntl.h",
+          "occurrences": 18
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 10
+        },
+        {
+          "name": "stat.h",
+          "occurrences": 8
+        },
+        {
+          "name": "intuition/intuition.h",
+          "occurrences": 7
+        },
+        {
+          "name": "ctype.h",
+          "occurrences": 6
+        },
+        {
+          "name": "intuition/intuitionbase.h",
+          "occurrences": 6
+        },
+        {
+          "name": "intuition/screens.h",
+          "occurrences": 6
+        },
+        {
+          "name": "math.h",
+          "occurrences": 5
+        },
+        {
+          "name": "dos/datetime.h",
+          "occurrences": 5
+        },
+        {
+          "name": "clib/intuition_protos.h",
+          "occurrences": 4
+        },
+        {
+          "name": "clib/graphics_protos.h",
+          "occurrences": 4
+        },
+        {
+          "name": "dos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "graphics/gfxbase.h",
+          "occurrences": 2
+        },
+        {
+          "name": "proto/dos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "clib/keymap_protos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "sys/dir.h",
+          "occurrences": 2
+        },
+        {
+          "name": "devices/audio.h",
+          "occurrences": 1
+        },
+        {
+          "name": "proto/exec.h",
+          "occurrences": 1
+        },
+        {
+          "name": "proto/graphics.h",
+          "occurrences": 1
+        },
+        {
+          "name": "intuition/classes.h",
+          "occurrences": 1
+        },
+        {
+          "name": "intuition/classusr.h",
+          "occurrences": 1
+        },
+        {
+          "name": "intuition/imageclass.h",
+          "occurrences": 1
+        },
+        {
+          "name": "intuition/gadgetclass.h",
+          "occurrences": 1
+        },
+        {
+          "name": "libraries/gadtools.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/view/Modem_Text1.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/view/Modem_Text.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/view/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/view/View.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Othello.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Othello.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Othello.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/othello/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Upload_lister.doc",
+          "keyword": "function 34"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Upload_lister.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Upload_Lister.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/upload_lister/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/config_killer/Distributor.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/config_killer/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/config_killer/Distributor.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/cli/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/cli/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/cli/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/cli/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/cli/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/cli/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/CDROM_Lister.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/cdrom_lister/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/settings/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/settings/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/settings/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/settings/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/settings/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/settings/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/arise/spcemp.help",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/arise/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/arise/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/arise/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/arise/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/arise/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/arise/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/arise/AriSE.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/sysopactivity/SysopActivity.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/Aridoorstuff.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/crap_invaders/Crap_Invaders.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/loguser.doc",
+          "keyword": "logoff"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/loguser.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/loguser.doc",
+          "keyword": "message port"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/Control.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/Control.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/Control.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/loguser.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/loguser.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/Sleep.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/Sleep.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/clicontrol/scoptions",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat2_old.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat2_old.c",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat2_old.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat_old.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Nice_Chat_old.c",
+          "keyword": "msgport"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Aridoorstuff.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Aridoorstuff.h",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Aridoorstuff.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Aridoorstuff.h",
+          "keyword": "node"
+        },
+        {
+          "file": "arisdoors4maxs/nice_chat/Aridoorstuff.h",
+          "keyword": "msgport"
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 90,
+          "text": "struct DoorMsg"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 99,
+          "text": "struct DoorMsg doormsg;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 124,
+          "text": "doormsg.command = 1;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 134,
+          "text": "doormsg.command = 1;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 142,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 169,
+          "text": "doormsg.command = 2;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 179,
+          "text": "doormsg.command = 2;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 187,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 202,
+          "text": "doormsg.command = 3;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 208,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 223,
+          "text": "doormsg.command = 4;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 229,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 244,
+          "text": "doormsg.command = 5;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 250,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 266,
+          "text": "doormsg.command = 6;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 274,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 290,
+          "text": "doormsg.command = 7;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 298,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 313,
+          "text": "doormsg.command = 8;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 321,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 335,
+          "text": "doormsg.command = 9;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 341,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 356,
+          "text": "doormsg.command = 10;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 362,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 377,
+          "text": "doormsg.command = 11;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 384,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 400,
+          "text": "doormsg.command = 12;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 406,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 421,
+          "text": "doormsg.command = 13;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 427,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 442,
+          "text": "doormsg.command = 14;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 450,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 465,
+          "text": "doormsg.command = 15;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 471,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 485,
+          "text": "doormsg.command = 20;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 505,
+          "text": "doormsg.command = 21;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 511,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 531,
+          "text": "doormsg.command = menu+100;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 538,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 559,
+          "text": "doormsg.command = 200;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 565,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 579,
+          "text": "doormsg.command = 201;"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 586,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 615,
+          "text": "sprintf(buffer,\"DoorReply%c\",line_number);"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 624,
+          "text": "/* LOCATE THE CORRECT DOORCONTROL PORT BASED ON THE LINE NUMBER */"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 626,
+          "text": "sprintf(cportname,\"DoorControl%c\",line_number);"
+        },
+        {
+          "file": "arisdoors4maxs/directdownload/Aridoorstuff.h",
+          "line": 632,
+          "text": "puts(\"DoorControl port not located!\");"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 90,
+          "text": "struct DoorMsg"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 99,
+          "text": "struct DoorMsg doormsg;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 124,
+          "text": "doormsg.command = 1;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 134,
+          "text": "doormsg.command = 1;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 142,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 169,
+          "text": "doormsg.command = 2;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 179,
+          "text": "doormsg.command = 2;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 187,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 202,
+          "text": "doormsg.command = 3;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 208,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 223,
+          "text": "doormsg.command = 4;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 229,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 244,
+          "text": "doormsg.command = 5;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 250,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 266,
+          "text": "doormsg.command = 6;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 274,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 290,
+          "text": "doormsg.command = 7;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 298,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 313,
+          "text": "doormsg.command = 8;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 321,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 335,
+          "text": "doormsg.command = 9;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 341,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 356,
+          "text": "doormsg.command = 10;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 362,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 377,
+          "text": "doormsg.command = 11;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 384,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 400,
+          "text": "doormsg.command = 12;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 406,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 421,
+          "text": "doormsg.command = 13;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 427,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 442,
+          "text": "doormsg.command = 14;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 450,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 465,
+          "text": "doormsg.command = 15;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 471,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 485,
+          "text": "doormsg.command = 20;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 505,
+          "text": "doormsg.command = 21;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 511,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 531,
+          "text": "doormsg.command = menu+100;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 538,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 559,
+          "text": "doormsg.command = 200;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 565,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 579,
+          "text": "doormsg.command = 201;"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 586,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 615,
+          "text": "sprintf(buffer,\"DoorReply%c\",line_number);"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 624,
+          "text": "/* LOCATE THE CORRECT DOORCONTROL PORT BASED ON THE LINE NUMBER */"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 626,
+          "text": "sprintf(cportname,\"DoorControl%c\",line_number);"
+        },
+        {
+          "file": "arisdoors4maxs/view/Aridoorstuff.h",
+          "line": 632,
+          "text": "puts(\"DoorControl port not located!\");"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Othello.c",
+          "line": 1896,
+          "text": "AudioIO->ioa_Request.io_Command=ADCMD_ALLOCATE;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Othello.c",
+          "line": 1942,
+          "text": "AudioIO->ioa_Request.io_Command=CMD_WRITE;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 90,
+          "text": "struct DoorMsg"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 99,
+          "text": "struct DoorMsg doormsg;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 124,
+          "text": "doormsg.command = 1;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 134,
+          "text": "doormsg.command = 1;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 142,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 169,
+          "text": "doormsg.command = 2;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 179,
+          "text": "doormsg.command = 2;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 187,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 202,
+          "text": "doormsg.command = 3;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 208,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 223,
+          "text": "doormsg.command = 4;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 229,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 244,
+          "text": "doormsg.command = 5;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 250,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 266,
+          "text": "doormsg.command = 6;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 274,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 290,
+          "text": "doormsg.command = 7;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 298,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 313,
+          "text": "doormsg.command = 8;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 321,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 335,
+          "text": "doormsg.command = 9;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 341,
+          "text": "if(doormsg.command==DROPPED)"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 356,
+          "text": "doormsg.command = 10;"
+        },
+        {
+          "file": "arisdoors4maxs/othello/Aridoorstuff.h",
+          "line": 362,
+          "text": "if(doormsg.command==DROPPED)"
+        }
+      ],
+      "sample_files": [
+        "arisdoors4maxs/ReadmeFirst.OrDie",
+        "arisdoors4maxs/amos/AMOSDoorFuncs.doc",
+        "arisdoors4maxs/amos/AMOSDoors4MAXS.doc",
+        "arisdoors4maxs/amos/Aridoorstuff.h",
+        "arisdoors4maxs/amos/Compiler_Configuration",
+        "arisdoors4maxs/amos/MAXSDoorHandler.Lib",
+        "arisdoors4maxs/amos/NewFiles",
+        "arisdoors4maxs/amos/NewFiles.AMOS",
+        "arisdoors4maxs/amos/NewFiles.ansi",
+        "arisdoors4maxs/amos/ReadMe.First",
+        "arisdoors4maxs/amos/Test",
+        "arisdoors4maxs/amos/Test.AMOS",
+        "arisdoors4maxs/amos/_MAXSDoorHandler.s",
+        "arisdoors4maxs/amos/genam2.inf",
+        "arisdoors4maxs/amos/scoptions",
+        "arisdoors4maxs/amos/test.c",
+        "arisdoors4maxs/ansee/ANSI",
+        "arisdoors4maxs/ansee/ANSI.c",
+        "arisdoors4maxs/ansee/Aridoorstuff.h",
+        "arisdoors4maxs/ansee/ReadMe.First",
+        "arisdoors4maxs/ansee/scoptions",
+        "arisdoors4maxs/ansi_art/ANSI_Reader",
+        "arisdoors4maxs/ansi_art/ANSI_Reader.c",
+        "arisdoors4maxs/ansi_art/ANSI_Sender",
+        "arisdoors4maxs/ansi_art/ANSI_Sender.c",
+        "arisdoors4maxs/ansi_art/Aridoorstuff.h",
+        "arisdoors4maxs/ansi_art/ReadMe.First",
+        "arisdoors4maxs/ansi_art/scoptions",
+        "arisdoors4maxs/arise/AriSE",
+        "arisdoors4maxs/arise/AriSE.c",
+        "arisdoors4maxs/arise/Aridoorstuff.h",
+        "arisdoors4maxs/arise/ReadMe.First",
+        "arisdoors4maxs/arise/SEHigh_Scores.text",
+        "arisdoors4maxs/arise/SpcEmp.CFG",
+        "arisdoors4maxs/arise/SpcEmp.doc",
+        "arisdoors4maxs/arise/scoptions",
+        "arisdoors4maxs/arise/spcemp.help",
+        "arisdoors4maxs/bbs_lister/Aridoorstuff.h",
+        "arisdoors4maxs/bbs_lister/BBS_Lister",
+        "arisdoors4maxs/bbs_lister/BBS_Lister.c",
+        "arisdoors4maxs/bbs_lister/BBS_Lister.config",
+        "arisdoors4maxs/bbs_lister/BBS_Lister.data",
+        "arisdoors4maxs/bbs_lister/BBS_lister.doc",
+        "arisdoors4maxs/bbs_lister/ReadMe.First",
+        "arisdoors4maxs/bbs_lister/scoptions",
+        "arisdoors4maxs/cdrom_lister/Aridoorstuff.h",
+        "arisdoors4maxs/cdrom_lister/CDROM_Lister",
+        "arisdoors4maxs/cdrom_lister/CDROM_Lister.c",
+        "arisdoors4maxs/cdrom_lister/ReadMe.First",
+        "arisdoors4maxs/cdrom_lister/cdrom.index",
+        "arisdoors4maxs/cdrom_lister/make_index",
+        "arisdoors4maxs/cdrom_lister/make_index.c",
+        "arisdoors4maxs/cdrom_lister/scoptions",
+        "arisdoors4maxs/cli/Aridoorstuff.h",
+        "arisdoors4maxs/cli/CLI",
+        "arisdoors4maxs/cli/CLI.c",
+        "arisdoors4maxs/cli/ReadMe.First",
+        "arisdoors4maxs/cli/scoptions",
+        "arisdoors4maxs/clicontrol/Control",
+        "arisdoors4maxs/clicontrol/Control.c",
+        "arisdoors4maxs/clicontrol/Control.doc",
+        "arisdoors4maxs/clicontrol/ReadMe.First",
+        "arisdoors4maxs/clicontrol/Sleep",
+        "arisdoors4maxs/clicontrol/Sleep.c",
+        "arisdoors4maxs/clicontrol/loguser",
+        "arisdoors4maxs/clicontrol/loguser.c",
+        "arisdoors4maxs/clicontrol/loguser.doc",
+        "arisdoors4maxs/clicontrol/scoptions",
+        "arisdoors4maxs/config_killer/Distributor",
+        "arisdoors4maxs/config_killer/Distributor.c",
+        "arisdoors4maxs/config_killer/Distributor.doc",
+        "arisdoors4maxs/config_killer/ReadMe.First",
+        "arisdoors4maxs/config_killer/scoptions",
+        "arisdoors4maxs/crap_invaders/Aridoorstuff.h",
+        "arisdoors4maxs/crap_invaders/Crap_Invaders",
+        "arisdoors4maxs/crap_invaders/Crap_Invaders.c",
+        "arisdoors4maxs/crap_invaders/ReadMe.First",
+        "arisdoors4maxs/crap_invaders/scoptions",
+        "arisdoors4maxs/directdownload/Aridoorstuff.h",
+        "arisdoors4maxs/directdownload/DirectDownLoad"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "large C source corpus",
+        "finding": "206-entry corpus with 63 C files repeatedly uses DoorMsg, DoorControl/DoorReply, commands 1-21 and 200-201, providing strong observed-behavior evidence."
+      }
+    },
+    {
+      "archive": "aedoor28(2).lha",
+      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
+      "entries": 45,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 45,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "aedoor28.lha",
+        "byte_identical": true,
+        "canonical_sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc"
+      },
+      "file_types": {
+        "other": 19,
+        "documentation": 9,
+        "library": 1,
+        "asm": 4,
+        "amiga-e": 7,
+        "c": 5
+      },
+      "text_files": 33,
+      "text_characters": 126429,
+      "documentation_files": [
+        "Amiga_E/README!",
+        "Amiga_E/Sources/README!",
+        "Docs/AEDoor.doc",
+        "Docs/History.txt",
+        "Docs/MultiDoor.doc",
+        "Docs/ReadME!",
+        "HSPascal/README!",
+        "SAS_C/README!",
+        "file_id.diz"
+      ],
+      "api_symbols": {
+        "fame": [
+          {
+            "symbol": "doorport",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 0,
+          "occurrences": 1
+        },
+        {
+          "command": 1,
+          "occurrences": 1
+        },
+        {
+          "command": 2,
+          "occurrences": 1
+        },
+        {
+          "command": 3,
+          "occurrences": 1
+        },
+        {
+          "command": 4,
+          "occurrences": 1
+        },
+        {
+          "command": 5,
+          "occurrences": 1
+        },
+        {
+          "command": 6,
+          "occurrences": 1
+        },
+        {
+          "command": 7,
+          "occurrences": 1
+        },
+        {
+          "command": 8,
+          "occurrences": 1
+        },
+        {
+          "command": 9,
+          "occurrences": 1
+        },
+        {
+          "command": 10,
+          "occurrences": 1
+        },
+        {
+          "command": 11,
+          "occurrences": 1
+        },
+        {
+          "command": 12,
+          "occurrences": 1
+        },
+        {
+          "command": 13,
+          "occurrences": 1
+        },
+        {
+          "command": 14,
+          "occurrences": 1
+        },
+        {
+          "command": 15,
+          "occurrences": 1
+        },
+        {
+          "command": 16,
+          "occurrences": 1
+        },
+        {
+          "command": 17,
+          "occurrences": 1
+        },
+        {
+          "command": 100,
+          "occurrences": 1
+        },
+        {
+          "command": 101,
+          "occurrences": 1
+        },
+        {
+          "command": 102,
+          "occurrences": 1
+        },
+        {
+          "command": 103,
+          "occurrences": 1
+        },
+        {
+          "command": 104,
+          "occurrences": 1
+        },
+        {
+          "command": 105,
+          "occurrences": 1
+        },
+        {
+          "command": 106,
+          "occurrences": 1
+        },
+        {
+          "command": 107,
+          "occurrences": 1
+        },
+        {
+          "command": 108,
+          "occurrences": 1
+        },
+        {
+          "command": 109,
+          "occurrences": 1
+        },
+        {
+          "command": 110,
+          "occurrences": 1
+        },
+        {
+          "command": 111,
+          "occurrences": 1
+        },
+        {
+          "command": 112,
+          "occurrences": 1
+        },
+        {
+          "command": 113,
+          "occurrences": 1
+        },
+        {
+          "command": 114,
+          "occurrences": 1
+        },
+        {
+          "command": 115,
+          "occurrences": 1
+        },
+        {
+          "command": 116,
+          "occurrences": 1
+        },
+        {
+          "command": 117,
+          "occurrences": 1
+        },
+        {
+          "command": 118,
+          "occurrences": 1
+        },
+        {
+          "command": 119,
+          "occurrences": 1
+        },
+        {
+          "command": 120,
+          "occurrences": 1
+        },
+        {
+          "command": 121,
+          "occurrences": 1
+        },
+        {
+          "command": 122,
+          "occurrences": 1
+        },
+        {
+          "command": 123,
+          "occurrences": 1
+        },
+        {
+          "command": 124,
+          "occurrences": 1
+        },
+        {
+          "command": 125,
+          "occurrences": 1
+        },
+        {
+          "command": 126,
+          "occurrences": 1
+        },
+        {
+          "command": 127,
+          "occurrences": 1
+        },
+        {
+          "command": 128,
+          "occurrences": 1
+        },
+        {
+          "command": 129,
+          "occurrences": 1
+        },
+        {
+          "command": 130,
+          "occurrences": 1
+        },
+        {
+          "command": 131,
+          "occurrences": 1
+        },
+        {
+          "command": 132,
+          "occurrences": 1
+        },
+        {
+          "command": 133,
+          "occurrences": 1
+        },
+        {
+          "command": 134,
+          "occurrences": 1
+        },
+        {
+          "command": 135,
+          "occurrences": 1
+        },
+        {
+          "command": 136,
+          "occurrences": 1
+        },
+        {
+          "command": 137,
+          "occurrences": 1
+        },
+        {
+          "command": 138,
+          "occurrences": 1
+        },
+        {
+          "command": 139,
+          "occurrences": 1
+        },
+        {
+          "command": 140,
+          "occurrences": 1
+        },
+        {
+          "command": 141,
+          "occurrences": 1
+        },
+        {
+          "command": 142,
+          "occurrences": 1
+        },
+        {
+          "command": 143,
+          "occurrences": 1
+        },
+        {
+          "command": 144,
+          "occurrences": 1
+        },
+        {
+          "command": 145,
+          "occurrences": 1
+        },
+        {
+          "command": 146,
+          "occurrences": 1
+        },
+        {
+          "command": 147,
+          "occurrences": 1
+        },
+        {
+          "command": 148,
+          "occurrences": 1
+        },
+        {
+          "command": 149,
+          "occurrences": 1
+        },
+        {
+          "command": 150,
+          "occurrences": 1
+        },
+        {
+          "command": 151,
+          "occurrences": 1
+        },
+        {
+          "command": 152,
+          "occurrences": 1
+        },
+        {
+          "command": 153,
+          "occurrences": 1
+        },
+        {
+          "command": 162,
+          "occurrences": 1
+        },
+        {
+          "command": 163,
+          "occurrences": 1
+        },
+        {
+          "command": 500,
+          "occurrences": 1
+        },
+        {
+          "command": 501,
+          "occurrences": 1
+        },
+        {
+          "command": 502,
+          "occurrences": 1
+        },
+        {
+          "command": 503,
+          "occurrences": 1
+        },
+        {
+          "command": 504,
+          "occurrences": 1
+        },
+        {
+          "command": 505,
+          "occurrences": 1
+        },
+        {
+          "command": 506,
+          "occurrences": 1
+        },
+        {
+          "command": 507,
+          "occurrences": 1
+        },
+        {
+          "command": 508,
+          "occurrences": 1
+        },
+        {
+          "command": 509,
+          "occurrences": 1
+        },
+        {
+          "command": 510,
+          "occurrences": 1
+        },
+        {
+          "command": 511,
+          "occurrences": 1
+        },
+        {
+          "command": 512,
+          "occurrences": 1
+        },
+        {
+          "command": 513,
+          "occurrences": 1
+        },
+        {
+          "command": 514,
+          "occurrences": 1
+        },
+        {
+          "command": 516,
+          "occurrences": 1
+        },
+        {
+          "command": 517,
+          "occurrences": 1
+        },
+        {
+          "command": 518,
+          "occurrences": 1
+        },
+        {
+          "command": 519,
+          "occurrences": 1
+        },
+        {
+          "command": 520,
+          "occurrences": 1
+        },
+        {
+          "command": 521,
+          "occurrences": 1
+        },
+        {
+          "command": 522,
+          "occurrences": 1
+        },
+        {
+          "command": 523,
+          "occurrences": 1
+        },
+        {
+          "command": 524,
+          "occurrences": 1
+        },
+        {
+          "command": 525,
+          "occurrences": 1
+        },
+        {
+          "command": 526,
+          "occurrences": 1
+        },
+        {
+          "command": 527,
+          "occurrences": 1
+        },
+        {
+          "command": 528,
+          "occurrences": 1
+        },
+        {
+          "command": 529,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "DIFace",
+          "occurrences": 36
+        },
+        {
+          "name": "Library",
+          "occurrences": 3
+        },
+        {
+          "name": "JHMessage",
+          "occurrences": 1
+        },
+        {
+          "name": "Message",
+          "occurrences": 1
+        },
+        {
+          "name": "Process",
+          "occurrences": 1
+        },
+        {
+          "name": "was",
+          "occurrences": 1
+        },
+        {
+          "name": "called",
+          "occurrences": 1
+        },
+        {
+          "name": "define",
+          "occurrences": 1
+        },
+        {
+          "name": "aestring",
+          "occurrences": 1
+        },
+        {
+          "name": "check",
+          "occurrences": 1
+        },
+        {
+          "name": "W",
+          "occurrences": 1
+        },
+        {
+          "name": "AED_dif",
+          "occurrences": 1
+        },
+        {
+          "name": "dif_ReplyName",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "exec/types.h",
+          "occurrences": 3
+        },
+        {
+          "name": "libraries/aedoor.h",
+          "occurrences": 2
+        },
+        {
+          "name": "clib/aedoor_protos.h",
+          "occurrences": 1
+        },
+        {
+          "name": "pragmas/aedoor_pragmas.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/libraries.h",
+          "occurrences": 1
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 1
+        },
+        {
+          "name": "stdlib.h",
+          "occurrences": 1
+        },
+        {
+          "name": "string.h",
+          "occurrences": 1
+        },
+        {
+          "name": "proto/aedoor.h",
+          "occurrences": 1
+        },
+        {
+          "name": "proto/exec.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "doordocs",
+          "keyword": "carrier"
+        },
+        {
+          "file": "doordocs",
+          "keyword": "node"
+        },
+        {
+          "file": "doordocs",
+          "keyword": "doorport"
+        },
+        {
+          "file": "Assembler/Example.s",
+          "keyword": "node"
+        },
+        {
+          "file": "Assembler/ShowFile.s",
+          "keyword": "node"
+        },
+        {
+          "file": "Docs/History.txt",
+          "keyword": "node"
+        },
+        {
+          "file": "Docs/AEDoor.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Docs/AEDoor.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "Docs/AEDoor.doc",
+          "keyword": "doorport"
+        },
+        {
+          "file": "Docs/MultiDoor.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "Docs/ReadME!",
+          "keyword": "node"
+        },
+        {
+          "file": "HSPascal/README!",
+          "keyword": "carrier"
+        },
+        {
+          "file": "HSPascal/README!",
+          "keyword": "logoff"
+        },
+        {
+          "file": "HSPascal/README!",
+          "keyword": "node"
+        },
+        {
+          "file": "HSPascal/Examples/demo.pas",
+          "keyword": "carrier"
+        },
+        {
+          "file": "HSPascal/Examples/test.pas",
+          "keyword": "carrier"
+        },
+        {
+          "file": "HSPascal/Examples/test.pas",
+          "keyword": "node"
+        },
+        {
+          "file": "HSPascal/Examples/test.pas",
+          "keyword": "doorport"
+        },
+        {
+          "file": "HSPascal/Units/AEDoor.pas",
+          "keyword": "logoff"
+        },
+        {
+          "file": "HSPascal/Units/AEDoor.pas",
+          "keyword": "node"
+        },
+        {
+          "file": "Amiga_E/Sources/README!",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Amiga_E/Sources/example.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Amiga_E/Sources/HKManager.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Amiga_E/Sources/example_exc.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Amiga_E/Sources/hotkey.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Amiga_E/Sources/exception.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Amiga_E/Sources/exception.e",
+          "keyword": "node"
+        },
+        {
+          "file": "Amiga_E/Sources/exception.e",
+          "keyword": "message port"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "keyword": "logoff"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "keyword": "node"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "keyword": "msgport"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "keyword": "doorport"
+        },
+        {
+          "file": "SAS_C/Examples/Simple/simple.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Assembler/Include/AMiX.i",
+          "keyword": "logoff"
+        },
+        {
+          "file": "Assembler/Include/AMiX.i",
+          "keyword": "node"
+        },
+        {
+          "file": "Assembler/Include/AEDoor.i",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "Assembler/Include/AEDoor.i",
+          "keyword": "node"
+        },
+        {
+          "file": "Assembler/Include/AEDoor.i",
+          "keyword": "msgport"
+        },
+        {
+          "file": "Assembler/Include/AEDoor.i",
+          "keyword": "doorport"
+        },
+        {
+          "file": "BBS/Commands/Debugger",
+          "keyword": "node"
+        },
+        {
+          "file": "BBS/Commands/MultiSampleScript",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "doordocs",
+          "line": 33,
+          "text": "msg->Command = 0"
+        },
+        {
+          "file": "doordocs",
+          "line": 45,
+          "text": "msg->Command = 1"
+        },
+        {
+          "file": "doordocs",
+          "line": 56,
+          "text": "msg->Command = 2"
+        },
+        {
+          "file": "doordocs",
+          "line": 62,
+          "text": "msg->Command = 3"
+        },
+        {
+          "file": "doordocs",
+          "line": 69,
+          "text": "msg->Command = 4"
+        },
+        {
+          "file": "doordocs",
+          "line": 79,
+          "text": "msg->Command = 5"
+        },
+        {
+          "file": "doordocs",
+          "line": 91,
+          "text": "msg->Command = 6"
+        },
+        {
+          "file": "doordocs",
+          "line": 103,
+          "text": "msg->Command = 7"
+        },
+        {
+          "file": "doordocs",
+          "line": 121,
+          "text": "msg->Command = 8"
+        },
+        {
+          "file": "doordocs",
+          "line": 135,
+          "text": "msg->Command = 9"
+        },
+        {
+          "file": "doordocs",
+          "line": 145,
+          "text": "msg->Command = 10"
+        },
+        {
+          "file": "doordocs",
+          "line": 155,
+          "text": "msg->Command = 11"
+        },
+        {
+          "file": "doordocs",
+          "line": 163,
+          "text": "msg->Command = 12"
+        },
+        {
+          "file": "doordocs",
+          "line": 171,
+          "text": "msg->Command = 13"
+        },
+        {
+          "file": "doordocs",
+          "line": 184,
+          "text": "msg->Command = 14"
+        },
+        {
+          "file": "doordocs",
+          "line": 189,
+          "text": "msg->Command = 15"
+        },
+        {
+          "file": "doordocs",
+          "line": 194,
+          "text": "msg->Command = 16"
+        },
+        {
+          "file": "doordocs",
+          "line": 199,
+          "text": "msg->Command = 17"
+        },
+        {
+          "file": "doordocs",
+          "line": 204,
+          "text": "msg->Command = 100"
+        },
+        {
+          "file": "doordocs",
+          "line": 213,
+          "text": "msg->Command = 101"
+        },
+        {
+          "file": "doordocs",
+          "line": 222,
+          "text": "msg->Command = 102"
+        },
+        {
+          "file": "doordocs",
+          "line": 231,
+          "text": "msg->Command = 103"
+        },
+        {
+          "file": "doordocs",
+          "line": 240,
+          "text": "msg->Command = 104"
+        },
+        {
+          "file": "doordocs",
+          "line": 248,
+          "text": "msg->Command = 105"
+        },
+        {
+          "file": "doordocs",
+          "line": 257,
+          "text": "msg->Command = 106"
+        },
+        {
+          "file": "doordocs",
+          "line": 266,
+          "text": "msg->Command = 107"
+        },
+        {
+          "file": "doordocs",
+          "line": 275,
+          "text": "msg->Command = 108"
+        },
+        {
+          "file": "doordocs",
+          "line": 284,
+          "text": "msg->Command = 109"
+        },
+        {
+          "file": "doordocs",
+          "line": 293,
+          "text": "msg->Command = 110"
+        },
+        {
+          "file": "doordocs",
+          "line": 302,
+          "text": "msg->Command = 111"
+        },
+        {
+          "file": "doordocs",
+          "line": 311,
+          "text": "msg->Command = 112"
+        },
+        {
+          "file": "doordocs",
+          "line": 320,
+          "text": "msg->Command = 113"
+        },
+        {
+          "file": "doordocs",
+          "line": 332,
+          "text": "msg->Command = 114"
+        },
+        {
+          "file": "doordocs",
+          "line": 343,
+          "text": "msg->Command = 115"
+        },
+        {
+          "file": "doordocs",
+          "line": 355,
+          "text": "msg->Command = 116"
+        },
+        {
+          "file": "doordocs",
+          "line": 366,
+          "text": "msg->Command = 117"
+        },
+        {
+          "file": "doordocs",
+          "line": 375,
+          "text": "msg->Command = 118"
+        },
+        {
+          "file": "doordocs",
+          "line": 385,
+          "text": "msg->Command = 119"
+        },
+        {
+          "file": "doordocs",
+          "line": 394,
+          "text": "msg->Command = 120"
+        },
+        {
+          "file": "doordocs",
+          "line": 403,
+          "text": "msg->Command = 121"
+        },
+        {
+          "file": "doordocs",
+          "line": 409,
+          "text": "msg->Command = 122"
+        },
+        {
+          "file": "doordocs",
+          "line": 418,
+          "text": "msg->Command = 123"
+        },
+        {
+          "file": "doordocs",
+          "line": 431,
+          "text": "msg->Command = 124"
+        },
+        {
+          "file": "doordocs",
+          "line": 437,
+          "text": "msg->Command = 125"
+        },
+        {
+          "file": "doordocs",
+          "line": 448,
+          "text": "msg->Command = 126"
+        },
+        {
+          "file": "doordocs",
+          "line": 457,
+          "text": "msg->Command = 127"
+        },
+        {
+          "file": "doordocs",
+          "line": 466,
+          "text": "msg->Command = 128"
+        },
+        {
+          "file": "doordocs",
+          "line": 472,
+          "text": "msg->Command = 129"
+        },
+        {
+          "file": "doordocs",
+          "line": 481,
+          "text": "msg->Command = 130"
+        },
+        {
+          "file": "doordocs",
+          "line": 487,
+          "text": "msg->Command = 131"
+        },
+        {
+          "file": "doordocs",
+          "line": 495,
+          "text": "msg->Command = 132"
+        },
+        {
+          "file": "doordocs",
+          "line": 500,
+          "text": "msg->Command = 133"
+        },
+        {
+          "file": "doordocs",
+          "line": 505,
+          "text": "msg->Command = 134"
+        },
+        {
+          "file": "doordocs",
+          "line": 510,
+          "text": "msg->Command = 135"
+        },
+        {
+          "file": "doordocs",
+          "line": 516,
+          "text": "msg->Command = 136"
+        },
+        {
+          "file": "doordocs",
+          "line": 524,
+          "text": "msg->Command = 137"
+        },
+        {
+          "file": "doordocs",
+          "line": 537,
+          "text": "msg->Command = 138"
+        },
+        {
+          "file": "doordocs",
+          "line": 550,
+          "text": "msg->Command = 139"
+        },
+        {
+          "file": "doordocs",
+          "line": 559,
+          "text": "msg->Command = 140"
+        },
+        {
+          "file": "doordocs",
+          "line": 567,
+          "text": "msg->Command = 141"
+        },
+        {
+          "file": "doordocs",
+          "line": 576,
+          "text": "msg->Command = 142"
+        },
+        {
+          "file": "doordocs",
+          "line": 585,
+          "text": "msg->Command = 143"
+        },
+        {
+          "file": "doordocs",
+          "line": 593,
+          "text": "msg->Command = 144"
+        },
+        {
+          "file": "doordocs",
+          "line": 602,
+          "text": "msg->Command = 145"
+        },
+        {
+          "file": "doordocs",
+          "line": 610,
+          "text": "msg->Command = 146"
+        },
+        {
+          "file": "doordocs",
+          "line": 625,
+          "text": "msg->Command = 147"
+        },
+        {
+          "file": "doordocs",
+          "line": 630,
+          "text": "msg->Command = 148"
+        },
+        {
+          "file": "doordocs",
+          "line": 636,
+          "text": "msg->Command = 149"
+        },
+        {
+          "file": "doordocs",
+          "line": 644,
+          "text": "msg->Command = 150"
+        },
+        {
+          "file": "doordocs",
+          "line": 651,
+          "text": "msg->Command = 151"
+        },
+        {
+          "file": "doordocs",
+          "line": 659,
+          "text": "msg->Command = 152"
+        },
+        {
+          "file": "doordocs",
+          "line": 665,
+          "text": "msg->Command = 153"
+        },
+        {
+          "file": "doordocs",
+          "line": 670,
+          "text": "msg->Command = 162"
+        },
+        {
+          "file": "doordocs",
+          "line": 680,
+          "text": "msg->Command = 163"
+        },
+        {
+          "file": "doordocs",
+          "line": 689,
+          "text": "msg->Command = 500"
+        },
+        {
+          "file": "doordocs",
+          "line": 694,
+          "text": "msg->Command = 501"
+        },
+        {
+          "file": "doordocs",
+          "line": 699,
+          "text": "msg->Command = 502"
+        },
+        {
+          "file": "doordocs",
+          "line": 704,
+          "text": "msg->Command = 503"
+        },
+        {
+          "file": "doordocs",
+          "line": 712,
+          "text": "msg->Command = 504"
+        },
+        {
+          "file": "doordocs",
+          "line": 720,
+          "text": "msg->Command = 505"
+        },
+        {
+          "file": "doordocs",
+          "line": 728,
+          "text": "msg->Command = 506"
+        },
+        {
+          "file": "doordocs",
+          "line": 733,
+          "text": "msg->Command = 507"
+        },
+        {
+          "file": "doordocs",
+          "line": 741,
+          "text": "msg->Command = 508"
+        },
+        {
+          "file": "doordocs",
+          "line": 748,
+          "text": "msg->Command = 509"
+        },
+        {
+          "file": "doordocs",
+          "line": 753,
+          "text": "msg->Command = 510"
+        },
+        {
+          "file": "doordocs",
+          "line": 761,
+          "text": "msg->Command = 511"
+        },
+        {
+          "file": "doordocs",
+          "line": 767,
+          "text": "msg->Command = 512"
+        },
+        {
+          "file": "doordocs",
+          "line": 775,
+          "text": "msg->Command = 513"
+        },
+        {
+          "file": "doordocs",
+          "line": 780,
+          "text": "msg->Command = 514"
+        },
+        {
+          "file": "doordocs",
+          "line": 785,
+          "text": "msg->Command = 516"
+        },
+        {
+          "file": "doordocs",
+          "line": 793,
+          "text": "msg->Command = 517"
+        },
+        {
+          "file": "doordocs",
+          "line": 806,
+          "text": "msg->Command = 518"
+        },
+        {
+          "file": "doordocs",
+          "line": 814,
+          "text": "msg->Command = 519"
+        },
+        {
+          "file": "doordocs",
+          "line": 822,
+          "text": "msg->Command = 520"
+        },
+        {
+          "file": "doordocs",
+          "line": 830,
+          "text": "msg->Command = 521"
+        },
+        {
+          "file": "doordocs",
+          "line": 838,
+          "text": "msg->Command = 522"
+        },
+        {
+          "file": "doordocs",
+          "line": 848,
+          "text": "msg->Command = 523"
+        },
+        {
+          "file": "doordocs",
+          "line": 854,
+          "text": "msg->Command = 524"
+        },
+        {
+          "file": "doordocs",
+          "line": 860,
+          "text": "msg->Command = 525"
+        },
+        {
+          "file": "doordocs",
+          "line": 870,
+          "text": "msg->Command = 526"
+        },
+        {
+          "file": "doordocs",
+          "line": 880,
+          "text": "msg->Command = 527"
+        },
+        {
+          "file": "doordocs",
+          "line": 899,
+          "text": "msg->Command = 528"
+        },
+        {
+          "file": "doordocs",
+          "line": 909,
+          "text": "msg->Command = 529"
+        },
+        {
+          "file": "doordocs",
+          "line": 922,
+          "text": "msg->Command = 1000"
+        },
+        {
+          "file": "doordocs",
+          "line": 927,
+          "text": "msg->Command = 1001"
+        },
+        {
+          "file": "doordocs",
+          "line": 932,
+          "text": "msg->Command = 1002"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "line": 40,
+          "text": "APTR dif_MsgPort; // Ptr to our DoorReplyPort to receive msg"
+        },
+        {
+          "file": "SAS_C/Include/libraries/aedoor.h",
+          "line": 42,
+          "text": "char dif_ReplyName[16]; // Our 'DoorReplyPortX' name"
+        },
+        {
+          "file": "Assembler/Include/AEDoor.i",
+          "line": 83,
+          "text": "APTR dif_MsgPort ; Ptr to our DoorReplyPort to receive msg"
+        },
+        {
+          "file": "Assembler/Include/AEDoor.i",
+          "line": 85,
+          "text": "STRUCT dif_ReplyName,16 ; Our 'DoorReplyPortX' name"
+        }
+      ],
+      "sample_files": [
+        "Amiga_E/Modules/aedoor.m",
+        "Amiga_E/Modules.info",
+        "Amiga_E/README!",
+        "Amiga_E/Sources/HKManager.e",
+        "Amiga_E/Sources/README!",
+        "Amiga_E/Sources/ShadowW.e",
+        "Amiga_E/Sources/example.e",
+        "Amiga_E/Sources/example_exc.e",
+        "Amiga_E/Sources/exception.e",
+        "Amiga_E/Sources/hotkey.e",
+        "Amiga_E/Sources.info",
+        "Assembler/Example.s",
+        "Assembler/Example.s.info",
+        "Assembler/Include/AEDoor.i",
+        "Assembler/Include/AMiX.i",
+        "Assembler/ShowFile.s",
+        "Assembler/ShowFile.s.info",
+        "BBS/Commands/ConfXCmd/DEBUG.info",
+        "BBS/Commands/ConfXCmd.info",
+        "BBS/Commands/Debugger",
+        "BBS/Commands/MultiDoorShutdown",
+        "BBS/Commands/MultiDoorStart",
+        "BBS/Commands/MultiSampleScript",
+        "Docs/AEDoor.doc",
+        "Docs/History.txt",
+        "Docs/MultiDoor.doc",
+        "Docs/ReadME!",
+        "HSPascal/Examples/AEtriangle.pas",
+        "HSPascal/Examples/AEtriangle.pas.info",
+        "HSPascal/Examples/demo.pas",
+        "HSPascal/Examples/test.pas",
+        "HSPascal/README!",
+        "HSPascal/Units/AEDoor.pas",
+        "Libs/AEDoor.library",
+        "SAS_C/Examples/Simple/SCOPTIONS",
+        "SAS_C/Examples/Simple/simple.c",
+        "SAS_C/Examples/Simple/simple.info",
+        "SAS_C/Examples/Simple/smakefile",
+        "SAS_C/Include/clib/aedoor_protos.h",
+        "SAS_C/Include/libraries/aedoor.h",
+        "SAS_C/Include/pragmas/aedoor_pragmas.h",
+        "SAS_C/Include/proto/aedoor.h",
+        "SAS_C/README!",
+        "doordocs",
+        "file_id.diz"
+      ],
+      "reviewed_finding": {
+        "family": "AmiExpress/AEDoor",
+        "role": "multi-language SDK",
+        "finding": "SDK contains C, assembler, Amiga E and documentation for a broad message-command interface; numeric command tables are documented but kept separate from MAXs semantics."
+      }
+    },
+    {
+      "archive": "door_io12(2).lha",
+      "sha256": "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
+      "entries": 9,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 9,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "door_io12.lha",
+        "byte_identical": true,
+        "canonical_sha256": "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1"
+      },
+      "file_types": {
+        "other": 4,
+        "library": 1,
+        "documentation": 1,
+        "fd": 1,
+        "c": 2
+      },
+      "text_files": 5,
+      "text_characters": 11778,
+      "documentation_files": [
+        "doorio/door_io.doc"
+      ],
+      "api_symbols": {
+        "door_io": [
+          {
+            "symbol": "door_io",
+            "occurrences": 3
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [
+        {
+          "name": "door_io_pragmas.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "doorio/door_io.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "doorio/door_io.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "doorio/door_io.dok",
+          "keyword": "carrier"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "doorio/door_io.doc",
+        "doorio/door_io.dok",
+        "doorio/door_io.fd",
+        "doorio/door_io.h",
+        "doorio/door_io.h.info",
+        "doorio/door_io.library",
+        "doorio/door_io_pragmas.h",
+        "doorio/door_io_pragmas.h.info",
+        "doorio.info"
+      ],
+      "reviewed_finding": {
+        "family": "door_io.library",
+        "role": "library SDK",
+        "finding": "Contains library, FD file, C bindings and documentation; confirms a callable Amiga shared-library interface rather than a message-port protocol."
+      }
+    },
+    {
+      "archive": "HydraBBSdc(1).lha",
+      "sha256": "0d18a9fdb3331e6f2d8db334f4e380cea808efcc14954be91d410e7750d961c6",
+      "entries": 4,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 4,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "HydraBBSdc.lha",
+        "byte_identical": true,
+        "canonical_sha256": "0d18a9fdb3331e6f2d8db334f4e380cea808efcc14954be91d410e7750d961c6"
+      },
+      "file_types": {
+        "other": 1,
+        "documentation": 3
+      },
+      "text_files": 2,
+      "text_characters": 5302,
+      "documentation_files": [
+        "File_ID.DIZ",
+        "HydraBBSdc.readme"
+      ],
+      "api_symbols": {},
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "HydraBBSdc.readme",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "File_ID.DIZ",
+        "File_ID.DIZ.info",
+        "HydraBBSdc.readme",
+        "HydraBBSdc.readme.info"
+      ],
+      "reviewed_finding": {
+        "family": "HydraBBS",
+        "role": "documentation package",
+        "finding": "Documentation-only package; useful for ecosystem context but no source-level API implementation was found."
+      }
+    },
+    {
+      "archive": "parod123(1).lha",
+      "sha256": "abb8d333daedd9eb7d83f0754e1910ab93c532a840180c2e1a8f5ab6a07b289b",
+      "entries": 3,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 3,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "parod123.lha",
+        "byte_identical": true,
+        "canonical_sha256": "abb8d333daedd9eb7d83f0754e1910ab93c532a840180c2e1a8f5ab6a07b289b"
+      },
+      "file_types": {
+        "other": 2,
+        "documentation": 1
+      },
+      "text_files": 2,
+      "text_characters": 4050,
+      "documentation_files": [
+        "ParoD.DOC"
+      ],
+      "api_symbols": {},
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "Changes",
+          "keyword": "carrier"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "Changes",
+        "ParoD",
+        "ParoD.DOC"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "compatibility door",
+        "finding": "Documentation confirms Paragon compatibility and the practical command boundary above command 21."
+      }
+    },
+    {
+      "archive": "par2dlg(1).lha",
+      "sha256": "c92ce04f6baf528e581d977fbbedb26351f37a30d5408b99b3b6a93a82366d3e",
+      "entries": 2,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 2,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "par2dlg.lha",
+        "byte_identical": true,
+        "canonical_sha256": "c92ce04f6baf528e581d977fbbedb26351f37a30d5408b99b3b6a93a82366d3e"
+      },
+      "file_types": {
+        "other": 2
+      },
+      "text_files": 2,
+      "text_characters": 48610,
+      "documentation_files": [],
+      "api_symbols": {},
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "in",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "high_value_lines": [],
+      "sample_files": [
+        "Instructions",
+        "StarFL.lha"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon/DLG",
+        "role": "bridge utility",
+        "finding": "Bridge payload and text establish interoperability context, but no readable source-level API definitions were present."
+      }
+    },
+    {
+      "archive": "max_e(1).lha",
+      "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
+      "entries": 2,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 2,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "max_e.lha",
+        "byte_identical": true,
+        "canonical_sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868"
+      },
+      "file_types": {
+        "documentation": 1,
+        "amiga-e": 1
+      },
+      "text_files": 2,
+      "text_characters": 7454,
+      "documentation_files": [
+        "MAX_E.readme"
+      ],
+      "api_symbols": {
+        "paragon_maxs": [
+          {
+            "symbol": "mxPrint",
+            "occurrences": 29
+          },
+          {
+            "symbol": "mxGetStrInfo",
+            "occurrences": 11
+          },
+          {
+            "symbol": "mxInput",
+            "occurrences": 10
+          },
+          {
+            "symbol": "mxHotKey",
+            "occurrences": 3
+          },
+          {
+            "symbol": "mxPrintFile",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxCheckFile",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxTwit",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxGetIntInfo",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxChangeUserInt",
+            "occurrences": 2
+          },
+          {
+            "symbol": "mxMenuFunct",
+            "occurrences": 2
+          },
+          {
+            "symbol": "DoorControl",
+            "occurrences": 1
+          },
+          {
+            "symbol": "DoorReply",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 1,
+          "occurrences": 1
+        },
+        {
+          "command": 6,
+          "occurrences": 1
+        },
+        {
+          "command": 8,
+          "occurrences": 1
+        },
+        {
+          "command": 9,
+          "occurrences": 1
+        },
+        {
+          "command": 10,
+          "occurrences": 1
+        },
+        {
+          "command": 11,
+          "occurrences": 1
+        },
+        {
+          "command": 13,
+          "occurrences": 1
+        },
+        {
+          "command": 14,
+          "occurrences": 1
+        },
+        {
+          "command": 20,
+          "occurrences": 1
+        },
+        {
+          "command": 200,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "p1",
+          "occurrences": 2
+        },
+        {
+          "name": "doormsg",
+          "occurrences": 1
+        },
+        {
+          "name": "a",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "MAXDoor.e",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "MAXDoor.e",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "MAXDoor.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "MAXDoor.e",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXDoor.e",
+          "keyword": "msgport"
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "MAXDoor.e",
+          "line": 37,
+          "text": "StringF(msgportname,'DoorControl\\c',Char(arg))"
+        },
+        {
+          "file": "MAXDoor.e",
+          "line": 38,
+          "text": "StringF(msgportname2,'DoorReply\\c',Char(arg))"
+        }
+      ],
+      "sample_files": [
+        "MAXDoor.e",
+        "MAX_E.readme"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "Amiga E SDK module",
+        "finding": "MAXDoor.e defines DoorControl/DoorReply messaging and wrappers for commands 1, 6, 8, 9, 10, 11, 13, 14, 20 and 200."
+      }
+    },
+    {
+      "archive": "Life1_2(1).lha",
+      "sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc",
+      "entries": 6,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 6,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "Life1_2.lha",
+        "byte_identical": true,
+        "canonical_sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc"
+      },
+      "file_types": {
+        "documentation": 4,
+        "other": 2
+      },
+      "text_files": 3,
+      "text_characters": 8305,
+      "documentation_files": [
+        "FILE_ID.DIZ",
+        "Life!.Guide",
+        "Life!.readme"
+      ],
+      "api_symbols": {},
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "Life!.Guide",
+          "keyword": "logoff"
+        },
+        {
+          "file": "Life!.Guide",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "FILE_ID.DIZ",
+        "Kaleidoscope.exe",
+        "Life",
+        "Life!.Guide",
+        "Life!.Guide.info",
+        "Life!.readme"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "recovery utility",
+        "finding": "Documentation describes recovery/maintenance use around MAXs/Paragon doors; no source API corpus is included."
+      }
+    },
+    {
+      "archive": "fprun11(1).lha",
+      "sha256": "073e506c87314a88bed60b4d8091b5fe37207b75b54e9801b3be968cee6127bd",
+      "entries": 6,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 6,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "fprun11.lha",
+        "byte_identical": true,
+        "canonical_sha256": "073e506c87314a88bed60b4d8091b5fe37207b75b54e9801b3be968cee6127bd"
+      },
+      "file_types": {
+        "documentation": 3,
+        "arexx": 1,
+        "other": 2
+      },
+      "text_files": 6,
+      "text_characters": 16952,
+      "documentation_files": [
+        "FPRUN11.README!",
+        "FPRun.doc",
+        "File_Id.DIZ"
+      ],
+      "api_symbols": {
+        "ambos": [
+          {
+            "symbol": "BBSMENU",
+            "occurrences": 5
+          },
+          {
+            "symbol": "BBSTEXT",
+            "occurrences": 3
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "of",
+          "occurrences": 2
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "FPRun.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "File_Id.DIZ",
+          "keyword": "arexx"
+        },
+        {
+          "file": "FPRun.rexx",
+          "keyword": "carrier"
+        },
+        {
+          "file": "FPRun.rexx",
+          "keyword": "arexx"
+        },
+        {
+          "file": "FPFiles.NFO",
+          "keyword": "carrier"
+        },
+        {
+          "file": "FPFiles.NFO",
+          "keyword": "logoff"
+        },
+        {
+          "file": "FPFiles.NFO",
+          "keyword": "arexx"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "FPFiles.NFO",
+        "FPRUN11.README!",
+        "FPRun.doc",
+        "FPRun.rexx",
+        "File_Id.DIZ",
+        "LastChanges.Notes"
+      ],
+      "reviewed_finding": {
+        "family": "FAME",
+        "role": "ARexx launcher",
+        "finding": "ARexx and documentation demonstrate FAME menu/text integration, but not a general native DoorPort implementation."
+      }
+    },
+    {
+      "archive": "DoorRunner(2).lha",
+      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
+      "entries": 14,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 14,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "DoorRunner.lha",
+        "byte_identical": true,
+        "canonical_sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873"
+      },
+      "file_types": {
+        "documentation": 3,
+        "other": 8,
+        "amiga-e": 3
+      },
+      "text_files": 4,
+      "text_characters": 30644,
+      "documentation_files": [
+        "DoorRunner1_30/DoorRunner.guide",
+        "file_id.diz"
+      ],
+      "api_symbols": {},
+      "observed_command_numbers": [
+        {
+          "command": 34,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "file_data_header",
+          "occurrences": 1
+        },
+        {
+          "name": "file_data",
+          "occurrences": 1
+        },
+        {
+          "name": "file_index_header",
+          "occurrences": 1
+        },
+        {
+          "name": "file_index",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "DoorRunner1_30/DoorRunner.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DoorRunner1_30/DoorRunner.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "DoorRunner1_30/DoorRunner.guide",
+          "keyword": "autoinsert"
+        },
+        {
+          "file": "DoorRunner1_30/DoorRunner.guide",
+          "keyword": "message port"
+        },
+        {
+          "file": "DoorRunner1_30/Examples/E/EDoor.e",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DoorRunner1_30/Examples/E/EDoor.e",
+          "keyword": "node"
+        },
+        {
+          "file": "DoorRunner1_30/Examples/E/EDoor.e",
+          "keyword": "autoinsert"
+        },
+        {
+          "file": "DoorRunner1_30/Examples/E/EDoor.e",
+          "keyword": "door port"
+        },
+        {
+          "file": "DoorRunner1_30/Examples/E/MAXStruc.e",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "DoorRunner1_30/DoorRunner",
+        "DoorRunner1_30/DoorRunner.guide",
+        "DoorRunner1_30/DoorRunner.guide.info",
+        "DoorRunner1_30/Examples/BlitzBASIC/BlitzDoor.bb2",
+        "DoorRunner1_30/Examples/BlitzBASIC/BlitzDoor.bb2.bak",
+        "DoorRunner1_30/Examples/BlitzBASIC/BlitzDoor.bb2.xtra",
+        "DoorRunner1_30/Examples/BlitzBASIC.info",
+        "DoorRunner1_30/Examples/E/EDoor.e",
+        "DoorRunner1_30/Examples/E/MAXStruc.e",
+        "DoorRunner1_30/Examples/E/maxstruc.m",
+        "DoorRunner1_30/Examples/E.info",
+        "DoorRunner1_30/Examples.info",
+        "DoorRunner1_30.info",
+        "file_id.diz"
+      ],
+      "reviewed_finding": {
+        "family": "MAXs/Paragon",
+        "role": "door launcher",
+        "finding": "Amiga E launcher and documentation confirm Function 34 execution context and runtime packaging behavior."
+      }
+    },
+    {
+      "archive": "fcomm130(1).lha",
+      "sha256": "9b010d4c807fe2fca82f784f2fadc31e5f21231f355c9c609a0e0db31e5462db",
+      "entries": 9,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 9,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "fcomm130.lha",
+        "byte_identical": true,
+        "canonical_sha256": "9b010d4c807fe2fca82f784f2fadc31e5f21231f355c9c609a0e0db31e5462db"
+      },
+      "file_types": {
+        "other": 3,
+        "documentation": 6
+      },
+      "text_files": 7,
+      "text_characters": 196708,
+      "documentation_files": [
+        "Documentation/FAMECommands.guide",
+        "Documentation/FILE_ID.DIZ",
+        "Documentation/fcomm.readme",
+        "FILE_ID.DIZ",
+        "fcomm.readme"
+      ],
+      "api_symbols": {
+        "paragon_maxs": [
+          {
+            "symbol": "DoorMsg",
+            "occurrences": 4
+          }
+        ],
+        "ambos": [
+          {
+            "symbol": "BBSCMD",
+            "occurrences": 2
+          }
+        ],
+        "fame": [
+          {
+            "symbol": "FAME",
+            "occurrences": 79
+          },
+          {
+            "symbol": "DoorPort",
+            "occurrences": 6
+          },
+          {
+            "symbol": "FAMEDoorMsg",
+            "occurrences": 4
+          },
+          {
+            "symbol": "FAMEDoorPort",
+            "occurrences": 4
+          },
+          {
+            "symbol": "FAMENum64ToStr",
+            "occurrences": 3
+          },
+          {
+            "symbol": "fcomm",
+            "occurrences": 2
+          },
+          {
+            "symbol": "doorport",
+            "occurrences": 2
+          },
+          {
+            "symbol": "fAME",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDOORCOMMANDS",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEIndex",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEous",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMECommands",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDoorCommands",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEGlobalBBSStructs",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEAllocObject",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEFreeObject",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDoorMessage",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDevelopment",
+            "occurrences": 1
+          },
+          {
+            "symbol": "Doorport",
+            "occurrences": 1
+          },
+          {
+            "symbol": "DOORPORT",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDefine",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDestNodes",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEFileChecker",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEAdd64",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMESub64",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 416,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "NumFlagList",
+          "occurrences": 14
+        },
+        {
+          "name": "ConfList",
+          "occurrences": 6
+        },
+        {
+          "name": "of",
+          "occurrences": 4
+        },
+        {
+          "name": "MailHeader",
+          "occurrences": 4
+        },
+        {
+          "name": "ExternEditor",
+          "occurrences": 3
+        },
+        {
+          "name": "FAMEDoorMsg",
+          "occurrences": 2
+        },
+        {
+          "name": "before",
+          "occurrences": 1
+        },
+        {
+          "name": "to",
+          "occurrences": 1
+        },
+        {
+          "name": "as",
+          "occurrences": 1
+        },
+        {
+          "name": "Message",
+          "occurrences": 1
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 1
+        },
+        {
+          "name": "and",
+          "occurrences": 1
+        },
+        {
+          "name": "dOORS",
+          "occurrences": 1
+        },
+        {
+          "name": "Process",
+          "occurrences": 1
+        },
+        {
+          "name": "for",
+          "occurrences": 1
+        },
+        {
+          "name": "aWAYmSG",
+          "occurrences": 1
+        },
+        {
+          "name": "NodeListBase",
+          "occurrences": 1
+        },
+        {
+          "name": "struct",
+          "occurrences": 1
+        },
+        {
+          "name": "in",
+          "occurrences": 1
+        },
+        {
+          "name": "code",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "PUNISH_IT",
+          "keyword": "node"
+        },
+        {
+          "file": "Documentation/FAMECommands.history",
+          "keyword": "node"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "message port"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "msgport"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "doorport"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "Documentation/FAMECommands.guide",
+        "Documentation/FAMECommands.guide.info",
+        "Documentation/FAMECommands.history",
+        "Documentation/FILE_ID.DIZ",
+        "Documentation/fcomm.readme",
+        "Documentation.info",
+        "FILE_ID.DIZ",
+        "PUNISH_IT",
+        "fcomm.readme"
+      ],
+      "reviewed_finding": {
+        "family": "FAME",
+        "role": "command reference",
+        "finding": "Large FAMECommands guide documents FAMEDoorMsg/FAMEDoorPort and a broad command surface, including structured conference, mail and user operations."
+      }
+    },
+    {
+      "archive": "fcomm(1).lha",
+      "sha256": "02daac9dc3f334c45dd9384622086c603c64f69ddbaccec3bb091f2e587aed8d",
+      "entries": 8,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 8,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "fcomm.lha",
+        "byte_identical": true,
+        "canonical_sha256": "02daac9dc3f334c45dd9384622086c603c64f69ddbaccec3bb091f2e587aed8d"
+      },
+      "file_types": {
+        "documentation": 6,
+        "other": 2
+      },
+      "text_files": 6,
+      "text_characters": 189198,
+      "documentation_files": [
+        "Documentation/FAMECommands.guide",
+        "Documentation/FCOMM.readme",
+        "Documentation/FILE_ID.DIZ",
+        "FCOMM.readme",
+        "FILE_ID.DIZ"
+      ],
+      "api_symbols": {
+        "paragon_maxs": [
+          {
+            "symbol": "DoorMsg",
+            "occurrences": 4
+          }
+        ],
+        "ambos": [
+          {
+            "symbol": "BBSCMD",
+            "occurrences": 2
+          }
+        ],
+        "fame": [
+          {
+            "symbol": "FAME",
+            "occurrences": 66
+          },
+          {
+            "symbol": "DoorPort",
+            "occurrences": 6
+          },
+          {
+            "symbol": "FAMEDoorMsg",
+            "occurrences": 4
+          },
+          {
+            "symbol": "FAMEDoorPort",
+            "occurrences": 4
+          },
+          {
+            "symbol": "fcomm114",
+            "occurrences": 2
+          },
+          {
+            "symbol": "doorport",
+            "occurrences": 2
+          },
+          {
+            "symbol": "FAMEDOORCOMMANDS",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEIndex",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEous",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMECommands",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDoorCommands",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEGlobalBBSStructs",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEAllocObject",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEFreeObject",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDoorMessage",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDevelopment",
+            "occurrences": 1
+          },
+          {
+            "symbol": "Doorport",
+            "occurrences": 1
+          },
+          {
+            "symbol": "DOORPORT",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDefine",
+            "occurrences": 1
+          },
+          {
+            "symbol": "FAMEDestNodes",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [
+        {
+          "command": 416,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "NumFlagList",
+          "occurrences": 10
+        },
+        {
+          "name": "ConfList",
+          "occurrences": 6
+        },
+        {
+          "name": "of",
+          "occurrences": 4
+        },
+        {
+          "name": "MailHeader",
+          "occurrences": 4
+        },
+        {
+          "name": "ExternEditor",
+          "occurrences": 3
+        },
+        {
+          "name": "FAMEDoorMsg",
+          "occurrences": 2
+        },
+        {
+          "name": "before",
+          "occurrences": 1
+        },
+        {
+          "name": "to",
+          "occurrences": 1
+        },
+        {
+          "name": "as",
+          "occurrences": 1
+        },
+        {
+          "name": "Message",
+          "occurrences": 1
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 1
+        },
+        {
+          "name": "and",
+          "occurrences": 1
+        },
+        {
+          "name": "dOORS",
+          "occurrences": 1
+        },
+        {
+          "name": "Process",
+          "occurrences": 1
+        },
+        {
+          "name": "for",
+          "occurrences": 1
+        },
+        {
+          "name": "aWAYmSG",
+          "occurrences": 1
+        },
+        {
+          "name": "NodeListStamm",
+          "occurrences": 1
+        },
+        {
+          "name": "struct",
+          "occurrences": 1
+        },
+        {
+          "name": "in",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "Documentation/FAMECommands.history",
+          "keyword": "node"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "message port"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "msgport"
+        },
+        {
+          "file": "Documentation/FAMECommands.guide",
+          "keyword": "doorport"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "Documentation/FAMECommands.guide",
+        "Documentation/FAMECommands.guide.info",
+        "Documentation/FAMECommands.history",
+        "Documentation/FCOMM.readme",
+        "Documentation/FILE_ID.DIZ",
+        "Documentation.info",
+        "FCOMM.readme",
+        "FILE_ID.DIZ"
+      ],
+      "reviewed_finding": {
+        "family": "FAME",
+        "role": "command reference",
+        "finding": "Earlier FCOMM distribution corroborates the same DoorPort message model and provides historical version comparison material."
+      }
+    },
+    {
+      "archive": "fame_dh(1).lha",
+      "sha256": "73250a39fd2c78ae03f3a2f84bb972c07fb6953174b11871671fe230c08c9f1e",
+      "entries": 9,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 9,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "fame_dh.lha",
+        "byte_identical": true,
+        "canonical_sha256": "73250a39fd2c78ae03f3a2f84bb972c07fb6953174b11871671fe230c08c9f1e"
+      },
+      "file_types": {
+        "other": 5,
+        "documentation": 4
+      },
+      "text_files": 5,
+      "text_characters": 8246,
+      "documentation_files": [
+        "DoorHeader/DoorHeader.doc",
+        "DoorHeader/FAME_DH.readme",
+        "DoorHeader/FILE_ID.DIZ",
+        "FILE_ID.DIZ"
+      ],
+      "api_symbols": {
+        "ambos": [
+          {
+            "symbol": "BBSCMD",
+            "occurrences": 4
+          }
+        ],
+        "fame": [
+          {
+            "symbol": "FAME",
+            "occurrences": 18
+          },
+          {
+            "symbol": "fAME",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "is",
+          "occurrences": 1
+        },
+        {
+          "name": "of",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "PUNISH_IT",
+          "keyword": "node"
+        },
+        {
+          "file": "DoorHeader/DoorHeader.doc",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "DoorHeader/DoorHeader",
+        "DoorHeader/DoorHeader.doc",
+        "DoorHeader/DoorHeader.doc.info",
+        "DoorHeader/DoorHeader.info",
+        "DoorHeader/FAME_DH.readme",
+        "DoorHeader/FILE_ID.DIZ",
+        "DoorHeader.info",
+        "FILE_ID.DIZ",
+        "PUNISH_IT"
+      ],
+      "reviewed_finding": {
+        "family": "FAME",
+        "role": "door header package",
+        "finding": "DoorHeader documentation provides integration constants and startup context for FAME doors."
+      }
+    },
+    {
+      "archive": "AmBoS_mod_E(1).lha",
+      "sha256": "12a6ad9d83d50cb0c6009d10bb1d5cc13d565ac00e35b25be4225fabc22471a1",
+      "entries": 4,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 4,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "AmBoS_mod_E.lha",
+        "byte_identical": true,
+        "canonical_sha256": "12a6ad9d83d50cb0c6009d10bb1d5cc13d565ac00e35b25be4225fabc22471a1"
+      },
+      "file_types": {
+        "amiga-e": 4
+      },
+      "text_files": 3,
+      "text_characters": 9535,
+      "documentation_files": [],
+      "api_symbols": {
+        "ambos": [
+          {
+            "symbol": "BBSTest",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "datestamp",
+          "occurrences": 1
+        },
+        {
+          "name": "externinfo",
+          "occurrences": 1
+        },
+        {
+          "name": "transfernode",
+          "occurrences": 1
+        },
+        {
+          "name": "userdatenextern",
+          "occurrences": 1
+        },
+        {
+          "name": "fileextern",
+          "occurrences": 1
+        },
+        {
+          "name": "brettdatenextern",
+          "occurrences": 1
+        },
+        {
+          "name": "bbsmenu",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "Xample.e",
+          "keyword": "logoff"
+        },
+        {
+          "file": "BBS/BBS.e",
+          "keyword": "logoff"
+        },
+        {
+          "file": "BBS/BBS.e",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "BBS/BBS.e",
+        "BBS/bbs.m",
+        "BBS.m",
+        "Xample.e"
+      ],
+      "reviewed_finding": {
+        "family": "AmBoS",
+        "role": "Amiga E bindings",
+        "finding": "E modules expose external user, transfer, file, board and menu structures, confirming a typed binding layer."
+      }
+    },
+    {
+      "archive": "BBSLib-Asm(1).lha",
+      "sha256": "848331d9e0b8941e37472bd8b3e20d7c772cdf2e13827880df879f54e85470b4",
+      "entries": 5,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 5,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "BBSLib-Asm.lha",
+        "byte_identical": true,
+        "canonical_sha256": "848331d9e0b8941e37472bd8b3e20d7c772cdf2e13827880df879f54e85470b4"
+      },
+      "file_types": {
+        "other": 1,
+        "asm": 3,
+        "documentation": 1
+      },
+      "text_files": 4,
+      "text_characters": 10075,
+      "documentation_files": [
+        "BBSLib-Asm/BBSLib-Asm.readme"
+      ],
+      "api_symbols": {
+        "ambos": [
+          {
+            "symbol": "BBSBase",
+            "occurrences": 4
+          },
+          {
+            "symbol": "BBSName",
+            "occurrences": 2
+          },
+          {
+            "symbol": "BBSMenu",
+            "occurrences": 2
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "ei_LogInTime",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_UserName",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_FirstName",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Name",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_City",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Street",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_PhoneNr",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Fax",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Modem",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Computer",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Substitute",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_DLProtocol",
+          "occurrences": 1
+        },
+        {
+          "name": "ude_Packer",
+          "occurrences": 1
+        },
+        {
+          "name": "fe_ReadMeFile",
+          "occurrences": 1
+        },
+        {
+          "name": "fe_BoxName",
+          "occurrences": 1
+        },
+        {
+          "name": "fe_Comment",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_BrettName",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_BrettPfad",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_SchreibGruppe",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_ZugangsGruppe",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_LeseGruppe",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_Verwalter",
+          "occurrences": 1
+        },
+        {
+          "name": "bde_BrettPasswort",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "BBSLib-Asm/bbs.i",
+          "keyword": "logoff"
+        },
+        {
+          "file": "BBSLib-Asm/bbs.i",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "BBSLib-Asm/BBSLib-Asm.readme",
+        "BBSLib-Asm/Demo",
+        "BBSLib-Asm/Demo.a",
+        "BBSLib-Asm/bbs.i",
+        "BBSLib-Asm/bbs_lib.i"
+      ],
+      "reviewed_finding": {
+        "family": "AmBoS",
+        "role": "assembler bindings",
+        "finding": "Assembler includes expose BBSBase/BBSMenu and detailed user-record offsets, independently corroborating the AmBoS data model."
+      }
+    },
+    {
+      "archive": "AmBoS_doc_dev(1).lha",
+      "sha256": "1785840c7dc5303bc3d59accdf1250ce003af36bcfd3804917a25207f7259b27",
+      "entries": 12,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 12,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "AmBoS_doc_dev.lha",
+        "byte_identical": true,
+        "canonical_sha256": "1785840c7dc5303bc3d59accdf1250ce003af36bcfd3804917a25207f7259b27"
+      },
+      "file_types": {
+        "other": 5,
+        "documentation": 2,
+        "c": 4,
+        "fd": 1
+      },
+      "text_files": 7,
+      "text_characters": 58921,
+      "documentation_files": [
+        "Dokumentation/BBS.lib.guide"
+      ],
+      "api_symbols": {
+        "ambos": [
+          {
+            "symbol": "BBSBase",
+            "occurrences": 77
+          },
+          {
+            "symbol": "BBSMenu",
+            "occurrences": 9
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "UserDatenExtern",
+          "occurrences": 20
+        },
+        {
+          "name": "FileExtern",
+          "occurrences": 20
+        },
+        {
+          "name": "BBSMenu",
+          "occurrences": 9
+        },
+        {
+          "name": "ExternInfo",
+          "occurrences": 7
+        },
+        {
+          "name": "TransferNode",
+          "occurrences": 6
+        },
+        {
+          "name": "DateStamp",
+          "occurrences": 2
+        },
+        {
+          "name": "List",
+          "occurrences": 2
+        },
+        {
+          "name": "BrettDatenExtern",
+          "occurrences": 2
+        },
+        {
+          "name": "Library",
+          "occurrences": 2
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "exec/types.h",
+          "occurrences": 2
+        },
+        {
+          "name": "dos/dos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "libraries/BBS_library.h",
+          "occurrences": 1
+        },
+        {
+          "name": "pragmas/BBS_pragmas.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "Dokumentation/BBS.lib.guide",
+          "keyword": "logoff"
+        },
+        {
+          "file": "Dokumentation/BBS.lib.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "Dokumentation/include/libraries/BBS_library.h",
+          "keyword": "logoff"
+        },
+        {
+          "file": "Dokumentation/include/libraries/BBS_library.h",
+          "keyword": "node"
+        }
+      ],
+      "high_value_lines": [],
+      "sample_files": [
+        "Dokumentation/BBS.lib.guide",
+        "Dokumentation/BBS.lib.guide.info",
+        "Dokumentation/Source/Beispiel",
+        "Dokumentation/Source/Beispiel.c",
+        "Dokumentation/Source/SCOPTIONS",
+        "Dokumentation/Source.info",
+        "Dokumentation/include/clib/BBS_protos.h",
+        "Dokumentation/include/fd/BBS_library.fd",
+        "Dokumentation/include/libraries/BBS_library.h",
+        "Dokumentation/include/pragmas/BBS_pragmas.h",
+        "Dokumentation/include.info",
+        "Dokumentation.info"
+      ],
+      "reviewed_finding": {
+        "family": "AmBoS",
+        "role": "developer SDK",
+        "finding": "Developer guide, C headers and FD file define BBS.library structures and entry points; this is the strongest AmBoS primary source in the batch."
+      }
+    },
+    {
+      "archive": "ABBS320_999(1).lha",
+      "sha256": "5e9fd4cbf871a2bbd4579a3f9b35a0cd2187676cab8886b16adbfe8b038380e4",
+      "entries": 222,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 218,
+      "unextracted": 0,
+      "failed": [],
+      "duplicate": {
+        "canonical": "ABBS320_999.lha",
+        "byte_identical": true,
+        "canonical_sha256": "5e9fd4cbf871a2bbd4579a3f9b35a0cd2187676cab8886b16adbfe8b038380e4"
+      },
+      "file_types": {
+        "other": 177,
+        "documentation": 27,
+        "c": 4,
+        "amiga-e": 4,
+        "library": 3,
+        "arexx": 3
+      },
+      "text_files": 160,
+      "text_characters": 605204,
+      "documentation_files": [
+        "ABBS/ABBS.readme",
+        "ABBS/Docs/ABBS.doc",
+        "ABBS/Docs/ABBS.guide",
+        "ABBS/Docs/AddFile.doc",
+        "ABBS/Docs/AddMsg.doc",
+        "ABBS/Docs/Broadcast.doc",
+        "ABBS/Docs/ConfigBBS.doc",
+        "ABBS/Docs/ConfigNode.doc",
+        "ABBS/Docs/Doors.doc",
+        "ABBS/Docs/FileCache.doc",
+        "ABBS/Docs/Installation.doc",
+        "ABBS/Docs/MiscMenu.doc",
+        "ABBS/Docs/SysopAvail.doc",
+        "ABBS/Docs/ToggleCache.doc",
+        "ABBS/Docs/abbsusers.doc",
+        "ABBS/Docs/checkconferences.doc",
+        "ABBS/Docs/flextractor.doc",
+        "ABBS/Docs/flmaker.doc",
+        "ABBS/Docs/scripts.doc",
+        "ABBS/Docs/usereditor.doc",
+        "ABBS/Doors/DAYS/DAYS.DOC",
+        "ABBS/Help/FE.guide",
+        "ABBS/Text/readmenu",
+        "ABBS/Text/readmenu.ansi",
+        "ABBS/Text/readmenu.raw",
+        "ABBS/file_id.diz"
+      ],
+      "api_symbols": {
+        "ambos": [
+          {
+            "symbol": "BBSNAME",
+            "occurrences": 12
+          }
+        ],
+        "abbs": [
+          {
+            "symbol": "ABBS",
+            "occurrences": 658
+          },
+          {
+            "symbol": "ABBS3",
+            "occurrences": 15
+          },
+          {
+            "symbol": "ABBS1",
+            "occurrences": 8
+          },
+          {
+            "symbol": "ABBSPACK",
+            "occurrences": 5
+          },
+          {
+            "symbol": "ABBSUSERS",
+            "occurrences": 3
+          },
+          {
+            "symbol": "ABBS2",
+            "occurrences": 2
+          },
+          {
+            "symbol": "ABBSRexx",
+            "occurrences": 2
+          },
+          {
+            "symbol": "ABBSRexxAutoIndex",
+            "occurrences": 1
+          },
+          {
+            "symbol": "ABBSRexxW",
+            "occurrences": 1
+          },
+          {
+            "symbol": "ABBSes",
+            "occurrences": 1
+          },
+          {
+            "symbol": "ABBSUsers",
+            "occurrences": 1
+          }
+        ]
+      },
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "the",
+          "occurrences": 5
+        },
+        {
+          "name": "a",
+          "occurrences": 4
+        },
+        {
+          "name": "in",
+          "occurrences": 2
+        },
+        {
+          "name": "structures",
+          "occurrences": 2
+        },
+        {
+          "name": "something",
+          "occurrences": 2
+        },
+        {
+          "name": "file",
+          "occurrences": 1
+        },
+        {
+          "name": "filnavn",
+          "occurrences": 1
+        },
+        {
+          "name": "open",
+          "occurrences": 1
+        },
+        {
+          "name": "filename",
+          "occurrences": 1
+        },
+        {
+          "name": "of",
+          "occurrences": 1
+        },
+        {
+          "name": "only",
+          "occurrences": 1
+        },
+        {
+          "name": "or",
+          "occurrences": 1
+        },
+        {
+          "name": "should",
+          "occurrences": 1
+        },
+        {
+          "name": "may",
+          "occurrences": 1
+        },
+        {
+          "name": "before",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "ABBS/Install ABBS",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "ABBS/Install ABBS",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/History",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "ABBS/History",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/History",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Config/startup.config",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Text/globalmenu",
+          "keyword": "time left"
+        },
+        {
+          "file": "ABBS/Text/globalmenu",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Text/chatmenu.ansi",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Text/chatmenu",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Text/nodemenu",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Text/chatmenu.raw",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Text/messagefilterhelp",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Doors/Node0Config",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.doc",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/Installation.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.doc",
+          "keyword": "time left"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.doc",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/Broadcast.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.guide",
+          "keyword": "time left"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.guide",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/abbsrexx.guide",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/ConfigBBS.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/ConfigBBS.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/usereditor.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/Doors.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/Doors.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "time left"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "message port"
+        },
+        {
+          "file": "ABBS/Docs/ABBS.guide",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/scripts.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/scripts.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/Docs/ConfigNode.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "ABBS/Docs/ConfigNode.doc",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "ABBS/Docs/ConfigNode.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/Docs/MiscMenu.doc",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/sys/LogoutScript.abbs",
+          "keyword": "carrier"
+        },
+        {
+          "file": "ABBS/sys/LogoutScript.abbs",
+          "keyword": "arexx"
+        },
+        {
+          "file": "ABBS/sys/Upload.script",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/sys/LoginScript.abbs",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "ABBS/sys/login/Clock.abbs",
+          "keyword": "node"
+        },
+        {
+          "file": "ABBS/sys/login/Clock1.abbs",
+          "keyword": "arexx"
+        }
+      ],
+      "high_value_lines": [
+        {
+          "file": "ABBS/Install ABBS",
+          "line": 394,
+          "text": "(prompt \"Installing fifo.library to LIBS:\")"
+        },
+        {
+          "file": "ABBS/Install ABBS",
+          "line": 397,
+          "text": "(source \"Libs/fifo.library\")"
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 261,
+          "text": "ABBSPACK: (or the directory you defined in Preferences)."
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 462,
+          "text": "@{\" Pack/Unpack Path \" link STR_ABBSPack }"
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 478,
+          "text": "@NODE STR_ABBSPack \"Pack/Unpack Path\""
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 486,
+          "text": "As DEFAULT the unpack/pack path has been set to ABBSPACK: This folder"
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 493,
+          "text": "and assign ABBSPACK: to that."
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 619,
+          "text": "If this is set, FE will ask you to delete files in e.g ABBSPACK: (or"
+        },
+        {
+          "file": "ABBS/Help/FE.guide",
+          "line": 621,
+          "text": "will delete files in ABBSPACK: without asking."
+        }
+      ],
+      "sample_files": [
+        "ABBS/ABBS",
+        "ABBS/ABBS-Icon",
+        "ABBS/ABBS.info",
+        "ABBS/ABBS.readme",
+        "ABBS/Bulletins/News1",
+        "ABBS/Bulletins/days1",
+        "ABBS/Bulletins/newsbl",
+        "ABBS/Catalogs/norsk/FE.catalog",
+        "ABBS/Conferences/FILEINFO.h",
+        "ABBS/Conferences/FILEINFO.m",
+        "ABBS/Conferences/NEWS.h",
+        "ABBS/Conferences/NEWS.m",
+        "ABBS/Conferences/POST.h",
+        "ABBS/Conferences/POST.m",
+        "ABBS/Conferences/USERINFO.h",
+        "ABBS/Conferences/USERINFO.m",
+        "ABBS/Config/abbs.keys",
+        "ABBS/Config/banfile",
+        "ABBS/Config/colorfile",
+        "ABBS/Config/filebanfile",
+        "ABBS/Config/node1.config",
+        "ABBS/Config/startup.config",
+        "ABBS/Docs/ABBS.doc",
+        "ABBS/Docs/ABBS.doc.info",
+        "ABBS/Docs/ABBS.guide",
+        "ABBS/Docs/ABBS.guide.info",
+        "ABBS/Docs/AddFile.doc",
+        "ABBS/Docs/AddFile.doc.info",
+        "ABBS/Docs/AddMsg.doc",
+        "ABBS/Docs/AddMsg.doc.info",
+        "ABBS/Docs/Broadcast.doc",
+        "ABBS/Docs/Broadcast.doc.info",
+        "ABBS/Docs/ConfigBBS.doc",
+        "ABBS/Docs/ConfigBBS.doc.info",
+        "ABBS/Docs/ConfigNode.doc",
+        "ABBS/Docs/ConfigNode.doc.info",
+        "ABBS/Docs/Doors.doc",
+        "ABBS/Docs/Doors.doc.info",
+        "ABBS/Docs/FileCache.doc",
+        "ABBS/Docs/FileCache.doc.info",
+        "ABBS/Docs/Installation.doc",
+        "ABBS/Docs/Installation.doc.info",
+        "ABBS/Docs/ListFiles.doc.info",
+        "ABBS/Docs/MiscMenu.doc",
+        "ABBS/Docs/MiscMenu.doc.info",
+        "ABBS/Docs/SysopAvail.doc",
+        "ABBS/Docs/SysopAvail.doc.info",
+        "ABBS/Docs/ToggleCache.doc",
+        "ABBS/Docs/ToggleCache.doc.info",
+        "ABBS/Docs/abbsrexx.doc",
+        "ABBS/Docs/abbsrexx.doc.info",
+        "ABBS/Docs/abbsrexx.guide",
+        "ABBS/Docs/abbsusers.doc",
+        "ABBS/Docs/abbsusers.doc.info",
+        "ABBS/Docs/checkconferences.doc",
+        "ABBS/Docs/checkconferences.doc.info",
+        "ABBS/Docs/flextractor.doc",
+        "ABBS/Docs/flextractor.doc.info",
+        "ABBS/Docs/flmaker.doc",
+        "ABBS/Docs/scripts.doc",
+        "ABBS/Docs/scripts.doc.info",
+        "ABBS/Docs/usereditor.doc",
+        "ABBS/Docs/usereditor.doc.info",
+        "ABBS/Docs.info",
+        "ABBS/Doors/DAYS/DAYS.ABBS",
+        "ABBS/Doors/DAYS/DAYS.DOC",
+        "ABBS/Doors/Node0Config",
+        "ABBS/Doors/Node0Menu",
+        "ABBS/FileHeaders/PRIVATE.fl",
+        "ABBS/FileHeaders/UPLOAD.fl",
+        "ABBS/Help/FE.guide",
+        "ABBS/History",
+        "ABBS/Install ABBS",
+        "ABBS/Install ABBS.info",
+        "ABBS/Text/BulletinHelp",
+        "ABBS/Text/Conf_text/FILEINFO",
+        "ABBS/Text/Conf_text/NEWS",
+        "ABBS/Text/Conf_text/POST",
+        "ABBS/Text/Conf_text/USERINFO",
+        "ABBS/Text/GrabFormat.raw"
+      ],
+      "reviewed_finding": {
+        "family": "ABBS",
+        "role": "BBS distribution and SDK corpus",
+        "finding": "222-entry ABBS 3.20 distribution contains documentation, C, Amiga E, ARexx and libraries; it corroborates ABBS extensibility but is distinct from the preserved ABBS 2.0 source snapshot."
+      }
+    }
+  ]
+}

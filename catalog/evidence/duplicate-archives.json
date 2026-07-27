@@ -2,6 +2,12 @@
   "schema_version": 1,
   "duplicates": [
     {
+      "uploaded": "ABBS320_999(1).lha",
+      "canonical": "ABBS320_999.lha",
+      "sha256": "5e9fd4cbf871a2bbd4579a3f9b35a0cd2187676cab8886b16adbfe8b038380e4",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "acp300(1).lzh",
       "canonical": "acp300.lzh",
       "status": "byte-identical"
@@ -13,8 +19,44 @@
       "canonical": "aedoor28.lha"
     },
     {
+      "uploaded": "aedoor28(2).lha",
+      "canonical": "aedoor28.lha",
+      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "AmBoS_doc_dev(1).lha",
+      "canonical": "AmBoS_doc_dev.lha",
+      "sha256": "1785840c7dc5303bc3d59accdf1250ce003af36bcfd3804917a25207f7259b27",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "AmBoS_mod_E(1).lha",
+      "canonical": "AmBoS_mod_E.lha",
+      "sha256": "12a6ad9d83d50cb0c6009d10bb1d5cc13d565ac00e35b25be4225fabc22471a1",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "ArisDoors4MAXs(1).lha",
+      "canonical": "ArisDoors4MAXs.lha",
+      "sha256": "df13b1aa671f4534be08d6e065e62a6061cfe4c1e00d13365962e05932fa584c",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "ax300(1).lzh",
       "canonical": "ax300.lzh",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "BBSLib-Asm(1).lha",
+      "canonical": "BBSLib-Asm.lha",
+      "sha256": "848331d9e0b8941e37472bd8b3e20d7c772cdf2e13827880df879f54e85470b4",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "CDoorExample(1).lha",
+      "canonical": "CDoorExample.lha",
+      "sha256": "097b33d57cef234b959bfb4ff5972a6c73a81077f1ea8d5d75ed2407ff4fee06",
       "status": "byte-identical"
     },
     {
@@ -57,7 +99,19 @@
       "status": "byte-identical"
     },
     {
+      "uploaded": "door_io12(2).lha",
+      "canonical": "door_io12.lha",
+      "sha256": "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "DoorRunner(1).lha",
+      "canonical": "DoorRunner.lha",
+      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "DoorRunner(2).lha",
       "canonical": "DoorRunner.lha",
       "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
       "status": "byte-identical"
@@ -65,6 +119,42 @@
     {
       "uploaded": "DoorStatus(1).lha",
       "canonical": "DoorStatus.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "fame_dh(1).lha",
+      "canonical": "fame_dh.lha",
+      "sha256": "73250a39fd2c78ae03f3a2f84bb972c07fb6953174b11871671fe230c08c9f1e",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "fcomm(1).lha",
+      "canonical": "fcomm.lha",
+      "sha256": "02daac9dc3f334c45dd9384622086c603c64f69ddbaccec3bb091f2e587aed8d",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "fcomm130(1).lha",
+      "canonical": "fcomm130.lha",
+      "sha256": "9b010d4c807fe2fca82f784f2fadc31e5f21231f355c9c609a0e0db31e5462db",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "fprun11(1).lha",
+      "canonical": "fprun11.lha",
+      "sha256": "073e506c87314a88bed60b4d8091b5fe37207b75b54e9801b3be968cee6127bd",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "HydraBBSdc(1).lha",
+      "canonical": "HydraBBSdc.lha",
+      "sha256": "0d18a9fdb3331e6f2d8db334f4e380cea808efcc14954be91d410e7750d961c6",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "Life1_2(1).lha",
+      "canonical": "Life1_2.lha",
+      "sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc",
       "status": "byte-identical"
     },
     {
@@ -79,6 +169,12 @@
     },
     {
       "uploaded": "max_e (1).lha",
+      "canonical": "max_e.lha",
+      "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "max_e(1).lha",
       "canonical": "max_e.lha",
       "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
       "status": "byte-identical"
@@ -126,6 +222,12 @@
       "status": "byte-identical"
     },
     {
+      "uploaded": "MCesrc(1).lha",
+      "canonical": "MCesrc.lha",
+      "sha256": "2d26aca12d89b8c76150b4b7fdbe487e9e9cdd09fc8af5bbcaa83d0a8eac99ba",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "Mdoors3(1).lha",
       "canonical": "Mdoors3.lha",
       "status": "byte-identical"
@@ -138,6 +240,24 @@
     {
       "uploaded": "Mdoors5(1).lha",
       "canonical": "Mdoors5.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "par2dlg(1).lha",
+      "canonical": "par2dlg.lha",
+      "sha256": "c92ce04f6baf528e581d977fbbedb26351f37a30d5408b99b3b6a93a82366d3e",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "parod123(1).lha",
+      "canonical": "parod123.lha",
+      "sha256": "abb8d333daedd9eb7d83f0754e1910ab93c532a840180c2e1a8f5ab6a07b289b",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "runraw(1).lha",
+      "canonical": "runraw.lha",
+      "sha256": "d42ada96bbf70bca59e4f4c13d0802f306681b4fa89808c7d93cc3cb704ca68c",
       "status": "byte-identical"
     },
     {

@@ -113,3 +113,8 @@ Completed: executable profile tests for portable reference adapters.
 ## M5.0 — Comprehensive archive reanalysis
 
 Completed: all supplied archives were reprocessed, a preserved ABBS 2.0 source snapshot was added, and machine-readable archive-level research coverage was introduced.
+
+
+## M5.1 — Second comprehensive archive reanalysis
+
+Completed: reprocessed 20 additional archive uploads, confirmed their duplicate status, and recorded deeper cross-language API and protocol findings without inflating canonical archive or provenance counts.

@@ -1,5 +1,14 @@
 # Changelog
 
+## M5.1 - Second comprehensive archive reanalysis
+
+- Reprocessed a second batch of 20 LHA archives from raw bytes.
+- Confirmed all 20 uploads as byte-identical redistributions while still unpacking and inspecting every payload.
+- Added a machine-readable archive-by-archive source, API, command, structure and evidence report.
+- Clarified the distinct MAXs/Paragon, FAME, AmBoS, AEDoor, door_io and ABBS interface models.
+- Preserved evidence boundaries: duplicate copies and undocumented numeric commands do not create new semantic mappings.
+- Added regression tests for full batch coverage and key source findings.
+
 ## M5.0 - Comprehensive archive reanalysis
 
 - Reprocessed all 20 supplied archives from raw bytes, including 19 byte-identical redistributions.
