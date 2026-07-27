@@ -28,17 +28,17 @@ BATCH = {
     "session.time_left": "verified",
     "bbs.command": "verified",
     "lifecycle.exit": "verified",
-    "lifecycle.disconnect": "partial",
+    "lifecycle.disconnect": "verified",
 }
-PR3_BASELINE = {
+PR4_BASELINE = {
     "coverage": {
         "total": 90,
-        "reviewed": 34,
-        "verified": 23,
-        "partial": 11,
-        "unassessed": 56,
+        "reviewed": 42,
+        "verified": 30,
+        "partial": 12,
+        "unassessed": 48,
     },
-    "queue": {"total": 56, "high": 46, "medium": 6, "low": 4},
+    "queue": {"total": 48, "high": 40, "medium": 6, "low": 2},
 }
 
 
@@ -58,76 +58,79 @@ GENERATORS = {
 }
 
 
-class M62AEDoorEvidenceBatchTests(unittest.TestCase):
+class M62FAMEEvidenceBatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.crosswalk = load_crosswalk(ROOT)
         cls.coverage = build_crosswalk_coverage(ROOT)
         cls.queue = build_crosswalk_work_queue(ROOT)
-        cls.aedoor = {
+        cls.fame = {
             row["operation"]: row
-            for row in cls.crosswalk["hosts"]["aedoor"]["operations"]
+            for row in cls.crosswalk["hosts"]["fame"]["operations"]
         }
 
     def test_manifest_cells_have_complete_validated_provenance(self) -> None:
-        self.assertGreaterEqual(validate_crosswalk_evidence(ROOT), 42)
+        self.assertEqual(validate_crosswalk_evidence(ROOT), 50)
         for operation, status in BATCH.items():
             with self.subTest(operation=operation):
-                cell = self.aedoor[operation]
-                self.assertEqual(cell["id"], f"aedoor:{operation}")
+                cell = self.fame[operation]
+                self.assertEqual(cell["id"], f"fame:{operation}")
                 self.assertEqual(cell["status"], status)
                 self.assertEqual(cell["semantic_review"], "reviewed")
                 self.assertTrue(cell["symbols"])
                 self.assertTrue(cell["evidence"])
                 self.assertTrue(cell["rationale"])
-                if status == "partial":
-                    self.assertTrue(cell["limitations"])
+                self.assertIn("limitations", cell)
 
-    def test_evidence_resolves_to_the_cataloged_aedoor_archive(self) -> None:
+    def test_evidence_resolves_to_cataloged_fcomm130_archive(self) -> None:
         manifest = json.loads(
-            (ROOT / "catalog" / "archives" / "aedoor28.json").read_text(
+            (ROOT / "catalog" / "archives" / "fcomm130.json").read_text(
                 encoding="utf-8"
             )
         )
+        self.assertEqual(
+            manifest["source_sha256"],
+            "9b010d4c807fe2fca82f784f2fadc31e5f21231f355c9c609a0e0db31e5462db",
+        )
         paths = {entry["path"] for entry in manifest["entries"]}
         for operation in BATCH:
-            for evidence in self.aedoor[operation]["evidence"]:
+            for evidence in self.fame[operation]["evidence"]:
                 with self.subTest(operation=operation, evidence=evidence):
-                    self.assertEqual(evidence["archive"], "aedoor28.lha")
+                    self.assertEqual(evidence["archive"], "fcomm130.lha")
                     self.assertIn(evidence["path"], paths)
                     self.assertTrue(evidence["symbol"])
 
-    def test_batch_is_removed_from_queue_and_uncertain_cell_remains(self) -> None:
+    def test_batch_is_removed_from_queue_and_status_set_remains(self) -> None:
         queued = {item["id"] for item in self.queue["items"]}
         self.assertTrue(
-            all(f"aedoor:{operation}" not in queued for operation in BATCH)
+            all(f"fame:{operation}" not in queued for operation in BATCH)
         )
-        self.assertIn("aedoor:status.set", queued)
+        self.assertIn("fame:status.set", queued)
 
-    def test_coverage_and_queue_match_the_declared_pr3_delta(self) -> None:
+    def test_coverage_and_queue_match_the_declared_pr4_delta(self) -> None:
         summary = self.coverage["summary"]
-        self.assertEqual(summary["total"], PR3_BASELINE["coverage"]["total"])
-        self.assertGreaterEqual(
+        self.assertEqual(summary["total"], PR4_BASELINE["coverage"]["total"])
+        self.assertEqual(
             summary["reviewed"],
-            PR3_BASELINE["coverage"]["reviewed"] + len(BATCH),
+            PR4_BASELINE["coverage"]["reviewed"] + len(BATCH),
         )
-        self.assertGreaterEqual(
+        self.assertEqual(
             summary["verified"],
-            PR3_BASELINE["coverage"]["verified"] + 7,
+            PR4_BASELINE["coverage"]["verified"] + len(BATCH),
         )
-        self.assertGreaterEqual(
-            summary["partial"],
-            PR3_BASELINE["coverage"]["partial"] + 1,
-        )
-        self.assertLessEqual(
+        self.assertEqual(summary["partial"], PR4_BASELINE["coverage"]["partial"])
+        self.assertEqual(
             summary["unassessed"],
-            PR3_BASELINE["coverage"]["unassessed"] - len(BATCH),
+            PR4_BASELINE["coverage"]["unassessed"] - len(BATCH),
         )
         self.assertEqual(summary["reviewed"], summary["verified"] + summary["partial"])
-        self.assertLessEqual(self.queue["summary"]["total"], 48)
+        self.assertEqual(
+            self.queue["summary"],
+            {"total": 40, "high": 32, "medium": 6, "low": 2},
+        )
 
-    def test_only_aedoor_mappings_are_new_in_this_batch(self) -> None:
-        pr2_batch = {
+    def test_only_fame_mappings_are_new_in_this_batch(self) -> None:
+        earlier_batches = {
             ("abbs", "lifecycle.disconnect"),
             ("ambos", "terminal.read_key"),
             ("ambos", "terminal.read_line"),
@@ -136,6 +139,14 @@ class M62AEDoorEvidenceBatchTests(unittest.TestCase):
             ("ucdoor", "terminal.read_line"),
             ("ucdoor", "session.time_left"),
             ("ucdoor", "lifecycle.disconnect"),
+            ("aedoor", "terminal.write"),
+            ("aedoor", "terminal.read_key"),
+            ("aedoor", "terminal.read_line"),
+            ("aedoor", "session.identity"),
+            ("aedoor", "session.time_left"),
+            ("aedoor", "bbs.command"),
+            ("aedoor", "lifecycle.exit"),
+            ("aedoor", "lifecycle.disconnect"),
         }
         m61_reviewed = set()
         for path in (ROOT / "catalog" / "mappings").glob("*.json"):
@@ -152,10 +163,10 @@ class M62AEDoorEvidenceBatchTests(unittest.TestCase):
         }
         expected = (
             m61_reviewed
-            | pr2_batch
-            | {("aedoor", operation) for operation in BATCH}
+            | earlier_batches
+            | {("fame", operation) for operation in BATCH}
         )
-        self.assertTrue(expected <= current_reviewed)
+        self.assertEqual(current_reviewed, expected)
 
     def test_all_generation_is_byte_identical_and_committed(self) -> None:
         with (

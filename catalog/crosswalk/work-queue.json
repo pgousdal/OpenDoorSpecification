@@ -13,8 +13,8 @@
     "low"
   ],
   "summary": {
-    "total": 48,
-    "high": 40,
+    "total": 40,
+    "high": 32,
     "medium": 6,
     "low": 2
   },
@@ -224,79 +224,6 @@
       ]
     },
     {
-      "id": "fame:bbs.command",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "bbs.command",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:lifecycle.disconnect",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.disconnect",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:lifecycle.exit",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:session.identity",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "session.identity",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:session.time_left",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "session.time_left",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
       "id": "fame:status.set",
       "host": "fame",
       "host_name": "FAME DoorPort",
@@ -307,51 +234,6 @@
       "reasons": [
         "host has documented SDK or protocol evidence",
         "operation has a reviewed mapping in another host",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:terminal.read_key",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "terminal.read_key",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:terminal.read_line",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "terminal.read_line",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "fame:terminal.write",
-      "host": "fame",
-      "host_name": "FAME DoorPort",
-      "host_evidence_class": "documented-sdk",
-      "operation": "terminal.write",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
         "host census or archive evidence is already cataloged"
       ]
     },

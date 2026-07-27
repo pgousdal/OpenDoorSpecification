@@ -146,4 +146,6 @@ in M6.2.
   rationales, partial limitations, and provenance cross-references.
 - PR4: eight AEDoor mappings reviewed from the cataloged SDK archive; seven
   verified and one partial, with M6.2 still in progress.
+- PR5: eight FAME DoorPort mappings verified from the cataloged v1.30 command
+  guide; ambiguous node-status mutation remains unassessed.
 - Future work: research and review queued host-operation cells.

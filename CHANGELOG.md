@@ -182,6 +182,8 @@
 - M6.2 PR4 host-centric AEDoor evidence batch: seven verified mappings and one
   partial mapping backed by the cataloged SDK guide, protocol reference,
   headers, and example source.
+- M6.2 PR5 host-centric FAME evidence batch: eight verified mappings backed by
+  the cataloged v1.30 Door-Command Guide.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.

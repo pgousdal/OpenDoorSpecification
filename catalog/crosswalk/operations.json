@@ -95,12 +95,33 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:bbs.command",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "CF_ExecuteCommand",
+            "CF_InternalCmd"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "CF_ExecuteCommand (command 403)",
+              "note": "The command executes the menu command supplied in IOString, including doors when available."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "CF_InternalCmd (command 404)",
+              "note": "The companion command executes a supplied internal menu command."
+            }
+          ],
+          "rationale": "Commands 403 and 404 explicitly invoke FAME menu commands from a door.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:bbs.command",
@@ -295,12 +316,33 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:lifecycle.disconnect",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "FAMEDoorMsg.fdom_ReturnCode",
+            "MC_ShutDown"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "FAMEDoorMsg.fdom_ReturnCode",
+              "note": "Return code -2 is defined as carrier lost, and the guide requires the door to close immediately on negative return codes."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "MC_ShutDown (command 2)",
+              "note": "The guide requires MC_ShutDown to be the final command after a negative return code."
+            }
+          ],
+          "rationale": "The protocol directly reports carrier loss and mandates immediate orderly door termination.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:lifecycle.disconnect",
@@ -479,12 +521,33 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:lifecycle.exit",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "MC_ShutDown",
+            "MC_ShutDownLastWords"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "MC_ShutDown (command 2)",
+              "note": "The guide requires this command whenever a door exits and documents that it notifies the node and decrements the door counter."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "MC_ShutDownLastWords (command 3)",
+              "note": "The alternate shutdown command also sends a final string to the user."
+            }
+          ],
+          "rationale": "The mandatory shutdown commands explicitly return control and lifecycle state to the FAME node.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:lifecycle.exit",
@@ -660,12 +723,40 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:session.identity",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "NR_Name",
+            "NR_SlotNumber",
+            "NR_Location"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_Name (command 31)",
+              "note": "The command returns the current user's name or handle."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_SlotNumber (command 36)",
+              "note": "The command returns the current user's stable slot number."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_Location (command 33)",
+              "note": "The command returns the current user's location."
+            }
+          ],
+          "rationale": "The DoorPort exposes the caller's name, stable user slot, and location through explicit commands.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:session.identity",
@@ -840,12 +931,26 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:session.time_left",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "NR_TimeRemain"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_TimeRemain (command 48)",
+              "note": "The command returns the user's total time remaining for the day in seconds."
+            }
+          ],
+          "rationale": "NR_TimeRemain directly returns remaining session allowance in canonical seconds.",
+          "limitations": []
         },
         "paragon": {
           "status": "unassessed",
@@ -1178,12 +1283,33 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:terminal.read_key",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "NR_HotKey",
+            "AR_WaitRAWChar"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_HotKey (command 15)",
+              "note": "The command returns a typed character's ASCII value and its console or serial origin."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "AR_WaitRAWChar (command 801)",
+              "note": "The command waits for one character and returns the typed character and its origin."
+            }
+          ],
+          "rationale": "FAME provides both nonblocking character retrieval and a documented wait-for-character command.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:terminal.read_key",
@@ -1397,12 +1523,26 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:terminal.read_line",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "NR_PromptChars"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_PromptChars (command 14)",
+              "note": "The command accepts a maximum length and prompt, returns typed text, and documents a full line-editor mode."
+            }
+          ],
+          "rationale": "NR_PromptChars implements bounded terminal line input with a documented editing mode.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:terminal.read_line",
@@ -1642,12 +1782,33 @@
           ]
         },
         "fame": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "fame:terminal.write",
+          "host": "fame",
+          "status": "verified",
+          "symbols": [
+            "NR_SendStr",
+            "NR_SendStrCRLF"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_SendStr (command 10)",
+              "note": "The command sends the FAMEDoorMsg IOString to the user."
+            },
+            {
+              "archive": "fcomm130.lha",
+              "path": "Documentation/FAMECommands.guide",
+              "symbol": "NR_SendStrCRLF (command 11)",
+              "note": "The companion command sends the string with CR/LF."
+            }
+          ],
+          "rationale": "The documented DoorPort string commands provide terminal output with explicit newline control.",
+          "limitations": []
         },
         "paragon": {
           "id": "paragon:terminal.write",
