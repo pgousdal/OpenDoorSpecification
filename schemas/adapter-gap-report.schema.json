@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/adapter-gap-report.schema.json",
+  "title": "ODS Adapter Gap Report",
+  "type": "object",
+  "required": ["schema_version", "spec_version", "operations", "historical_apis", "adapters", "summary"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "spec_version": {"type": "string"},
+    "operations": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "historical_apis": {"type": "array"},
+    "adapters": {"type": "array"},
+    "summary": {"type": "object"}
+  },
+  "additionalProperties": false
+}

@@ -5,6 +5,7 @@ from .parsers.lha import inspect
 from .semantic import compare, load_mapping, load_operations
 from .coverage import build_coverage, write_coverage
 from .operations import build_operation_records, write_operation_records
+from .gaps import build_adapter_gap_report, write_adapter_gap_report
 from .simulator import load_scenario, run_scenario
 
 
@@ -92,6 +93,9 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         for record in generated_records["operations"]:
             path = operation_dir / (record["id"].replace(".", "-") + ".json")
             assert json.loads(path.read_text(encoding="utf-8")) == record, f"stale operation record: {record['id']}"
+        gap_report = build_adapter_gap_report(root)
+        stored_gap_report = json.loads((root / "catalog" / "knowledge" / "adapter-gap-report.json").read_text(encoding="utf-8"))
+        assert stored_gap_report == gap_report, "stale adapter gap report"
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
 
 
@@ -112,6 +116,17 @@ def _format_operation_record(record: dict) -> str:
     return "\n".join(lines)
 
 
+
+def _format_gap_target(target: dict) -> str:
+    lines = [f"{target['id']} ({target['kind']})"]
+    for row in target['rows']:
+        symbols = f" — {', '.join(row.get('symbols', []))}" if row.get('symbols') else ""
+        lines.append(f"  {row['operation']:<28} {row['status']}{symbols}")
+    summary = target['summary']
+    lines.append(f"summary: {summary['supported']} supported, {summary['partial']} partial, {summary['missing']} missing")
+    return "\n".join(lines)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(prog="ods")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -129,6 +144,10 @@ def main() -> int:
     cov = sub.add_parser("coverage", help="report provenance coverage for semantic mappings")
     cov.add_argument("--json", action="store_true", help="print the complete machine-readable report")
     cov.add_argument("--write", type=Path, help="write the report to a JSON file")
+    gaps = sub.add_parser("gaps", help="report historical API and adapter operation gaps")
+    gaps.add_argument("target", nargs="?", help="historical API or adapter ID")
+    gaps.add_argument("--json", action="store_true", help="print machine-readable JSON")
+    gaps.add_argument("--write", type=Path, help="write the report to a JSON file")
     ops = sub.add_parser("operations", help="list or inspect canonical operation records")
     ops.add_argument("operation", nargs="?", help="operation ID to inspect")
     ops.add_argument("--json", action="store_true", help="print machine-readable JSON")
@@ -152,6 +171,30 @@ def main() -> int:
             args.json.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
+    if args.command == "gaps":
+        report = write_adapter_gap_report(root, args.write) if args.write else build_adapter_gap_report(root)
+        targets = [*report["historical_apis"], *report["adapters"]]
+        if args.target:
+            if args.target.startswith("api:"):
+                matches = [item for item in report["historical_apis"] if item["id"] == args.target[4:]]
+            elif args.target.startswith("adapter:"):
+                matches = [item for item in report["adapters"] if item["id"] == args.target[8:]]
+            else:
+                matches = [item for item in targets if item["id"] == args.target]
+            if not matches:
+                raise SystemExit(f"unknown API or adapter: {args.target}")
+            if len(matches) > 1:
+                raise SystemExit(f"ambiguous target: {args.target}; use api:{args.target} or adapter:{args.target}")
+            target = matches[0]
+            print(json.dumps(target, indent=2) if args.json else _format_gap_target(target))
+        elif args.json:
+            print(json.dumps(report, indent=2))
+        else:
+            print("target                       kind                 supported partial missing")
+            for item in targets:
+                summary = item["summary"]
+                print(f"{item['id']:<28} {item['kind']:<20} {summary['supported']:<9} {summary['partial']:<7} {summary['missing']}")
+        return 0
     if args.command == "operations":
         result = write_operation_records(root, args.write) if args.write else build_operation_records(root)
         records = result["operations"]

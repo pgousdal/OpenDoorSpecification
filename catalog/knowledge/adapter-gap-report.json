@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "operations": [
+    "terminal.write",
+    "terminal.read_key",
+    "terminal.read_line",
+    "session.identity",
+    "session.node",
+    "session.time_left",
+    "session.connection_state",
+    "status.set",
+    "bbs.command",
+    "lifecycle.exit",
+    "lifecycle.disconnect"
+  ],
+  "historical_apis": [
+    {
+      "id": "abbs",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "partial",
+          "symbols": [
+            "Writeln",
+            "Write"
+          ]
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "supported",
+          "symbols": [
+            "GetKey"
+          ]
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "supported",
+          "symbols": [
+            "GetString"
+          ]
+        },
+        {
+          "operation": "session.identity",
+          "status": "supported",
+          "symbols": [
+            "UserName",
+            "UserNumber"
+          ]
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "supported",
+          "symbols": [
+            "TimeLeft"
+          ]
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "supported",
+          "symbols": [
+            "SetStatus"
+          ]
+        },
+        {
+          "operation": "bbs.command",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "missing",
+          "symbols": []
+        }
+      ],
+      "summary": {
+        "supported": 5,
+        "partial": 1,
+        "missing": 5
+      }
+    },
+    {
+      "id": "aedoor",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.identity",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "bbs.command",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "missing",
+          "symbols": []
+        }
+      ],
+      "summary": {
+        "supported": 0,
+        "partial": 0,
+        "missing": 11
+      }
+    },
+    {
+      "id": "ambos",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "supported",
+          "symbols": [
+            "BBSWrite",
+            "BBSPrintf"
+          ]
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.identity",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "bbs.command",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "partial",
+          "symbols": [
+            "BBSCarrier"
+          ]
+        }
+      ],
+      "summary": {
+        "supported": 1,
+        "partial": 1,
+        "missing": 9
+      }
+    },
+    {
+      "id": "daydream",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "supported",
+          "symbols": [
+            "DDPutStr",
+            "DDPrintf"
+          ]
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "supported",
+          "symbols": [
+            "DDGetKey"
+          ]
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "partial",
+          "symbols": [
+            "Prompt"
+          ]
+        },
+        {
+          "operation": "session.identity",
+          "status": "partial",
+          "symbols": [
+            "GetAccount"
+          ]
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "supported",
+          "symbols": [
+            "TimeLeft"
+          ]
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "supported",
+          "symbols": [
+            "ChangeActivity"
+          ]
+        },
+        {
+          "operation": "bbs.command",
+          "status": "supported",
+          "symbols": [
+            "InternalCommand"
+          ]
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "partial",
+          "symbols": [
+            "Carrier"
+          ]
+        }
+      ],
+      "summary": {
+        "supported": 5,
+        "partial": 3,
+        "missing": 3
+      }
+    },
+    {
+      "id": "door-io",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "supported",
+          "symbols": [
+            "DoorPrint"
+          ]
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "supported",
+          "symbols": [
+            "DoorGetKey"
+          ]
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "supported",
+          "symbols": [
+            "DoorGetString"
+          ]
+        },
+        {
+          "operation": "session.identity",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "bbs.command",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "missing",
+          "symbols": []
+        }
+      ],
+      "summary": {
+        "supported": 3,
+        "partial": 0,
+        "missing": 8
+      }
+    },
+    {
+      "id": "fame",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.identity",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "bbs.command",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "missing",
+          "symbols": []
+        }
+      ],
+      "summary": {
+        "supported": 0,
+        "partial": 0,
+        "missing": 11
+      }
+    },
+    {
+      "id": "paragon",
+      "kind": "historical-api",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "supported",
+          "symbols": [
+            "command 1",
+            "mxPrint"
+          ]
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "supported",
+          "symbols": [
+            "command 8",
+            "mxHotKey"
+          ]
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "supported",
+          "symbols": [
+            "command 6",
+            "mxInput"
+          ]
+        },
+        {
+          "operation": "session.identity",
+          "status": "partial",
+          "symbols": [
+            "command 13",
+            "command 14",
+            "mxGetIntInfo",
+            "mxGetStrInfo"
+          ]
+        },
+        {
+          "operation": "session.node",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.time_left",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "status.set",
+          "status": "missing",
+          "symbols": []
+        },
+        {
+          "operation": "bbs.command",
+          "status": "supported",
+          "symbols": [
+            "mxMenuFunct",
+            "message command field"
+          ]
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "supported",
+          "symbols": [
+            "command 20"
+          ]
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "supported",
+          "symbols": [
+            "command 9",
+            "carrier field"
+          ]
+        }
+      ],
+      "summary": {
+        "supported": 6,
+        "partial": 1,
+        "missing": 4
+      }
+    }
+  ],
+  "adapters": [
+    {
+      "id": "daydream",
+      "kind": "historical-adapter",
+      "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
+      "conformance": "host-and-c-tested",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "supported"
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "supported"
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "supported"
+        },
+        {
+          "operation": "session.identity",
+          "status": "supported"
+        },
+        {
+          "operation": "session.node",
+          "status": "supported"
+        },
+        {
+          "operation": "session.time_left",
+          "status": "supported"
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "supported"
+        },
+        {
+          "operation": "status.set",
+          "status": "supported"
+        },
+        {
+          "operation": "bbs.command",
+          "status": "supported"
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "supported"
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "supported"
+        }
+      ],
+      "summary": {
+        "supported": 11,
+        "partial": 0,
+        "missing": 0
+      }
+    },
+    {
+      "id": "host-simulator",
+      "kind": "reference",
+      "implementation": "ods_tools.adapters.host.HostAdapter",
+      "conformance": "unspecified",
+      "rows": [
+        {
+          "operation": "terminal.write",
+          "status": "supported"
+        },
+        {
+          "operation": "terminal.read_key",
+          "status": "supported"
+        },
+        {
+          "operation": "terminal.read_line",
+          "status": "supported"
+        },
+        {
+          "operation": "session.identity",
+          "status": "supported"
+        },
+        {
+          "operation": "session.node",
+          "status": "supported"
+        },
+        {
+          "operation": "session.time_left",
+          "status": "supported"
+        },
+        {
+          "operation": "session.connection_state",
+          "status": "supported"
+        },
+        {
+          "operation": "status.set",
+          "status": "supported"
+        },
+        {
+          "operation": "bbs.command",
+          "status": "supported"
+        },
+        {
+          "operation": "lifecycle.exit",
+          "status": "supported"
+        },
+        {
+          "operation": "lifecycle.disconnect",
+          "status": "supported"
+        }
+      ],
+      "summary": {
+        "supported": 11,
+        "partial": 0,
+        "missing": 0
+      }
+    }
+  ],
+  "summary": {
+    "operation_count": 11,
+    "historical_api_count": 7,
+    "adapter_count": 2,
+    "complete_targets": 2
+  }
+}

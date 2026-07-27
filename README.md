@@ -48,3 +48,10 @@ PYTHONPATH=tools/ods-tools/src python3 -m ods_tools operations
 ```
 
 See [`docs/provenance-coverage.md`](docs/provenance-coverage.md).
+
+### Adapter and historical API gaps
+
+```sh
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools gaps
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools gaps api:daydream
+```

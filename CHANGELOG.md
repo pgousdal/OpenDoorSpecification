@@ -97,3 +97,10 @@
 - Combined normative definitions, historical mappings, provenance coverage, and adapter support.
 - Added `ods operations` for listing, inspection, JSON output, and regeneration.
 - Made strict validation reject stale operation records and indexes.
+
+## M4.5
+
+- Added a generated operation-gap matrix for historical APIs and executable adapters.
+- Added `ods gaps` with summary, target inspection, JSON output, and report regeneration.
+- Classified coverage as supported, partial, or missing without overstating historical evidence.
+- Made strict validation reject a stale adapter-gap report.
