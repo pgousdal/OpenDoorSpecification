@@ -57,21 +57,29 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         for implementation in item["implementations"]:
             assert implementation["api"] in registered_apis
 
+    provenance_count = 0
     if strict:
         archive_entries = {
             manifest["source_filename"]: {entry["path"] for entry in manifest["entries"]}
             for manifest in manifests
         }
+        provenance_ids = set()
         for path in sorted((root / "catalog" / "provenance").glob("*.json")):
             record = json.loads(path.read_text(encoding="utf-8"))
+            assert record["id"] not in provenance_ids, path
+            provenance_ids.add(record["id"])
+            assert path.stem == record["id"], path
+            assert record["status"] in {"documented", "observed", "inferred", "unknown"}, path
             if "operation" in record:
                 assert record["operation"] in operation_ids, path
             if "api" in record:
                 assert record["api"] in registered_apis, path
+            assert record["sources"], path
             for source in record["sources"]:
                 assert source["archive"] in archive_entries, path
                 assert source["path"] in archive_entries[source["archive"]], path
-    return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count
+            provenance_count += 1
+    return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
 
 
 def main() -> int:
@@ -113,8 +121,8 @@ def main() -> int:
             print(f"{d['source_filename']}: {d['entry_count']} entries {d['source_sha256'][:12]}")
         return 0
     if args.command == "validate":
-        archives, entries, mappings = validate(root, strict=args.strict)
-        suffix = ", strict provenance" if args.strict else ""
+        archives, entries, mappings, provenance = validate(root, strict=args.strict)
+        suffix = f", {provenance} provenance records, strict provenance" if args.strict else ""
         print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}")
         return 0
     if args.command == "inspect":

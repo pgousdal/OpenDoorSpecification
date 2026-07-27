@@ -1,0 +1,25 @@
+{
+  "id": "prov.paragon.terminal-read-line.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.read_line",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "Paragon/MAXs command 6 reads a line of terminal input",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "mxInput"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/cdgetstr.htm",
+      "symbol": "CDGetStr"
+    },
+    {
+      "archive": "CDoorExample.lha",
+      "path": "door.c",
+      "symbol": "command 6"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "prov.paragon.behavior-corpus.1",
+  "claim_type": "behavior",
+  "api": "paragon",
+  "status": "observed",
+  "summary": "Historical MAXs doors repeatedly use the message protocol for terminal I/O, user data, BBS functions and termination",
+  "sources": [
+    {
+      "archive": "ArisDoors4MAXs.lha",
+      "path": "arisdoors4maxs/upload_lister/Upload_Lister.c"
+    },
+    {
+      "archive": "ArisDoors4MAXs.lha",
+      "path": "arisdoors4maxs/sysopactivity/SysopActivity.c"
+    },
+    {
+      "archive": "ArisDoors4MAXs.lha",
+      "path": "arisdoors4maxs/section_mover/Section_Mover.c"
+    }
+  ]
+}

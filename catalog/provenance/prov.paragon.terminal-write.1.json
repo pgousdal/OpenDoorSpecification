@@ -1,0 +1,28 @@
+{
+  "id": "prov.paragon.terminal-write.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.write",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "Paragon/MAXs command 1 writes text to the caller terminal",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "mxPrint",
+      "note": "Language binding sends command 1."
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/cdputstr.htm",
+      "symbol": "CDPutStr",
+      "note": "SDK documentation for terminal output."
+    },
+    {
+      "archive": "CDoorExample.lha",
+      "path": "door.c",
+      "symbol": "command 1",
+      "note": "Minimal C door uses the message command in practice."
+    }
+  ]
+}

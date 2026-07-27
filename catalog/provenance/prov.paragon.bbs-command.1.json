@@ -1,0 +1,25 @@
+{
+  "id": "prov.paragon.bbs-command.1",
+  "claim_type": "operation-mapping",
+  "operation": "bbs.command",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "The message command field invokes supported BBS-side functions",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "mxMenuFunct"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/dofuncti.htm",
+      "symbol": "DoFunction"
+    },
+    {
+      "archive": "ArisDoors4MAXs.lha",
+      "path": "arisdoors4maxs/clicontrol/Control.c",
+      "note": "Observed in historical door source."
+    }
+  ]
+}

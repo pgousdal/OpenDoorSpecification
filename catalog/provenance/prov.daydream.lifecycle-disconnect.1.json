@@ -1,0 +1,20 @@
+{
+  "id": "prov.daydream.lifecycle-disconnect.1",
+  "claim_type": "operation-mapping",
+  "operation": "lifecycle.disconnect",
+  "api": "daydream",
+  "status": "documented",
+  "summary": "DreamDoor Carrier reports whether the caller remains connected",
+  "sources": [
+    {
+      "archive": "DayDreamBBSDev.lha",
+      "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+      "symbol": "Carrier"
+    },
+    {
+      "archive": "DayDreamBBSDev.lha",
+      "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+      "symbol": "Carrier"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "prov.paragon.terminal-read-key.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.read_key",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "Paragon/MAXs command 8 reads a key from the caller",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "mxHotKey"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/getchar.htm",
+      "symbol": "GetChar"
+    },
+    {
+      "archive": "CDoorExample.lha",
+      "path": "door.c",
+      "symbol": "command 8"
+    }
+  ]
+}

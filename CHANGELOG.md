@@ -76,3 +76,10 @@
 - Added a canonical cross-reference index for ODS operations and historical mappings.
 - Added a common provenance schema and strict dangling-reference validation.
 - Added `ods validate --strict`.
+
+## M4.2
+
+- Populated canonical provenance records for DayDream and Paragon/MAXs.
+- Added multi-source evidence for operation mappings, message structure, and observed behavior.
+- Extended strict validation with unique provenance IDs and population statistics.
+- Documented the provenance population and remaining coverage limits.

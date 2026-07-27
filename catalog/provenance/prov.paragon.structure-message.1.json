@@ -1,0 +1,24 @@
+{
+  "id": "prov.paragon.structure-message.1",
+  "claim_type": "structure",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "The Paragon/MAXs door message carries an Exec message header, command, data, text and carrier state",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "MDDOOR"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/include/ucdoor.h",
+      "symbol": "MDDOOR"
+    },
+    {
+      "archive": "DoorRunner.lha",
+      "path": "DoorRunner1_30/Examples/E/MAXStruc.e",
+      "symbol": "MAXStruc"
+    }
+  ]
+}

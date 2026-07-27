@@ -1,0 +1,20 @@
+{
+  "id": "prov.daydream.status-set.1",
+  "claim_type": "operation-mapping",
+  "operation": "status.set",
+  "api": "daydream",
+  "status": "documented",
+  "summary": "DreamDoor ChangeActivity updates the node activity text",
+  "sources": [
+    {
+      "archive": "DayDreamBBSDev.lha",
+      "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+      "symbol": "ChangeActivity"
+    },
+    {
+      "archive": "DayDreamBBSDev.lha",
+      "path": "DayDream/Developer/DreamDoor/Sas_C/Example/Stat.C",
+      "note": "Observed SDK example usage."
+    }
+  ]
+}

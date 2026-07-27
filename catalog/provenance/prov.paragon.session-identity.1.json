@@ -1,0 +1,25 @@
+{
+  "id": "prov.paragon.session-identity.1",
+  "claim_type": "operation-mapping",
+  "operation": "session.identity",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "Commands 13 and 14 expose numeric and textual caller information",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "mxGetIntInfo/mxGetStrInfo"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/getuseri.htm",
+      "symbol": "GetUserInfo"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/getuserd.htm",
+      "symbol": "GetUserData"
+    }
+  ]
+}

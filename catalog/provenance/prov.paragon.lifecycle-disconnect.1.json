@@ -1,0 +1,25 @@
+{
+  "id": "prov.paragon.lifecycle-disconnect.1",
+  "claim_type": "operation-mapping",
+  "operation": "lifecycle.disconnect",
+  "api": "paragon",
+  "status": "documented",
+  "summary": "Command 9 and the carrier field represent disconnect state and action",
+  "sources": [
+    {
+      "archive": "max_e.lha",
+      "path": "MAXDoor.e",
+      "symbol": "carrier/command 9"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/carrier.htm",
+      "symbol": "Carrier"
+    },
+    {
+      "archive": "ucdoor10.lha",
+      "path": "ucdoor/html/cdend.htm",
+      "symbol": "CDEnd"
+    }
+  ]
+}
