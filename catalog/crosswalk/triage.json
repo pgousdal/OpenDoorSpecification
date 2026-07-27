@@ -1,0 +1,774 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.2",
+  "kind": "crosswalk-evidence-triage",
+  "source_path": "catalog/crosswalk/work-queue.json",
+  "semantics": {
+    "category": "Primary reason the cell remains unassessed.",
+    "effort": "Estimated evidence-research effort, not implementation effort.",
+    "confidence": "Confidence that sufficient additional evidence can be found.",
+    "unassessed": "No reviewed mapping is recorded; this does not mean unsupported."
+  },
+  "vocabularies": {
+    "categories": [
+      "documented-but-not-reviewed",
+      "insufficient-semantics",
+      "missing-primary-source",
+      "insufficient-sdk",
+      "ambiguous-operation",
+      "needs-additional-research"
+    ],
+    "efforts": [
+      "trivial",
+      "small",
+      "moderate",
+      "extensive"
+    ],
+    "confidences": [
+      "high",
+      "medium",
+      "low"
+    ],
+    "documentation_qualities": [
+      "comprehensive",
+      "targeted",
+      "limited",
+      "observational"
+    ],
+    "recommended_priorities": [
+      "high",
+      "medium",
+      "low"
+    ]
+  },
+  "summary": {
+    "total": 34,
+    "categories": {
+      "documented-but-not-reviewed": 2,
+      "insufficient-semantics": 3,
+      "missing-primary-source": 18,
+      "insufficient-sdk": 6,
+      "ambiguous-operation": 3,
+      "needs-additional-research": 2
+    },
+    "efforts": {
+      "trivial": 0,
+      "small": 2,
+      "moderate": 8,
+      "extensive": 24
+    },
+    "confidences": {
+      "high": 2,
+      "medium": 6,
+      "low": 26
+    }
+  },
+  "hosts": [
+    {
+      "host": "abbs",
+      "host_name": "ABBS ARexx",
+      "reviewed_mappings": 7,
+      "remaining_mappings": 2,
+      "triage_categories": [
+        "needs-additional-research"
+      ],
+      "documentation_quality": "comprehensive",
+      "recommended_priority": "medium",
+      "next_evidence_opportunity": "Review the ARexx guide and door lifecycle documentation for host command dispatch and normal script completion."
+    },
+    {
+      "host": "aedoor",
+      "host_name": "AmiExpress/AEDoor",
+      "reviewed_mappings": 8,
+      "remaining_mappings": 1,
+      "triage_categories": [
+        "ambiguous-operation"
+      ],
+      "documentation_quality": "comprehensive",
+      "recommended_priority": "low",
+      "next_evidence_opportunity": "Locate an AmiExpress node-action or status-text setter beyond the public AEDoor calls already reviewed."
+    },
+    {
+      "host": "ambos",
+      "host_name": "AmBoS bbs.library",
+      "reviewed_mappings": 4,
+      "remaining_mappings": 5,
+      "triage_categories": [
+        "documented-but-not-reviewed",
+        "insufficient-semantics",
+        "insufficient-sdk"
+      ],
+      "documentation_quality": "comprehensive",
+      "recommended_priority": "high",
+      "next_evidence_opportunity": "Review bbs_close for normal completion and bbs_open/ExternInfo for current-caller identity."
+    },
+    {
+      "host": "door-io",
+      "host_name": "door_io.library",
+      "reviewed_mappings": 5,
+      "remaining_mappings": 4,
+      "triage_categories": [
+        "insufficient-sdk"
+      ],
+      "documentation_quality": "targeted",
+      "recommended_priority": "low",
+      "next_evidence_opportunity": "Seek host-specific wrapper documentation; the public library itself contains only terminal I/O and lifecycle cleanup."
+    },
+    {
+      "host": "fame",
+      "host_name": "FAME DoorPort",
+      "reviewed_mappings": 8,
+      "remaining_mappings": 1,
+      "triage_categories": [
+        "ambiguous-operation"
+      ],
+      "documentation_quality": "comprehensive",
+      "recommended_priority": "medium",
+      "next_evidence_opportunity": "Check developer-only DoorPort commands for a node action-string setter distinct from account status."
+    },
+    {
+      "host": "paragon",
+      "host_name": "MAXs/Paragon message protocol",
+      "reviewed_mappings": 7,
+      "remaining_mappings": 2,
+      "triage_categories": [
+        "insufficient-semantics"
+      ],
+      "documentation_quality": "limited",
+      "recommended_priority": "medium",
+      "next_evidence_opportunity": "Find a primary MAXs command table defining remaining-time fields and host-visible activity mutation."
+    },
+    {
+      "host": "ucdoor",
+      "host_name": "UCDoor compatibility wrapper",
+      "reviewed_mappings": 8,
+      "remaining_mappings": 1,
+      "triage_categories": [
+        "ambiguous-operation"
+      ],
+      "documentation_quality": "comprehensive",
+      "recommended_priority": "low",
+      "next_evidence_opportunity": "Research the underlying MAXs protocol for a node activity-description setter not exposed by UCDoor."
+    },
+    {
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "reviewed_mappings": 0,
+      "remaining_mappings": 9,
+      "triage_categories": [
+        "missing-primary-source"
+      ],
+      "documentation_quality": "observational",
+      "recommended_priority": "low",
+      "next_evidence_opportunity": "Locate and catalog a WWBBS ARexx programmer reference or protocol definition before reviewing individual operations."
+    },
+    {
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "reviewed_mappings": 0,
+      "remaining_mappings": 9,
+      "triage_categories": [
+        "missing-primary-source"
+      ],
+      "documentation_quality": "observational",
+      "recommended_priority": "low",
+      "next_evidence_opportunity": "Locate and catalog a Zeus door SDK or protocol specification before reviewing individual operations."
+    }
+  ],
+  "items": [
+    {
+      "id": "abbs:bbs.command",
+      "host": "abbs",
+      "host_name": "ABBS ARexx",
+      "host_evidence_class": "documented-sdk",
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "needs-additional-research",
+      "effort": "moderate",
+      "confidence": "medium",
+      "triage_rationale": "Primary material is available, but the relevant host interaction has not yet been isolated and interpreted."
+    },
+    {
+      "id": "abbs:lifecycle.exit",
+      "host": "abbs",
+      "host_name": "ABBS ARexx",
+      "host_evidence_class": "documented-sdk",
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host has a related reviewed operation in the same family",
+        "operation is foundational for terminal, session, or lifecycle behavior",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "needs-additional-research",
+      "effort": "moderate",
+      "confidence": "medium",
+      "triage_rationale": "Primary material is available, but the relevant host interaction has not yet been isolated and interpreted."
+    },
+    {
+      "id": "aedoor:status.set",
+      "host": "aedoor",
+      "host_name": "AmiExpress/AEDoor",
+      "host_evidence_class": "documented-sdk",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has a reviewed mapping in another host",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "ambiguous-operation",
+      "effort": "moderate",
+      "confidence": "low",
+      "triage_rationale": "Status-related evidence exists, but it does not clearly set the canonical host-visible activity description."
+    },
+    {
+      "id": "ambos:bbs.command",
+      "host": "ambos",
+      "host_name": "AmBoS bbs.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-semantics",
+      "effort": "moderate",
+      "confidence": "medium",
+      "triage_rationale": "Cataloged material exposes nearby commands or fields without defining enough behavior for the canonical operation."
+    },
+    {
+      "id": "ambos:lifecycle.exit",
+      "host": "ambos",
+      "host_name": "AmBoS bbs.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host has a related reviewed operation in the same family",
+        "operation is foundational for terminal, session, or lifecycle behavior",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "documented-but-not-reviewed",
+      "effort": "small",
+      "confidence": "high",
+      "triage_rationale": "Cataloged primary documentation names the required behavior, but the mapping still needs a focused semantic review."
+    },
+    {
+      "id": "ambos:session.identity",
+      "host": "ambos",
+      "host_name": "AmBoS bbs.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "session.identity",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "documented-but-not-reviewed",
+      "effort": "small",
+      "confidence": "high",
+      "triage_rationale": "Cataloged primary documentation names the required behavior, but the mapping still needs a focused semantic review."
+    },
+    {
+      "id": "ambos:session.time_left",
+      "host": "ambos",
+      "host_name": "AmBoS bbs.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-sdk",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "The cataloged SDK does not expose an interface for this operation."
+    },
+    {
+      "id": "ambos:status.set",
+      "host": "ambos",
+      "host_name": "AmBoS bbs.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has a reviewed mapping in another host",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-sdk",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "The cataloged SDK does not expose an interface for this operation."
+    },
+    {
+      "id": "door-io:bbs.command",
+      "host": "door-io",
+      "host_name": "door_io.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-sdk",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "The cataloged SDK does not expose an interface for this operation."
+    },
+    {
+      "id": "door-io:session.identity",
+      "host": "door-io",
+      "host_name": "door_io.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "session.identity",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-sdk",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "The cataloged SDK does not expose an interface for this operation."
+    },
+    {
+      "id": "door-io:session.time_left",
+      "host": "door-io",
+      "host_name": "door_io.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-sdk",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "The cataloged SDK does not expose an interface for this operation."
+    },
+    {
+      "id": "door-io:status.set",
+      "host": "door-io",
+      "host_name": "door_io.library",
+      "host_evidence_class": "documented-sdk",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has a reviewed mapping in another host",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-sdk",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "The cataloged SDK does not expose an interface for this operation."
+    },
+    {
+      "id": "fame:status.set",
+      "host": "fame",
+      "host_name": "FAME DoorPort",
+      "host_evidence_class": "documented-sdk",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has a reviewed mapping in another host",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "ambiguous-operation",
+      "effort": "moderate",
+      "confidence": "medium",
+      "triage_rationale": "Status-related evidence exists, but it does not clearly set the canonical host-visible activity description."
+    },
+    {
+      "id": "paragon:session.time_left",
+      "host": "paragon",
+      "host_name": "MAXs/Paragon message protocol",
+      "host_evidence_class": "documented-protocol",
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has reviewed mappings in at least three other hosts",
+        "host has a related reviewed operation in the same family",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-semantics",
+      "effort": "moderate",
+      "confidence": "medium",
+      "triage_rationale": "Cataloged material exposes nearby commands or fields without defining enough behavior for the canonical operation."
+    },
+    {
+      "id": "paragon:status.set",
+      "host": "paragon",
+      "host_name": "MAXs/Paragon message protocol",
+      "host_evidence_class": "documented-protocol",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "host has documented SDK or protocol evidence",
+        "operation has a reviewed mapping in another host",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "insufficient-semantics",
+      "effort": "moderate",
+      "confidence": "medium",
+      "triage_rationale": "Cataloged material exposes nearby commands or fields without defining enough behavior for the canonical operation."
+    },
+    {
+      "id": "wwbbs:lifecycle.disconnect",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "lifecycle.disconnect",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:lifecycle.exit",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:session.identity",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "session.identity",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:terminal.read_key",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "terminal.read_key",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:terminal.read_line",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "terminal.read_line",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:terminal.write",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "terminal.write",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:lifecycle.disconnect",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "lifecycle.disconnect",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:lifecycle.exit",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:session.identity",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "session.identity",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:terminal.read_key",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "terminal.read_key",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:terminal.read_line",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "terminal.read_line",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:terminal.write",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "terminal.write",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "ucdoor:status.set",
+      "host": "ucdoor",
+      "host_name": "UCDoor compatibility wrapper",
+      "host_evidence_class": "wrapper-binding",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "medium",
+      "reasons": [
+        "operation has a reviewed mapping in another host",
+        "host census or archive evidence is already cataloged"
+      ],
+      "category": "ambiguous-operation",
+      "effort": "moderate",
+      "confidence": "low",
+      "triage_rationale": "Status-related evidence exists, but it does not clearly set the canonical host-visible activity description."
+    },
+    {
+      "id": "wwbbs:bbs.command",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "priority": "medium",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:session.time_left",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "priority": "medium",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:bbs.command",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "priority": "medium",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:session.time_left",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "priority": "medium",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "wwbbs:status.set",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "low",
+      "reasons": [
+        "operation has a reviewed mapping in another host"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    },
+    {
+      "id": "zeus:status.set",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "status.set",
+      "status": "unassessed",
+      "priority": "low",
+      "reasons": [
+        "operation has a reviewed mapping in another host"
+      ],
+      "category": "missing-primary-source",
+      "effort": "extensive",
+      "confidence": "low",
+      "triage_rationale": "Observed door code is cataloged, but no primary SDK or protocol contract is available for this host."
+    }
+  ]
+}

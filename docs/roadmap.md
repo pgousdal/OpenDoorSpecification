@@ -152,4 +152,6 @@ in M6.2.
   public header, and original demo; status mutation remains unassessed.
 - PR7: two Door-IO lifecycle mappings harvested from the cataloged SDK; one
   verified and one partial, with unrelated gaps left unassessed.
+- PR8: deterministic triage for every remaining queue item, including reason,
+  research effort, confidence, and per-host next opportunities.
 - Future work: research and review queued host-operation cells.

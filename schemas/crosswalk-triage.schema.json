@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.example/schemas/crosswalk-triage.schema.json",
+  "title": "Crosswalk evidence triage",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "milestone",
+    "kind",
+    "source_path",
+    "semantics",
+    "vocabularies",
+    "summary",
+    "hosts",
+    "items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "milestone": {
+      "const": "M6.2"
+    },
+    "kind": {
+      "const": "crosswalk-evidence-triage"
+    },
+    "source_path": {
+      "const": "catalog/crosswalk/work-queue.json"
+    },
+    "hosts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "host",
+          "reviewed_mappings",
+          "remaining_mappings",
+          "triage_categories",
+          "documentation_quality",
+          "recommended_priority",
+          "next_evidence_opportunity"
+        ]
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "host",
+          "operation",
+          "status",
+          "category",
+          "effort",
+          "confidence",
+          "triage_rationale"
+        ],
+        "properties": {
+          "status": {
+            "const": "unassessed"
+          },
+          "category": {
+            "enum": [
+              "documented-but-not-reviewed",
+              "insufficient-semantics",
+              "missing-primary-source",
+              "insufficient-sdk",
+              "ambiguous-operation",
+              "needs-additional-research"
+            ]
+          },
+          "effort": {
+            "enum": [
+              "trivial",
+              "small",
+              "moderate",
+              "extensive"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

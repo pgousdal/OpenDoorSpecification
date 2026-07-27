@@ -17,6 +17,11 @@ from .crosswalk_work_queue import (
     format_crosswalk_work_queue,
     select_crosswalk_work_queue,
 )
+from .crosswalk_triage import (
+    build_crosswalk_triage,
+    format_crosswalk_triage,
+    select_crosswalk_triage,
+)
 from .crosswalk_evidence import (
     EvidenceValidationError,
     format_mapping_evidence,
@@ -67,6 +72,12 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
     assert len(registered_operations) == len(set(registered_operations))
     assert len(registered_apis) == len(set(registered_apis))
     assert set(registered_operations) == set(operation_ids)
+    if (root / "catalog" / "crosswalk" / "index.json").exists():
+        generated_triage = build_crosswalk_triage(root)
+        triage_path = root / "catalog" / "crosswalk" / "triage.json"
+        assert triage_path.exists(), "missing crosswalk evidence triage"
+        stored_triage = json.loads(triage_path.read_text(encoding="utf-8"))
+        assert stored_triage == generated_triage, "stale crosswalk evidence triage"
 
     index = json.loads((root / "catalog" / "knowledge" / "operation-index.json").read_text(encoding="utf-8"))
     indexed_operations = [item["id"] for item in index["operations"]]
@@ -232,6 +243,15 @@ def main() -> int:
         help="show prioritized unassessed cells for future research",
     )
     crosswalk.add_argument(
+        "--triage",
+        action="store_true",
+        help="show research triage for remaining unassessed cells",
+    )
+    crosswalk.add_argument(
+        "--host",
+        help="limit triage output to one host ID",
+    )
+    crosswalk.add_argument(
         "--priority",
         choices=PRIORITIES,
         help="limit the work queue to high, medium, or low priority",
@@ -304,6 +324,8 @@ def main() -> int:
                 or args.gaps
                 or args.write
                 or args.work_queue
+                or args.triage
+                or args.host
                 or args.priority
                 or args.all
             ):
@@ -333,6 +355,8 @@ def main() -> int:
                 or args.gaps
                 or args.write
                 or args.work_queue
+                or args.triage
+                or args.host
                 or args.priority
                 or args.all
             ):
@@ -358,6 +382,33 @@ def main() -> int:
             return 0
         if args.priority and not args.work_queue:
             raise SystemExit("--priority requires --work-queue")
+        if args.host and not args.triage:
+            raise SystemExit("--host requires --triage")
+        if args.triage:
+            if (
+                args.target
+                or args.evidence_operation
+                or args.coverage
+                or args.gaps
+                or args.write
+                or args.work_queue
+                or args.priority
+                or args.evidence
+                or args.all
+            ):
+                raise SystemExit(
+                    "--triage cannot be combined with other crosswalk selections"
+                )
+            try:
+                report = select_crosswalk_triage(root, host=args.host)
+            except KeyError:
+                raise SystemExit(f"unknown crosswalk triage host: {args.host}")
+            print(
+                json.dumps(report, indent=2, ensure_ascii=False)
+                if args.json
+                else format_crosswalk_triage(report)
+            )
+            return 0
         if args.work_queue:
             if args.coverage or args.gaps or args.write or args.all:
                 raise SystemExit(
