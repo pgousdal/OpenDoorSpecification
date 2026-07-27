@@ -1,5 +1,13 @@
 # Changelog
 
+## M4.7
+
+- Added four archive manifests covering ACP 3.00, AX 3.00, mAGNUM cHAT 1.10, and Multi-Quest 1.1.
+- Recorded five byte-identical redistributions.
+- Added conservative research findings and two documented Maxs door corpus entries.
+- Expanded the catalog to 26 archives and 880 entries.
+
+
 ## M4.6 — Conformance Profiles
 
 - Added cumulative minimal, interactive, and complete adapter profiles.

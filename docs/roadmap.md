@@ -92,3 +92,7 @@ Status: complete.
 - strict stale-record validation
 
 - [x] M4.6 — Conformance Profiles: cumulative adapter capability levels and generated conformance report.
+
+## M4.7 — Historical corpus expansion
+
+Completed: four new archive inventories, duplicate-distribution evidence, and documented Maxs door findings.

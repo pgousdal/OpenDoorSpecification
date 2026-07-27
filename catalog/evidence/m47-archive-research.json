@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "milestone": "M4.7",
+  "archives": [
+    {
+      "archive": "acp300.lzh",
+      "classification": "bbs-source-release",
+      "product": "ACP 3.00",
+      "language": "C",
+      "entry_count": 34,
+      "compression_methods": [
+        "-lh1-"
+      ],
+      "evidence_basis": "archive inventory",
+      "notable_paths": [
+        "ACP3.00/acp208.c",
+        "ACP3.00/ACP_defs208.h",
+        "ACP3.00/Includes/acp208_protos.h"
+      ],
+      "ods_result": "No door API mapping added. This is ACP application source; payload text remains unavailable to the repository LH5-only extractor."
+    },
+    {
+      "archive": "ax300.lzh",
+      "classification": "bbs-source-release",
+      "product": "AX 3.00",
+      "language": "C",
+      "entry_count": 116,
+      "compression_methods": [
+        "-lh0-",
+        "-lh1-"
+      ],
+      "evidence_basis": "archive inventory plus stored files",
+      "notable_paths": [
+        "AX3.00/bbs.h",
+        "AX3.00/bbs.protos",
+        "AX3.00/paraport.c",
+        "AX3.00/aeputstr.c"
+      ],
+      "ods_result": "Potential Paragon-port evidence identified, but no semantic claim is promoted without decompressed source text."
+    },
+    {
+      "archive": "mAG-cH_11.lha",
+      "classification": "maxs-door-binary-and-documentation",
+      "product": "mAGNUM cHAT 1.10",
+      "language": "Amiga E (documented)",
+      "entry_count": 12,
+      "compression_methods": [
+        "-lh5-"
+      ],
+      "evidence_basis": "decompressed guide and readme",
+      "notable_paths": [
+        "mAGNUMcHAT/mAGNUM-cHAT.guide",
+        "mAG^cH_11.readme",
+        "mAGNUMcHAT/magnumchat"
+      ],
+      "documented_behavior": [
+        "MaxsBBS Professional or MaxsBBS 1.54",
+        "installed as menu function 34",
+        "freeze and resume caller time",
+        "raw upload and download",
+        "standard logoff command"
+      ],
+      "ods_result": "Historical MAXs door added to the corpus as documented behavioral evidence; binary-only package contains no source-level call census."
+    },
+    {
+      "archive": "M_Quest_v11.lha",
+      "classification": "maxs-door-binary-and-documentation",
+      "product": "Multi-Quest 1.1",
+      "language": "unknown binary",
+      "entry_count": 5,
+      "compression_methods": [
+        "-lh5-"
+      ],
+      "evidence_basis": "decompressed documentation",
+      "notable_paths": [
+        "Multi-Quest",
+        "Multi-Quest.Doc",
+        "multi-quest.questions"
+      ],
+      "documented_behavior": [
+        "targets Maxs BBS 1.52+",
+        "reads configurable questionnaire",
+        "supports string, hotkey and multiple-choice input",
+        "can display ANSI screens"
+      ],
+      "ods_result": "Historical MAXs door added as documented interaction evidence; no source-level API mapping inferred."
+    }
+  ]
+}

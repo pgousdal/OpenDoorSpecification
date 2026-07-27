@@ -2,9 +2,27 @@
   "schema_version": 1,
   "duplicates": [
     {
-      "uploaded": "DoorRunner(1).lha",
-      "canonical": "DoorRunner.lha",
-      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
+      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
+      "status": "byte-identical",
+      "uploaded": "aedoor28(1).lha",
+      "canonical": "aedoor28.lha"
+    },
+    {
+      "uploaded": "DayDreamBBS (1).lha",
+      "canonical": "DayDreamBBS.lha",
+      "sha256": "1984be20e38d8e70a3e374ba6bcf6cb1ec82228a672d7e6ede4b40106c4a8f35",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "DayDreamBBSDev (1).lha",
+      "canonical": "DayDreamBBSDev.lha",
+      "sha256": "93a45dbd05e504974c8bee69a60c7f7bb7e1cfbde46386c3c517c0c2a627d5fd",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "DayDreamBBSDoo (1).lha",
+      "canonical": "DayDreamBBSDoo.lha",
+      "sha256": "287a64cca4aade32a2903e79b761764d8cb4db1dfc024c9632ae70ba8b7d6d13",
       "status": "byte-identical"
     },
     {
@@ -14,10 +32,22 @@
       "status": "byte-identical"
     },
     {
-      "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
-      "status": "byte-identical",
-      "uploaded": "aedoor28(1).lha",
-      "canonical": "aedoor28.lha"
+      "uploaded": "DoorRunner(1).lha",
+      "canonical": "DoorRunner.lha",
+      "sha256": "b81eb5318e2c6aa86c850ddbe5dcfd987c91d5888813222164f5d66641f60873",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "max_e (1).lha",
+      "canonical": "max_e.lha",
+      "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "MaxPro2 (1).lha",
+      "canonical": "MaxPro2.lha",
+      "sha256": "beff6bc9330c41f6ac4e847e9c5e4412b1060e11327b7ad7e1a28cab7e83f5bc",
+      "status": "byte-identical"
     }
   ]
 }

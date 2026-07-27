@@ -84,6 +84,28 @@
       "observed_calls": {},
       "note": "Launcher/runtime material; no source-level BBS API call corpus was present.",
       "evidence_status": "observed"
+    },
+    {
+      "archive": "mAG-cH_11.lha",
+      "kind": "documented-maxs-chat-door",
+      "source_files": [
+        "mAGNUMcHAT/mAGNUM-cHAT.guide",
+        "mAG^cH_11.readme"
+      ],
+      "observed_calls": {},
+      "note": "Documentation confirms time freeze/resume, raw transfer and standard logoff behavior; no source code is present.",
+      "evidence_status": "documented"
+    },
+    {
+      "archive": "M_Quest_v11.lha",
+      "kind": "documented-maxs-questionnaire-door",
+      "source_files": [
+        "Multi-Quest.Doc",
+        "multi-quest.questions"
+      ],
+      "observed_calls": {},
+      "note": "Documentation confirms configurable line, hotkey and multiple-choice interaction on Maxs BBS 1.52+.",
+      "evidence_status": "documented"
     }
   ]
 }

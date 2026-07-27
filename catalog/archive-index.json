@@ -1,12 +1,18 @@
 {
-  "archive_count": 22,
-  "entry_count": 713,
+  "archive_count": 26,
+  "entry_count": 880,
   "archives": [
     {
       "archive": "ABBS320_999.lha",
       "sha256": "5e9fd4cbf871a2bbd4579a3f9b35a0cd2187676cab8886b16adbfe8b038380e4",
       "entries": 222,
       "size": 751581
+    },
+    {
+      "archive": "acp300.lzh",
+      "sha256": "52168cd82304f1ba341171845e1477ba5784f458e08724d2e1013b1917972c0f",
+      "entries": 34,
+      "size": 62736
     },
     {
       "archive": "aedoor28.lha",
@@ -31,6 +37,12 @@
       "sha256": "df13b1aa671f4534be08d6e065e62a6061cfe4c1e00d13365962e05932fa584c",
       "entries": 206,
       "size": 714884
+    },
+    {
+      "archive": "ax300.lzh",
+      "sha256": "d86e31e8fc73012712e0e1300050fd3c59833e8e06533fa5084fe6b54c42a909",
+      "entries": 116,
+      "size": 191926
     },
     {
       "archive": "BBSLib-Asm.lha",
@@ -97,6 +109,18 @@
       "sha256": "e99765af1f7366a447d5310b9d0bb651a345c0e12134397d7fee670120dd29bc",
       "entries": 6,
       "size": 13421
+    },
+    {
+      "archive": "M_Quest_v11.lha",
+      "sha256": "7c64536850e9580b572afc44c8d69c4e875ade2b1885517c108a54cda94e5f4b",
+      "entries": 5,
+      "size": 5550
+    },
+    {
+      "archive": "mAG-cH_11.lha",
+      "sha256": "ce2b466daa0830f53cb1095347d0edd6e1f7f738d441df6ca2e0f62b75a4f9ac",
+      "entries": 12,
+      "size": 23004
     },
     {
       "archive": "max_e.lha",
