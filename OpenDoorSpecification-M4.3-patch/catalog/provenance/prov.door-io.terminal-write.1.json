@@ -1,0 +1,15 @@
+{
+  "id": "prov.door-io.terminal-write.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.write",
+  "api": "door-io",
+  "status": "documented",
+  "summary": "door_io.library documents DoorPrint terminal output",
+  "sources": [
+    {
+      "archive": "door_io12.lha",
+      "path": "doorio/door_io.doc",
+      "symbol": "DoorPrint"
+    }
+  ]
+}

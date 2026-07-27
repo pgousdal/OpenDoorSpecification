@@ -1,0 +1,15 @@
+{
+  "id": "prov.abbs.status-set.1",
+  "claim_type": "operation-mapping",
+  "operation": "status.set",
+  "api": "abbs",
+  "status": "documented",
+  "summary": "ABBS exposes SetStatus through its documented ARexx interface",
+  "sources": [
+    {
+      "archive": "ABBS320_999.lha",
+      "path": "ABBS/Docs/abbsrexx.doc",
+      "symbol": "SetStatus"
+    }
+  ]
+}

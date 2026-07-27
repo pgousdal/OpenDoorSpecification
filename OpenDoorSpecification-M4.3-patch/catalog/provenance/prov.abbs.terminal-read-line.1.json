@@ -1,0 +1,15 @@
+{
+  "id": "prov.abbs.terminal-read-line.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.read_line",
+  "api": "abbs",
+  "status": "documented",
+  "summary": "ABBS exposes GetString through its documented ARexx interface",
+  "sources": [
+    {
+      "archive": "ABBS320_999.lha",
+      "path": "ABBS/Docs/abbsrexx.doc",
+      "symbol": "GetString"
+    }
+  ]
+}

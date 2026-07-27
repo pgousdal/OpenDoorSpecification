@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "summary": {
+    "total": 26,
+    "covered": 23,
+    "uncovered": 3,
+    "verified_without_provenance": 0,
+    "by_evidence_status": {
+      "documented": 22,
+      "observed": 1
+    }
+  },
+  "mappings": [
+    {
+      "api": "abbs",
+      "operation": "terminal.write",
+      "mapping_status": "partial",
+      "evidence_statuses": [],
+      "provenance_ids": [],
+      "covered": false
+    },
+    {
+      "api": "abbs",
+      "operation": "terminal.read_key",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.terminal-read-key.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "abbs",
+      "operation": "terminal.read_line",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "abbs",
+      "operation": "session.identity",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.session-identity.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "abbs",
+      "operation": "session.time_left",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.session-time-left.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "abbs",
+      "operation": "status.set",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.status-set.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "ambos",
+      "operation": "terminal.write",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.ambos.terminal-write.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "ambos",
+      "operation": "lifecycle.disconnect",
+      "mapping_status": "partial",
+      "evidence_statuses": [],
+      "provenance_ids": [],
+      "covered": false
+    },
+    {
+      "api": "daydream",
+      "operation": "terminal.write",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.terminal-write.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "operation": "terminal.read_key",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.terminal-read-key.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "operation": "terminal.read_line",
+      "mapping_status": "partial",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "operation": "session.identity",
+      "mapping_status": "partial",
+      "evidence_statuses": [],
+      "provenance_ids": [],
+      "covered": false
+    },
+    {
+      "api": "daydream",
+      "operation": "session.time_left",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.session-time-left.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "operation": "status.set",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.status-set.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "operation": "bbs.command",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.bbs-command.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "operation": "lifecycle.disconnect",
+      "mapping_status": "partial",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.lifecycle-disconnect.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "door-io",
+      "operation": "terminal.write",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.door-io.terminal-write.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "door-io",
+      "operation": "terminal.read_key",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.door-io.terminal-read-key.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "door-io",
+      "operation": "terminal.read_line",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.door-io.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "terminal.write",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.terminal-write.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "terminal.read_line",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "terminal.read_key",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.terminal-read-key.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "session.identity",
+      "mapping_status": "partial",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.session-identity.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "bbs.command",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.bbs-command.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "lifecycle.disconnect",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.lifecycle-disconnect.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "operation": "lifecycle.exit",
+      "mapping_status": "verified",
+      "evidence_statuses": [
+        "observed"
+      ],
+      "provenance_ids": [
+        "prov.paragon.lifecycle-exit.1"
+      ],
+      "covered": true
+    }
+  ]
+}

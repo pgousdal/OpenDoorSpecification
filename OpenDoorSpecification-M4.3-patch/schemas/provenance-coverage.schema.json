@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/provenance-coverage.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "summary",
+    "mappings"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "total",
+        "covered",
+        "uncovered",
+        "verified_without_provenance",
+        "by_evidence_status"
+      ],
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "covered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "uncovered": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verified_without_provenance": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "by_evidence_status": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "api",
+          "operation",
+          "mapping_status",
+          "evidence_statuses",
+          "provenance_ids",
+          "covered"
+        ],
+        "properties": {
+          "api": {
+            "type": "string"
+          },
+          "operation": {
+            "type": "string"
+          },
+          "mapping_status": {
+            "type": "string"
+          },
+          "evidence_statuses": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "documented",
+                "observed",
+                "inferred",
+                "unknown"
+              ]
+            }
+          },
+          "provenance_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "covered": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

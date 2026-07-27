@@ -1,0 +1,15 @@
+{
+  "id": "prov.door-io.terminal-read-line.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.read_line",
+  "api": "door-io",
+  "status": "documented",
+  "summary": "door_io.library documents DoorGetString line input",
+  "sources": [
+    {
+      "archive": "door_io12.lha",
+      "path": "doorio/door_io.doc",
+      "symbol": "DoorGetString"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "prov.door-io.terminal-read-key.1",
+  "claim_type": "operation-mapping",
+  "operation": "terminal.read_key",
+  "api": "door-io",
+  "status": "documented",
+  "summary": "door_io.library documents DoorGetKey keyboard input",
+  "sources": [
+    {
+      "archive": "door_io12.lha",
+      "path": "doorio/door_io.doc",
+      "symbol": "DoorGetKey"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "id": "prov.abbs.session-time-left.1",
+  "claim_type": "operation-mapping",
+  "operation": "session.time_left",
+  "api": "abbs",
+  "status": "documented",
+  "summary": "ABBS exposes TimeLeft through its documented ARexx interface",
+  "sources": [
+    {
+      "archive": "ABBS320_999.lha",
+      "path": "ABBS/Docs/abbsrexx.doc",
+      "symbol": "TimeLeft"
+    }
+  ]
+}
