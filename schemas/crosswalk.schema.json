@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/crosswalk.schema.json",
+  "title": "ODS Crosswalk Host Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "milestone",
+    "host",
+    "operations",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "milestone": {
+      "const": "M6.1"
+    },
+    "host": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "evidence_class",
+        "census_path"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_class": {
+          "enum": [
+            "documented-sdk",
+            "documented-protocol",
+            "wrapper-binding",
+            "observed-doors"
+          ]
+        },
+        "census_path": {
+          "type": "string",
+          "pattern": "^catalog/census/.+\\.json$"
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "operation",
+          "status",
+          "symbols",
+          "evidence_class",
+          "notes"
+        ],
+        "properties": {
+          "operation": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"
+          },
+          "status": {
+            "enum": [
+              "verified",
+              "partial",
+              "unassessed"
+            ]
+          },
+          "symbols": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "semantic_review": {
+            "enum": [
+              "reviewed",
+              "unknown"
+            ]
+          },
+          "evidence_class": {
+            "enum": [
+              "documented-sdk",
+              "documented-protocol",
+              "wrapper-binding",
+              "observed-doors"
+            ]
+          },
+          "lossiness": {
+            "enum": [
+              "lossless",
+              "lossy",
+              "unknown"
+            ]
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

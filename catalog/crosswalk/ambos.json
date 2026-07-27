@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "host": {
+    "id": "ambos",
+    "name": "AmBoS bbs.library",
+    "evidence_class": "documented-sdk",
+    "census_path": "catalog/census/ambos.json"
+  },
+  "operations": [
+    {
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "partial",
+      "symbols": [
+        "BBSCarrier"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.identity",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "status.set",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.write",
+      "status": "verified",
+      "symbols": [
+        "BBSWrite",
+        "BBSPrintf"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    }
+  ],
+  "limitations": [
+    "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures."
+  ]
+}

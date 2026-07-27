@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "host": {
+    "id": "paragon",
+    "name": "MAXs/Paragon message protocol",
+    "evidence_class": "documented-protocol",
+    "census_path": "catalog/census/paragon.json"
+  },
+  "operations": [
+    {
+      "operation": "bbs.command",
+      "status": "verified",
+      "symbols": [
+        "mxMenuFunct",
+        "message command field"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "verified",
+      "symbols": [
+        "command 9",
+        "carrier field"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "verified",
+      "symbols": [
+        "command 20"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "session.identity",
+      "status": "partial",
+      "symbols": [
+        "command 13",
+        "command 14",
+        "mxGetIntInfo",
+        "mxGetStrInfo"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-protocol",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "status.set",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-protocol",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "verified",
+      "symbols": [
+        "command 8",
+        "mxHotKey"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "verified",
+      "symbols": [
+        "command 6",
+        "mxInput"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.write",
+      "status": "verified",
+      "symbols": [
+        "command 1",
+        "mxPrint"
+      ],
+      "semantic_review": "reviewed",
+      "evidence_class": "documented-protocol",
+      "lossiness": "unknown",
+      "notes": []
+    }
+  ],
+  "limitations": [
+    "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures."
+  ]
+}

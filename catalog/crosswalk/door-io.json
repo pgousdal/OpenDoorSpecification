@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "host": {
+    "id": "door-io",
+    "name": "door_io.library",
+    "evidence_class": "documented-sdk",
+    "census_path": "catalog/census/door-io.json"
+  },
+  "operations": [
+    {
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.identity",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "status.set",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "verified",
+      "symbols": [
+        "DoorGetKey"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "verified",
+      "symbols": [
+        "DoorGetString"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.write",
+      "status": "verified",
+      "symbols": [
+        "DoorPrint"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    }
+  ],
+  "limitations": []
+}

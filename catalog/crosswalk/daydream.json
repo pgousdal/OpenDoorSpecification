@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "host": {
+    "id": "daydream",
+    "name": "DayDream DreamDoor",
+    "evidence_class": "documented-sdk",
+    "census_path": "catalog/census/daydream.json"
+  },
+  "operations": [
+    {
+      "operation": "bbs.command",
+      "status": "verified",
+      "symbols": [
+        "InternalCommand"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "partial",
+      "symbols": [
+        "Carrier"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "documented-sdk",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.identity",
+      "status": "partial",
+      "symbols": [
+        "GetAccount"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "session.time_left",
+      "status": "verified",
+      "symbols": [
+        "TimeLeft"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "status.set",
+      "status": "verified",
+      "symbols": [
+        "ChangeActivity"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "verified",
+      "symbols": [
+        "DDGetKey"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "partial",
+      "symbols": [
+        "Prompt"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    },
+    {
+      "operation": "terminal.write",
+      "status": "verified",
+      "symbols": [
+        "DDPutStr",
+        "DDPrintf"
+      ],
+      "semantic_review": "provisional",
+      "evidence_class": "documented-sdk",
+      "lossiness": "unknown",
+      "notes": []
+    }
+  ],
+  "limitations": []
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "title": "ODS Crosswalk Specification",
+  "source_milestone": "M6.0",
+  "source_path": "catalog/census/index.json",
+  "host_count": 10,
+  "operation_count": 9,
+  "mapped_cell_count": 26,
+  "hosts": [
+    {
+      "id": "abbs",
+      "name": "ABBS ARexx",
+      "path": "catalog/crosswalk/abbs.json"
+    },
+    {
+      "id": "aedoor",
+      "name": "AmiExpress/AEDoor",
+      "path": "catalog/crosswalk/aedoor.json"
+    },
+    {
+      "id": "ambos",
+      "name": "AmBoS bbs.library",
+      "path": "catalog/crosswalk/ambos.json"
+    },
+    {
+      "id": "daydream",
+      "name": "DayDream DreamDoor",
+      "path": "catalog/crosswalk/daydream.json"
+    },
+    {
+      "id": "door-io",
+      "name": "door_io.library",
+      "path": "catalog/crosswalk/door-io.json"
+    },
+    {
+      "id": "fame",
+      "name": "FAME DoorPort",
+      "path": "catalog/crosswalk/fame.json"
+    },
+    {
+      "id": "paragon",
+      "name": "MAXs/Paragon message protocol",
+      "path": "catalog/crosswalk/paragon.json"
+    },
+    {
+      "id": "ucdoor",
+      "name": "UCDoor compatibility wrapper",
+      "path": "catalog/crosswalk/ucdoor.json"
+    },
+    {
+      "id": "wwbbs",
+      "name": "WWBBS ARexx doors corpus",
+      "path": "catalog/crosswalk/wwbbs.json"
+    },
+    {
+      "id": "zeus",
+      "name": "Zeus doors corpus",
+      "path": "catalog/crosswalk/zeus.json"
+    }
+  ],
+  "operations_path": "catalog/crosswalk/operations.json"
+}

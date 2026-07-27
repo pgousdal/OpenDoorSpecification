@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.1",
+  "host": {
+    "id": "ucdoor",
+    "name": "UCDoor compatibility wrapper",
+    "evidence_class": "wrapper-binding",
+    "census_path": "catalog/census/ucdoor.json"
+  },
+  "operations": [
+    {
+      "operation": "bbs.command",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.identity",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "session.time_left",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "status.set",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    },
+    {
+      "operation": "terminal.write",
+      "status": "unassessed",
+      "symbols": [],
+      "evidence_class": "wrapper-binding",
+      "notes": [
+        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      ]
+    }
+  ],
+  "limitations": [
+    "The corpus proves existence or practical use, but a complete public callable contract has not yet been normalized."
+  ]
+}
