@@ -77,3 +77,21 @@ PYTHONPATH=tools/ods-tools/src python3 -m ods_tools conformance
 ## Complete API census
 
 The machine-readable historical API census starts at `catalog/census/index.json`.
+
+<!-- m61-api-crosswalk -->
+## API crosswalk
+
+The M6.1 crosswalk records reviewed evidence between historical door/BBS host
+APIs and nine canonical ODS operations.
+
+```bash
+ods crosswalk
+ods crosswalk paragon
+ods crosswalk terminal.write
+ods crosswalk --coverage
+ods crosswalk --gaps
+ods validate
+```
+
+`unassessed` means that no reviewed mapping is currently recorded; it does not
+mean unsupported. See [M6.1 API crosswalk](docs/m61-api-crosswalk.md).

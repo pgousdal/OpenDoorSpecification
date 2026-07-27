@@ -166,3 +166,20 @@
 - Added a deterministic complete API census across ten historical API families.
 - Consolidated normalized functions, structures, semantic mappings, source archives, evidence classes, and limitations.
 - Added schema validation and repository tests for census integrity and stale-count detection.
+
+<!-- m61-api-crosswalk -->
+## Unreleased
+
+### Added
+
+- M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
+  operations.
+- Host and operation lookup through `ods crosswalk`.
+- Evidence coverage and gap reporting.
+- Generated-data and repository validation.
+- M6.1 milestone acceptance test.
+
+### Semantics
+
+- `unassessed` is not equivalent to unsupported.
+- `partial` is not equivalent to unsupported.

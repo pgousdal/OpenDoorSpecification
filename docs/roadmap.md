@@ -128,3 +128,10 @@ See `docs/m52-comprehensive-amiexpress-reanalysis.md`.
 ## M6.0 — Complete API Census (complete)
 
 See `docs/m60-complete-api-census.md`.
+
+<!-- m61-status -->
+### M6.1 — API crosswalk: complete
+
+Delivered data model, deterministic generation, CLI lookup, validation,
+coverage reporting and milestone acceptance checks. Mapping expansion continues
+in M6.2.
