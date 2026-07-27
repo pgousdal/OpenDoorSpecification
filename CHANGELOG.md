@@ -160,3 +160,9 @@
 - Added `ods gaps` with summary, target inspection, JSON output, and report regeneration.
 - Classified coverage as supported, partial, or missing without overstating historical evidence.
 - Made strict validation reject a stale adapter-gap report.
+
+## M6.0
+
+- Added a deterministic complete API census across ten historical API families.
+- Consolidated normalized functions, structures, semantic mappings, source archives, evidence classes, and limitations.
+- Added schema validation and repository tests for census integrity and stale-count detection.

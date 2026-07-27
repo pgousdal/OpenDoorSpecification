@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "id": "ucdoor",
+  "name": "UCDoor compatibility wrapper",
+  "api_manifest": null,
+  "evidence_class": "wrapper-binding",
+  "archives": [
+    "ucdoor10.json"
+  ],
+  "entry_count": 0,
+  "mapping_count": 0,
+  "entries": [],
+  "mappings": [],
+  "limitations": [
+    "The corpus proves existence or practical use, but a complete public callable contract has not yet been normalized."
+  ]
+}

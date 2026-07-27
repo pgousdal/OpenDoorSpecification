@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "id": "aedoor",
+  "name": "AmiExpress/AEDoor",
+  "api_manifest": "amiexpress-aedoor",
+  "evidence_class": "documented-sdk",
+  "archives": [
+    "aedoor28.json",
+    "amiexpress-master.json"
+  ],
+  "entry_count": 14,
+  "mapping_count": 0,
+  "entries": [
+    {
+      "kind": "function",
+      "name": "alreadyoff",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 274
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "alreadyon",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 281
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "askpw",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 158
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "aufbau",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "mesg"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 146
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "changepw",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 182
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "func",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "str"
+        },
+        {
+          "name": "wait"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/HKManager.e",
+        "line": 110
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "header",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 140
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "insertflag",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 227
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "listoptions",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 213
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "newuser",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 109
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "pwfail",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 288
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "subprg",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/exception.e",
+        "line": 96
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "turnpwoff",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 236
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "turnpwon",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "aedoor28",
+        "path": "Amiga_E/Sources/ShadowW.e",
+        "line": 263
+      },
+      "evidence_class": "observed"
+    }
+  ],
+  "mappings": [],
+  "limitations": [
+    "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures.",
+    "No normative ODS semantic mappings are claimed for this family in the current corpus."
+  ]
+}

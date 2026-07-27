@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "id": "abbs",
+  "name": "ABBS ARexx",
+  "api_manifest": "abbs-arexx",
+  "evidence_class": "documented-sdk",
+  "archives": [
+    "ABBS320_999.json",
+    "preservation-abbs20-master.json"
+  ],
+  "entry_count": 16,
+  "mapping_count": 6,
+  "entries": [
+    {
+      "kind": "function",
+      "name": "BREAKOUTIMAGE",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FILEINFO",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GETCONSTAT",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GETLINE",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "MAYGETCHAR",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "NODENUMBER",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "OUTIMAGE",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "READCHAR",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SETSTATUSTEXT",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SIGOP",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SYSOP",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "TIMELEFT",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "TYPEFILE",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "USERINFO",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "USERNAME",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "WRITETEXT",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "ABBS320_999.lha",
+        "path": "ABBS/Docs/abbsrexx.doc"
+      },
+      "evidence_class": "documented"
+    }
+  ],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "Writeln",
+        "Write"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "GetKey"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "GetString"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "UserName",
+        "UserNumber"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "session.time_left",
+      "symbols": [
+        "TimeLeft"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "status.set",
+      "symbols": [
+        "SetStatus"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    }
+  ],
+  "limitations": [
+    "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures."
+  ]
+}

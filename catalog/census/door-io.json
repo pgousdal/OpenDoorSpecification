@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "id": "door-io",
+  "name": "door_io.library",
+  "api_manifest": "door-io-library",
+  "evidence_class": "documented-sdk",
+  "archives": [
+    "door_io12.json"
+  ],
+  "entry_count": 6,
+  "mapping_count": 3,
+  "entries": [
+    {
+      "kind": "function",
+      "name": "BOX_getchrs",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "text",
+          "register": "A0"
+        },
+        {
+          "name": "len",
+          "register": "D1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "door_io12",
+        "path": "doorio/door_io.fd",
+        "line": 8
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "BOX_getstr",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "text",
+          "register": "A0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "door_io12",
+        "path": "doorio/door_io.fd",
+        "line": 6
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "BOX_print",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "text",
+          "register": "A0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "door_io12",
+        "path": "doorio/door_io.fd",
+        "line": 5
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "BOX_setmask",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "extmask",
+          "register": "D1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "door_io12",
+        "path": "doorio/door_io.fd",
+        "line": 7
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "BOX_start",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "clhook",
+          "register": "A0/A1"
+        },
+        {
+          "name": "exthandler",
+          "register": "D1"
+        },
+        {
+          "name": "extmask",
+          "register": "D2"
+        },
+        {
+          "name": "metaon",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "door_io12",
+        "path": "doorio/door_io.fd",
+        "line": 3
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "BOX_wgetchar",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "sigbits",
+          "register": "D1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "door_io12",
+        "path": "doorio/door_io.fd",
+        "line": 9
+      },
+      "evidence_class": "documented"
+    }
+  ],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "DoorPrint"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "DoorGetKey"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "DoorGetString"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    }
+  ],
+  "limitations": []
+}

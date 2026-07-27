@@ -1,0 +1,701 @@
+{
+  "schema_version": 1,
+  "id": "paragon",
+  "name": "MAXs/Paragon message protocol",
+  "api_manifest": "paragon-door",
+  "evidence_class": "documented-protocol",
+  "archives": [
+    "c-door-example.json",
+    "maxshell-1.01.json",
+    "mcesrc.json",
+    "max_e.json",
+    "aris-doors-for-maxs.json"
+  ],
+  "entry_count": 32,
+  "mapping_count": 7,
+  "entries": [
+    {
+      "kind": "function",
+      "name": "maxaltertime",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "timechange"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 258
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxautoinsert",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "asciicode"
+        },
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 286
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxcallport",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 74
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxdoorinit",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 86
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxeditfile",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "filename"
+        },
+        {
+          "name": "maxlines"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 202
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxfindfile",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "filename"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 191
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxgetfile",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 46
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxgetstring",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "message"
+        },
+        {
+          "name": "maxchars"
+        },
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 152
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxgetstringstack",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "message"
+        },
+        {
+          "name": "maxchars"
+        },
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 161
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxgetusernum",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "item"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 210
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxgetuserstr",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "item"
+        },
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 216
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxhangup",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 178
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxhotkey",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "message"
+        },
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 170
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxmain",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 305
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxmenufunction",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "command"
+        },
+        {
+          "name": "extra"
+        },
+        {
+          "name": "string"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 265
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxnowaithotkey",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "message"
+        },
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 272
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxputfile",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 31
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxrandnum",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "maxnum"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 239
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxresetcarrier",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 245
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxreturnfile",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "buffer"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 198
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsendchar",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "char"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 145
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsendmessage",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "message"
+        },
+        {
+          "name": "linefeed"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 115
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsendmodemchar",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "char"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 131
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsendscreen",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "message"
+        },
+        {
+          "name": "linefeed"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 123
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsendscreenchar",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "char"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 138
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsetaccess",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "newaccess"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 224
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsetpagelight",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "condition"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 279
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxsetuserstr",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "item"
+        },
+        {
+          "name": "newstr"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 231
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxshowfile",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "filename"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 184
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxshowgfxfile",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "filename"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 251
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxshutdown",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 294
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "maxwaitport",
+      "status": "verified-from-example",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DoorRunner",
+        "path": "DoorRunner1_30/Examples/E/EDoor.e",
+        "line": 65
+      },
+      "evidence_class": "observed"
+    }
+  ],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "command 1",
+        "mxPrint"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "command 6",
+        "mxInput"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "command 8",
+        "mxHotKey"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "command 13",
+        "command 14",
+        "mxGetIntInfo",
+        "mxGetStrInfo"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "mxMenuFunct",
+        "message command field"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "command 9",
+        "carrier field"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    },
+    {
+      "operation": "lifecycle.exit",
+      "symbols": [
+        "command 20"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed"
+    }
+  ],
+  "limitations": [
+    "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures."
+  ]
+}

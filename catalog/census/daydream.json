@@ -1,0 +1,2586 @@
+{
+  "schema_version": 1,
+  "id": "daydream",
+  "name": "DayDream DreamDoor",
+  "api_manifest": "daydream-dreamdoor",
+  "evidence_class": "documented-sdk",
+  "archives": [
+    "DayDreamBBSDev.json"
+  ],
+  "entry_count": 117,
+  "mapping_count": 8,
+  "entries": [
+    {
+      "kind": "function",
+      "name": "ChangeActivity",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "string",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 34
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ChangeActivity",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "string",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 34
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ChangeMsgBase",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "conf",
+          "register": "d1"
+        },
+        {
+          "name": "flags",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 26
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ChangeMsgBase",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/d2"
+        },
+        {
+          "name": "base",
+          "register": null
+        },
+        {
+          "name": "flags",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 26
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ChatMode",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 41
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ChatMode",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 41
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "CheckKey",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 28
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "CheckKey",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 28
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "CleanTemp",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 32
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "CleanTemp",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 32
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "CloseDoor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 6
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "CloseDoor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 6
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "DDCommand",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "command",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 22
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "DDCommand",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "command",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 22
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Disconnect",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 21
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Disconnect",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 21
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "DisplayFile",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "filename",
+          "register": "a0"
+        },
+        {
+          "name": "flags",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 10
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "DisplayFile",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0/d1"
+        },
+        {
+          "name": "filename",
+          "register": null
+        },
+        {
+          "name": "flags",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 10
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FetchKey",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "flags",
+          "register": "d1"
+        },
+        {
+          "name": "timeout",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 33
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FetchKey",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/d2"
+        },
+        {
+          "name": "flags",
+          "register": null
+        },
+        {
+          "name": "timeout",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 33
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FifoExecute",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "command",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 30
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FifoExecute",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "command",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 30
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FlagFile",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "path",
+          "register": "a0"
+        },
+        {
+          "name": "file",
+          "register": "a1"
+        },
+        {
+          "name": "flags",
+          "register": "d1"
+        },
+        {
+          "name": "size",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 20
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "FlagFile",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0/a1/d1/d2"
+        },
+        {
+          "name": "path",
+          "register": null
+        },
+        {
+          "name": "file",
+          "register": null
+        },
+        {
+          "name": "flags",
+          "register": null
+        },
+        {
+          "name": "size",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 20
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetBase",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "confdat",
+          "register": "a0"
+        },
+        {
+          "name": "conf",
+          "register": "d0"
+        },
+        {
+          "name": "base",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 36
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetBase",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "confdat",
+          "register": "a0/d0/d1"
+        },
+        {
+          "name": "conf",
+          "register": null
+        },
+        {
+          "name": "base",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 36
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetConf",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "confdat",
+          "register": "a0"
+        },
+        {
+          "name": "conf",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 35
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetConf",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "confdat",
+          "register": "a0/d0"
+        },
+        {
+          "name": "conf",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 35
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetDDString",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "stringnum",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 47
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetDDString",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "stringnum",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 47
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetKey",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "flags",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 18
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetKey",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1"
+        },
+        {
+          "name": "flags",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 18
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetLrp",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "conf",
+          "register": "d1"
+        },
+        {
+          "name": "base",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 16
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "GetLrp",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/d2"
+        },
+        {
+          "name": "conf",
+          "register": null
+        },
+        {
+          "name": "base",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 16
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "HideCursor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 45
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "HideCursor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 45
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "InitDoor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "node",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 5
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "InitDoor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "node",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 5
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "InquirePointers",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "pointers",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 9
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "InquirePointers",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "pointers",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 9
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "IntCommand",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "command",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 27
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "IntCommand",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "command",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 27
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "IsAway",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 37
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "IsAway",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 37
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "JoinConference",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "conf",
+          "register": "d1"
+        },
+        {
+          "name": "flags",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 25
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "JoinConference",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/d2"
+        },
+        {
+          "name": "conf",
+          "register": null
+        },
+        {
+          "name": "flags",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 25
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "LineEditor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "file",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 29
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "LineEditor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "file",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 29
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Pause",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 42
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Pause",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 42
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Prompt",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "buffer",
+          "register": "a0"
+        },
+        {
+          "name": "length",
+          "register": "d1"
+        },
+        {
+          "name": "flags",
+          "register": "d2"
+        },
+        {
+          "name": "default",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 8
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Prompt",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0/d1/d2/d3"
+        },
+        {
+          "name": "buffer",
+          "register": null
+        },
+        {
+          "name": "length",
+          "register": null
+        },
+        {
+          "name": "flags",
+          "register": null
+        },
+        {
+          "name": "default",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 8
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ReCountFiles",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 43
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ReCountFiles",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 43
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Relogin",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 24
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "Relogin",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 24
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ResetIdle",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 23
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ResetIdle",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 23
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ScanFileDirs",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "conf",
+          "register": "d1"
+        },
+        {
+          "name": "pattern",
+          "register": "a0"
+        },
+        {
+          "name": "hook",
+          "register": "a1"
+        },
+        {
+          "name": "data",
+          "register": "a2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 19
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ScanFileDirs",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/a0/a1/a2"
+        },
+        {
+          "name": "conf",
+          "register": null
+        },
+        {
+          "name": "pattern",
+          "register": null
+        },
+        {
+          "name": "hook",
+          "register": null
+        },
+        {
+          "name": "userdata",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 19
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ScanUserbase",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "name",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 12
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ScanUserbase",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "name",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 12
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SearchUser",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "slot",
+          "register": "d1"
+        },
+        {
+          "name": "pat",
+          "register": "d2"
+        },
+        {
+          "name": "index",
+          "register": "d3"
+        },
+        {
+          "name": "user",
+          "register": "d4"
+        },
+        {
+          "name": "flags",
+          "register": "d5"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 50
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SendMessage",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "node",
+          "register": "d1"
+        },
+        {
+          "name": "msg",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 38
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SendMessage",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/a0"
+        },
+        {
+          "name": "node",
+          "register": null
+        },
+        {
+          "name": "message",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 38
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SendMsgToAll",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "msg",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 39
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SendMsgToAll",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "message",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 39
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SendString",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "pointer",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 7
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SendString",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "string",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 7
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetAccPreset",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "presetid",
+          "register": "d1"
+        },
+        {
+          "name": "user",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 49
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetAccPreset",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "presetid",
+          "register": "d1"
+        },
+        {
+          "name": "user",
+          "register": "d2"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 49
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetLrp",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "conf",
+          "register": "d1"
+        },
+        {
+          "name": "base",
+          "register": "d2"
+        },
+        {
+          "name": "lrp",
+          "register": "d3"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 17
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetLrp",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1/d2/d3"
+        },
+        {
+          "name": "conf",
+          "register": null
+        },
+        {
+          "name": "base",
+          "register": null
+        },
+        {
+          "name": "lrp",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 17
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetRemainingTime",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 44
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetRemainingTime",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1"
+        },
+        {
+          "name": "time",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 44
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetSerial",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "state",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 40
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "SetSerial",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1"
+        },
+        {
+          "name": "state",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 40
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ShowCursor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 46
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "ShowCursor",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 46
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "UpdateStructures",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 13
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "UpdateStructures",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 13
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "UpdateUserRec",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "user",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 48
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "UpdateUserRec",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "user",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 48
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "WriteLog",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "string",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 31
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "WriteLog",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "string",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 31
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "XprReceive",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "path",
+          "register": "a0"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 15
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "XprReceive",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0"
+        },
+        {
+          "name": "path",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 15
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "XprSend",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "files",
+          "register": "a0"
+        },
+        {
+          "name": "path",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 14
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "XprSend",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/a0/a1"
+        },
+        {
+          "name": "files",
+          "register": null
+        },
+        {
+          "name": "defpath",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 14
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "YesNo",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0"
+        },
+        {
+          "name": "default",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "line": 11
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "YesNo",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "dif",
+          "register": "d0/d1"
+        },
+        {
+          "name": "default",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "DayDreamBBSDev",
+        "path": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "line": 11
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Archivers.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Archivers.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "UserBase.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/UserBase.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "UploadLog.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/UploadLog.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "DayDream.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/DayDream.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Callers.Log.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Callers.Log.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Conferences.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Conferences.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Directory.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Directory.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "NodeStructure.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/NodeStructure.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "ExternalCommands.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/ExternalCommands.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Schedule.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Schedule.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "NodeMessage.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/NodeMessage.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Message.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Message.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "NodeScreen.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/NodeScreen.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "IO-Device.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/IO-Device.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "DoorMessage.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/DoorMessage.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Protocols.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Protocols.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Security.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Security.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Version.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Version.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Directory.Structure2",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Directory.Structure2"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "MultiNode.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/MultiNode.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "ConversionTable.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/ConversionTable.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Selected.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Selected.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "LossCarrier.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/LossCarrier.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Access.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Access.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "Display.DAT.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/Display.DAT.Structure"
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "structure",
+      "name": "DownloadLog.Structure",
+      "status": "verified-file",
+      "fields": [],
+      "source": {
+        "path": "DayDreamBBSDev/DayDream/Developer/DownloadLog.Structure"
+      },
+      "evidence_class": "documented"
+    }
+  ],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "DDPutStr",
+        "DDPrintf"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "DDGetKey"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "Prompt"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "GetAccount"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "session.time_left",
+      "symbols": [
+        "TimeLeft"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "status.set",
+      "symbols": [
+        "ChangeActivity"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "InternalCommand"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "Carrier"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    }
+  ],
+  "limitations": []
+}

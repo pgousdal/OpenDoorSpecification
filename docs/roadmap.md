@@ -123,3 +123,8 @@ Completed: reprocessed 20 additional archive uploads, confirmed their duplicate 
 ## M5.2 — Comprehensive AmiExpress corpus reanalysis (complete)
 
 See `docs/m52-comprehensive-amiexpress-reanalysis.md`.
+
+
+## M6.0 — Complete API Census (complete)
+
+See `docs/m60-complete-api-census.md`.

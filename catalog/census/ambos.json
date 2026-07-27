@@ -1,0 +1,904 @@
+{
+  "schema_version": 1,
+  "id": "ambos",
+  "name": "AmBoS bbs.library",
+  "api_manifest": "ambos-bbs-library",
+  "evidence_class": "documented-sdk",
+  "archives": [
+    "AmBoS_doc_dev.json",
+    "AmBoS_mod_E.json",
+    "BBSLib-Asm.json"
+  ],
+  "entry_count": 45,
+  "mapping_count": 2,
+  "entries": [
+    {
+      "kind": "function",
+      "name": "bbs_BrettInhaltByNumber",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Number",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 54
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_close",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 8
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_fgetc",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 16
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_FirstBrettInhalt",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 52
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_FirstUser",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 42
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_FreeBrettInhalt",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "BrettInhalt",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 55
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_FreeUserData",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "UserData",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 48
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_GetBrettType",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 51
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_getc",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 15
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_gets",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Deposid",
+          "register": "a1/d1/d2"
+        },
+        {
+          "name": "MaxChars",
+          "register": null
+        },
+        {
+          "name": "Mode",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 10
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_graphic",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "FileName",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 18
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_LoadUserData",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "UserName",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 46
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_lookc",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 41
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_MailToBrett",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Brett",
+          "register": "a1/d1/d2/a2"
+        },
+        {
+          "name": "Absender",
+          "register": null
+        },
+        {
+          "name": "Betreff",
+          "register": null
+        },
+        {
+          "name": "TextFile",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 50
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_MailToUser",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "UserName",
+          "register": "a1/d1/d2/a2"
+        },
+        {
+          "name": "Absender",
+          "register": null
+        },
+        {
+          "name": "Betreff",
+          "register": null
+        },
+        {
+          "name": "TextFile",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 49
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_menu",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "MenuDaten",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 17
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_NextBrettInhalt",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "BrettInhalt",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 53
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_NextUser",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "User",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 43
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_ObtainName",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Name",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 44
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_open",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "PortName",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 7
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_printf",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "String",
+          "register": "a1/a2"
+        },
+        {
+          "name": "Tags",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 36
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private1",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 4
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private10",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 34
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private11",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 39
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private2",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 5
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private3",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 13
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private4",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 21
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private5",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 25
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private6",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 26
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private7",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 27
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private8",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 32
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Private9",
+      "status": "verified",
+      "parameters": [],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 33
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_puts",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "String",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 9
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_ReleaseName",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Name",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 45
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_rputs",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "String",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 23
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_SaveBrettInhalt",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "BrettInhalt",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 56
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_SaveUserData",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "UserData",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 47
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_sgets",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Deposid",
+          "register": "a1/d1/d2"
+        },
+        {
+          "name": "MaxChars",
+          "register": null
+        },
+        {
+          "name": "Mode",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 11
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_text",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "FileName",
+          "register": "a1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 19
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Wfgetc",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "WaitBits",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 30
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Wgetc",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "WaitBits",
+          "register": "d1"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 29
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "bbs_Wgets",
+      "status": "verified",
+      "parameters": [
+        {
+          "name": "Deposid",
+          "register": "a1/d1/d2/d3"
+        },
+        {
+          "name": "MaxChars",
+          "register": null
+        },
+        {
+          "name": "Mode",
+          "register": null
+        },
+        {
+          "name": "Bits",
+          "register": null
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_doc_dev",
+        "path": "Dokumentation/include/fd/BBS_library.fd",
+        "line": 37
+      },
+      "evidence_class": "documented"
+    },
+    {
+      "kind": "function",
+      "name": "error",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "txt"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_mod_E",
+        "path": "Xample.e",
+        "line": 173
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "menu",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "a "
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_mod_E",
+        "path": "Xample.e",
+        "line": 143
+      },
+      "evidence_class": "observed"
+    },
+    {
+      "kind": "function",
+      "name": "printf",
+      "status": "verified-from-example",
+      "parameters": [
+        {
+          "name": "a"
+        },
+        {
+          "name": "b"
+        }
+      ],
+      "return": {
+        "status": "unknown"
+      },
+      "source": {
+        "archive": "AmBoS_mod_E",
+        "path": "Xample.e",
+        "line": 156
+      },
+      "evidence_class": "observed"
+    }
+  ],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "BBSWrite",
+        "BBSPrintf"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "BBSCarrier"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional"
+    }
+  ],
+  "limitations": [
+    "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures."
+  ]
+}

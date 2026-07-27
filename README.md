@@ -72,3 +72,8 @@ See [docs/m46-conformance-profiles.md](docs/m46-conformance-profiles.md).
 ```bash
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools conformance
 ```
+
+
+## Complete API census
+
+The machine-readable historical API census starts at `catalog/census/index.json`.

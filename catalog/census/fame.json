@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "id": "fame",
+  "name": "FAME DoorPort",
+  "api_manifest": "fame-doorport",
+  "evidence_class": "documented-sdk",
+  "archives": [
+    "fame_dh.json",
+    "fcomm.json",
+    "fcomm130.json"
+  ],
+  "entry_count": 0,
+  "mapping_count": 0,
+  "entries": [],
+  "mappings": [],
+  "limitations": [
+    "No normative ODS semantic mappings are claimed for this family in the current corpus."
+  ]
+}

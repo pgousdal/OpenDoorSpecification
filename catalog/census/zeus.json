@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "zeus",
+  "name": "Zeus doors corpus",
+  "api_manifest": null,
+  "evidence_class": "observed-doors",
+  "archives": [],
+  "entry_count": 0,
+  "mapping_count": 0,
+  "entries": [],
+  "mappings": [],
+  "limitations": [
+    "The corpus proves existence or practical use, but a complete public callable contract has not yet been normalized."
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.0",
+  "title": "Complete API Census",
+  "system_count": 10,
+  "systems": [
+    {
+      "id": "abbs",
+      "name": "ABBS ARexx",
+      "evidence_class": "documented-sdk",
+      "entry_count": 16,
+      "mapping_count": 6,
+      "path": "catalog/census/abbs.json"
+    },
+    {
+      "id": "aedoor",
+      "name": "AmiExpress/AEDoor",
+      "evidence_class": "documented-sdk",
+      "entry_count": 14,
+      "mapping_count": 0,
+      "path": "catalog/census/aedoor.json"
+    },
+    {
+      "id": "ambos",
+      "name": "AmBoS bbs.library",
+      "evidence_class": "documented-sdk",
+      "entry_count": 45,
+      "mapping_count": 2,
+      "path": "catalog/census/ambos.json"
+    },
+    {
+      "id": "daydream",
+      "name": "DayDream DreamDoor",
+      "evidence_class": "documented-sdk",
+      "entry_count": 117,
+      "mapping_count": 8,
+      "path": "catalog/census/daydream.json"
+    },
+    {
+      "id": "door-io",
+      "name": "door_io.library",
+      "evidence_class": "documented-sdk",
+      "entry_count": 6,
+      "mapping_count": 3,
+      "path": "catalog/census/door-io.json"
+    },
+    {
+      "id": "fame",
+      "name": "FAME DoorPort",
+      "evidence_class": "documented-sdk",
+      "entry_count": 0,
+      "mapping_count": 0,
+      "path": "catalog/census/fame.json"
+    },
+    {
+      "id": "paragon",
+      "name": "MAXs/Paragon message protocol",
+      "evidence_class": "documented-protocol",
+      "entry_count": 32,
+      "mapping_count": 7,
+      "path": "catalog/census/paragon.json"
+    },
+    {
+      "id": "ucdoor",
+      "name": "UCDoor compatibility wrapper",
+      "evidence_class": "wrapper-binding",
+      "entry_count": 0,
+      "mapping_count": 0,
+      "path": "catalog/census/ucdoor.json"
+    },
+    {
+      "id": "zeus",
+      "name": "Zeus doors corpus",
+      "evidence_class": "observed-doors",
+      "entry_count": 0,
+      "mapping_count": 0,
+      "path": "catalog/census/zeus.json"
+    },
+    {
+      "id": "wwbbs",
+      "name": "WWBBS ARexx doors corpus",
+      "evidence_class": "observed-doors",
+      "entry_count": 0,
+      "mapping_count": 0,
+      "path": "catalog/census/wwbbs.json"
+    }
+  ],
+  "entry_count": 230,
+  "mapping_count": 26
+}

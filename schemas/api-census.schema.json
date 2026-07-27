@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ODS API census record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "evidence_class",
+    "archives",
+    "entry_count",
+    "mapping_count",
+    "entries",
+    "mappings",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "name": {
+      "type": "string"
+    },
+    "api_manifest": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_class": {
+      "enum": [
+        "documented-sdk",
+        "documented-protocol",
+        "wrapper-binding",
+        "observed-doors"
+      ]
+    },
+    "archives": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "entry_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "mapping_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "entries": {
+      "type": "array"
+    },
+    "mappings": {
+      "type": "array"
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": false
+}
