@@ -92,6 +92,8 @@ ods crosswalk --coverage
 ods crosswalk --gaps
 ods crosswalk --work-queue
 ods crosswalk --work-queue --priority high
+ods crosswalk --completion
+ods crosswalk --backlog
 ods crosswalk ucdoor terminal.write --evidence
 ods crosswalk --validate-evidence
 ods validate
@@ -103,3 +105,5 @@ The [M6.2 evidence work queue](docs/m62-crosswalk-work-queue.md) prioritizes
 future research; priority is not a support claim.
 Reviewed mappings must satisfy the
 [M6.2 provenance requirements](docs/m62-evidence-provenance-validation.md).
+The [M6.2 completion report](docs/m62-completion.md) separates completed
+milestone work from deferred research and archival source discovery.

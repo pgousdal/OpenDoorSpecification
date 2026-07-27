@@ -136,7 +136,7 @@ Delivered data model, deterministic generation, CLI lookup, validation,
 coverage reporting and milestone acceptance checks. Mapping expansion continues
 in M6.2.
 
-### M6.2 — Crosswalk evidence expansion: in progress
+### M6.2 — Crosswalk evidence expansion: complete
 
 - PR1: deterministic evidence work queue, documented priority rules, CLI
   filtering, and stale-data validation.
@@ -156,4 +156,7 @@ in M6.2.
   research effort, confidence, and per-host next opportunities.
 - PR9: the two small-effort, high-confidence AmBoS items were verified from
   the cataloged developer guide, public headers, and original example source.
-- Future work: research and review queued host-operation cells.
+- PR10: deterministic completion criteria classify every remaining queue item
+  as a completion blocker, deferred research, or archival source discovery.
+- Future milestones consume the generated research backlog without treating
+  unassessed cells as unsupported.

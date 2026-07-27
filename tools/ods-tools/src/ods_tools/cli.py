@@ -22,6 +22,12 @@ from .crosswalk_triage import (
     format_crosswalk_triage,
     select_crosswalk_triage,
 )
+from .crosswalk_completion import (
+    build_m62_completion,
+    format_m62_backlog,
+    format_m62_completion,
+    select_m62_backlog,
+)
 from .crosswalk_evidence import (
     EvidenceValidationError,
     format_mapping_evidence,
@@ -78,6 +84,17 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         assert triage_path.exists(), "missing crosswalk evidence triage"
         stored_triage = json.loads(triage_path.read_text(encoding="utf-8"))
         assert stored_triage == generated_triage, "stale crosswalk evidence triage"
+        generated_completion = build_m62_completion(root)
+        completion_path = (
+            root / "catalog" / "crosswalk" / "m62-completion.json"
+        )
+        assert completion_path.exists(), "missing M6.2 completion report"
+        stored_completion = json.loads(
+            completion_path.read_text(encoding="utf-8")
+        )
+        assert stored_completion == generated_completion, (
+            "stale M6.2 completion report"
+        )
 
     index = json.loads((root / "catalog" / "knowledge" / "operation-index.json").read_text(encoding="utf-8"))
     indexed_operations = [item["id"] for item in index["operations"]]
@@ -248,6 +265,16 @@ def main() -> int:
         help="show research triage for remaining unassessed cells",
     )
     crosswalk.add_argument(
+        "--completion",
+        action="store_true",
+        help="show deterministic M6.2 completion criteria",
+    )
+    crosswalk.add_argument(
+        "--backlog",
+        action="store_true",
+        help="show remaining research grouped by triage reason",
+    )
+    crosswalk.add_argument(
         "--host",
         help="limit triage output to one host ID",
     )
@@ -325,6 +352,8 @@ def main() -> int:
                 or args.write
                 or args.work_queue
                 or args.triage
+                or args.completion
+                or args.backlog
                 or args.host
                 or args.priority
                 or args.all
@@ -356,6 +385,8 @@ def main() -> int:
                 or args.write
                 or args.work_queue
                 or args.triage
+                or args.completion
+                or args.backlog
                 or args.host
                 or args.priority
                 or args.all
@@ -384,6 +415,40 @@ def main() -> int:
             raise SystemExit("--priority requires --work-queue")
         if args.host and not args.triage:
             raise SystemExit("--host requires --triage")
+        if args.completion or args.backlog:
+            if (
+                args.target
+                or args.evidence_operation
+                or args.coverage
+                or args.gaps
+                or args.write
+                or args.work_queue
+                or args.triage
+                or args.host
+                or args.priority
+                or args.evidence
+                or args.all
+                or (args.completion and args.backlog)
+            ):
+                option = "--completion" if args.completion else "--backlog"
+                raise SystemExit(
+                    f"{option} cannot be combined with other crosswalk selections"
+                )
+            report = (
+                build_m62_completion(root)
+                if args.completion
+                else select_m62_backlog(root)
+            )
+            print(
+                json.dumps(report, indent=2, ensure_ascii=False)
+                if args.json
+                else (
+                    format_m62_completion(report)
+                    if args.completion
+                    else format_m62_backlog(report)
+                )
+            )
+            return 0
         if args.triage:
             if (
                 args.target

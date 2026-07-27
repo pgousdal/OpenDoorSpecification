@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/crosswalk-m62-completion.schema.json",
+  "title": "M6.2 crosswalk completion and research backlog",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "milestone",
+    "kind",
+    "source_paths",
+    "complete",
+    "completion_semantics",
+    "validation_requirements",
+    "criteria",
+    "backlog"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "milestone": {
+      "const": "M6.2"
+    },
+    "kind": {
+      "const": "crosswalk-milestone-completion"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "satisfied",
+          "detail"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "satisfied": {
+            "type": "boolean"
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "backlog": {
+      "type": "object",
+      "required": [
+        "summary",
+        "groups"
+      ],
+      "properties": {
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "backlog_class",
+              "summary",
+              "affected_hosts",
+              "affected_operations",
+              "effort_distribution",
+              "expected_value",
+              "recommended_milestone",
+              "item_count",
+              "items"
+            ],
+            "properties": {
+              "backlog_class": {
+                "enum": [
+                  "completion-blocker",
+                  "deferred-research",
+                  "archival-source-discovery"
+                ]
+              },
+              "expected_value": {
+                "enum": [
+                  "high",
+                  "medium",
+                  "low"
+                ]
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "host",
+                    "operation",
+                    "reason",
+                    "effort",
+                    "confidence"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

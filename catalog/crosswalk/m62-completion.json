@@ -1,0 +1,429 @@
+{
+  "schema_version": 1,
+  "milestone": "M6.2",
+  "kind": "crosswalk-milestone-completion",
+  "source_paths": [
+    "catalog/crosswalk/work-queue.json",
+    "catalog/crosswalk/triage.json"
+  ],
+  "complete": true,
+  "completion_semantics": "M6.2 is complete when cataloged documented or high-confidence work is reviewed and every remaining unassessed cell is consistently classified. Completion is not a claim that every host supports every canonical operation.",
+  "validation_requirements": [
+    "reviewed mapping provenance passes validation",
+    "all generators produce byte-identical output for unchanged inputs",
+    "generated crosswalk, coverage, queue, triage, and completion data are current",
+    "queue, triage, and backlog contain the same unassessed mapping IDs",
+    "backlog IDs are unique and no reviewed mapping appears in the backlog",
+    "normal and strict repository validation pass"
+  ],
+  "criteria": [
+    {
+      "id": "documented-high-confidence-work-complete",
+      "satisfied": true,
+      "detail": "0 documented or high-confidence items remain."
+    },
+    {
+      "id": "remaining-work-classified",
+      "satisfied": true,
+      "detail": "32 backlog items classify 32 queue items."
+    },
+    {
+      "id": "reviewed-provenance-valid",
+      "satisfied": true,
+      "detail": "58 reviewed mappings have valid provenance."
+    },
+    {
+      "id": "queue-triage-consistent",
+      "satisfied": true,
+      "detail": "Queue and triage each contain 32 ordered items."
+    },
+    {
+      "id": "no-orphaned-backlog-items",
+      "satisfied": true,
+      "detail": "Backlog IDs are unique and resolve to unassessed cells."
+    }
+  ],
+  "backlog": {
+    "summary": {
+      "total": 32,
+      "groups": 5,
+      "classes": {
+        "completion-blocker": 0,
+        "deferred-research": 8,
+        "archival-source-discovery": 24
+      }
+    },
+    "groups": [
+      {
+        "id": "insufficient-semantics",
+        "backlog_class": "deferred-research",
+        "expected_value": "medium",
+        "recommended_milestone": "post-M6.2 evidence expansion",
+        "summary": "Resolve semantic gaps without treating nearby symbols as mappings.",
+        "affected_hosts": [
+          "ambos",
+          "paragon"
+        ],
+        "affected_operations": [
+          "bbs.command",
+          "session.time_left",
+          "status.set"
+        ],
+        "effort_distribution": {
+          "moderate": 3
+        },
+        "item_count": 3,
+        "items": [
+          {
+            "id": "ambos:bbs.command",
+            "host": "ambos",
+            "operation": "bbs.command",
+            "reason": "insufficient-semantics",
+            "effort": "moderate",
+            "confidence": "medium"
+          },
+          {
+            "id": "paragon:session.time_left",
+            "host": "paragon",
+            "operation": "session.time_left",
+            "reason": "insufficient-semantics",
+            "effort": "moderate",
+            "confidence": "medium"
+          },
+          {
+            "id": "paragon:status.set",
+            "host": "paragon",
+            "operation": "status.set",
+            "reason": "insufficient-semantics",
+            "effort": "moderate",
+            "confidence": "medium"
+          }
+        ]
+      },
+      {
+        "id": "missing-primary-source",
+        "backlog_class": "archival-source-discovery",
+        "expected_value": "high",
+        "recommended_milestone": "archive discovery",
+        "summary": "Locate and catalog a primary SDK, protocol, or programmer reference.",
+        "affected_hosts": [
+          "wwbbs",
+          "zeus"
+        ],
+        "affected_operations": [
+          "bbs.command",
+          "lifecycle.disconnect",
+          "lifecycle.exit",
+          "session.identity",
+          "session.time_left",
+          "status.set",
+          "terminal.read_key",
+          "terminal.read_line",
+          "terminal.write"
+        ],
+        "effort_distribution": {
+          "extensive": 18
+        },
+        "item_count": 18,
+        "items": [
+          {
+            "id": "wwbbs:lifecycle.disconnect",
+            "host": "wwbbs",
+            "operation": "lifecycle.disconnect",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:lifecycle.exit",
+            "host": "wwbbs",
+            "operation": "lifecycle.exit",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:session.identity",
+            "host": "wwbbs",
+            "operation": "session.identity",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:terminal.read_key",
+            "host": "wwbbs",
+            "operation": "terminal.read_key",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:terminal.read_line",
+            "host": "wwbbs",
+            "operation": "terminal.read_line",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:terminal.write",
+            "host": "wwbbs",
+            "operation": "terminal.write",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:lifecycle.disconnect",
+            "host": "zeus",
+            "operation": "lifecycle.disconnect",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:lifecycle.exit",
+            "host": "zeus",
+            "operation": "lifecycle.exit",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:session.identity",
+            "host": "zeus",
+            "operation": "session.identity",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:terminal.read_key",
+            "host": "zeus",
+            "operation": "terminal.read_key",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:terminal.read_line",
+            "host": "zeus",
+            "operation": "terminal.read_line",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:terminal.write",
+            "host": "zeus",
+            "operation": "terminal.write",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:bbs.command",
+            "host": "wwbbs",
+            "operation": "bbs.command",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:session.time_left",
+            "host": "wwbbs",
+            "operation": "session.time_left",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:bbs.command",
+            "host": "zeus",
+            "operation": "bbs.command",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:session.time_left",
+            "host": "zeus",
+            "operation": "session.time_left",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "wwbbs:status.set",
+            "host": "wwbbs",
+            "operation": "status.set",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "zeus:status.set",
+            "host": "zeus",
+            "operation": "status.set",
+            "reason": "missing-primary-source",
+            "effort": "extensive",
+            "confidence": "low"
+          }
+        ]
+      },
+      {
+        "id": "insufficient-sdk",
+        "backlog_class": "archival-source-discovery",
+        "expected_value": "medium",
+        "recommended_milestone": "archive discovery",
+        "summary": "Find a broader host-specific source because the cataloged SDK omits the operation.",
+        "affected_hosts": [
+          "ambos",
+          "door-io"
+        ],
+        "affected_operations": [
+          "bbs.command",
+          "session.identity",
+          "session.time_left",
+          "status.set"
+        ],
+        "effort_distribution": {
+          "extensive": 6
+        },
+        "item_count": 6,
+        "items": [
+          {
+            "id": "ambos:session.time_left",
+            "host": "ambos",
+            "operation": "session.time_left",
+            "reason": "insufficient-sdk",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "ambos:status.set",
+            "host": "ambos",
+            "operation": "status.set",
+            "reason": "insufficient-sdk",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "door-io:bbs.command",
+            "host": "door-io",
+            "operation": "bbs.command",
+            "reason": "insufficient-sdk",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "door-io:session.identity",
+            "host": "door-io",
+            "operation": "session.identity",
+            "reason": "insufficient-sdk",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "door-io:session.time_left",
+            "host": "door-io",
+            "operation": "session.time_left",
+            "reason": "insufficient-sdk",
+            "effort": "extensive",
+            "confidence": "low"
+          },
+          {
+            "id": "door-io:status.set",
+            "host": "door-io",
+            "operation": "status.set",
+            "reason": "insufficient-sdk",
+            "effort": "extensive",
+            "confidence": "low"
+          }
+        ]
+      },
+      {
+        "id": "ambiguous-operation",
+        "backlog_class": "deferred-research",
+        "expected_value": "medium",
+        "recommended_milestone": "post-M6.2 evidence expansion",
+        "summary": "Distinguish the canonical operation from similar documented behavior.",
+        "affected_hosts": [
+          "aedoor",
+          "fame",
+          "ucdoor"
+        ],
+        "affected_operations": [
+          "status.set"
+        ],
+        "effort_distribution": {
+          "moderate": 3
+        },
+        "item_count": 3,
+        "items": [
+          {
+            "id": "aedoor:status.set",
+            "host": "aedoor",
+            "operation": "status.set",
+            "reason": "ambiguous-operation",
+            "effort": "moderate",
+            "confidence": "low"
+          },
+          {
+            "id": "fame:status.set",
+            "host": "fame",
+            "operation": "status.set",
+            "reason": "ambiguous-operation",
+            "effort": "moderate",
+            "confidence": "medium"
+          },
+          {
+            "id": "ucdoor:status.set",
+            "host": "ucdoor",
+            "operation": "status.set",
+            "reason": "ambiguous-operation",
+            "effort": "moderate",
+            "confidence": "low"
+          }
+        ]
+      },
+      {
+        "id": "needs-additional-research",
+        "backlog_class": "deferred-research",
+        "expected_value": "medium",
+        "recommended_milestone": "post-M6.2 evidence expansion",
+        "summary": "Perform focused research in cataloged primary material.",
+        "affected_hosts": [
+          "abbs"
+        ],
+        "affected_operations": [
+          "bbs.command",
+          "lifecycle.exit"
+        ],
+        "effort_distribution": {
+          "moderate": 2
+        },
+        "item_count": 2,
+        "items": [
+          {
+            "id": "abbs:bbs.command",
+            "host": "abbs",
+            "operation": "bbs.command",
+            "reason": "needs-additional-research",
+            "effort": "moderate",
+            "confidence": "medium"
+          },
+          {
+            "id": "abbs:lifecycle.exit",
+            "host": "abbs",
+            "operation": "lifecycle.exit",
+            "reason": "needs-additional-research",
+            "effort": "moderate",
+            "confidence": "medium"
+          }
+        ]
+      }
+    ]
+  }
+}

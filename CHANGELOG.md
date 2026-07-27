@@ -193,6 +193,8 @@
   generation, and validation.
 - M6.2 PR9 verified the two small-effort, high-confidence AmBoS mappings from
   the cataloged programmer guide, public headers, and original SDK example.
+- M6.2 PR10 deterministic completion criteria and a reason-grouped research
+  backlog separating blockers, deferred research, and archival discovery.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.
