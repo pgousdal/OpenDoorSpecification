@@ -36,6 +36,7 @@ class RecordingDreamDoorBackend:
     output: list[str] = field(default_factory=list)
     calls: list[dict[str, Any]] = field(default_factory=list)
     activity: str = ""
+    command_results: dict[str, Any] = field(default_factory=dict)
 
     def _call(self, symbol: str, arguments: dict[str, Any], result: Any = None) -> Any:
         self.calls.append({"symbol": symbol, "arguments": arguments, "result": result})
@@ -63,7 +64,8 @@ class RecordingDreamDoorBackend:
         self.activity = text; self._call("ChangeActivity", {"text": text})
 
     def internal_command(self, command: str, arguments: list[Any]) -> Any:
-        return self._call("InternalCommand", {"command": command, "arguments": arguments})
+        result = self.command_results.get(command)
+        return self._call("InternalCommand", {"command": command, "arguments": arguments}, result)
 
     def carrier(self) -> bool:
         return self._call("Carrier", {}, self.connected)

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/executable-conformance-report.schema.json",
+  "title": "ODS Executable Conformance Report",
+  "type": "object",
+  "required": ["schema_version", "suite_version", "spec_version", "case_count", "adapters"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "suite_version": {"type": "string"},
+    "spec_version": {"type": "string"},
+    "case_count": {"type": "integer", "minimum": 1},
+    "adapters": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": false
+}

@@ -8,6 +8,7 @@ from .operations import build_operation_records, write_operation_records
 from .gaps import build_adapter_gap_report, write_adapter_gap_report
 from .profiles import build_conformance_report, write_conformance_report
 from .simulator import load_scenario, run_scenario
+from .conformance import build_executable_conformance_report, write_executable_conformance_report
 
 
 def repo_root() -> Path:
@@ -113,6 +114,11 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
             assert not adapter["unknown_operations"], f"unknown adapter operations: {adapter['id']}"
         stored_conformance = json.loads((root / "catalog" / "knowledge" / "conformance-report.json").read_text(encoding="utf-8"))
         assert stored_conformance == conformance_report, "stale conformance report"
+        executable_report = build_executable_conformance_report(root)
+        stored_executable = json.loads((root / "catalog" / "knowledge" / "executable-conformance-report.json").read_text(encoding="utf-8"))
+        assert stored_executable == executable_report, "stale executable conformance report"
+        for adapter in executable_report["adapters"]:
+            assert adapter["highest_executed_profile"] == "complete", f"adapter failed executable complete profile: {adapter['id']}"
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
 
 
@@ -173,10 +179,38 @@ def main() -> int:
     ops.add_argument("operation", nargs="?", help="operation ID to inspect")
     ops.add_argument("--json", action="store_true", help="print machine-readable JSON")
     ops.add_argument("--write", type=Path, help="regenerate operation records in a directory")
+    conf = sub.add_parser("conformance", help="execute adapter conformance cases")
+    conf.add_argument("adapter", nargs="?", help="adapter ID to report")
+    conf.add_argument("--profile", choices=["minimal", "interactive", "complete"], help="limit display to one profile")
+    conf.add_argument("--json", action="store_true", help="print machine-readable JSON")
+    conf.add_argument("--write", type=Path, help="write the executable report to a JSON file")
     sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
     sim.add_argument("scenario", type=Path)
     sim.add_argument("--transcript", action="store_true", help="print complete JSON execution result")
     args = parser.parse_args()
+    if args.command == "conformance":
+        report = write_executable_conformance_report(repo_root(), args.write) if args.write else build_executable_conformance_report(repo_root())
+        adapters = report["adapters"]
+        if args.adapter:
+            adapters = [item for item in adapters if item["id"] == args.adapter]
+            if not adapters:
+                raise SystemExit(f"unknown executable adapter: {args.adapter}")
+        if args.profile:
+            for adapter in adapters:
+                adapter["profiles"] = [item for item in adapter["profiles"] if item["profile"] == args.profile]
+        if args.json:
+            payload = dict(report)
+            payload["adapters"] = adapters
+            print(json.dumps(payload, indent=2))
+        else:
+            for adapter in adapters:
+                print(f"{adapter['id']}: {adapter['passed_cases']}/{adapter['total_cases']} cases; highest profile = {adapter['highest_executed_profile'] or 'none'}")
+                for profile in adapter["profiles"]:
+                    state = "PASS" if profile["passed"] else "FAIL"
+                    print(f"  {profile['profile']:<12} {state}")
+                    for operation in profile["failed_operations"]:
+                        print(f"    failed: {operation}")
+        return 0
     if args.command == "simulate":
         result = run_scenario(load_scenario(args.scenario))
         if args.transcript:

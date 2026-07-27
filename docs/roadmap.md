@@ -104,3 +104,7 @@ Status: complete.
 - Catalog MAXs Coders, MAXs Guide, and MAXShell 1.01.
 - Add verified source-level MAXShell protocol evidence.
 - Preserve the evidence boundary by avoiding new mappings from contextual documentation alone.
+
+## M4.9 — Executable Conformance Suite
+
+Completed: executable profile tests for portable reference adapters.

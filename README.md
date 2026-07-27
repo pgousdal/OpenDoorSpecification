@@ -66,3 +66,9 @@ PYTHONPATH=tools/ods-tools/src python3 -m ods_tools profiles
 
 See [docs/m46-conformance-profiles.md](docs/m46-conformance-profiles.md).
 
+
+### Executable conformance
+
+```bash
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools conformance
+```

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "suite_version": "0.1.0",
+  "spec_version": "0.1.0",
+  "cases": [
+    {"id": "terminal-write", "operation": "terminal.write", "arguments": {"data": "Hello"}, "expected": {"result": null, "output": ["Hello"]}},
+    {"id": "terminal-read-key", "operation": "terminal.read_key", "setup": {"keys": ["Q"]}, "expected": {"result": "Q"}},
+    {"id": "terminal-read-line", "operation": "terminal.read_line", "setup": {"lines": ["Alphabet"]}, "arguments": {"max_length": 3}, "expected": {"result": "Alp"}},
+    {"id": "session-identity", "operation": "session.identity", "setup": {"identity": {"user_id": "42", "display_name": "Ada"}}, "expected": {"result": {"user_id": "42", "display_name": "Ada"}}},
+    {"id": "session-node", "operation": "session.node", "setup": {"node": 7}, "expected": {"result": 7}},
+    {"id": "session-time-left", "operation": "session.time_left", "setup": {"time_left": 900}, "expected": {"result": 900}},
+    {"id": "session-connection-state", "operation": "session.connection_state", "expected": {"result": "connected"}},
+    {"id": "status-set", "operation": "status.set", "arguments": {"text": "Reading mail"}, "expected": {"result": null, "status": "Reading mail"}},
+    {"id": "bbs-command", "operation": "bbs.command", "setup": {"command_results": {"PING": "PONG"}}, "arguments": {"command": "PING", "arguments": []}, "expected": {"result": "PONG"}},
+    {"id": "lifecycle-exit", "operation": "lifecycle.exit", "arguments": {"status": 3}, "expected": {"exception": "DoorExit", "status": 3}},
+    {"id": "lifecycle-disconnect", "operation": "lifecycle.disconnect", "arguments": {"reason": "operator_request"}, "expected": {"exception": "DoorDisconnected", "reason": "operator_request"}}
+  ]
+}

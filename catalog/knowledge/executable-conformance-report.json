@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "suite_version": "0.1.0",
+  "spec_version": "0.1.0",
+  "case_count": 11,
+  "adapters": [
+    {
+      "id": "daydream",
+      "highest_executed_profile": "complete",
+      "passed_cases": 11,
+      "total_cases": 11,
+      "profiles": [
+        {
+          "profile": "minimal",
+          "passed": true,
+          "failed_operations": []
+        },
+        {
+          "profile": "interactive",
+          "passed": true,
+          "failed_operations": []
+        },
+        {
+          "profile": "complete",
+          "passed": true,
+          "failed_operations": []
+        }
+      ],
+      "cases": [
+        {
+          "case": "terminal-write",
+          "operation": "terminal.write",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "terminal-read-key",
+          "operation": "terminal.read_key",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "terminal-read-line",
+          "operation": "terminal.read_line",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-identity",
+          "operation": "session.identity",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-node",
+          "operation": "session.node",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-time-left",
+          "operation": "session.time_left",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-connection-state",
+          "operation": "session.connection_state",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "status-set",
+          "operation": "status.set",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "bbs-command",
+          "operation": "bbs.command",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "lifecycle-exit",
+          "operation": "lifecycle.exit",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "lifecycle-disconnect",
+          "operation": "lifecycle.disconnect",
+          "passed": true,
+          "failures": []
+        }
+      ]
+    },
+    {
+      "id": "host-simulator",
+      "highest_executed_profile": "complete",
+      "passed_cases": 11,
+      "total_cases": 11,
+      "profiles": [
+        {
+          "profile": "minimal",
+          "passed": true,
+          "failed_operations": []
+        },
+        {
+          "profile": "interactive",
+          "passed": true,
+          "failed_operations": []
+        },
+        {
+          "profile": "complete",
+          "passed": true,
+          "failed_operations": []
+        }
+      ],
+      "cases": [
+        {
+          "case": "terminal-write",
+          "operation": "terminal.write",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "terminal-read-key",
+          "operation": "terminal.read_key",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "terminal-read-line",
+          "operation": "terminal.read_line",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-identity",
+          "operation": "session.identity",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-node",
+          "operation": "session.node",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-time-left",
+          "operation": "session.time_left",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "session-connection-state",
+          "operation": "session.connection_state",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "status-set",
+          "operation": "status.set",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "bbs-command",
+          "operation": "bbs.command",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "lifecycle-exit",
+          "operation": "lifecycle.exit",
+          "passed": true,
+          "failures": []
+        },
+        {
+          "case": "lifecycle-disconnect",
+          "operation": "lifecycle.disconnect",
+          "passed": true,
+          "failures": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,13 @@
 # Changelog
 
+## M4.9 - Executable Conformance Suite
+
+- Added executable cases for all 11 ODS Core operations.
+- Added portable execution harnesses for the host simulator and DayDream adapter.
+- Added `ods conformance` with text, filtered, JSON, and report-writing modes.
+- Added strict validation of the committed executable conformance report.
+- Both portable reference adapters pass the complete profile.
+
 ## M4.8
 
 - Added manifests for MAXs Coders, MAXs Guide, and MAXShell 1.01.
