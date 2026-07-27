@@ -1,9 +1,0 @@
-{
-  "id": "paragon-door",
-  "name": "Paragon/StarNet-compatible door interface",
-  "status": "inferred",
-  "transport": "native process and host compatibility layer",
-  "evidence": [
-    "DoorRunner.lha"
-  ]
-}

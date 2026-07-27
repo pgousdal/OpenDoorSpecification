@@ -1,9 +1,0 @@
-{
-  "id": "daydream-dreamdoor",
-  "name": "DayDream DreamDoor",
-  "status": "verified",
-  "transport": "shared library and DoorMessage structure",
-  "evidence": [
-    "DayDreamBBSDev.lha"
-  ]
-}

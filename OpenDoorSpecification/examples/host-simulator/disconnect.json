@@ -1,6 +1,0 @@
-{
-  "session": {"connected": false},
-  "actions": [
-    {"operation": "terminal.write", "arguments": {"data": "This is never written"}}
-  ]
-}

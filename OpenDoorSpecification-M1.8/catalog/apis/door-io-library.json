@@ -1,9 +1,0 @@
-{
-  "id": "door-io-library",
-  "name": "door_io.library",
-  "status": "verified",
-  "transport": "shared library and AmigaDOS I/O",
-  "evidence": [
-    "door_io12.lha"
-  ]
-}
