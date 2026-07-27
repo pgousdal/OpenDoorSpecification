@@ -14,7 +14,7 @@ def repo_root() -> Path:
     raise SystemExit("ODS repository root not found")
 
 
-def validate(root: Path) -> tuple[int, int, int]:
+def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
     manifests = []
     for path in sorted((root / "catalog" / "archives").glob("*.json")):
         manifests.append(json.loads(path.read_text(encoding="utf-8")))
@@ -42,6 +42,35 @@ def validate(root: Path) -> tuple[int, int, int]:
         assert data["operations"], path
         assert len(data["operations"]) == len(set(data["operations"])), path
         assert set(data["operations"]).issubset(operation_ids), path
+    registry = json.loads((root / "catalog" / "knowledge" / "id-registry.json").read_text(encoding="utf-8"))
+    registered_operations = [item["id"] for item in registry["operations"]]
+    registered_apis = [item["id"] for item in registry["apis"]]
+    assert len(registered_operations) == len(set(registered_operations))
+    assert len(registered_apis) == len(set(registered_apis))
+    assert set(registered_operations) == set(operation_ids)
+
+    index = json.loads((root / "catalog" / "knowledge" / "operation-index.json").read_text(encoding="utf-8"))
+    indexed_operations = [item["id"] for item in index["operations"]]
+    assert indexed_operations == operation_ids
+    assert all(item["definition_ref"] == "catalog/operations/core.json" for item in index["operations"])
+    for item in index["operations"]:
+        for implementation in item["implementations"]:
+            assert implementation["api"] in registered_apis
+
+    if strict:
+        archive_entries = {
+            manifest["source_filename"]: {entry["path"] for entry in manifest["entries"]}
+            for manifest in manifests
+        }
+        for path in sorted((root / "catalog" / "provenance").glob("*.json")):
+            record = json.loads(path.read_text(encoding="utf-8"))
+            if "operation" in record:
+                assert record["operation"] in operation_ids, path
+            if "api" in record:
+                assert record["api"] in registered_apis, path
+            for source in record["sources"]:
+                assert source["archive"] in archive_entries, path
+                assert source["path"] in archive_entries[source["archive"]], path
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count
 
 
@@ -52,7 +81,8 @@ def main() -> int:
     inv.add_argument("archive", type=Path)
     inv.add_argument("--json", type=Path)
     sub.add_parser("list-archives", help="list cataloged archives")
-    sub.add_parser("validate", help="validate repository catalog invariants")
+    val = sub.add_parser("validate", help="validate repository catalog invariants")
+    val.add_argument("--strict", action="store_true", help="also validate every provenance cross-reference")
     ins = sub.add_parser("inspect", help="inspect an ODS operation or historical API mapping")
     ins.add_argument("name")
     cmp = sub.add_parser("compare", help="compare historical APIs against ODS operations")
@@ -83,8 +113,9 @@ def main() -> int:
             print(f"{d['source_filename']}: {d['entry_count']} entries {d['source_sha256'][:12]}")
         return 0
     if args.command == "validate":
-        archives, entries, mappings = validate(root)
-        print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings")
+        archives, entries, mappings = validate(root, strict=args.strict)
+        suffix = ", strict provenance" if args.strict else ""
+        print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}")
         return 0
     if args.command == "inspect":
         operations = {o["id"]: o for o in load_operations(root)["operations"]}

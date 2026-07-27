@@ -4,7 +4,7 @@ Open Door Specification (ODS) is an implementation-neutral specification and evi
 
 ## Current status
 
-This repository foundation contains the M0 structure and the first M1.6 archive inventory. It does not yet claim binary compatibility with any historical API.
+The repository is in the M4 architecture-baseline phase. It contains an evidence-backed historical catalog, ODS Core 0.1, host and DayDream reference adapters, and repository validation. It does not claim binary compatibility where ABI evidence remains incomplete.
 
 ## Quick start
 
@@ -14,6 +14,10 @@ ods inventory path/to/sdk.lha
 ods validate
 ods list-archives
 ```
+
+## Architecture
+
+The normative specification is the primary product. Historical catalogs, the toolkit, and reference adapters support it without silently redefining it. See [`ARCHITECTURE.md`](ARCHITECTURE.md).
 
 ## Principles
 
@@ -32,3 +36,5 @@ DoorForge is planned as a reference implementation, but ODS is independent of Do
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools inspect terminal.write
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools compare abbs daydream ambos
 ```
+
+Canonical knowledge model: [`docs/canonical-knowledge-model.md`](docs/canonical-knowledge-model.md)

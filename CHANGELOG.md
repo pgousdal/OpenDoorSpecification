@@ -61,3 +61,18 @@
 - Added observed API-usage corpus with documented/observed/inferred evidence classes.
 - Added independent MAXs/Paragon protocol evidence from C and Amiga E doors.
 - Added historical corpus reports and repository tests.
+
+
+## M4.0
+
+- Added the repository-level architecture manifesto.
+- Defined specification, toolkit, and reference implementation boundaries.
+- Defined normative/informative and evidence-strength rules.
+- Added an incremental project-structure migration target with no disruptive file moves.
+
+## M4.1
+
+- Added stable operation, API, and provenance identifier rules.
+- Added a canonical cross-reference index for ODS operations and historical mappings.
+- Added a common provenance schema and strict dangling-reference validation.
+- Added `ods validate --strict`.

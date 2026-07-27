@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "namespace": "ods",
+  "id_policy": {
+    "operations": "<domain>.<verb_or_noun>",
+    "apis": "lowercase-kebab-case",
+    "provenance": "prov.<api>.<operation-with-dots-replaced-by-dashes>.<ordinal>",
+    "stability": "IDs are permanent once published; aliases may be added but IDs are never reused."
+  },
+  "operations": [
+    {
+      "id": "terminal.write",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "terminal.read_key",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "terminal.read_line",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "session.identity",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "session.node",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "session.time_left",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "session.connection_state",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "status.set",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "bbs.command",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "lifecycle.exit",
+      "kind": "operation",
+      "status": "active"
+    },
+    {
+      "id": "lifecycle.disconnect",
+      "kind": "operation",
+      "status": "active"
+    }
+  ],
+  "apis": [
+    {
+      "id": "abbs",
+      "kind": "historical-api",
+      "status": "active"
+    },
+    {
+      "id": "aedoor",
+      "kind": "historical-api",
+      "status": "active"
+    },
+    {
+      "id": "ambos",
+      "kind": "historical-api",
+      "status": "active"
+    },
+    {
+      "id": "daydream",
+      "kind": "historical-api",
+      "status": "active"
+    },
+    {
+      "id": "door-io",
+      "kind": "historical-api",
+      "status": "active"
+    },
+    {
+      "id": "fame",
+      "kind": "historical-api",
+      "status": "active"
+    },
+    {
+      "id": "paragon",
+      "kind": "historical-api",
+      "status": "active"
+    }
+  ]
+}

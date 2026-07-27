@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "operations": [
+    {
+      "id": "terminal.write",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "abbs",
+          "symbols": [
+            "Writeln",
+            "Write"
+          ],
+          "status": "partial",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "ambos",
+          "symbols": [
+            "BBSWrite",
+            "BBSPrintf"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "DDPutStr",
+            "DDPrintf"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "door-io",
+          "symbols": [
+            "DoorPrint"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "paragon",
+          "symbols": [
+            "command 1",
+            "mxPrint"
+          ],
+          "status": "verified",
+          "semantic_review": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "terminal.read_key",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "abbs",
+          "symbols": [
+            "GetKey"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "DDGetKey"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "door-io",
+          "symbols": [
+            "DoorGetKey"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "paragon",
+          "symbols": [
+            "command 8",
+            "mxHotKey"
+          ],
+          "status": "verified",
+          "semantic_review": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "terminal.read_line",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "abbs",
+          "symbols": [
+            "GetString"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "Prompt"
+          ],
+          "status": "partial",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "door-io",
+          "symbols": [
+            "DoorGetString"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "paragon",
+          "symbols": [
+            "command 6",
+            "mxInput"
+          ],
+          "status": "verified",
+          "semantic_review": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "session.identity",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "abbs",
+          "symbols": [
+            "UserName",
+            "UserNumber"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "GetAccount"
+          ],
+          "status": "partial",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "paragon",
+          "symbols": [
+            "command 13",
+            "command 14",
+            "mxGetIntInfo",
+            "mxGetStrInfo"
+          ],
+          "status": "partial",
+          "semantic_review": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "session.node",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": []
+    },
+    {
+      "id": "session.time_left",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "abbs",
+          "symbols": [
+            "TimeLeft"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "TimeLeft"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        }
+      ]
+    },
+    {
+      "id": "session.connection_state",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": []
+    },
+    {
+      "id": "status.set",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "abbs",
+          "symbols": [
+            "SetStatus"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "ChangeActivity"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        }
+      ]
+    },
+    {
+      "id": "bbs.command",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "daydream",
+          "symbols": [
+            "InternalCommand"
+          ],
+          "status": "verified",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "paragon",
+          "symbols": [
+            "mxMenuFunct",
+            "message command field"
+          ],
+          "status": "verified",
+          "semantic_review": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "lifecycle.exit",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "paragon",
+          "symbols": [
+            "command 20"
+          ],
+          "status": "verified",
+          "semantic_review": "reviewed"
+        }
+      ]
+    },
+    {
+      "id": "lifecycle.disconnect",
+      "definition_ref": "catalog/operations/core.json",
+      "implementations": [
+        {
+          "api": "ambos",
+          "symbols": [
+            "BBSCarrier"
+          ],
+          "status": "partial",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "daydream",
+          "symbols": [
+            "Carrier"
+          ],
+          "status": "partial",
+          "semantic_review": "provisional"
+        },
+        {
+          "api": "paragon",
+          "symbols": [
+            "command 9",
+            "carrier field"
+          ],
+          "status": "verified",
+          "semantic_review": "reviewed"
+        }
+      ]
+    }
+  ]
+}
