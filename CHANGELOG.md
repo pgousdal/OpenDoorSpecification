@@ -11,6 +11,12 @@
   validation and profile inspection commands.
 - Added one normative Adapter Contract and a closed outcome vocabulary for
   every canonical operation, with contract inspection and validation commands.
+- Added the capability declaration JSON Schema (`schemas/capability-declaration.schema.json`),
+  a closed capability status vocabulary (`supported`, `partial`, `unsupported`),
+  a reference declaration catalog under `catalog/capabilities/`, CLI inspection
+  and validation commands (`ods capabilities list|show|validate`), and
+  deterministic catalog validation. Capability statuses are kept separate from
+  Adapter Contract outcome values.
 - Refreshed repository, contributor, CLI, and milestone documentation after
   M6.2 completion.
 - Consolidated the roadmap into current, next, backlog, completed, and future

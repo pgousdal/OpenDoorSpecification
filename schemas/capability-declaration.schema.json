@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/capability-declaration.schema.json",
+  "title": "ODS Capability Declaration",
+  "description": "A machine-readable declaration of the canonical Adapter Contracts and Compatibility Profiles one implementation supports.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "spec_version",
+    "implementation_id",
+    "implementation_name",
+    "implementation_version",
+    "target_platform",
+    "supported_profiles",
+    "capabilities"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "spec_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "implementation_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "implementation_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_platform": {
+      "type": "string",
+      "minLength": 1
+    },
+    "supported_profiles": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]*$"
+      }
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/capability"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "capability_status": {
+      "enum": [
+        "supported",
+        "partial",
+        "unsupported"
+      ]
+    },
+    "capability": {
+      "type": "object",
+      "required": ["operation", "status"],
+      "properties": {
+        "operation": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_-]*$"
+        },
+        "status": {
+          "$ref": "#/$defs/capability_status"
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

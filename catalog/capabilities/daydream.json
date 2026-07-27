@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "implementation_id": "daydream",
+  "implementation_name": "DayDream DreamDoor",
+  "implementation_version": "1.0.0",
+  "target_platform": "amiga",
+  "supported_profiles": [
+    "interactive"
+  ],
+  "capabilities": [
+    {
+      "operation": "terminal.write",
+      "status": "supported",
+      "notes": "Delegates to DDPutStr with Amiga text encoding."
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "supported",
+      "notes": "Single-key input via DDGetKey."
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "partial",
+      "notes": "Line input is host-mediated through Prompt; editing behavior depends on the host BBS."
+    },
+    {
+      "operation": "session.identity",
+      "status": "supported",
+      "notes": "Caller account data from GetAccount."
+    },
+    {
+      "operation": "session.node",
+      "status": "partial",
+      "notes": "Node identifier is set externally; the adapter does not discover it from the host."
+    },
+    {
+      "operation": "session.time_left",
+      "status": "supported",
+      "notes": "Delegates to TimeLeft when the host provides seconds."
+    },
+    {
+      "operation": "session.connection_state",
+      "status": "supported",
+      "notes": "Reported through Carrier call."
+    },
+    {
+      "operation": "status.set",
+      "status": "supported",
+      "notes": "Activity description via ChangeActivity."
+    },
+    {
+      "operation": "bbs.command",
+      "status": "partial",
+      "notes": "Supports only the documented InternalCommand subset."
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "supported",
+      "notes": "Status passed to CloseDoor."
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "supported"
+    }
+  ]
+}

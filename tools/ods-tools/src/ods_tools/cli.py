@@ -20,6 +20,12 @@ from .adapter_contracts import (
     validate_adapter_contract_document,
 )
 from .simulator import load_scenario, run_scenario
+from .capability_declarations import (
+    format_capability_declaration,
+    list_capability_declarations,
+    select_capability_declaration,
+    validate_capability_declaration_document,
+)
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
 from .crosswalk import format_crosswalk, select_crosswalk, validate_crosswalk
 from .crosswalk_coverage import build_crosswalk_coverage, format_crosswalk_coverage, write_crosswalk_coverage
@@ -109,6 +115,8 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         )
     validate_compatibility_profile_document(root)
     validate_adapter_contract_document(root)
+    if (root / "catalog" / "capabilities").is_dir():
+        validate_capability_declaration_document(root)
 
     index = json.loads((root / "catalog" / "knowledge" / "operation-index.json").read_text(encoding="utf-8"))
     indexed_operations = [item["id"] for item in index["operations"]]
@@ -264,6 +272,21 @@ def main() -> int:
         help="canonical operation ID for `contracts show`",
     )
     contracts.add_argument("--json", action="store_true", help="print machine-readable JSON")
+    capabilities = sub.add_parser(
+        "capabilities",
+        help="inspect and validate capability declarations",
+    )
+    capabilities.add_argument(
+        "action",
+        choices=["list", "show", "validate"],
+        help="list, show, or validate capability declarations",
+    )
+    capabilities.add_argument(
+        "impl_id",
+        nargs="?",
+        help="implementation ID for `capabilities show`",
+    )
+    capabilities.add_argument("--json", action="store_true", help="print machine-readable JSON")
     ops = sub.add_parser("operations", help="list or inspect canonical operation records")
     ops.add_argument("operation", nargs="?", help="operation ID to inspect")
     ops.add_argument("--json", action="store_true", help="print machine-readable JSON")
@@ -717,6 +740,49 @@ def main() -> int:
                     f"{contract['category']:<12} {contract['title']}"
                 )
         return 0
+    if args.command == "capabilities":
+        if args.action == "validate":
+            if args.impl_id:
+                raise SystemExit("capabilities validate does not take an implementation ID")
+            try:
+                count = validate_capability_declaration_document(root)
+            except (KeyError, TypeError, ValueError) as exc:
+                raise SystemExit(f"capability declaration validation failed: {exc}")
+            if args.json:
+                print(json.dumps({"valid": True, "declaration_count": count}, indent=2))
+            else:
+                print(f"Capability declaration catalog is valid: {count} declarations.")
+            return 0
+        if args.action == "show":
+            if not args.impl_id:
+                raise SystemExit("capabilities show requires an implementation ID")
+            try:
+                declaration = select_capability_declaration(root, args.impl_id)
+            except KeyError:
+                raise SystemExit(
+                    f"unknown capability declaration: {args.impl_id}"
+                )
+            print(
+                json.dumps(declaration, indent=2)
+                if args.json
+                else format_capability_declaration(declaration)
+            )
+            return 0
+        if args.impl_id:
+            raise SystemExit("capabilities list does not take an implementation ID")
+        result = list_capability_declarations(root)
+        if args.json:
+            print(json.dumps(result, indent=2))
+        else:
+            print(f"capability declarations ({result['declaration_count']}):")
+            for item in result["declarations"]:
+                print(
+                    f"  {item['implementation_id']:<20} "
+                    f"{item['implementation_name']:<30} "
+                    f"{item['implementation_version']:<10} "
+                    f"profiles={', '.join(item['supported_profiles'])}"
+                )
+        return 0
     if args.command == "operations":
         result = write_operation_records(root, args.write) if args.write else build_operation_records(root)
         records = result["operations"]
@@ -762,9 +828,15 @@ def main() -> int:
                 )
             canonical_operations = len(load_operations(root)["operations"])
             adapter_contracts = validate_adapter_contract_document(root)
+            capability_declarations = (
+                validate_capability_declaration_document(root)
+                if (root / "catalog" / "capabilities").is_dir()
+                else 0
+            )
             crosswalk_suffix = (
                 f", {hosts} crosswalk hosts, {crosswalk_operations} crosswalk operations, "
                 f"{canonical_operations} canonical operations, {adapter_contracts} adapter contracts, "
+                f"{capability_declarations} capability declarations, "
                 f"{cells} reviewed crosswalk mappings"
             )
         print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}{crosswalk_suffix}")

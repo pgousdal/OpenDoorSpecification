@@ -38,6 +38,7 @@ generated JSON and CLI reports for current totals.
 - [Compatibility profiles and adapter contract architecture](m63-compatibility-profile-architecture.md)
 - [Compatibility Profile schema and catalog](m63-compatibility-profile-schema.md)
 - [Adapter Contract schema and canonical catalog](m63-adapter-contract-schema.md)
+- [Capability Declaration schema and reference catalog](m63-capability-declarations.md)
 
 ## Historical interface findings
 

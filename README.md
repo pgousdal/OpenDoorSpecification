@@ -10,9 +10,9 @@ implementation.
 
 M6.3 is in progress. PR1 defined the language-neutral architecture for
 Compatibility Profiles, Adapter Contracts, and Capability Declarations. PR2
-added the Compatibility Profile schema and catalog. PR3 now adds the Adapter
-Contract schema and canonical contract catalog. Capability Declaration schemas
-remain future work.
+added the Compatibility Profile schema and catalog. PR3 added the Adapter
+Contract schema and canonical contract catalog. PR4 now adds the Capability
+Declaration schema, reference catalog, and CLI commands.
 
 M6.2 is complete. The repository contains ODS Core 0.1, deterministic archive
 and API catalogs, reference adapters, executable conformance checks, a complete
@@ -84,6 +84,9 @@ ods gaps
 ods profiles
 ods contracts list
 ods contracts validate
+ods capabilities list
+ods capabilities show host-simulator
+ods capabilities validate
 ods conformance
 ods simulate examples/host-simulator/hello.json --transcript
 ods validate
@@ -142,13 +145,16 @@ without making ODS language- or runtime-specific:
 - a Capability Declaration states what one implementation supports, partially
   supports, or intentionally leaves unsupported.
 
-PR1 provides the architecture and PR2 provides the profile catalog and
-validation. See
+PR1 provides the architecture, PR2 provides the profile catalog and
+validation, PR3 provides the Adapter Contract catalog, and PR4 provides the
+Capability Declaration schema. See
 [M6.3 compatibility profile architecture](docs/m63-compatibility-profile-architecture.md).
 The [M6.3 profile schema and catalog](docs/m63-compatibility-profile-schema.md)
 documents the current machine-readable profile model.
 The [M6.3 Adapter Contract schema](docs/m63-adapter-contract-schema.md)
 defines canonical operation behavior and outcomes.
+The [M6.3 Capability Declaration schema](docs/m63-capability-declarations.md)
+documents implementation capability declarations.
 
 ## Generators
 

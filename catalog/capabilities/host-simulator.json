@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "implementation_id": "host-simulator",
+  "implementation_name": "ODS Host Simulator",
+  "implementation_version": "0.1.0",
+  "target_platform": "generic",
+  "supported_profiles": [
+    "minimal"
+  ],
+  "capabilities": [
+    {
+      "operation": "terminal.write",
+      "status": "supported",
+      "notes": "All data types are converted to string before output."
+    },
+    {
+      "operation": "terminal.read_key",
+      "status": "supported"
+    },
+    {
+      "operation": "terminal.read_line",
+      "status": "partial",
+      "notes": "Line input is assembled from queued keys when no explicit line is queued."
+    },
+    {
+      "operation": "session.identity",
+      "status": "supported"
+    },
+    {
+      "operation": "session.node",
+      "status": "supported"
+    },
+    {
+      "operation": "session.time_left",
+      "status": "partial",
+      "notes": "Returns null when not explicitly configured by the scenario."
+    },
+    {
+      "operation": "session.connection_state",
+      "status": "supported"
+    },
+    {
+      "operation": "status.set",
+      "status": "supported"
+    },
+    {
+      "operation": "bbs.command",
+      "status": "partial",
+      "notes": "Requires commands to be registered before invocation; no built-in command namespace."
+    },
+    {
+      "operation": "lifecycle.exit",
+      "status": "supported"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "status": "supported"
+    }
+  ]
+}
