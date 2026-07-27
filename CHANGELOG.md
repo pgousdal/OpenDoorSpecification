@@ -4,6 +4,8 @@
 
 ### Changed
 
+- Started M6.3 with language-neutral architecture for Compatibility Profiles,
+  Adapter Contracts, and Capability Declarations.
 - Refreshed repository, contributor, CLI, and milestone documentation after
   M6.2 completion.
 - Consolidated the roadmap into current, next, backlog, completed, and future

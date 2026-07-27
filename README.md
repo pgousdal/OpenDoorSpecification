@@ -8,10 +8,14 @@ implementation.
 
 ## Current status
 
+M6.3 is in progress. PR1 defines the language-neutral architecture for
+Compatibility Profiles, Adapter Contracts, and Capability Declarations. It
+does not add schemas, CLI validation, or runtime implementation.
+
 M6.2 is complete. The repository contains ODS Core 0.1, deterministic archive
 and API catalogs, reference adapters, executable conformance checks, a complete
 host-operation crosswalk, strict evidence provenance validation, and a
-classified research backlog for future milestones.
+classified research backlog for future evidence milestones.
 
 The current generated completion state is
 `catalog/crosswalk/m62-completion.json`. Remaining `unassessed` cells are
@@ -123,6 +127,20 @@ See the [M6.1 crosswalk](docs/m61-api-crosswalk.md),
 [triage methodology](docs/m62-evidence-triage.md), and
 [completion and backlog workflow](docs/m62-completion.md).
 
+## Compatibility architecture
+
+M6.3 defines how future implementations can consume canonical ODS operations
+without making ODS language- or runtime-specific:
+
+- a Compatibility Profile defines an implementation-independent capability
+  target;
+- an Adapter Contract defines canonical behavioral and lifecycle obligations;
+- a Capability Declaration states what one implementation supports, partially
+  supports, or intentionally leaves unsupported.
+
+PR1 is architecture documentation only. See
+[M6.3 compatibility profile architecture](docs/m63-compatibility-profile-architecture.md).
+
 ## Generators
 
 Crosswalk JSON under `catalog/crosswalk/` is derived data. Edit the census or
@@ -172,5 +190,5 @@ and strict validation.
 
 ## Roadmap
 
-Completed milestones and preparation for M6.3 are tracked in
+Completed milestones and the active M6.3 sequence are tracked in
 [docs/roadmap.md](docs/roadmap.md).

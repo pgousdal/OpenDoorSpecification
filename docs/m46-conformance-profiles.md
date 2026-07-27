@@ -33,3 +33,11 @@ ods profiles --write catalog/knowledge/conformance-report.json
 ```
 
 `ods validate --strict` rejects unknown profile operations, non-cumulative profiles, invalid adapter operations, and a stale generated conformance report.
+
+## Relationship to M6.3
+
+M6.3 treats these profiles as the existing cumulative required-operation
+baseline. The [M6.3 architecture](m63-compatibility-profile-architecture.md)
+adds language-neutral concepts for optional and outside-profile operations,
+evidence expectations, adapter behavior, and implementation capability
+declarations. PR1 does not change this artifact or its CLI behavior.

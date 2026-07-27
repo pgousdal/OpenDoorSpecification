@@ -33,6 +33,10 @@ generated JSON and CLI reports for current totals.
 - [M6.2 evidence triage](m62-evidence-triage.md)
 - [M6.2 completion and research backlog](m62-completion.md)
 
+## M6.3 architecture
+
+- [Compatibility profiles and adapter contract architecture](m63-compatibility-profile-architecture.md)
+
 ## Historical interface findings
 
 - [FAME DoorPort findings](fame-doorport-contract.md)

@@ -2,29 +2,36 @@
 
 ## Current state
 
-M6.2 is complete. The generated
-`catalog/crosswalk/m62-completion.json` report has no completion blockers and
-classifies every remaining unassessed cell as deferred research or archival
-source discovery.
+M6.3 is in progress. PR1 establishes the language-neutral architecture for
+Compatibility Profiles, Adapter Contracts, and Capability Declarations.
+Schemas, CLI validation, examples, and acceptance criteria remain future M6.3
+work.
 
-The repository is ready to scope M6.3. No M6.3 evidence target is selected by
-this maintenance refresh; future work should start from
-`ods crosswalk --backlog`.
+M6.2 remains complete. Its generated research backlog is preserved for future
+evidence milestones and is not modified by M6.3 architecture work.
 
-## Next milestone — M6.3
+## Active milestone — M6.3
 
-Status: planning.
+Status: in progress.
 
-M6.3 should consume stable backlog IDs rather than reopening completed
-milestones. Candidate work falls into two generated classes:
+M6.3 defines deterministic, implementation-independent contracts that future
+runtimes can consume and validate. ODS remains a specification project; M6.3
+does not introduce adapter runtime code.
 
-- deferred semantic or historical research;
-- archival and primary-source discovery.
+Planned sequence:
 
-Selection must continue to prioritize primary evidence. An unassessed mapping
-is not unsupported, and backlog priority or confidence is not a support claim.
+- PR1: Compatibility Profile, Adapter Contract, and Capability Declaration
+  architecture;
+- PR2: Compatibility Profile schema;
+- PR3: Adapter Contract schema;
+- PR4: Capability Declaration schema;
+- PR5: CLI validation;
+- PR6: reference examples;
+- PR7: acceptance criteria and M6.3 completion.
 
-## Research backlog
+See [M6.3 compatibility architecture](m63-compatibility-profile-architecture.md).
+
+## M6.2 research backlog
 
 The source of truth is `catalog/crosswalk/m62-completion.json`, inspected with:
 
@@ -36,7 +43,8 @@ ods crosswalk --backlog --json
 
 Backlog grouping, expected value, affected hosts and operations, research
 effort, and recommended future milestone are generated from the queue and
-triage. The roadmap intentionally does not duplicate those changing totals.
+triage. The roadmap intentionally does not duplicate those changing totals or
+fold evidence expansion into M6.3.
 
 ## Completed milestones
 
@@ -114,4 +122,4 @@ See [ODS Core 0.1](ods-core-0.1.md),
 
 Generated reference documentation, public-site publication, and an ODS 1.0
 release-candidate checklist remain future release work. They are separate from
-the M6.3 research backlog.
+the M6.2 evidence backlog and M6.3 compatibility-contract work.
