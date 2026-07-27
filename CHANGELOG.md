@@ -191,6 +191,8 @@
 - M6.2 PR8 deterministic remaining-evidence triage with explicit reason,
   research-effort and confidence vocabularies, host summaries, CLI inspection,
   generation, and validation.
+- M6.2 PR9 verified the two small-effort, high-confidence AmBoS mappings from
+  the cataloged programmer guide, public headers, and original SDK example.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.

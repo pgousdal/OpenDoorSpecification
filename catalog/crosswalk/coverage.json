@@ -7,10 +7,10 @@
     "partial": "A reviewed mapping exists, but coverage is incomplete."
   },
   "summary": {
-    "verified": 43,
+    "verified": 45,
     "partial": 13,
-    "unassessed": 34,
-    "reviewed": 56,
+    "unassessed": 32,
+    "reviewed": 58,
     "total": 90
   },
   "hosts": [
@@ -50,16 +50,14 @@
       "name": "AmBoS bbs.library",
       "evidence_class": "documented-sdk",
       "summary": {
-        "verified": 1,
+        "verified": 3,
         "partial": 3,
-        "unassessed": 5,
-        "reviewed": 4,
+        "unassessed": 3,
+        "reviewed": 6,
         "total": 9
       },
       "unassessed_operations": [
         "bbs.command",
-        "lifecycle.exit",
-        "session.identity",
         "session.time_left",
         "status.set"
       ]
@@ -223,15 +221,14 @@
     {
       "id": "lifecycle.exit",
       "summary": {
-        "verified": 5,
+        "verified": 6,
         "partial": 1,
-        "unassessed": 4,
-        "reviewed": 6,
+        "unassessed": 3,
+        "reviewed": 7,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
-        "ambos",
         "wwbbs",
         "zeus"
       ]
@@ -239,14 +236,13 @@
     {
       "id": "session.identity",
       "summary": {
-        "verified": 4,
+        "verified": 5,
         "partial": 2,
-        "unassessed": 4,
-        "reviewed": 6,
+        "unassessed": 3,
+        "reviewed": 7,
         "total": 10
       },
       "unassessed_hosts": [
-        "ambos",
         "door-io",
         "wwbbs",
         "zeus"

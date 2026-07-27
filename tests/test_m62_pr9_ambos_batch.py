@@ -17,22 +17,29 @@ sys.path.insert(0, str(TOOLS_SRC))
 from ods_tools.crosswalk import load_crosswalk
 from ods_tools.crosswalk_coverage import build_crosswalk_coverage
 from ods_tools.crosswalk_evidence import validate_crosswalk_evidence
+from ods_tools.crosswalk_triage import build_crosswalk_triage
 from ods_tools.crosswalk_work_queue import build_crosswalk_work_queue
 
 
 BATCH = {
-    ("door-io", "lifecycle.disconnect"): "verified",
-    ("door-io", "lifecycle.exit"): "partial",
+    ("ambos", "lifecycle.exit"): "verified",
+    ("ambos", "session.identity"): "verified",
 }
-PR6_BASELINE = {
+PR8_BASELINE = {
     "coverage": {
         "total": 90,
-        "reviewed": 54,
-        "verified": 42,
-        "partial": 12,
-        "unassessed": 36,
+        "reviewed": 56,
+        "verified": 43,
+        "partial": 13,
+        "unassessed": 34,
     },
-    "queue": {"total": 36, "high": 29, "medium": 5, "low": 2},
+    "queue": {"total": 34, "high": 27, "medium": 5, "low": 2},
+    "triage": {
+        "total": 34,
+        "documented-but-not-reviewed": 2,
+        "small": 2,
+        "high": 2,
+    },
 }
 
 
@@ -49,15 +56,17 @@ GENERATORS = {
     "crosswalk": load_generator("generate_crosswalk"),
     "coverage": load_generator("generate_crosswalk_coverage"),
     "queue": load_generator("generate_crosswalk_work_queue"),
+    "triage": load_generator("generate_crosswalk_triage"),
 }
 
 
-class M62PR7EvidenceBatchTests(unittest.TestCase):
+class M62PR9AmBoSBatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.crosswalk = load_crosswalk(ROOT)
         cls.coverage = build_crosswalk_coverage(ROOT)
         cls.queue = build_crosswalk_work_queue(ROOT)
+        cls.triage = build_crosswalk_triage(ROOT)
 
     def cell(self, host: str, operation: str) -> dict:
         return next(
@@ -67,7 +76,7 @@ class M62PR7EvidenceBatchTests(unittest.TestCase):
         )
 
     def test_manifest_cells_have_complete_validated_provenance(self) -> None:
-        self.assertGreaterEqual(validate_crosswalk_evidence(ROOT), 56)
+        self.assertEqual(validate_crosswalk_evidence(ROOT), 58)
         for (host, operation), status in BATCH.items():
             with self.subTest(host=host, operation=operation):
                 cell = self.cell(host, operation)
@@ -77,45 +86,63 @@ class M62PR7EvidenceBatchTests(unittest.TestCase):
                 self.assertTrue(cell["symbols"])
                 self.assertTrue(cell["evidence"])
                 self.assertTrue(cell["rationale"])
-                if status == "partial":
-                    self.assertTrue(cell["limitations"])
+                self.assertEqual(cell["limitations"], [])
 
-    def test_evidence_resolves_to_cataloged_door_io_archive(self) -> None:
+    def test_evidence_resolves_to_cataloged_ambos_archive(self) -> None:
         manifest = json.loads(
-            (ROOT / "catalog" / "archives" / "door_io12.json").read_text(
+            (ROOT / "catalog" / "archives" / "AmBoS_doc_dev.json").read_text(
                 encoding="utf-8"
             )
         )
         self.assertEqual(
             manifest["source_sha256"],
-            "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
+            "1785840c7dc5303bc3d59accdf1250ce003af36bcfd3804917a25207f7259b27",
         )
         paths = {entry["path"] for entry in manifest["entries"]}
         for host, operation in BATCH:
             for evidence in self.cell(host, operation)["evidence"]:
                 with self.subTest(operation=operation, evidence=evidence):
-                    self.assertEqual(evidence["archive"], "door_io12.lha")
+                    self.assertEqual(evidence["archive"], "AmBoS_doc_dev.lha")
                     self.assertIn(evidence["path"], paths)
                     self.assertTrue(evidence["symbol"])
 
-    def test_batch_is_removed_from_queue_and_other_gaps_remain(self) -> None:
-        queued = {item["id"] for item in self.queue["items"]}
+    def test_batch_leaves_queue_and_triage_consistently(self) -> None:
+        queue_ids = {item["id"] for item in self.queue["items"]}
+        triage_ids = {item["id"] for item in self.triage["items"]}
         for host, operation in BATCH:
-            self.assertNotIn(f"{host}:{operation}", queued)
-        self.assertIn("door-io:session.identity", queued)
-        self.assertIn("door-io:session.time_left", queued)
-        self.assertIn("door-io:status.set", queued)
-        self.assertIn("door-io:bbs.command", queued)
+            item_id = f"{host}:{operation}"
+            self.assertNotIn(item_id, queue_ids)
+            self.assertNotIn(item_id, triage_ids)
+        self.assertEqual(queue_ids, triage_ids)
+        self.assertFalse(
+            any(
+                item["host"] == "ambos"
+                and item["effort"] == "small"
+                and item["confidence"] == "high"
+                for item in self.triage["items"]
+            )
+        )
 
-    def test_coverage_and_queue_match_the_declared_pr6_delta(self) -> None:
+    def test_coverage_queue_and_triage_match_pr8_delta(self) -> None:
         summary = self.coverage["summary"]
-        self.assertEqual(summary["total"], PR6_BASELINE["coverage"]["total"])
-        self.assertGreaterEqual(summary["reviewed"], 56)
-        self.assertGreaterEqual(summary["verified"], 43)
-        self.assertGreaterEqual(summary["partial"], 13)
-        self.assertLessEqual(summary["unassessed"], 34)
-        self.assertEqual(summary["reviewed"], summary["verified"] + summary["partial"])
-        self.assertLessEqual(self.queue["summary"]["total"], 34)
+        self.assertEqual(summary["total"], PR8_BASELINE["coverage"]["total"])
+        self.assertEqual(summary["reviewed"], 58)
+        self.assertEqual(summary["verified"], 45)
+        self.assertEqual(summary["partial"], 13)
+        self.assertEqual(summary["unassessed"], 32)
+        self.assertEqual(
+            self.queue["summary"],
+            {"total": 32, "high": 25, "medium": 5, "low": 2},
+        )
+        self.assertEqual(self.triage["summary"]["total"], 32)
+        self.assertEqual(
+            self.triage["summary"]["categories"][
+                "documented-but-not-reviewed"
+            ],
+            0,
+        )
+        self.assertEqual(self.triage["summary"]["efforts"]["small"], 0)
+        self.assertEqual(self.triage["summary"]["confidences"]["high"], 0)
 
     def test_no_unrelated_reviewed_mapping_changed(self) -> None:
         earlier_batches = {
@@ -147,6 +174,8 @@ class M62PR7EvidenceBatchTests(unittest.TestCase):
             ("ucdoor", "session.identity"),
             ("ucdoor", "bbs.command"),
             ("ucdoor", "lifecycle.exit"),
+            ("door-io", "lifecycle.disconnect"),
+            ("door-io", "lifecycle.exit"),
         }
         m61_reviewed = set()
         for path in (ROOT / "catalog" / "mappings").glob("*.json"):
@@ -161,9 +190,7 @@ class M62PR7EvidenceBatchTests(unittest.TestCase):
             for row in record["operations"]
             if row["status"] in {"verified", "partial"}
         }
-        self.assertTrue(
-            (m61_reviewed | earlier_batches | set(BATCH)) <= current_reviewed
-        )
+        self.assertEqual(current_reviewed, m61_reviewed | earlier_batches | set(BATCH))
 
     def test_all_generation_is_byte_identical_and_committed(self) -> None:
         with (
@@ -185,6 +212,10 @@ class M62PR7EvidenceBatchTests(unittest.TestCase):
                 )
                 self.assertEqual(
                     GENERATORS["queue"].generate(ROOT, root / "work-queue.json"),
+                    0,
+                )
+                self.assertEqual(
+                    GENERATORS["triage"].generate(ROOT, root / "triage.json"),
                     0,
                 )
             for path in sorted(first.glob("*.json")):

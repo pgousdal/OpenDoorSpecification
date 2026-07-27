@@ -42,9 +42,9 @@
     ]
   },
   "summary": {
-    "total": 34,
+    "total": 32,
     "categories": {
-      "documented-but-not-reviewed": 2,
+      "documented-but-not-reviewed": 0,
       "insufficient-semantics": 3,
       "missing-primary-source": 18,
       "insufficient-sdk": 6,
@@ -53,12 +53,12 @@
     },
     "efforts": {
       "trivial": 0,
-      "small": 2,
+      "small": 0,
       "moderate": 8,
       "extensive": 24
     },
     "confidences": {
-      "high": 2,
+      "high": 0,
       "medium": 6,
       "low": 26
     }
@@ -91,16 +91,15 @@
     {
       "host": "ambos",
       "host_name": "AmBoS bbs.library",
-      "reviewed_mappings": 4,
-      "remaining_mappings": 5,
+      "reviewed_mappings": 6,
+      "remaining_mappings": 3,
       "triage_categories": [
-        "documented-but-not-reviewed",
         "insufficient-semantics",
         "insufficient-sdk"
       ],
       "documentation_quality": "comprehensive",
-      "recommended_priority": "high",
-      "next_evidence_opportunity": "Review bbs_close for normal completion and bbs_open/ExternInfo for current-caller identity."
+      "recommended_priority": "medium",
+      "next_evidence_opportunity": "Determine whether bbs_menu can satisfy the canonical host-command namespace without conflating menu presentation with command dispatch."
     },
     {
       "host": "door-io",
@@ -251,45 +250,6 @@
       "triage_rationale": "Cataloged material exposes nearby commands or fields without defining enough behavior for the canonical operation."
     },
     {
-      "id": "ambos:lifecycle.exit",
-      "host": "ambos",
-      "host_name": "AmBoS bbs.library",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "host has a related reviewed operation in the same family",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ],
-      "category": "documented-but-not-reviewed",
-      "effort": "small",
-      "confidence": "high",
-      "triage_rationale": "Cataloged primary documentation names the required behavior, but the mapping still needs a focused semantic review."
-    },
-    {
-      "id": "ambos:session.identity",
-      "host": "ambos",
-      "host_name": "AmBoS bbs.library",
-      "host_evidence_class": "documented-sdk",
-      "operation": "session.identity",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ],
-      "category": "documented-but-not-reviewed",
-      "effort": "small",
-      "confidence": "high",
-      "triage_rationale": "Cataloged primary documentation names the required behavior, but the mapping still needs a focused semantic review."
-    },
-    {
       "id": "ambos:session.time_left",
       "host": "ambos",
       "host_name": "AmBoS bbs.library",
@@ -300,6 +260,7 @@
       "reasons": [
         "host has documented SDK or protocol evidence",
         "operation has reviewed mappings in at least three other hosts",
+        "host has a related reviewed operation in the same family",
         "host census or archive evidence is already cataloged"
       ],
       "category": "insufficient-sdk",

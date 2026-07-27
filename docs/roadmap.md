@@ -154,4 +154,6 @@ in M6.2.
   verified and one partial, with unrelated gaps left unassessed.
 - PR8: deterministic triage for every remaining queue item, including reason,
   research effort, confidence, and per-host next opportunities.
+- PR9: the two small-effort, high-confidence AmBoS items were verified from
+  the cataloged developer guide, public headers, and original example source.
 - Future work: research and review queued host-operation cells.

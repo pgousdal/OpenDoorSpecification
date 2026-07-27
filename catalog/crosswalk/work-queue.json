@@ -13,8 +13,8 @@
     "low"
   ],
   "summary": {
-    "total": 34,
-    "high": 27,
+    "total": 32,
+    "high": 25,
     "medium": 5,
     "low": 2
   },
@@ -78,37 +78,6 @@
       ]
     },
     {
-      "id": "ambos:lifecycle.exit",
-      "host": "ambos",
-      "host_name": "AmBoS bbs.library",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "host has a related reviewed operation in the same family",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "ambos:session.identity",
-      "host": "ambos",
-      "host_name": "AmBoS bbs.library",
-      "host_evidence_class": "documented-sdk",
-      "operation": "session.identity",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
       "id": "ambos:session.time_left",
       "host": "ambos",
       "host_name": "AmBoS bbs.library",
@@ -119,6 +88,7 @@
       "reasons": [
         "host has documented SDK or protocol evidence",
         "operation has reviewed mappings in at least three other hosts",
+        "host has a related reviewed operation in the same family",
         "host census or archive evidence is already cataloged"
       ]
     },

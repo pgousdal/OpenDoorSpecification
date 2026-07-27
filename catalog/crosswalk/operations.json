@@ -534,12 +534,38 @@
           "limitations": []
         },
         "ambos": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "ambos:lifecycle.exit",
+          "host": "ambos",
+          "status": "verified",
+          "symbols": [
+            "bbs_close"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/BBS.lib.guide",
+              "symbol": "bbs_close",
+              "note": "The programmer guide requires bbs_close before the external program exits so control over the port is returned to the BBS."
+            },
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/include/clib/BBS_protos.h",
+              "symbol": "bbs_close",
+              "note": "The public C prototype declares the no-argument close operation."
+            },
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/Source/Beispiel.c",
+              "symbol": "bbs_close",
+              "note": "The original SDK example closes the BBS port before releasing the library and returning."
+            }
+          ],
+          "rationale": "bbs_close is the required normal-exit operation that unregisters the external program and returns port control to AmBoS.",
+          "limitations": []
         },
         "daydream": {
           "id": "daydream:lifecycle.exit",
@@ -787,12 +813,40 @@
           "limitations": []
         },
         "ambos": {
-          "status": "unassessed",
-          "symbols": [],
+          "id": "ambos:session.identity",
+          "host": "ambos",
+          "status": "verified",
+          "symbols": [
+            "bbs_open",
+            "ExternInfo.UserName",
+            "ExternInfo.City"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/BBS.lib.guide",
+              "symbol": "bbs_open/ExternInfo",
+              "note": "The programmer guide documents that bbs_open returns an ExternInfo structure containing caller name, location, and other session data."
+            },
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/include/libraries/BBS_library.h",
+              "symbol": "ExternInfo.UserName/ExternInfo.City",
+              "note": "The public header defines the caller name and city fields in ExternInfo."
+            },
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/Source/Beispiel.c",
+              "symbol": "ExternInfo->UserName/ExternInfo->City",
+              "note": "The original SDK example obtains ExternInfo from bbs_open and displays the current caller's name and city."
+            }
+          ],
+          "rationale": "bbs_open returns documented current-caller identity fields through ExternInfo.",
+          "limitations": []
         },
         "daydream": {
           "id": "daydream:session.identity",

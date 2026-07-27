@@ -25,7 +25,7 @@
       "name": "AmBoS bbs.library",
       "evidence_class": "documented-sdk",
       "entry_count": 45,
-      "mapping_count": 4,
+      "mapping_count": 6,
       "path": "catalog/census/ambos.json"
     },
     {
@@ -86,5 +86,5 @@
     }
   ],
   "entry_count": 230,
-  "mapping_count": 56
+  "mapping_count": 58
 }

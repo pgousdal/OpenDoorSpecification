@@ -27,8 +27,6 @@ ITEM_TRIAGE: dict[str, tuple[str, str, str]] = {
     "abbs:lifecycle.exit": ("needs-additional-research", "moderate", "medium"),
     "aedoor:status.set": ("ambiguous-operation", "moderate", "low"),
     "ambos:bbs.command": ("insufficient-semantics", "moderate", "medium"),
-    "ambos:lifecycle.exit": ("documented-but-not-reviewed", "small", "high"),
-    "ambos:session.identity": ("documented-but-not-reviewed", "small", "high"),
     "ambos:session.time_left": ("insufficient-sdk", "extensive", "low"),
     "ambos:status.set": ("insufficient-sdk", "extensive", "low"),
     "door-io:bbs.command": ("insufficient-sdk", "extensive", "low"),
@@ -106,10 +104,10 @@ HOST_RESEARCH = {
     },
     "ambos": {
         "documentation_quality": "comprehensive",
-        "recommended_priority": "high",
+        "recommended_priority": "medium",
         "next_evidence_opportunity": (
-            "Review bbs_close for normal completion and bbs_open/ExternInfo for "
-            "current-caller identity."
+            "Determine whether bbs_menu can satisfy the canonical host-command "
+            "namespace without conflating menu presentation with command dispatch."
         ),
     },
     "door-io": {

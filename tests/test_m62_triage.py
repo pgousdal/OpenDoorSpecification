@@ -130,7 +130,7 @@ class M62CrosswalkTriageTests(unittest.TestCase):
         text = self.run_cli("crosswalk", "--triage")
         self.assertEqual(text.returncode, 0, text.stderr)
         self.assertIn("remaining evidence triage", text.stdout)
-        self.assertIn("documented-but-not-reviewed", text.stdout)
+        self.assertIn("insufficient-semantics", text.stdout)
 
         payload = self.run_cli("crosswalk", "--triage", "--json")
         self.assertEqual(payload.returncode, 0, payload.stderr)
