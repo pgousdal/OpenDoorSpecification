@@ -144,4 +144,6 @@ in M6.2.
   and UCDoor; reviewed coverage increased while M6.2 remains in progress.
 - PR3: machine validation for stable mapping identities, evidence references,
   rationales, partial limitations, and provenance cross-references.
+- PR4: eight AEDoor mappings reviewed from the cataloged SDK archive; seven
+  verified and one partial, with M6.2 still in progress.
 - Future work: research and review queued host-operation cells.

@@ -7,10 +7,10 @@
     "partial": "A reviewed mapping exists, but coverage is incomplete."
   },
   "summary": {
-    "verified": 23,
-    "partial": 11,
-    "unassessed": 56,
-    "reviewed": 34,
+    "verified": 30,
+    "partial": 12,
+    "unassessed": 48,
+    "reviewed": 42,
     "total": 90
   },
   "hosts": [
@@ -35,22 +35,14 @@
       "name": "AmiExpress/AEDoor",
       "evidence_class": "documented-sdk",
       "summary": {
-        "verified": 0,
-        "partial": 0,
-        "unassessed": 9,
-        "reviewed": 0,
+        "verified": 7,
+        "partial": 1,
+        "unassessed": 1,
+        "reviewed": 8,
         "total": 9
       },
       "unassessed_operations": [
-        "bbs.command",
-        "lifecycle.disconnect",
-        "lifecycle.exit",
-        "session.identity",
-        "session.time_left",
-        "status.set",
-        "terminal.read_key",
-        "terminal.read_line",
-        "terminal.write"
+        "status.set"
       ]
     },
     {
@@ -214,15 +206,14 @@
     {
       "id": "bbs.command",
       "summary": {
-        "verified": 2,
+        "verified": 3,
         "partial": 0,
-        "unassessed": 8,
-        "reviewed": 2,
+        "unassessed": 7,
+        "reviewed": 3,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
-        "aedoor",
         "ambos",
         "door-io",
         "fame",
@@ -235,13 +226,12 @@
       "id": "lifecycle.disconnect",
       "summary": {
         "verified": 2,
-        "partial": 3,
-        "unassessed": 5,
-        "reviewed": 5,
+        "partial": 4,
+        "unassessed": 4,
+        "reviewed": 6,
         "total": 10
       },
       "unassessed_hosts": [
-        "aedoor",
         "door-io",
         "fame",
         "wwbbs",
@@ -251,15 +241,14 @@
     {
       "id": "lifecycle.exit",
       "summary": {
-        "verified": 2,
+        "verified": 3,
         "partial": 0,
-        "unassessed": 8,
-        "reviewed": 2,
+        "unassessed": 7,
+        "reviewed": 3,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
-        "aedoor",
         "ambos",
         "door-io",
         "fame",
@@ -271,14 +260,13 @@
     {
       "id": "session.identity",
       "summary": {
-        "verified": 1,
+        "verified": 2,
         "partial": 2,
-        "unassessed": 7,
-        "reviewed": 3,
+        "unassessed": 6,
+        "reviewed": 4,
         "total": 10
       },
       "unassessed_hosts": [
-        "aedoor",
         "ambos",
         "door-io",
         "fame",
@@ -290,14 +278,13 @@
     {
       "id": "session.time_left",
       "summary": {
-        "verified": 2,
+        "verified": 3,
         "partial": 1,
-        "unassessed": 7,
-        "reviewed": 3,
+        "unassessed": 6,
+        "reviewed": 4,
         "total": 10
       },
       "unassessed_hosts": [
-        "aedoor",
         "ambos",
         "door-io",
         "fame",
@@ -329,14 +316,13 @@
     {
       "id": "terminal.read_key",
       "summary": {
-        "verified": 4,
+        "verified": 5,
         "partial": 1,
-        "unassessed": 5,
-        "reviewed": 5,
+        "unassessed": 4,
+        "reviewed": 6,
         "total": 10
       },
       "unassessed_hosts": [
-        "aedoor",
         "fame",
         "ucdoor",
         "wwbbs",
@@ -346,14 +332,13 @@
     {
       "id": "terminal.read_line",
       "summary": {
-        "verified": 3,
+        "verified": 4,
         "partial": 3,
-        "unassessed": 4,
-        "reviewed": 6,
+        "unassessed": 3,
+        "reviewed": 7,
         "total": 10
       },
       "unassessed_hosts": [
-        "aedoor",
         "fame",
         "wwbbs",
         "zeus"
@@ -362,14 +347,13 @@
     {
       "id": "terminal.write",
       "summary": {
-        "verified": 5,
+        "verified": 6,
         "partial": 1,
-        "unassessed": 4,
-        "reviewed": 6,
+        "unassessed": 3,
+        "reviewed": 7,
         "total": 10
       },
       "unassessed_hosts": [
-        "aedoor",
         "fame",
         "wwbbs",
         "zeus"

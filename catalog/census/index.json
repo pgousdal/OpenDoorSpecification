@@ -17,7 +17,7 @@
       "name": "AmiExpress/AEDoor",
       "evidence_class": "documented-sdk",
       "entry_count": 14,
-      "mapping_count": 0,
+      "mapping_count": 8,
       "path": "catalog/census/aedoor.json"
     },
     {
@@ -86,5 +86,5 @@
     }
   ],
   "entry_count": 230,
-  "mapping_count": 34
+  "mapping_count": 42
 }

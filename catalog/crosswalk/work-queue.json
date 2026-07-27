@@ -13,10 +13,10 @@
     "low"
   ],
   "summary": {
-    "total": 56,
-    "high": 46,
+    "total": 48,
+    "high": 40,
     "medium": 6,
-    "low": 4
+    "low": 2
   },
   "items": [
     {
@@ -29,7 +29,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host census or archive evidence is already cataloged"
       ]
     },
@@ -43,82 +43,9 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host has a related reviewed operation in the same family",
         "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:bbs.command",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "bbs.command",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:lifecycle.disconnect",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.disconnect",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:lifecycle.exit",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:session.identity",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "session.identity",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:session.time_left",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "session.time_left",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
         "host census or archive evidence is already cataloged"
       ]
     },
@@ -137,51 +64,6 @@
       ]
     },
     {
-      "id": "aedoor:terminal.read_key",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "terminal.read_key",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:terminal.read_line",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "terminal.read_line",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "aedoor:terminal.write",
-      "host": "aedoor",
-      "host_name": "AmiExpress/AEDoor",
-      "host_evidence_class": "documented-sdk",
-      "operation": "terminal.write",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
       "id": "ambos:bbs.command",
       "host": "ambos",
       "host_name": "AmBoS bbs.library",
@@ -191,7 +73,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host census or archive evidence is already cataloged"
       ]
     },
@@ -205,7 +87,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host has a related reviewed operation in the same family",
         "operation is foundational for terminal, session, or lifecycle behavior",
         "host census or archive evidence is already cataloged"
@@ -264,7 +146,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host census or archive evidence is already cataloged"
       ]
     },
@@ -293,7 +175,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "operation is foundational for terminal, session, or lifecycle behavior",
         "host census or archive evidence is already cataloged"
       ]
@@ -351,7 +233,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host census or archive evidence is already cataloged"
       ]
     },
@@ -380,7 +262,7 @@
       "priority": "high",
       "reasons": [
         "host has documented SDK or protocol evidence",
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "operation is foundational for terminal, session, or lifecycle behavior",
         "host census or archive evidence is already cataloged"
       ]
@@ -511,7 +393,7 @@
       "status": "unassessed",
       "priority": "high",
       "reasons": [
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host has a related reviewed operation in the same family",
         "operation is foundational for terminal, session, or lifecycle behavior",
         "host census or archive evidence is already cataloged"
@@ -553,6 +435,19 @@
       "host_name": "WWBBS ARexx doors corpus",
       "host_evidence_class": "observed-doors",
       "operation": "lifecycle.disconnect",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ]
+    },
+    {
+      "id": "wwbbs:lifecycle.exit",
+      "host": "wwbbs",
+      "host_name": "WWBBS ARexx doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "lifecycle.exit",
       "status": "unassessed",
       "priority": "high",
       "reasons": [
@@ -626,6 +521,19 @@
       ]
     },
     {
+      "id": "zeus:lifecycle.exit",
+      "host": "zeus",
+      "host_name": "Zeus doors corpus",
+      "host_evidence_class": "observed-doors",
+      "operation": "lifecycle.exit",
+      "status": "unassessed",
+      "priority": "high",
+      "reasons": [
+        "operation has reviewed mappings in at least three other hosts",
+        "operation is foundational for terminal, session, or lifecycle behavior"
+      ]
+    },
+    {
       "id": "zeus:session.identity",
       "host": "zeus",
       "host_name": "Zeus doors corpus",
@@ -686,7 +594,7 @@
       "status": "unassessed",
       "priority": "medium",
       "reasons": [
-        "operation has a reviewed mapping in another host",
+        "operation has reviewed mappings in at least three other hosts",
         "host census or archive evidence is already cataloged"
       ]
     },
@@ -704,16 +612,15 @@
       ]
     },
     {
-      "id": "wwbbs:lifecycle.exit",
+      "id": "wwbbs:bbs.command",
       "host": "wwbbs",
       "host_name": "WWBBS ARexx doors corpus",
       "host_evidence_class": "observed-doors",
-      "operation": "lifecycle.exit",
+      "operation": "bbs.command",
       "status": "unassessed",
       "priority": "medium",
       "reasons": [
-        "operation has a reviewed mapping in another host",
-        "operation is foundational for terminal, session, or lifecycle behavior"
+        "operation has reviewed mappings in at least three other hosts"
       ]
     },
     {
@@ -729,16 +636,15 @@
       ]
     },
     {
-      "id": "zeus:lifecycle.exit",
+      "id": "zeus:bbs.command",
       "host": "zeus",
       "host_name": "Zeus doors corpus",
       "host_evidence_class": "observed-doors",
-      "operation": "lifecycle.exit",
+      "operation": "bbs.command",
       "status": "unassessed",
       "priority": "medium",
       "reasons": [
-        "operation has a reviewed mapping in another host",
-        "operation is foundational for terminal, session, or lifecycle behavior"
+        "operation has reviewed mappings in at least three other hosts"
       ]
     },
     {
@@ -754,35 +660,11 @@
       ]
     },
     {
-      "id": "wwbbs:bbs.command",
-      "host": "wwbbs",
-      "host_name": "WWBBS ARexx doors corpus",
-      "host_evidence_class": "observed-doors",
-      "operation": "bbs.command",
-      "status": "unassessed",
-      "priority": "low",
-      "reasons": [
-        "operation has a reviewed mapping in another host"
-      ]
-    },
-    {
       "id": "wwbbs:status.set",
       "host": "wwbbs",
       "host_name": "WWBBS ARexx doors corpus",
       "host_evidence_class": "observed-doors",
       "operation": "status.set",
-      "status": "unassessed",
-      "priority": "low",
-      "reasons": [
-        "operation has a reviewed mapping in another host"
-      ]
-    },
-    {
-      "id": "zeus:bbs.command",
-      "host": "zeus",
-      "host_name": "Zeus doors corpus",
-      "host_evidence_class": "observed-doors",
-      "operation": "bbs.command",
       "status": "unassessed",
       "priority": "low",
       "reasons": [

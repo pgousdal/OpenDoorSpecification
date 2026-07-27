@@ -179,6 +179,9 @@
 - M6.2 PR3 provenance validation for every reviewed mapping, including stable
   IDs, archive/document cross-references, rationales, concrete symbols, partial
   limitations, generator enforcement, and CLI evidence inspection.
+- M6.2 PR4 host-centric AEDoor evidence batch: seven verified mappings and one
+  partial mapping backed by the cataloged SDK guide, protocol reference,
+  headers, and example source.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.

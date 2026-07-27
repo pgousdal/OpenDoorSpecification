@@ -9,7 +9,7 @@
     "amiexpress-master.json"
   ],
   "entry_count": 14,
-  "mapping_count": 0,
+  "mapping_count": 8,
   "entries": [
     {
       "kind": "function",
@@ -233,9 +233,264 @@
       "evidence_class": "observed"
     }
   ],
-  "mappings": [],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "WriteStr",
+        "JH_WRITE"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "WriteStr",
+          "note": "The SDK documents string output with optional line feed and long-string handling."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "JH_WRITE",
+          "note": "The protocol command sends a text string to the user."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Examples/Simple/simple.c",
+          "symbol": "WriteStr",
+          "note": "The original SDK example writes labels and retrieved caller fields."
+        }
+      ],
+      "rationale": "WriteStr and JH_WRITE provide documented terminal text output.",
+      "limitations": []
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "Hotkey",
+        "JH_HK"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "Hotkey",
+          "note": "The SDK documents waiting for one key and returning its ASCII code."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "JH_HK",
+          "note": "The protocol command returns a one-character response and signals carrier loss or timeout."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Include/clib/aedoor_protos.h",
+          "symbol": "Hotkey"
+        }
+      ],
+      "rationale": "Hotkey waits for and returns one terminal input character while surfacing carrier loss.",
+      "limitations": []
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "Prompt",
+        "GetStr",
+        "JH_PM",
+        "JH_LI"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "Prompt/GetStr",
+          "note": "Both calls document bounded line input; GetStr also supplies an editable default."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "JH_PM/JH_LI",
+          "note": "The protocol records maximum response length, returned text, and carrier-loss or timeout results."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Examples/Simple/simple.c",
+          "symbol": "Prompt/GetStr",
+          "note": "The SDK example exercises both input forms and checks their carrier-loss result."
+        }
+      ],
+      "rationale": "Prompt and GetStr implement bounded edited terminal line input and expose connection failure.",
+      "limitations": []
+    },
+    {
+      "operation": "session.identity",
+      "symbols": [
+        "GetDT",
+        "DT_NAME",
+        "DT_SLOTNUMBER",
+        "DT_LOCATION"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "GetDT",
+          "note": "GetDT retrieves named AmiExpress data fields."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "DT_NAME/DT_SLOTNUMBER/DT_LOCATION",
+          "note": "The command table defines caller name, stable user slot number, and location fields."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Examples/Simple/simple.c",
+          "symbol": "GetDT(DT_NAME)/GetDT(DT_LOCATION)",
+          "note": "The original example retrieves and displays caller identity data."
+        }
+      ],
+      "rationale": "GetDT exposes stable caller identity fields including name and user slot number.",
+      "limitations": []
+    },
+    {
+      "operation": "session.time_left",
+      "symbols": [
+        "GetDT",
+        "DT_TIMETOTAL"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "DT_TIMETOTAL",
+          "note": "The command table defines total time remaining for the user today and specifies seconds."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Include/libraries/aedoor.h",
+          "symbol": "DT_TIMETOTAL",
+          "note": "The public SDK header defines the data-field identifier as command 116."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "GetDT",
+          "note": "GetDT is the documented retrieval call for AmiExpress data identifiers."
+        }
+      ],
+      "rationale": "GetDT with DT_TIMETOTAL returns remaining user time directly in canonical seconds.",
+      "limitations": []
+    },
+    {
+      "operation": "bbs.command",
+      "symbols": [
+        "SendStrCmd",
+        "PRV_COMMAND"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "PRV_COMMAND",
+          "note": "Command 508 immediately executes the internal AmiExpress menu command in the message string."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Include/libraries/aedoor.h",
+          "symbol": "PRV_COMMAND",
+          "note": "The public header defines the command identifier."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "SendStrCmd",
+          "note": "The SDK documents sending a string-bearing command to AEDoorPort and waiting for its reply."
+        }
+      ],
+      "rationale": "SendStrCmd with PRV_COMMAND requests immediate execution in AmiExpress's documented menu-command namespace.",
+      "limitations": []
+    },
+    {
+      "operation": "lifecycle.exit",
+      "symbols": [
+        "DeleteComm",
+        "JH_SHUTDOWN"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "DeleteComm",
+          "note": "The SDK requires this call to tell AmiExpress that the door finished and to release communication resources."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "JH_SHUTDOWN",
+          "note": "The protocol command tells the node that a door is shutting down."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Examples/Simple/simple.c",
+          "symbol": "DeleteComm",
+          "note": "The original SDK example performs normal door cleanup with DeleteComm."
+        }
+      ],
+      "rationale": "DeleteComm sends JH_SHUTDOWN, releases the door channel, and returns control to the host.",
+      "limitations": []
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "Prompt",
+        "GetStr",
+        "Hotkey"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "aedoor28.lha",
+          "path": "Docs/AEDoor.doc",
+          "symbol": "Prompt/GetStr/Hotkey",
+          "note": "The input calls document NULL or -1 results when carrier is lost."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "doordocs",
+          "symbol": "JH_PM/JH_HK",
+          "note": "The message protocol reports carrier loss or timeout through a negative data result."
+        },
+        {
+          "archive": "aedoor28.lha",
+          "path": "SAS_C/Examples/Simple/simple.c",
+          "symbol": "Prompt/GetStr lost-carrier checks",
+          "note": "The original example branches on failed input and displays LOST CARRIER."
+        }
+      ],
+      "rationale": "AEDoor input operations explicitly surface carrier loss so a door can terminate promptly.",
+      "limitations": [
+        "The SDK reports carrier loss but leaves termination policy and timing to the door."
+      ]
+    }
+  ],
   "limitations": [
     "Some source records do not expose parameter signatures; empty parameter lists must not be interpreted as verified no-argument signatures.",
-    "No normative ODS semantic mappings are claimed for this family in the current corpus."
+    "The reviewed mappings cover only operations directly established by the cataloged SDK; other operations remain unassessed."
   ]
 }
