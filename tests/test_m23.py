@@ -4,7 +4,7 @@ ROOT=Path(__file__).resolve().parents[1]
 class M23Tests(unittest.TestCase):
  def test_archive_totals(self):
   d=json.loads((ROOT/'catalog/archive-index.json').read_text())
-  self.assertEqual((d['archive_count'],d['entry_count']),(29,904))
+  self.assertEqual((d['archive_count'],d['entry_count']),(30,1150))
  def test_new_manifests_exist(self):
   for n in ['ucdoor10','runraw','mcesrc','c-door-example','aris-doors-for-maxs']:
    self.assertTrue((ROOT/'catalog/archives'/f'{n}.json').is_file(),n)

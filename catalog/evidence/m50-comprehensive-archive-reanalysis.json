@@ -1,0 +1,3272 @@
+{
+  "schema_version": 1,
+  "archive_count": 20,
+  "archives": [
+    {
+      "archive": "MAXsGUiDE(1).lha",
+      "sha256": "3367ea82010c5f4ce32b7749013526a308feaf2eeb3ea571315a9b6ef3a4ef10",
+      "entries": 4,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 4,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MAXsGUiDE.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 3,
+        "other": 1
+      },
+      "text_files": 3,
+      "text_characters": 172372,
+      "documentation_files": [
+        "FILE_ID.DIZ",
+        "MaxsBBS.Guide"
+      ],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "a",
+          "occurrences": 6
+        },
+        {
+          "name": "in",
+          "occurrences": 5
+        },
+        {
+          "name": "the",
+          "occurrences": 1
+        },
+        {
+          "name": "text",
+          "occurrences": 1
+        },
+        {
+          "name": "to",
+          "occurrences": 1
+        },
+        {
+          "name": "back",
+          "occurrences": 1
+        },
+        {
+          "name": "of",
+          "occurrences": 1
+        },
+        {
+          "name": "and",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "MaxsBBS.Guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "MaxsBBS.Guide",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "MaxsBBS.Guide",
+          "keyword": "node"
+        },
+        {
+          "file": "MaxsBBS.Guide",
+          "keyword": "auto insert"
+        },
+        {
+          "file": "MaxsBBS.Guide",
+          "keyword": "autoinsert"
+        }
+      ],
+      "sample_files": [
+        "FILE_ID.DIZ",
+        "GREMLINS.BBS",
+        "MaxsBBS.Guide",
+        "MaxsBBS.Guide.info"
+      ]
+    },
+    {
+      "archive": "MAXShell101(1).lha",
+      "sha256": "3f3f04ebdf7702712612986fdf46e658552e41ac3371f47dfb7d2b2c5f57c600",
+      "entries": 15,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 15,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MAXShell101.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "c": 3,
+        "documentation": 4,
+        "other": 7,
+        "library": 1
+      },
+      "text_files": 11,
+      "text_characters": 41255,
+      "documentation_files": [
+        "MAXShell.DOC",
+        "mr.doc",
+        "FILE_ID.DIZ",
+        "ReadMe"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "DoorMsg",
+          "occurrences": 5
+        },
+        {
+          "symbol": "DoorControl",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DoorExample",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DoorReply",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "command": 1,
+          "occurrences": 1
+        },
+        {
+          "command": 3,
+          "occurrences": 1
+        },
+        {
+          "command": 4,
+          "occurrences": 1
+        },
+        {
+          "command": 5,
+          "occurrences": 1
+        },
+        {
+          "command": 6,
+          "occurrences": 2
+        },
+        {
+          "command": 8,
+          "occurrences": 1
+        },
+        {
+          "command": 10,
+          "occurrences": 1
+        },
+        {
+          "command": 13,
+          "occurrences": 1
+        },
+        {
+          "command": 14,
+          "occurrences": 1
+        },
+        {
+          "command": 20,
+          "occurrences": 1
+        },
+        {
+          "command": 200,
+          "occurrences": 1
+        },
+        {
+          "command": 201,
+          "occurrences": 1
+        },
+        {
+          "command": 203,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "Message",
+          "occurrences": 20
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 4
+        },
+        {
+          "name": "DoorMsg",
+          "occurrences": 3
+        },
+        {
+          "name": "Task",
+          "occurrences": 2
+        },
+        {
+          "name": "Library",
+          "occurrences": 1
+        },
+        {
+          "name": "has",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "clib/exec_protos.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/exec.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/memory.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/ports.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/libraries.h",
+          "occurrences": 1
+        },
+        {
+          "name": "fcntl.h",
+          "occurrences": 1
+        },
+        {
+          "name": "libraries/dos.h",
+          "occurrences": 1
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 1
+        },
+        {
+          "name": "stdlib.h",
+          "occurrences": 1
+        },
+        {
+          "name": "string.h",
+          "occurrences": 1
+        },
+        {
+          "name": "fifo.h",
+          "occurrences": 1
+        },
+        {
+          "name": "fifopr.h",
+          "occurrences": 1
+        },
+        {
+          "name": "proto/exec.h",
+          "occurrences": 1
+        },
+        {
+          "name": "proto/dos.h",
+          "occurrences": 1
+        },
+        {
+          "name": "time.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "MAXShell.c",
+          "keyword": "doorreply"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "carrier"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "auto insert"
+        },
+        {
+          "file": "MAXShell.c",
+          "keyword": "autoinsert"
+        },
+        {
+          "file": "MAXShell.DOC",
+          "keyword": "function 34"
+        },
+        {
+          "file": "MAXShell.DOC",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "MAXShell.DOC",
+          "keyword": "carrier"
+        },
+        {
+          "file": "MAXShell.DOC",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "MAXShell.DOC",
+          "keyword": "autoinsert"
+        },
+        {
+          "file": "fifopr.h",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "mr.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "fifo.h",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "gw-startup",
+          "keyword": "timeleft"
+        }
+      ],
+      "sample_files": [
+        "FILE_ID.DIZ",
+        "MAXShell.DOC",
+        "MAXShell.c",
+        "ReadMe",
+        "SCOPTIONS",
+        "fifo.h",
+        "fifopr.h",
+        "gw-startup",
+        "knot-startup",
+        "l/fifo-handler",
+        "libs/fifo.library",
+        "maxshell",
+        "maxshell.lnk",
+        "mr",
+        "mr.doc"
+      ]
+    },
+    {
+      "archive": "mAG-cH_11(2).lha",
+      "sha256": "ce2b466daa0830f53cb1095347d0edd6e1f7f738d441df6ca2e0f62b75a4f9ac",
+      "entries": 12,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 12,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "mAG-cH_11.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 6,
+        "other": 6
+      },
+      "text_files": 8,
+      "text_characters": 22936,
+      "documentation_files": [
+        "mAG^nUM.txt",
+        "file_id.diz",
+        "nO^cARRIER.txt",
+        "mAG^cH_11.readme",
+        "mAGNUMcHAT/mAGNUM-cHAT.guide"
+      ],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "at",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "mAG^cH_11.readme",
+          "keyword": "logoff"
+        },
+        {
+          "file": "mAGNUMcHAT/mAGNUM-cHAT.guide",
+          "keyword": "logoff"
+        },
+        {
+          "file": "mAGNUMcHAT/mAGNUM-cHAT.guide",
+          "keyword": "node"
+        }
+      ],
+      "sample_files": [
+        "file_id.diz",
+        "mAGNUMcHAT/Install",
+        "mAGNUMcHAT/Install.info",
+        "mAGNUMcHAT/MagnumChat.cfg",
+        "mAGNUMcHAT/MagnumChat.cfg.info",
+        "mAGNUMcHAT/Temp.ans",
+        "mAGNUMcHAT/mAGNUM-cHAT.guide",
+        "mAGNUMcHAT/mAGNUM-cHAT.guide.info",
+        "mAGNUMcHAT/magnumchat",
+        "mAG^cH_11.readme",
+        "mAG^nUM.txt",
+        "nO^cARRIER.txt"
+      ]
+    },
+    {
+      "archive": "M_Quest_v11(1).lha",
+      "sha256": "7c64536850e9580b572afc44c8d69c4e875ade2b1885517c108a54cda94e5f4b",
+      "entries": 5,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 5,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "M_Quest_v11.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 4,
+        "documentation": 1
+      },
+      "text_files": 4,
+      "text_characters": 4539,
+      "documentation_files": [
+        "Multi-Quest.Doc"
+      ],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "of",
+          "occurrences": 2
+        },
+        {
+          "name": "where",
+          "occurrences": 1
+        },
+        {
+          "name": "B",
+          "occurrences": 1
+        },
+        {
+          "name": "C",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "sample_files": [
+        "MQ.displayme",
+        "Multi-Quest",
+        "Multi-Quest.Doc",
+        "cdte.displayme",
+        "multi-quest.questions"
+      ]
+    },
+    {
+      "archive": "ax300(1).lzh",
+      "sha256": "d86e31e8fc73012712e0e1300050fd3c59833e8e06533fa5084fe6b54c42a909",
+      "entries": 116,
+      "methods": [
+        "-lh0-",
+        "-lh1-",
+        "-lh5-"
+      ],
+      "extracted": 5,
+      "unextracted": 111,
+      "duplicate": {
+        "canonical": "ax300.lzh",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 2,
+        "c": 2
+      },
+      "text_files": 4,
+      "text_characters": 1215,
+      "documentation_files": [],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "sample_files": [
+        "AX3.00/deadline.h",
+        "AX3.00/version.h",
+        "bD_rULES!",
+        "\u00a0.oOSynergy_Me!Oo."
+      ]
+    },
+    {
+      "archive": "acp300(1).lzh",
+      "sha256": "52168cd82304f1ba341171845e1477ba5784f458e08724d2e1013b1917972c0f",
+      "entries": 34,
+      "methods": [
+        "-lh1-"
+      ],
+      "extracted": 0,
+      "unextracted": 34,
+      "duplicate": {
+        "canonical": "acp300.lzh",
+        "byte_identical": true
+      },
+      "file_types": {},
+      "text_files": 0,
+      "text_characters": 0,
+      "documentation_files": [],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "sample_files": []
+    },
+    {
+      "archive": "MAXs_Coders(1).lha",
+      "sha256": "7afb0f53baf85a27ab7e2ef9cc14b6fc7b8456366cb907a920588d690a3bab73",
+      "entries": 5,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 5,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MAXs_Coders.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 4,
+        "other": 1
+      },
+      "text_files": 5,
+      "text_characters": 36908,
+      "documentation_files": [
+        "MAXs_Coders.readme",
+        "MAXs_Coders.guide",
+        "file_id.diz",
+        "!_rEAD.mE"
+      ],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "door",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "MAXs_Coders.guide",
+          "keyword": "logoff"
+        },
+        {
+          "file": "MAXs_Coders.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXs_Coders.appform",
+          "keyword": "node"
+        }
+      ],
+      "sample_files": [
+        "!_rEAD.mE",
+        "MAXs_Coders.appform",
+        "MAXs_Coders.guide",
+        "MAXs_Coders.readme",
+        "file_id.diz"
+      ]
+    },
+    {
+      "archive": "MaxPro2(1).lha",
+      "sha256": "beff6bc9330c41f6ac4e847e9c5e4412b1060e11327b7ad7e1a28cab7e83f5bc",
+      "entries": 36,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 36,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MaxPro2.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 34,
+        "documentation": 2
+      },
+      "text_files": 5,
+      "text_characters": 15238,
+      "documentation_files": [
+        "MaxPro2.readme",
+        "file_id.diz"
+      ],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "detector",
+          "occurrences": 1
+        },
+        {
+          "name": "checker",
+          "occurrences": 1
+        },
+        {
+          "name": "detecter",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "MaxPro2.readme",
+          "keyword": "node"
+        },
+        {
+          "file": "MaxsPro2Info.Text",
+          "keyword": "node"
+        }
+      ],
+      "sample_files": [
+        "M2_Reg_OZ.PrintMe",
+        "M2_Reg_OZ.PrintMe.info",
+        "M2_Reg_UK.PrintMe",
+        "M2_Reg_UK.PrintMe.info",
+        "MaxPro2.readme",
+        "MaxsPro2Info.Text",
+        "MaxsPro2Info.Text.info",
+        "Mpro2_FileList.IFF",
+        "Mpro2_FileList.IFF.info",
+        "Mpro_ColourID.Iff",
+        "Mpro_ColourID.Iff.info",
+        "Mpro_ColourMsg.IFF",
+        "Mpro_ColourMsg.IFF.info",
+        "Mpro_DizEd.Iff",
+        "Mpro_DizEd.Iff.info",
+        "Mpro_FidoDist.IFF",
+        "Mpro_FidoDist.IFF.info",
+        "Mpro_FileExt.Iff",
+        "Mpro_FileExt.Iff.info",
+        "Mpro_FileExt2.Iff",
+        "Mpro_FileExt2.Iff.info",
+        "Mpro_FileExtract.Iff",
+        "Mpro_FileExtract.Iff.info",
+        "Mpro_UserEd.IFF",
+        "Mpro_UserEd.IFF.info",
+        "Mpro_Virus.IFF",
+        "Mpro_Virus.IFF.info",
+        "Mpro_WHO_Online.Iff",
+        "Mpro_WHO_Online.Iff.info",
+        "Mpro_XIM.Iff",
+        "Mpro_XIM.Iff.info",
+        "Redrum_Idle.Iff",
+        "Redrum_Idle.Iff.info",
+        "Redrum_Menu.Iff",
+        "Redrum_Menu.Iff.info",
+        "file_id.diz"
+      ]
+    },
+    {
+      "archive": "MaxRexx(1).lha",
+      "sha256": "9751f4435edfd4c5453ddafe741148a19a21d00474768973415926305996210e",
+      "entries": 66,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 66,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MaxRexx.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "arexx": 15,
+        "documentation": 2,
+        "other": 49
+      },
+      "text_files": 55,
+      "text_characters": 83446,
+      "documentation_files": [
+        "MAXREXX/Readme.1st"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "DoorStarterr",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "of",
+          "occurrences": 1
+        },
+        {
+          "name": "a",
+          "occurrences": 1
+        },
+        {
+          "name": "the",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "MAXREXX/Examples/Everything.Rexx",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/MaxRexx.Guide",
+          "keyword": "function 34"
+        },
+        {
+          "file": "MAXREXX/DOCS/MaxRexx.Guide",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/tips.html",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/commandlist.html",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/introduction.html",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/installation.html",
+          "keyword": "function 34"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/commanddesc.html",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/26.html",
+          "keyword": "node"
+        },
+        {
+          "file": "MAXREXX/DOCS/HTML/history.html",
+          "keyword": "node"
+        }
+      ],
+      "sample_files": [
+        "MAXREXX/DOCS/HTML/01.html",
+        "MAXREXX/DOCS/HTML/02.html",
+        "MAXREXX/DOCS/HTML/03.html",
+        "MAXREXX/DOCS/HTML/04.html",
+        "MAXREXX/DOCS/HTML/05.html",
+        "MAXREXX/DOCS/HTML/06.html",
+        "MAXREXX/DOCS/HTML/07.html",
+        "MAXREXX/DOCS/HTML/08.html",
+        "MAXREXX/DOCS/HTML/09.html",
+        "MAXREXX/DOCS/HTML/10.html",
+        "MAXREXX/DOCS/HTML/11.html",
+        "MAXREXX/DOCS/HTML/12.html",
+        "MAXREXX/DOCS/HTML/13.html",
+        "MAXREXX/DOCS/HTML/14.html",
+        "MAXREXX/DOCS/HTML/15.html",
+        "MAXREXX/DOCS/HTML/16.html",
+        "MAXREXX/DOCS/HTML/17.html",
+        "MAXREXX/DOCS/HTML/18.html",
+        "MAXREXX/DOCS/HTML/19.html",
+        "MAXREXX/DOCS/HTML/20.html",
+        "MAXREXX/DOCS/HTML/21.html",
+        "MAXREXX/DOCS/HTML/22.html",
+        "MAXREXX/DOCS/HTML/23.html",
+        "MAXREXX/DOCS/HTML/24.html",
+        "MAXREXX/DOCS/HTML/25.html",
+        "MAXREXX/DOCS/HTML/26.html",
+        "MAXREXX/DOCS/HTML/27.html",
+        "MAXREXX/DOCS/HTML/28.html",
+        "MAXREXX/DOCS/HTML/bg2.gif",
+        "MAXREXX/DOCS/HTML/bugs.html",
+        "MAXREXX/DOCS/HTML/commanddesc.html",
+        "MAXREXX/DOCS/HTML/commandlist.html",
+        "MAXREXX/DOCS/HTML/commands.html",
+        "MAXREXX/DOCS/HTML/contacts.html",
+        "MAXREXX/DOCS/HTML/copyright.html",
+        "MAXREXX/DOCS/HTML/disclaimer.html",
+        "MAXREXX/DOCS/HTML/examples.html",
+        "MAXREXX/DOCS/HTML/future.html",
+        "MAXREXX/DOCS/HTML/history.html",
+        "MAXREXX/DOCS/HTML/index.html"
+      ]
+    },
+    {
+      "archive": "DayDreamBBSDoo(1).lha",
+      "sha256": "287a64cca4aade32a2903e79b761764d8cb4db1dfc024c9632ae70ba8b7d6d13",
+      "entries": 9,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 9,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "DayDreamBBSDoo.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 1,
+        "other": 8
+      },
+      "text_files": 9,
+      "text_characters": 218074,
+      "documentation_files": [
+        "DDDoorPack/readme"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "mxK",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "sample_files": [
+        "DDDoorPack/DCD!US11.LHA",
+        "DDDoorPack/INS-TD10.LHA",
+        "DDDoorPack/INS-TM20.LHA",
+        "DDDoorPack/MST-DA12.LHA",
+        "DDDoorPack/MST-DEL1.LHA",
+        "DDDoorPack/MST-IV13.LHA",
+        "DDDoorPack/MST-SF11.LHA",
+        "DDDoorPack/TRIM2MON.LHA",
+        "DDDoorPack/readme"
+      ]
+    },
+    {
+      "archive": "DayDreamBBS(1).lha",
+      "sha256": "1984be20e38d8e70a3e374ba6bcf6cb1ec82228a672d7e6ede4b40106c4a8f35",
+      "entries": 193,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 193,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "DayDreamBBS.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 50,
+        "other": 136,
+        "arexx": 4,
+        "library": 3
+      },
+      "text_files": 119,
+      "text_characters": 418449,
+      "documentation_files": [
+        "file_id.diz",
+        "DayDream/DD126.readme",
+        "DayDream/file_id.diz",
+        "DayDream/Configs/WeekTop.TXT",
+        "DayDream/Display/DisplayModeList.TXT",
+        "DayDream/Display/MoreHelp.TXT",
+        "DayDream/Display/DisplayModeHelp.TXT",
+        "DayDream/Docs/FAQ.Guide",
+        "DayDream/Docs/changes.guide",
+        "DayDream/Docs/DDConfTop.DOC",
+        "DayDream/Docs/ftpd.doc",
+        "DayDream/Docs/UpDating.TXT",
+        "DayDream/Docs/kalacon.readme",
+        "DayDream/Docs/RoboWriter.DOC",
+        "DayDream/Docs/DayDream.guide",
+        "DayDream/Docs/MUIConfig.DOC",
+        "DayDream/Display/iso/LineChatOn.TXT",
+        "DayDream/Display/iso/newuser.txt",
+        "DayDream/Display/iso/ProtocolMenu.TXT",
+        "DayDream/Display/iso/Upload.TXT",
+        "DayDream/Display/iso/SplitChatOff.TXT",
+        "DayDream/Display/iso/OtherCommands.TXT",
+        "DayDream/Display/iso/Download.TXT",
+        "DayDream/Display/iso/EditUser.TXT",
+        "DayDream/Display/iso/Welcome.TXT",
+        "DayDream/Display/iso/FileCatalogs.TXT",
+        "DayDream/Display/iso/Conferences.TXT",
+        "DayDream/Display/iso/Commands.TXT",
+        "DayDream/Display/iso/LineEditorCommands.TXT",
+        "DayDream/Display/iso/Reg_RealName.TXT"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "DDCallers",
+          "occurrences": 20
+        },
+        {
+          "symbol": "DDDP",
+          "occurrences": 17
+        },
+        {
+          "symbol": "DDTop",
+          "occurrences": 13
+        },
+        {
+          "symbol": "DDHydra",
+          "occurrences": 12
+        },
+        {
+          "symbol": "DDWeekTop",
+          "occurrences": 11
+        },
+        {
+          "symbol": "BBSNAME",
+          "occurrences": 6
+        },
+        {
+          "symbol": "DDCOMMAND",
+          "occurrences": 5
+        },
+        {
+          "symbol": "DDMComment",
+          "occurrences": 5
+        },
+        {
+          "symbol": "DDRc",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDCommand",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDName",
+          "occurrences": 2
+        },
+        {
+          "symbol": "BBSID",
+          "occurrences": 2
+        },
+        {
+          "symbol": "DDWeektop",
+          "occurrences": 2
+        },
+        {
+          "symbol": "BBSFiles",
+          "occurrences": 2
+        },
+        {
+          "symbol": "DDBBSMenu",
+          "occurrences": 2
+        },
+        {
+          "symbol": "DDVersion",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DoorCommand",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DDConfTop",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DoorProtocol",
+          "occurrences": 1
+        },
+        {
+          "symbol": "BBSCommand",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DDRcserver",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "command": 1,
+          "occurrences": 1
+        },
+        {
+          "command": 2,
+          "occurrences": 1
+        },
+        {
+          "command": 3,
+          "occurrences": 2
+        },
+        {
+          "command": 4,
+          "occurrences": 1
+        },
+        {
+          "command": 101,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "Q",
+          "occurrences": 6
+        },
+        {
+          "name": "your",
+          "occurrences": 1
+        },
+        {
+          "name": "Sweden",
+          "occurrences": 1
+        },
+        {
+          "name": "was",
+          "occurrences": 1
+        },
+        {
+          "name": "NEW",
+          "occurrences": 1
+        },
+        {
+          "name": "for",
+          "occurrences": 1
+        },
+        {
+          "name": "LENGTH",
+          "occurrences": 1
+        },
+        {
+          "name": "N",
+          "occurrences": 1
+        },
+        {
+          "name": "specifies",
+          "occurrences": 1
+        },
+        {
+          "name": "flags",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "DayDream/DD126.readme",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "DayDream/DD126.readme",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/DayDream.CFG",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/DayDream.CFG",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/DayDream.CFG",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/InstallDD",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "DayDream/InstallDD",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/InstallDD",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/REXX/StartNodes.rexx",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/REXX/servertest.rexx",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/REXX/Announce.amirx",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/REXX/who.amirx",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Data/FTP-Paths.DAT",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Mail/DreamToss.Cfg",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Display/Strings.001",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Display/Strings.001",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Display/Strings.001",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Display/Strings.001",
+          "keyword": "user record"
+        },
+        {
+          "file": "DayDream/Docs/FAQ.Guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Docs/FAQ.Guide",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "time left"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Docs/changes.guide",
+          "keyword": "user record"
+        },
+        {
+          "file": "DayDream/Docs/DDConfTop.DOC",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Docs/UpDating.TXT",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "DayDream/Docs/UpDating.TXT",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Docs/UpDating.TXT",
+          "keyword": "user record"
+        },
+        {
+          "file": "DayDream/Docs/DDCallers.MAN",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Docs/DDCallers.MAN",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Docs/DayDream.guide",
+          "keyword": "fifo.library"
+        },
+        {
+          "file": "DayDream/Docs/DayDream.guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Docs/DayDream.guide",
+          "keyword": "time left"
+        },
+        {
+          "file": "DayDream/Docs/DayDream.guide",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Docs/DayDream.guide",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Docs/DayDream.guide",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/SetLrp.dd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/BBSList.dd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/Stats.dd",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/Stats.dd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/MComment.dd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/LogOff.dd",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Doors/Rexxdir/LogOff.dd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Display/iso/Commands.TXT",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Display/iso/Commands.GFX",
+          "keyword": "disconnect"
+        }
+      ],
+      "sample_files": [
+        "DayDream/Batch/GetFax1.bat",
+        "DayDream/Batch/Logoff1.BAT",
+        "DayDream/Configs/DD-ConfTop.CFG",
+        "DayDream/Configs/DDTop.Config",
+        "DayDream/Configs/DDWeekTop.Config",
+        "DayDream/Configs/DreamFaker.Cfg",
+        "DayDream/Configs/DreamWall.DAT",
+        "DayDream/Configs/Dreammail.Cfg",
+        "DayDream/Configs/Dreamnew.CFG",
+        "DayDream/Configs/WeekTop.GFX",
+        "DayDream/Configs/WeekTop.TXT",
+        "DayDream/DD126.readme",
+        "DayDream/Data/Access.DAT",
+        "DayDream/Data/Archivers.DAT",
+        "DayDream/Data/Conferences.DAT",
+        "DayDream/Data/ConversionTable01.DAT",
+        "DayDream/Data/ConversionTable02.DAT",
+        "DayDream/Data/DD-Server.DAT",
+        "DayDream/Data/DayDream.DAT",
+        "DayDream/Data/Display.DAT",
+        "DayDream/Data/ExternalCommands.DAT",
+        "DayDream/Data/FTP-Paths.DAT",
+        "DayDream/Data/FreeDownloads.DAT",
+        "DayDream/Data/IO-Device1.DAT",
+        "DayDream/Data/IO-Device2.DAT",
+        "DayDream/Data/LogOnDoors.DAT",
+        "DayDream/Data/Multinode.DAT",
+        "DayDream/Data/Protocols.DAT",
+        "DayDream/Data/Schedule.DAT",
+        "DayDream/Data/ScreenInfo1.DAT",
+        "DayDream/Data/Security.DAT",
+        "DayDream/Data/Selected.DAT",
+        "DayDream/Data/TrashCan.DAT",
+        "DayDream/Data/Version.DAT",
+        "DayDream/DayDream",
+        "DayDream/DayDream.CFG",
+        "DayDream/DayDream.info",
+        "DayDream/Developer.Info",
+        "DayDream/Devs/kalacon.device",
+        "DayDream/Devs/kalacon.device.020"
+      ]
+    },
+    {
+      "archive": "DayDreamBBSDev(3).lha",
+      "sha256": "93a45dbd05e504974c8bee69a60c7f7bb7e1cfbde46386c3c517c0c2a627d5fd",
+      "entries": 69,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 69,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "DayDreamBBSDev.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 9,
+        "other": 32,
+        "asm": 7,
+        "fd": 2,
+        "amiga-e": 6,
+        "c": 13
+      },
+      "text_files": 62,
+      "text_characters": 295922,
+      "documentation_files": [
+        "File_Id.Diz",
+        "DayDream/Developer/ReadMe_Distributing.Txt",
+        "DayDream/Developer/ReadMe",
+        "DayDream/Developer/DreamDoor/ReadMe_C",
+        "DayDream/Developer/DreamDoor/Gnu_C/readme.txt",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "DDBase",
+          "occurrences": 118
+        },
+        {
+          "symbol": "DDDOOR_BASE_NAME",
+          "occurrences": 46
+        },
+        {
+          "symbol": "DDCommand",
+          "occurrences": 21
+        },
+        {
+          "symbol": "DDPointers",
+          "occurrences": 18
+        },
+        {
+          "symbol": "DDF_SHOWERROR",
+          "occurrences": 6
+        },
+        {
+          "symbol": "DDLibBase",
+          "occurrences": 6
+        },
+        {
+          "symbol": "DoorPortName",
+          "occurrences": 4
+        },
+        {
+          "symbol": "DDF_ADDEXTENSION",
+          "occurrences": 4
+        },
+        {
+          "symbol": "DDDoor_Pragmas",
+          "occurrences": 4
+        },
+        {
+          "symbol": "DoorPort",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDF_STRIPKLUDGES",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDF_CHECKCONF",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDF_CHECKACS",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDF_STRIPCTRL",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDDoor",
+          "occurrences": 2
+        },
+        {
+          "symbol": "DDMMYY",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DDDoorName",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DoorReplyPort",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DDDP",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "command": 0,
+          "occurrences": 2
+        },
+        {
+          "command": 10,
+          "occurrences": 1
+        },
+        {
+          "command": 13,
+          "occurrences": 1
+        },
+        {
+          "command": 27,
+          "occurrences": 1
+        },
+        {
+          "command": 250,
+          "occurrences": 1
+        },
+        {
+          "command": 251,
+          "occurrences": 1
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "DIFace",
+          "occurrences": 118
+        },
+        {
+          "name": "LENGTH",
+          "occurrences": 23
+        },
+        {
+          "name": "DayDream_User",
+          "occurrences": 17
+        },
+        {
+          "name": "DDPointers",
+          "occurrences": 15
+        },
+        {
+          "name": "ConfTopData",
+          "occurrences": 14
+        },
+        {
+          "name": "Library",
+          "occurrences": 12
+        },
+        {
+          "name": "DayDream_Conference",
+          "occurrences": 11
+        },
+        {
+          "name": "FakerDataFile",
+          "occurrences": 9
+        },
+        {
+          "name": "Fakerdata",
+          "occurrences": 9
+        },
+        {
+          "name": "NodeStruct",
+          "occurrences": 8
+        },
+        {
+          "name": "Fakenode",
+          "occurrences": 8
+        },
+        {
+          "name": "FileChainItem",
+          "occurrences": 7
+        },
+        {
+          "name": "DayDream_MsgBase",
+          "occurrences": 6
+        },
+        {
+          "name": "String",
+          "occurrences": 4
+        },
+        {
+          "name": "DD_UploadLog",
+          "occurrences": 4
+        },
+        {
+          "name": "ConfTopDates",
+          "occurrences": 4
+        },
+        {
+          "name": "StringMem",
+          "occurrences": 4
+        },
+        {
+          "name": "the",
+          "occurrences": 3
+        },
+        {
+          "name": "MEANING",
+          "occurrences": 3
+        },
+        {
+          "name": "DayDream_DisplayMode",
+          "occurrences": 3
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "libraries/dddoor.h",
+          "occurrences": 6
+        },
+        {
+          "name": "daydream.h",
+          "occurrences": 6
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 5
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 5
+        },
+        {
+          "name": "stdlib.h",
+          "occurrences": 5
+        },
+        {
+          "name": "string.h",
+          "occurrences": 5
+        },
+        {
+          "name": "proto/dddoor.h",
+          "occurrences": 5
+        },
+        {
+          "name": "proto/exec.h",
+          "occurrences": 5
+        },
+        {
+          "name": "proto/dos.h",
+          "occurrences": 5
+        },
+        {
+          "name": "exec/memory.h",
+          "occurrences": 5
+        },
+        {
+          "name": "time.h",
+          "occurrences": 3
+        },
+        {
+          "name": "dos.h",
+          "occurrences": 3
+        },
+        {
+          "name": "clib/dddoor_protos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "inline/dddoor.h",
+          "occurrences": 1
+        },
+        {
+          "name": "inline/macros.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/nodes.h",
+          "occurrences": 1
+        },
+        {
+          "name": "exec/lists.h",
+          "occurrences": 1
+        },
+        {
+          "name": "dos/datetime.h",
+          "occurrences": 1
+        },
+        {
+          "name": "dos/dostags.h",
+          "occurrences": 1
+        },
+        {
+          "name": "pragmas/dddoor_pragmas.h",
+          "occurrences": 1
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "DayDream/Developer/DoorMessage.Structure",
+          "keyword": "time left"
+        },
+        {
+          "file": "DayDream/Developer/DoorMessage.Structure",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DoorMessage.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/Schedule.DAT.Structure",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Developer/NodeScreen.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/NodeStructure.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/MultiNode.DAT.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DownloadLog.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DayDream.DAT.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/UserBase.DAT.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/Message.DAT.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/NodeMessage.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/IO-Device.Structure",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/Conferences.DAT.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/LossCarrier.DAT.Structure",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/Version.DAT.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/UploadLog.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/Callers.Log.Structure",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/Callers.Log.Structure",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Developer/Callers.Log.Structure",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide",
+          "keyword": "time left"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "keyword": "time left"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/AmigaE/Example3.e",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/AmigaE/Example.e",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/AmigaE/Example2.e",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/QuickLogin.asm",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/StatExample_New.Asm",
+          "keyword": "time left"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/Include/DayDream.I",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/Include/DayDream.I",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/Include/DayDream.I",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/Include/DayDream.I",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Asm/Include/DreamDoor_lib.i",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/StormC/Include/pragmas/DDDoor_lib.h",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Gnu_C/include/inline/dddoor.h",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Gnu_C/include/inline/dddoor.h",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Sas_C/include/DayDream.h",
+          "keyword": "carrier"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Sas_C/include/DayDream.h",
+          "keyword": "logoff"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Sas_C/include/DayDream.h",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Sas_C/Example/FileChain.c",
+          "keyword": "node"
+        },
+        {
+          "file": "DayDream/Developer/DreamDoor/Sas_C/Example/Stat.C",
+          "keyword": "time left"
+        }
+      ],
+      "sample_files": [
+        "DayDream/Developer/Access.DAT.Structure",
+        "DayDream/Developer/Archivers.DAT.Structure",
+        "DayDream/Developer/Callers.Log.Structure",
+        "DayDream/Developer/Conferences.DAT.Structure",
+        "DayDream/Developer/ConversionTable.DAT.Structure",
+        "DayDream/Developer/DayDream.DAT.Structure",
+        "DayDream/Developer/Directory.Structure",
+        "DayDream/Developer/Directory.Structure2",
+        "DayDream/Developer/Display.DAT.Structure",
+        "DayDream/Developer/DoorMessage.Structure",
+        "DayDream/Developer/DownloadLog.Structure",
+        "DayDream/Developer/DreamDoor/AmigaE/Example.e",
+        "DayDream/Developer/DreamDoor/AmigaE/Example2.e",
+        "DayDream/Developer/DreamDoor/AmigaE/Example3.e",
+        "DayDream/Developer/DreamDoor/AmigaE/Modules/DDDoor_pragmas.m",
+        "DayDream/Developer/DreamDoor/AmigaE/Modules/DayDream.m",
+        "DayDream/Developer/DreamDoor/AmigaE/Testlib.e",
+        "DayDream/Developer/DreamDoor/Asm/Include/DayDream.I",
+        "DayDream/Developer/DreamDoor/Asm/Include/DreamDoor_lib.i",
+        "DayDream/Developer/DreamDoor/Asm/QuickLogin.asm",
+        "DayDream/Developer/DreamDoor/Asm/StatExample_New.Asm",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.Doc.info",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.Guide.info",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+        "DayDream/Developer/DreamDoor/Doc/DreamDoor.fd",
+        "DayDream/Developer/DreamDoor/Doc.Info",
+        "DayDream/Developer/DreamDoor/Gnu_C/include/inline/dddoor.h",
+        "DayDream/Developer/DreamDoor/Gnu_C/lib/fd/dddoor_lib.fd",
+        "DayDream/Developer/DreamDoor/Gnu_C/os-include/proto/dddoor.h",
+        "DayDream/Developer/DreamDoor/Gnu_C/readme.txt",
+        "DayDream/Developer/DreamDoor/ReadMe_C",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/ConfTop/AsmRoutines.s",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/ConfTop/Conftop.c",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/ConfTop/smakefile",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/Faker/AsmRoutines.s",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/Faker/Faker.c",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/Faker/smakefile",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/FileChain.c",
+        "DayDream/Developer/DreamDoor/Sas_C/Example/Stat.C"
+      ]
+    },
+    {
+      "archive": "ZeusDoors(1).lha",
+      "sha256": "03ce86f41229dc5d4d7d180fbe50f1d79de89a56f8d937b4f10bb42777722111",
+      "entries": 136,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 136,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "ZeusDoors.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 86,
+        "documentation": 35,
+        "c": 13,
+        "arexx": 2
+      },
+      "text_files": 81,
+      "text_characters": 141213,
+      "documentation_files": [
+        "ZeusDoors.readme",
+        "UserList/UserList.doc",
+        "ZMenuBar/MenuBar.doc",
+        "Lightning/Lightning.doc",
+        "CallerStats/CallerStats.doc",
+        "TimeStats/TimeStats.doc",
+        "LastCalls/LastCallers.doc",
+        "Lightning/Config/Lightning/Inserts/Footer.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.450.txt",
+        "Lightning/Config/Lightning/Inserts/Header.txt",
+        "Lightning/Config/Lightning/Inserts/Header.450.txt",
+        "Lightning/Config/Lightning/Inserts/Footer.txt",
+        "Lightning/Config/Lightning/Inserts/Header.452.txt",
+        "Lightning/Config/Lightning/Inserts/NewFooter.txt",
+        "Lightning/Config/Lightning/Inserts/NewFooter.1.txt",
+        "Lightning/Config/Lightning/Inserts/Footer.1.txt",
+        "Lightning/Config/Lightning/Inserts/Header.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.1.txt",
+        "Lightning/Config/Lightning/Inserts/Header.452.guide",
+        "Lightning/Config/Lightning/Inserts/Header.451.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.451.txt",
+        "Lightning/Config/Lightning/Inserts/NewHeader.452.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.451.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.1.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.450.guide",
+        "Lightning/Config/Lightning/Inserts/Header.1.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.txt",
+        "Lightning/Config/Lightning/Inserts/Footer.1.guide",
+        "Lightning/Config/Lightning/Inserts/NewHeader.452.txt"
+      ],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "Node",
+          "occurrences": 17
+        },
+        {
+          "name": "KeyFile",
+          "occurrences": 16
+        },
+        {
+          "name": "Library",
+          "occurrences": 11
+        },
+        {
+          "name": "List",
+          "occurrences": 10
+        },
+        {
+          "name": "MyNode",
+          "occurrences": 10
+        },
+        {
+          "name": "tm",
+          "occurrences": 9
+        },
+        {
+          "name": "FL_Config",
+          "occurrences": 8
+        },
+        {
+          "name": "Line",
+          "occurrences": 7
+        },
+        {
+          "name": "FL_AreaNode",
+          "occurrences": 7
+        },
+        {
+          "name": "User",
+          "occurrences": 6
+        },
+        {
+          "name": "SharedData",
+          "occurrences": 6
+        },
+        {
+          "name": "AreaNode",
+          "occurrences": 5
+        },
+        {
+          "name": "fullFile",
+          "occurrences": 4
+        },
+        {
+          "name": "tuser",
+          "occurrences": 3
+        },
+        {
+          "name": "RDArgs",
+          "occurrences": 3
+        },
+        {
+          "name": "LastCaller",
+          "occurrences": 3
+        },
+        {
+          "name": "to",
+          "occurrences": 2
+        },
+        {
+          "name": "PF_Globals",
+          "occurrences": 2
+        },
+        {
+          "name": "NewMapEntry",
+          "occurrences": 2
+        },
+        {
+          "name": "ScanInfo",
+          "occurrences": 2
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "proto/dos.h",
+          "occurrences": 10
+        },
+        {
+          "name": "string.h",
+          "occurrences": 10
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 10
+        },
+        {
+          "name": "stdlib.h",
+          "occurrences": 10
+        },
+        {
+          "name": "proto/pipeline.h",
+          "occurrences": 10
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 9
+        },
+        {
+          "name": "proto/exec.h",
+          "occurrences": 9
+        },
+        {
+          "name": "proto/pipeutil.h",
+          "occurrences": 9
+        },
+        {
+          "name": "exec/nodes.h",
+          "occurrences": 7
+        },
+        {
+          "name": "exec/lists.h",
+          "occurrences": 7
+        },
+        {
+          "name": "nodes.h",
+          "occurrences": 7
+        },
+        {
+          "name": "ctype.h",
+          "occurrences": 4
+        },
+        {
+          "name": "exec/memory.h",
+          "occurrences": 2
+        },
+        {
+          "name": "exec/semaphores.h",
+          "occurrences": 2
+        },
+        {
+          "name": "proto/intuition.h",
+          "occurrences": 2
+        },
+        {
+          "name": "dos/dos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "dos/rdargs.h",
+          "occurrences": 2
+        },
+        {
+          "name": "dos/dosextens.h",
+          "occurrences": 2
+        },
+        {
+          "name": "clib/exec_protos.h",
+          "occurrences": 2
+        },
+        {
+          "name": "clib/dos_protos.h",
+          "occurrences": 2
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "WhoIs/Whois.c",
+          "keyword": "node"
+        },
+        {
+          "file": "ZMenuBar/MenubarDemo.zeus",
+          "keyword": "carrier"
+        },
+        {
+          "file": "Lightning/headers.h",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/configs.c",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/configs.h",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/Lightning.c",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/configs_protos.h",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/Lightning.cfg.newkeywords",
+          "keyword": "node"
+        },
+        {
+          "file": "Who/Who.c",
+          "keyword": "node"
+        },
+        {
+          "file": "CallerStats/CallerStats.c",
+          "keyword": "node"
+        },
+        {
+          "file": "TimeStats/TimeStats.c",
+          "keyword": "node"
+        },
+        {
+          "file": "LastCalls/LastCallers.c",
+          "keyword": "logoff"
+        },
+        {
+          "file": "LastCalls/LastCallers.c",
+          "keyword": "node"
+        },
+        {
+          "file": "LastCalls/LastCallers.doc",
+          "keyword": "logoff"
+        },
+        {
+          "file": "Lightning/LFLKeyGen/FLKeyGen.c",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/Config/Lightning/Lightning.cfg",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/Config/Lightning/Inserts/About",
+          "keyword": "node"
+        },
+        {
+          "file": "Lightning/Config/Lightning/Inserts/AboutNew",
+          "keyword": "node"
+        }
+      ],
+      "sample_files": [
+        "CallerStats/Build.info",
+        "CallerStats/CallerStats",
+        "CallerStats/CallerStats.c",
+        "CallerStats/CallerStats.c.info",
+        "CallerStats/CallerStats.doc",
+        "CallerStats/CallerStats.doc.info",
+        "CallerStats/SCOPTIONS",
+        "CallerStats/SCoptions.info",
+        "CallerStats/screencap.iff",
+        "CallerStats/screencap.iff.info",
+        "CallerStats.info",
+        "LastCalls/Build.info",
+        "LastCalls/LastCallers",
+        "LastCalls/LastCallers.c",
+        "LastCalls/LastCallers.c.info",
+        "LastCalls/LastCallers.doc",
+        "LastCalls/SCOPTIONS",
+        "LastCalls/SCoptions.info",
+        "LastCalls.info",
+        "Lightning/Build.info",
+        "Lightning/Config/Lightning/Inserts/About",
+        "Lightning/Config/Lightning/Inserts/AboutNew",
+        "Lightning/Config/Lightning/Inserts/Footer.1.guide",
+        "Lightning/Config/Lightning/Inserts/Footer.1.ibm",
+        "Lightning/Config/Lightning/Inserts/Footer.1.txt",
+        "Lightning/Config/Lightning/Inserts/Footer.guide",
+        "Lightning/Config/Lightning/Inserts/Footer.ibm",
+        "Lightning/Config/Lightning/Inserts/Footer.txt",
+        "Lightning/Config/Lightning/Inserts/Header.1.guide",
+        "Lightning/Config/Lightning/Inserts/Header.1.ibm",
+        "Lightning/Config/Lightning/Inserts/Header.1.txt",
+        "Lightning/Config/Lightning/Inserts/Header.450.guide",
+        "Lightning/Config/Lightning/Inserts/Header.450.ibm",
+        "Lightning/Config/Lightning/Inserts/Header.450.txt",
+        "Lightning/Config/Lightning/Inserts/Header.451.guide",
+        "Lightning/Config/Lightning/Inserts/Header.451.ibm",
+        "Lightning/Config/Lightning/Inserts/Header.451.txt",
+        "Lightning/Config/Lightning/Inserts/Header.452.guide",
+        "Lightning/Config/Lightning/Inserts/Header.452.ibm",
+        "Lightning/Config/Lightning/Inserts/Header.452.txt"
+      ]
+    },
+    {
+      "archive": "WWBBSDoors(1).lha",
+      "sha256": "0de2c02130a5a3986865c1d54582aed4bfaa4c9c6141a4ee9cada65aa550ccd4",
+      "entries": 102,
+      "methods": [
+        "-lh0-",
+        "-lh5-"
+      ],
+      "extracted": 102,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "WWBBSDoors.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 9,
+        "arexx": 21,
+        "other": 72
+      },
+      "text_files": 102,
+      "text_characters": 802448,
+      "documentation_files": [
+        "WWBBS/readme",
+        "WWBBS/rexxDoors/readme",
+        "WWBBS/rexxDoors/Data/FilmFlubs.txt",
+        "WWBBS/rexxDoors/Docs/SM.readme",
+        "WWBBS/rexxDoors/Docs/WOF.Update.Doc",
+        "WWBBS/rexxDoors/Docs/Yacht_C.doc",
+        "WWBBS/rexxDoors/Docs/Chicago.doc",
+        "WWBBS/rexxDoors/Docs/UpDating.doc",
+        "WWBBS/rexxDoors/Docs/Chicago.Readme"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "BBSIDENTIFY",
+          "occurrences": 33
+        },
+        {
+          "symbol": "DDOWN",
+          "occurrences": 3
+        },
+        {
+          "symbol": "BBSNAME",
+          "occurrences": 2
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [
+        {
+          "name": "is",
+          "occurrences": 5
+        },
+        {
+          "name": "in",
+          "occurrences": 5
+        },
+        {
+          "name": "of",
+          "occurrences": 3
+        },
+        {
+          "name": "if",
+          "occurrences": 1
+        },
+        {
+          "name": "guess",
+          "occurrences": 1
+        },
+        {
+          "name": "the",
+          "occurrences": 1
+        },
+        {
+          "name": "Who",
+          "occurrences": 1
+        },
+        {
+          "name": "things",
+          "occurrences": 1
+        }
+      ],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "WWBBS/rexxDoors/Ship_Hunt.rexx",
+          "keyword": "carrier"
+        },
+        {
+          "file": "WWBBS/rexxDoors/Amiga_List.rexx",
+          "keyword": "node"
+        },
+        {
+          "file": "WWBBS/rexxDoors/Moon.rexx",
+          "keyword": "node"
+        },
+        {
+          "file": "WWBBS/rexxDoors/Wheel_Of_Fortune.rexx",
+          "keyword": "carrier"
+        },
+        {
+          "file": "WWBBS/rexxDoors/Data/wright.data",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "WWBBS/rexxDoors/Data/FilmFlubs.txt",
+          "keyword": "carrier"
+        },
+        {
+          "file": "WWBBS/rexxDoors/Data/Grins",
+          "keyword": "disconnect"
+        }
+      ],
+      "sample_files": [
+        "WWBBS/readme",
+        "WWBBS/rexxDoors/Amiga_List.rexx",
+        "WWBBS/rexxDoors/BlackJack.rexx",
+        "WWBBS/rexxDoors/Chicago.rexx",
+        "WWBBS/rexxDoors/Data/FilmFlubs.txt",
+        "WWBBS/rexxDoors/Data/Grins",
+        "WWBBS/rexxDoors/Data/HS.Users",
+        "WWBBS/rexxDoors/Data/Horses/Dplayers",
+        "WWBBS/rexxDoors/Data/Kim",
+        "WWBBS/rexxDoors/Data/Root",
+        "WWBBS/rexxDoors/Data/SM.companystats",
+        "WWBBS/rexxDoors/Data/SM.errlog",
+        "WWBBS/rexxDoors/Data/SM.fame",
+        "WWBBS/rexxDoors/Data/SM.help",
+        "WWBBS/rexxDoors/Data/SM.log",
+        "WWBBS/rexxDoors/Data/SM.news1",
+        "WWBBS/rexxDoors/Data/SM.news2",
+        "WWBBS/rexxDoors/Data/SM.players",
+        "WWBBS/rexxDoors/Data/SM.playerstats",
+        "WWBBS/rexxDoors/Data/Ship/Kim",
+        "WWBBS/rexxDoors/Data/Ship/winners",
+        "WWBBS/rexxDoors/Data/StoryBoard/story1",
+        "WWBBS/rexxDoors/Data/WoF.dat",
+        "WWBBS/rexxDoors/Data/WoF.players",
+        "WWBBS/rexxDoors/Data/WoF.puzzles",
+        "WWBBS/rexxDoors/Data/WoF.stat",
+        "WWBBS/rexxDoors/Data/WoF.winners",
+        "WWBBS/rexxDoors/Data/Yacht_C/MATT_ENGLISH",
+        "WWBBS/rexxDoors/Data/Yacht_C/Root",
+        "WWBBS/rexxDoors/Data/Yuppie/Instructions1",
+        "WWBBS/rexxDoors/Data/Yuppie/Instructions2",
+        "WWBBS/rexxDoors/Data/Yuppie/Instructions3",
+        "WWBBS/rexxDoors/Data/Yuppie/Instructions4",
+        "WWBBS/rexxDoors/Data/Yuppie/Instructions5",
+        "WWBBS/rexxDoors/Data/Yuppie/KIM.DAT",
+        "WWBBS/rexxDoors/Data/Yuppie/NEWS",
+        "WWBBS/rexxDoors/Data/Yuppie/PLAYERS",
+        "WWBBS/rexxDoors/Data/Yuppie/Root.DAT",
+        "WWBBS/rexxDoors/Data/Yuppie/STATS",
+        "WWBBS/rexxDoors/Data/Yuppie/TopOnes"
+      ]
+    },
+    {
+      "archive": "MaxsAmosDoors(1).lha",
+      "sha256": "08537c3b26c6388e370c26696b65e80c0ffd1b8d78e90185cd0a0b050489f5b7",
+      "entries": 15,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 15,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "MaxsAmosDoors.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "amos": 15
+      },
+      "text_files": 1,
+      "text_characters": 2415,
+      "documentation_files": [],
+      "top_api_symbols": [],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "sample_files": [
+        "MaxsAmosDoors.readme",
+        "cwdl.amos",
+        "fake_cli2.amos",
+        "freedownload.amos",
+        "maxs_secure24.amos",
+        "multimax21.amos",
+        "privateaxs.amos",
+        "pshow.amos",
+        "rs.amos",
+        "scriptexec.amos",
+        "slowtext3.amos",
+        "trans41finished.amos",
+        "trans41wb.amos",
+        "uddermaxs.amos",
+        "user_to_ram2.amos"
+      ]
+    },
+    {
+      "archive": "DoorStatus(1).lha",
+      "sha256": "e77497dcf53e47059170b7c343ac6116c64e8bd78ce23c3c6b1fcee6c053bf3b",
+      "entries": 5,
+      "methods": [
+        "-lh5-"
+      ],
+      "extracted": 5,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "DoorStatus.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "documentation": 1,
+        "other": 4
+      },
+      "text_files": 1,
+      "text_characters": 2757,
+      "documentation_files": [
+        "readme.doc"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "DoorStatusClient",
+          "occurrences": 1
+        },
+        {
+          "symbol": "DoorStatusServer",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [],
+      "sample_files": [
+        "DoorStatusClient",
+        "DoorStatusClient.info",
+        "DoorStatusServer",
+        "DoorStatusServer.info",
+        "readme.doc"
+      ]
+    },
+    {
+      "archive": "Mdoors5(1).lha",
+      "sha256": "ac874453071d37ae4c3885da66085433beb724a5b8237a7e9601addcaf621c31",
+      "entries": 6,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 6,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors5.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 6
+      },
+      "text_files": 6,
+      "text_characters": 269086,
+      "documentation_files": [],
+      "top_api_symbols": [
+        {
+          "symbol": "BBSCMD",
+          "occurrences": 3
+        },
+        {
+          "symbol": "BBSCmd",
+          "occurrences": 2
+        },
+        {
+          "symbol": "AXHLML",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "NVA-LOW1.lha",
+          "keyword": "logoff"
+        },
+        {
+          "file": "TRSI-B22.lha",
+          "keyword": "logoff"
+        },
+        {
+          "file": "FLD-ULB0.lha",
+          "keyword": "logoff"
+        }
+      ],
+      "sample_files": [
+        "FLD-ULB0.lha",
+        "MST-AEH2.lha",
+        "MST-CF23.lha",
+        "NVA-LOW1.lha",
+        "ORS-CS12.lha",
+        "TRSI-B22.lha"
+      ]
+    },
+    {
+      "archive": "Mdoors4(1).lha",
+      "sha256": "04fef8ec9ebd208fbce3dedea59d9b12da65ce5e43508d29265a5d6d7bcdceb1",
+      "entries": 16,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 16,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors4.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 16
+      },
+      "text_files": 16,
+      "text_characters": 291530,
+      "documentation_files": [],
+      "top_api_symbols": [
+        {
+          "symbol": "BBSCmd",
+          "occurrences": 6
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "OTL-AN20.LHA",
+          "keyword": "logoff"
+        },
+        {
+          "file": "OTL-TC10.LHA",
+          "keyword": "node"
+        },
+        {
+          "file": "LFC-LSTY.LHA",
+          "keyword": "logoff"
+        }
+      ],
+      "sample_files": [
+        "FLD-CRDD.LHA",
+        "LFC-LSTY.LHA",
+        "OTL-AN20.LHA",
+        "OTL-AQ11.LHA",
+        "OTL-CA10.LHA",
+        "OTL-MF10.LHA",
+        "OTL-PW10.LHA",
+        "OTL-QK10.LHA",
+        "OTL-RQ10.LHA",
+        "OTL-SA10.LHA",
+        "OTL-SE10.LHA",
+        "OTL-ST12.LHA",
+        "OTL-TC10.LHA",
+        "OTL-US10.LHA",
+        "SZIP-CHK.LHA",
+        "TDS_SC11.LHA"
+      ]
+    },
+    {
+      "archive": "Mdoors3(1).lha",
+      "sha256": "f7738849d6a863c74175d90727c752c0e3d7415a9e7121907fd2a71de60541c0",
+      "entries": 12,
+      "methods": [
+        "-lh0-"
+      ],
+      "extracted": 12,
+      "unextracted": 0,
+      "duplicate": {
+        "canonical": "Mdoors3.lha",
+        "byte_identical": true
+      },
+      "file_types": {
+        "other": 12
+      },
+      "text_files": 11,
+      "text_characters": 214719,
+      "documentation_files": [],
+      "top_api_symbols": [
+        {
+          "symbol": "BBSCmd",
+          "occurrences": 3
+        },
+        {
+          "symbol": "DDG",
+          "occurrences": 1
+        }
+      ],
+      "observed_command_numbers": [],
+      "top_structures": [],
+      "top_includes": [],
+      "evidence_keywords": [
+        {
+          "file": "5D-DSGB1.LHA",
+          "keyword": "logoff"
+        },
+        {
+          "file": "FLD-CHAT.LHA",
+          "keyword": "node"
+        },
+        {
+          "file": "DPL-AC10.LHA",
+          "keyword": "node"
+        }
+      ],
+      "sample_files": [
+        "5D-BCHCK.LHA",
+        "5D-DSGB1.LHA",
+        "5D-ED121.LHA",
+        "5D-JC074.LHA",
+        "5D-LC022.LHA",
+        "AIRADD34.LHA",
+        "AMI-ANSI.LHA",
+        "DLT-FC14.LHA",
+        "DPL-AC10.LHA",
+        "DPL-AX10.LHA",
+        "F-SCREEN.LHA",
+        "FLD-CHAT.LHA"
+      ]
+    },
+    {
+      "archive": "preservation-abbs20-master.zip",
+      "sha256": "837e78f28bb4afdbaca17627144c6f9063d00a7d6930da5ffc3df1bf51442d25",
+      "entries": 246,
+      "methods": [
+        "zip"
+      ],
+      "extracted": 238,
+      "unextracted": 0,
+      "duplicate": null,
+      "file_types": {
+        "asm": 51,
+        "documentation": 28,
+        "c": 72,
+        "other": 84,
+        "arexx": 3
+      },
+      "text_files": 175,
+      "text_characters": 2088899,
+      "documentation_files": [
+        "preservation-abbs20-master/readme.md",
+        "preservation-abbs20-master/doc/SysopAvail.doc",
+        "preservation-abbs20-master/doc/ABBS.doc",
+        "preservation-abbs20-master/doc/PackFileDirs.doc",
+        "preservation-abbs20-master/doc/Fixusers.doc",
+        "preservation-abbs20-master/doc/FixIndex.doc",
+        "preservation-abbs20-master/doc/Broadcast.doc",
+        "preservation-abbs20-master/doc/NewConfigNode.txt",
+        "preservation-abbs20-master/doc/FixFileOrder.Doc",
+        "preservation-abbs20-master/doc/AddFile.Doc",
+        "preservation-abbs20-master/doc/ConfigBBS.doc",
+        "preservation-abbs20-master/doc/ToggleCache.Doc",
+        "preservation-abbs20-master/doc/DLratio.doc",
+        "preservation-abbs20-master/doc/CheckIndex.doc",
+        "preservation-abbs20-master/doc/Installasjon.txt",
+        "preservation-abbs20-master/doc/AddMsg.Doc",
+        "preservation-abbs20-master/doc/msgport.doc",
+        "preservation-abbs20-master/doc/CheckUsers.doc",
+        "preservation-abbs20-master/doc/CryptPasswords.doc",
+        "preservation-abbs20-master/doc/Doors.doc",
+        "preservation-abbs20-master/doc/scripts.doc",
+        "preservation-abbs20-master/doc/ConfigNode.doc",
+        "preservation-abbs20-master/doc/MiscMenu.doc",
+        "preservation-abbs20-master/doc/NewConfigNode.doc",
+        "preservation-abbs20-master/doc/ListFiles.doc",
+        "preservation-abbs20-master/doc/Configbbs.txt",
+        "preservation-abbs20-master/JEO/ansi.txt",
+        "preservation-abbs20-master/JEO/ANSIHELP.txt"
+      ],
+      "top_api_symbols": [
+        {
+          "symbol": "ABBS",
+          "occurrences": 307
+        },
+        {
+          "symbol": "ABBSUserEditorWnd",
+          "occurrences": 122
+        },
+        {
+          "symbol": "ABBSmsg",
+          "occurrences": 99
+        },
+        {
+          "symbol": "ABBSUserEditorGadgets",
+          "occurrences": 92
+        },
+        {
+          "symbol": "ABBSUserEditorMenus",
+          "occurrences": 18
+        },
+        {
+          "symbol": "ABBSAppWindowWnd",
+          "occurrences": 17
+        },
+        {
+          "symbol": "ABBSmsg_SIZE",
+          "occurrences": 15
+        },
+        {
+          "symbol": "ABBSUserEditorGList",
+          "occurrences": 12
+        },
+        {
+          "symbol": "ABBSAppWindowMenus",
+          "occurrences": 10
+        },
+        {
+          "symbol": "ABBSUserEditorRender",
+          "occurrences": 10
+        },
+        {
+          "symbol": "ABBSUserEditorFont",
+          "occurrences": 10
+        },
+        {
+          "symbol": "ABBSUserEditorWidth",
+          "occurrences": 8
+        },
+        {
+          "symbol": "ABBSUserEditorHeight",
+          "occurrences": 8
+        },
+        {
+          "symbol": "ABBSAppWindowGadgets",
+          "occurrences": 7
+        },
+        {
+          "symbol": "ABBSAppWindowRender",
+          "occurrences": 6
+        },
+        {
+          "symbol": "ABBSAppWindowLeft",
+          "occurrences": 6
+        },
+        {
+          "symbol": "ABBSAppWindowTop",
+          "occurrences": 6
+        },
+        {
+          "symbol": "ABBSUserEditorGTags",
+          "occurrences": 6
+        },
+        {
+          "symbol": "ABBSAppWindowGList",
+          "occurrences": 5
+        },
+        {
+          "symbol": "ABBSAppWindowDone",
+          "occurrences": 5
+        },
+        {
+          "symbol": "ABBSAppWindowWidth",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSAppWindowHeight",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSd",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditor_CNT",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditorLeft",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditorTop",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditorWdt",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditorNewMenu",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditorGTypes",
+          "occurrences": 4
+        },
+        {
+          "symbol": "ABBSUserEditorNGad",
+          "occurrences": 4
+        }
+      ],
+      "observed_command_numbers": [
+        {
+          "command": 0,
+          "occurrences": 30
+        },
+        {
+          "command": 1,
+          "occurrences": 19
+        },
+        {
+          "command": 2,
+          "occurrences": 15
+        },
+        {
+          "command": 3,
+          "occurrences": 10
+        },
+        {
+          "command": 4,
+          "occurrences": 3
+        },
+        {
+          "command": 5,
+          "occurrences": 4
+        },
+        {
+          "command": 6,
+          "occurrences": 1
+        },
+        {
+          "command": 7,
+          "occurrences": 1
+        },
+        {
+          "command": 13,
+          "occurrences": 2
+        },
+        {
+          "command": 20,
+          "occurrences": 1
+        },
+        {
+          "command": 21,
+          "occurrences": 1
+        },
+        {
+          "command": 27,
+          "occurrences": 2
+        },
+        {
+          "command": 32,
+          "occurrences": 2
+        },
+        {
+          "command": 65,
+          "occurrences": 1
+        },
+        {
+          "command": 66,
+          "occurrences": 1
+        },
+        {
+          "command": 113,
+          "occurrences": 2
+        }
+      ],
+      "top_structures": [
+        {
+          "name": "LocText",
+          "occurrences": 231
+        },
+        {
+          "name": "Gadget",
+          "occurrences": 161
+        },
+        {
+          "name": "ABBSmsg",
+          "occurrences": 97
+        },
+        {
+          "name": "StringInfo",
+          "occurrences": 84
+        },
+        {
+          "name": "ConfigRecord",
+          "occurrences": 79
+        },
+        {
+          "name": "Fileentry",
+          "occurrences": 69
+        },
+        {
+          "name": "MessageRecord",
+          "occurrences": 63
+        },
+        {
+          "name": "Node",
+          "occurrences": 63
+        },
+        {
+          "name": "UserRecord",
+          "occurrences": 56
+        },
+        {
+          "name": "ConferenceRecord",
+          "occurrences": 45
+        },
+        {
+          "name": "Library",
+          "occurrences": 37
+        },
+        {
+          "name": "MsgPort",
+          "occurrences": 36
+        },
+        {
+          "name": "Log_entry",
+          "occurrences": 35
+        },
+        {
+          "name": "IntuiMessage",
+          "occurrences": 33
+        },
+        {
+          "name": "FileDirRecord",
+          "occurrences": 32
+        },
+        {
+          "name": "NewGadget",
+          "occurrences": 31
+        },
+        {
+          "name": "DateStamp",
+          "occurrences": 27
+        },
+        {
+          "name": "code",
+          "occurrences": 21
+        },
+        {
+          "name": "Window",
+          "occurrences": 21
+        },
+        {
+          "name": "Message",
+          "occurrences": 20
+        }
+      ],
+      "top_includes": [
+        {
+          "name": "proto/dos.h",
+          "occurrences": 46
+        },
+        {
+          "name": "exec/memory.h",
+          "occurrences": 42
+        },
+        {
+          "name": "bbs.h",
+          "occurrences": 41
+        },
+        {
+          "name": "proto/exec.h",
+          "occurrences": 32
+        },
+        {
+          "name": "string.h",
+          "occurrences": 28
+        },
+        {
+          "name": "JEO:JEO.h",
+          "occurrences": 24
+        },
+        {
+          "name": "stdio.h",
+          "occurrences": 20
+        },
+        {
+          "name": "ctype.h",
+          "occurrences": 19
+        },
+        {
+          "name": "dos/dosextens.h",
+          "occurrences": 18
+        },
+        {
+          "name": "exec/ports.h",
+          "occurrences": 13
+        },
+        {
+          "name": "dos/rdargs.h",
+          "occurrences": 12
+        },
+        {
+          "name": "exec/types.h",
+          "occurrences": 11
+        },
+        {
+          "name": "proto/intuition.h",
+          "occurrences": 10
+        },
+        {
+          "name": "dos/dos.h",
+          "occurrences": 9
+        },
+        {
+          "name": "libraries/gadtools.h",
+          "occurrences": 8
+        },
+        {
+          "name": "intuition/gadgetclass.h",
+          "occurrences": 8
+        },
+        {
+          "name": "proto/utility.h",
+          "occurrences": 7
+        },
+        {
+          "name": "proto/gadtools.h",
+          "occurrences": 7
+        },
+        {
+          "name": "proto/reqtools.h",
+          "occurrences": 7
+        },
+        {
+          "name": "libraries/reqtools.h",
+          "occurrences": 6
+        }
+      ],
+      "evidence_keywords": [
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "doorcontrol"
+        },
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "time left"
+        },
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "disconnect"
+        },
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "logoff"
+        },
+        {
+          "file": "preservation-abbs20-master/Node.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Paragon.asm",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/Paragon.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/QWK.c",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/NodeSupport.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/ABBSmy.s",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Main.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Msg.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Rexx.asm",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "preservation-abbs20-master/Rexx.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Div.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/FSE.asm",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/FSE.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/ABBSint.s",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Hippo.c",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/JEO.c",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Exeption.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Browse.asm",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/Browse.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/transfer.asm",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/transfer.asm",
+          "keyword": "logoff"
+        },
+        {
+          "file": "preservation-abbs20-master/transfer.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/tables.asm",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/Makefile",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ABBS.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ABBSRexx.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ABBSRexx.doc",
+          "keyword": "time left"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ABBSRexx.doc",
+          "keyword": "timeleft"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ABBSRexx.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/Broadcast.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/NewConfigNode.txt",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/NewConfigNode.txt",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ConfigBBS.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/Installasjon.txt",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/msgport.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/msgport.doc",
+          "keyword": "logoff"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/msgport.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/Doors.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/NewArexx.txt",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/scripts.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ConfigNode.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/ConfigNode.doc",
+          "keyword": "node"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/NewConfigNode.doc",
+          "keyword": "carrier"
+        },
+        {
+          "file": "preservation-abbs20-master/doc/NewConfigNode.doc",
+          "keyword": "disconnect"
+        }
+      ],
+      "sample_files": [
+        "preservation-abbs20-master/ABBS.info",
+        "preservation-abbs20-master/ABBSint.s",
+        "preservation-abbs20-master/ABBSmy.s",
+        "preservation-abbs20-master/Browse.asm",
+        "preservation-abbs20-master/Div.asm",
+        "preservation-abbs20-master/Exeption.asm",
+        "preservation-abbs20-master/FSE.asm",
+        "preservation-abbs20-master/Hippo.c",
+        "preservation-abbs20-master/Include/.RELEASE.h",
+        "preservation-abbs20-master/Include/ABBSFront.h",
+        "preservation-abbs20-master/Include/ABBSFront.i",
+        "preservation-abbs20-master/Include/ABBSmy.i",
+        "preservation-abbs20-master/Include/ABBSmyfix.i",
+        "preservation-abbs20-master/Include/Browse.pro",
+        "preservation-abbs20-master/Include/NodeSupport.pro",
+        "preservation-abbs20-master/Include/NodeSupportdefs.i",
+        "preservation-abbs20-master/Include/QWK.pro",
+        "preservation-abbs20-master/Include/abbsint.i",
+        "preservation-abbs20-master/Include/asm.i",
+        "preservation-abbs20-master/Include/bbs.h",
+        "preservation-abbs20-master/Include/bbs.i",
+        "preservation-abbs20-master/Include/fifo.h",
+        "preservation-abbs20-master/Include/fifo.i",
+        "preservation-abbs20-master/Include/first.i",
+        "preservation-abbs20-master/Include/fse.i",
+        "preservation-abbs20-master/Include/misc.h",
+        "preservation-abbs20-master/Include/msg.pro",
+        "preservation-abbs20-master/Include/node.h",
+        "preservation-abbs20-master/Include/node.i",
+        "preservation-abbs20-master/Include/nodedefs.i",
+        "preservation-abbs20-master/Include/noderefs.i",
+        "preservation-abbs20-master/Include/paragon.pro",
+        "preservation-abbs20-master/Include/rexx.pro",
+        "preservation-abbs20-master/Include/tables.i",
+        "preservation-abbs20-master/Include/tables.pro",
+        "preservation-abbs20-master/Include/transfer.pro",
+        "preservation-abbs20-master/Include/xpr.h",
+        "preservation-abbs20-master/Include/xpr.i",
+        "preservation-abbs20-master/Include/xproto.h",
+        "preservation-abbs20-master/JEO/-Loadsaveuserfile.c"
+      ]
+    }
+  ],
+  "milestone": "M5.0",
+  "title": "Comprehensive archive reanalysis",
+  "methodology": [
+    "Recomputed SHA-256 for every uploaded archive",
+    "Parsed every LHA level 0/1/2 header and every ZIP central-directory entry",
+    "Decompressed every -lh0- and -lh5- payload and scanned all text-like files",
+    "Recorded -lh1- members conservatively without claiming unread source semantics",
+    "Repeated analysis for byte-identical redistributions instead of relying on previous conclusions",
+    "Classified claims as documented, observed, inferred, or unavailable"
+  ]
+}

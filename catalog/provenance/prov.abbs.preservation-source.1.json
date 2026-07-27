@@ -1,0 +1,19 @@
+{
+  "id": "prov.abbs.preservation-source.1",
+  "claim_type": "source-corroboration",
+  "api": "abbs",
+  "status": "observed",
+  "summary": "The preserved ABBS 2.0 source tree directly corroborates node state and carrier-loss handling in the BBS implementation",
+  "sources": [
+    {
+      "archive": "preservation-abbs20-master.zip",
+      "path": "preservation-abbs20-master/transfer.asm",
+      "symbol": "NoCarrier/Setup+Nodemem"
+    },
+    {
+      "archive": "preservation-abbs20-master.zip",
+      "path": "preservation-abbs20-master/Node.asm",
+      "symbol": "NodeBase"
+    }
+  ]
+}

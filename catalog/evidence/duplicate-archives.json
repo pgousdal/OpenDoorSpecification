@@ -2,15 +2,30 @@
   "schema_version": 1,
   "duplicates": [
     {
+      "uploaded": "acp300(1).lzh",
+      "canonical": "acp300.lzh",
+      "status": "byte-identical"
+    },
+    {
       "sha256": "222e474cf5f9181c25443bd0e754d2a38fda215ffdcc2b5b130476292b98d3fc",
       "status": "byte-identical",
       "uploaded": "aedoor28(1).lha",
       "canonical": "aedoor28.lha"
     },
     {
+      "uploaded": "ax300(1).lzh",
+      "canonical": "ax300.lzh",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "DayDreamBBS (1).lha",
       "canonical": "DayDreamBBS.lha",
       "sha256": "1984be20e38d8e70a3e374ba6bcf6cb1ec82228a672d7e6ede4b40106c4a8f35",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "DayDreamBBS(1).lha",
+      "canonical": "DayDreamBBS.lha",
       "status": "byte-identical"
     },
     {
@@ -20,9 +35,19 @@
       "status": "byte-identical"
     },
     {
+      "uploaded": "DayDreamBBSDev(3).lha",
+      "canonical": "DayDreamBBSDev.lha",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "DayDreamBBSDoo (1).lha",
       "canonical": "DayDreamBBSDoo.lha",
       "sha256": "287a64cca4aade32a2903e79b761764d8cb4db1dfc024c9632ae70ba8b7d6d13",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "DayDreamBBSDoo(1).lha",
+      "canonical": "DayDreamBBSDoo.lha",
       "status": "byte-identical"
     },
     {
@@ -38,6 +63,21 @@
       "status": "byte-identical"
     },
     {
+      "uploaded": "DoorStatus(1).lha",
+      "canonical": "DoorStatus.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "M_Quest_v11(1).lha",
+      "canonical": "M_Quest_v11.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "mAG-cH_11(2).lha",
+      "canonical": "mAG-cH_11.lha",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "max_e (1).lha",
       "canonical": "max_e.lha",
       "sha256": "9560c66c62c552c7f6006de6b36e8039be1df4d14632b14364bbaee80af7b868",
@@ -50,9 +90,64 @@
       "status": "byte-identical"
     },
     {
+      "uploaded": "MaxPro2(1).lha",
+      "canonical": "MaxPro2.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "MaxRexx(1).lha",
+      "canonical": "MaxRexx.lha",
+      "status": "byte-identical"
+    },
+    {
       "uploaded": "MAXs_Coders (1).lha",
       "canonical": "MAXs_Coders.lha",
       "sha256": "7afb0f53baf85a27ab7e2ef9cc14b6fc7b8456366cb907a920588d690a3bab73",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "MAXs_Coders(1).lha",
+      "canonical": "MAXs_Coders.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "MaxsAmosDoors(1).lha",
+      "canonical": "MaxsAmosDoors.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "MAXsGUiDE(1).lha",
+      "canonical": "MAXsGUiDE.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "MAXShell101(1).lha",
+      "canonical": "MAXShell101.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "Mdoors3(1).lha",
+      "canonical": "Mdoors3.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "Mdoors4(1).lha",
+      "canonical": "Mdoors4.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "Mdoors5(1).lha",
+      "canonical": "Mdoors5.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "WWBBSDoors(1).lha",
+      "canonical": "WWBBSDoors.lha",
+      "status": "byte-identical"
+    },
+    {
+      "uploaded": "ZeusDoors(1).lha",
+      "canonical": "ZeusDoors.lha",
       "status": "byte-identical"
     }
   ]

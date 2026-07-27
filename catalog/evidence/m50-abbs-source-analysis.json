@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "archive": "preservation-abbs20-master.zip",
+  "classification": "bbs-source-preservation-snapshot",
+  "evidence_status": "observed",
+  "findings": [
+    "The archive contains a complete ABBS 2.0 preservation source tree with 246 ZIP entries, of which 238 are files.",
+    "The source tree contains 72 C files and 51 assembler files, plus documentation and ARexx material.",
+    "Node-local state is represented extensively through NodeBase-relative fields and node status routines.",
+    "Carrier-loss handling is directly observed in transfer.asm through Setup+Nodemem checks, NoCarrier state, and logoff paths.",
+    "The source includes user, node, transfer, message, browser, serial, and command-processing subsystems.",
+    "This source snapshot corroborates the documented ABBS ARexx mappings but is not treated as a distinct public door ABI."
+  ],
+  "important_paths": [
+    "preservation-abbs20-master/Node.asm",
+    "preservation-abbs20-master/transfer.asm",
+    "preservation-abbs20-master/Include/node.i",
+    "preservation-abbs20-master/doc/ABBS.doc",
+    "preservation-abbs20-master/readme.md"
+  ]
+}

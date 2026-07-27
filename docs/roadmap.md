@@ -108,3 +108,8 @@ Status: complete.
 ## M4.9 — Executable Conformance Suite
 
 Completed: executable profile tests for portable reference adapters.
+
+
+## M5.0 — Comprehensive archive reanalysis
+
+Completed: all supplied archives were reprocessed, a preserved ABBS 2.0 source snapshot was added, and machine-readable archive-level research coverage was introduced.

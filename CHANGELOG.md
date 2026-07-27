@@ -1,5 +1,14 @@
 # Changelog
 
+## M5.0 - Comprehensive archive reanalysis
+
+- Reprocessed all 20 supplied archives from raw bytes, including 19 byte-identical redistributions.
+- Added the complete ABBS 2.0 preservation source snapshot as a canonical archive.
+- Added a machine-readable per-archive file, language, symbol, command and extraction census.
+- Added direct ABBS source corroboration for node state and carrier-loss handling.
+- Kept ACP/AX `-lh1-` findings explicitly bounded instead of inferring unavailable source semantics.
+- Added seven regression tests for the full reanalysis.
+
 ## M4.9 - Executable Conformance Suite
 
 - Added executable cases for all 11 ODS Core operations.

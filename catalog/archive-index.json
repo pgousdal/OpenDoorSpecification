@@ -1,6 +1,6 @@
 {
-  "archive_count": 29,
-  "entry_count": 904,
+  "archive_count": 30,
+  "entry_count": 1150,
   "archives": [
     {
       "archive": "ABBS320_999.lha",
@@ -163,6 +163,12 @@
       "sha256": "abb8d333daedd9eb7d83f0754e1910ab93c532a840180c2e1a8f5ab6a07b289b",
       "entries": 3,
       "size": 10414
+    },
+    {
+      "archive": "preservation-abbs20-master.zip",
+      "sha256": "837e78f28bb4afdbaca17627144c6f9063d00a7d6930da5ffc3df1bf51442d25",
+      "entries": 246,
+      "size": 855259
     },
     {
       "archive": "runraw.lha",
