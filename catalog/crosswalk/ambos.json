@@ -66,20 +66,61 @@
     },
     {
       "operation": "terminal.read_key",
-      "status": "unassessed",
-      "symbols": [],
+      "status": "partial",
+      "symbols": [
+        "bbs_getc",
+        "bbs_Wgetc"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "documented-sdk",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/BBS.lib.guide",
+          "symbol": "bbs_getc"
+        },
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/include/fd/BBS_library.fd",
+          "symbol": "bbs_Wgetc",
+          "note": "The FD declaration includes the WaitBits argument."
+        }
+      ],
+      "rationale": "The documented bbs.library character-input calls provide terminal key input.",
+      "limitations": [
+        "Return encoding and disconnect signaling have not been normalized against the ODS result contract."
       ]
     },
     {
       "operation": "terminal.read_line",
-      "status": "unassessed",
-      "symbols": [],
+      "status": "partial",
+      "symbols": [
+        "bbs_gets",
+        "bbs_sgets",
+        "bbs_Wgets"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "documented-sdk",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/BBS.lib.guide",
+          "symbol": "bbs_gets"
+        },
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/include/fd/BBS_library.fd",
+          "symbol": "bbs_Wgets",
+          "note": "The FD declaration records destination, maximum characters, mode, and wait bits."
+        }
+      ],
+      "rationale": "The documented bounded string-input calls map to terminal line input.",
+      "limitations": [
+        "Editing-mode behavior and disconnect signaling require further normalization."
       ]
     },
     {

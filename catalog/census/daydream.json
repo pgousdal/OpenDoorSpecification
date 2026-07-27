@@ -8,7 +8,7 @@
     "DayDreamBBSDev.json"
   ],
   "entry_count": 117,
-  "mapping_count": 8,
+  "mapping_count": 9,
   "entries": [
     {
       "kind": "function",
@@ -2580,6 +2580,28 @@
       ],
       "status": "partial",
       "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.exit",
+      "symbols": [
+        "CloseDoor"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "CloseDoor"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+          "symbol": "CloseDoor"
+        }
+      ],
+      "rationale": "DreamDoor documents CloseDoor as the normal operation that closes the active door interface and returns control to the host.",
+      "limitations": []
     }
   ],
   "limitations": []

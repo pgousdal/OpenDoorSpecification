@@ -7,10 +7,10 @@
     "partial": "A reviewed mapping exists, but coverage is incomplete."
   },
   "summary": {
-    "verified": 20,
-    "partial": 6,
-    "unassessed": 64,
-    "reviewed": 26,
+    "verified": 23,
+    "partial": 11,
+    "unassessed": 56,
+    "reviewed": 34,
     "total": 90
   },
   "hosts": [
@@ -20,14 +20,13 @@
       "evidence_class": "documented-sdk",
       "summary": {
         "verified": 5,
-        "partial": 1,
-        "unassessed": 3,
-        "reviewed": 6,
+        "partial": 2,
+        "unassessed": 2,
+        "reviewed": 7,
         "total": 9
       },
       "unassessed_operations": [
         "bbs.command",
-        "lifecycle.disconnect",
         "lifecycle.exit"
       ]
     },
@@ -60,9 +59,9 @@
       "evidence_class": "documented-sdk",
       "summary": {
         "verified": 1,
-        "partial": 1,
-        "unassessed": 7,
-        "reviewed": 2,
+        "partial": 3,
+        "unassessed": 5,
+        "reviewed": 4,
         "total": 9
       },
       "unassessed_operations": [
@@ -70,9 +69,7 @@
         "lifecycle.exit",
         "session.identity",
         "session.time_left",
-        "status.set",
-        "terminal.read_key",
-        "terminal.read_line"
+        "status.set"
       ]
     },
     {
@@ -80,15 +77,13 @@
       "name": "DayDream DreamDoor",
       "evidence_class": "documented-sdk",
       "summary": {
-        "verified": 5,
+        "verified": 6,
         "partial": 3,
-        "unassessed": 1,
-        "reviewed": 8,
+        "unassessed": 0,
+        "reviewed": 9,
         "total": 9
       },
-      "unassessed_operations": [
-        "lifecycle.exit"
-      ]
+      "unassessed_operations": []
     },
     {
       "id": "door-io",
@@ -154,22 +149,18 @@
       "name": "UCDoor compatibility wrapper",
       "evidence_class": "wrapper-binding",
       "summary": {
-        "verified": 0,
-        "partial": 0,
-        "unassessed": 9,
-        "reviewed": 0,
+        "verified": 2,
+        "partial": 2,
+        "unassessed": 5,
+        "reviewed": 4,
         "total": 9
       },
       "unassessed_operations": [
         "bbs.command",
-        "lifecycle.disconnect",
         "lifecycle.exit",
         "session.identity",
-        "session.time_left",
         "status.set",
-        "terminal.read_key",
-        "terminal.read_line",
-        "terminal.write"
+        "terminal.read_key"
       ]
     },
     {
@@ -243,18 +234,16 @@
     {
       "id": "lifecycle.disconnect",
       "summary": {
-        "verified": 1,
-        "partial": 2,
-        "unassessed": 7,
-        "reviewed": 3,
+        "verified": 2,
+        "partial": 3,
+        "unassessed": 5,
+        "reviewed": 5,
         "total": 10
       },
       "unassessed_hosts": [
-        "abbs",
         "aedoor",
         "door-io",
         "fame",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
@@ -262,17 +251,16 @@
     {
       "id": "lifecycle.exit",
       "summary": {
-        "verified": 1,
+        "verified": 2,
         "partial": 0,
-        "unassessed": 9,
-        "reviewed": 1,
+        "unassessed": 8,
+        "reviewed": 2,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
         "aedoor",
         "ambos",
-        "daydream",
         "door-io",
         "fame",
         "ucdoor",
@@ -303,9 +291,9 @@
       "id": "session.time_left",
       "summary": {
         "verified": 2,
-        "partial": 0,
-        "unassessed": 8,
-        "reviewed": 2,
+        "partial": 1,
+        "unassessed": 7,
+        "reviewed": 3,
         "total": 10
       },
       "unassessed_hosts": [
@@ -314,7 +302,6 @@
         "door-io",
         "fame",
         "paragon",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
@@ -343,14 +330,13 @@
       "id": "terminal.read_key",
       "summary": {
         "verified": 4,
-        "partial": 0,
-        "unassessed": 6,
-        "reviewed": 4,
+        "partial": 1,
+        "unassessed": 5,
+        "reviewed": 5,
         "total": 10
       },
       "unassessed_hosts": [
         "aedoor",
-        "ambos",
         "fame",
         "ucdoor",
         "wwbbs",
@@ -361,16 +347,14 @@
       "id": "terminal.read_line",
       "summary": {
         "verified": 3,
-        "partial": 1,
-        "unassessed": 6,
-        "reviewed": 4,
+        "partial": 3,
+        "unassessed": 4,
+        "reviewed": 6,
         "total": 10
       },
       "unassessed_hosts": [
         "aedoor",
-        "ambos",
         "fame",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]
@@ -378,16 +362,15 @@
     {
       "id": "terminal.write",
       "summary": {
-        "verified": 4,
+        "verified": 5,
         "partial": 1,
-        "unassessed": 5,
-        "reviewed": 5,
+        "unassessed": 4,
+        "reviewed": 6,
         "total": 10
       },
       "unassessed_hosts": [
         "aedoor",
         "fame",
-        "ucdoor",
         "wwbbs",
         "zeus"
       ]

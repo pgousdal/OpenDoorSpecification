@@ -174,6 +174,8 @@
 
 - M6.2 PR1 deterministic crosswalk evidence work queue with explicit priority
   reasons, CLI filtering, generation, and strict stale-data validation.
+- M6.2 PR2 first evidence expansion batch: eight reviewed ABBS, AmBoS,
+  DayDream, and UCDoor cells with resolvable primary-source references.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.

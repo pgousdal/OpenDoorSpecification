@@ -47,13 +47,13 @@ class M61AcceptanceTests(unittest.TestCase):
         self.assertEqual(index["host_count"], 10)
         self.assertEqual(index["operation_count"], 9)
         self.assertEqual(coverage["summary"]["total"], 90)
-        self.assertEqual(coverage["summary"]["reviewed"], 26)
+        self.assertEqual(coverage["summary"]["reviewed"], 34)
         self.assertEqual(
             coverage["summary"]["reviewed"],
             coverage["summary"]["verified"]
             + coverage["summary"]["partial"],
         )
-        self.assertEqual(coverage["summary"]["unassessed"], 64)
+        self.assertEqual(coverage["summary"]["unassessed"], 56)
         self.assertIn(
             "does not mean unsupported",
             coverage["semantics"]["unassessed"],

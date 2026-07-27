@@ -10,7 +10,7 @@
     "BBSLib-Asm.json"
   ],
   "entry_count": 45,
-  "mapping_count": 2,
+  "mapping_count": 4,
   "entries": [
     {
       "kind": "function",
@@ -896,6 +896,59 @@
       ],
       "status": "partial",
       "semantic_review": "provisional"
+    },
+    {
+      "operation": "terminal.read_key",
+      "symbols": [
+        "bbs_getc",
+        "bbs_Wgetc"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/BBS.lib.guide",
+          "symbol": "bbs_getc"
+        },
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/include/fd/BBS_library.fd",
+          "symbol": "bbs_Wgetc",
+          "note": "The FD declaration includes the WaitBits argument."
+        }
+      ],
+      "rationale": "The documented bbs.library character-input calls provide terminal key input.",
+      "limitations": [
+        "Return encoding and disconnect signaling have not been normalized against the ODS result contract."
+      ]
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "bbs_gets",
+        "bbs_sgets",
+        "bbs_Wgets"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/BBS.lib.guide",
+          "symbol": "bbs_gets"
+        },
+        {
+          "archive": "AmBoS_doc_dev.lha",
+          "path": "Dokumentation/include/fd/BBS_library.fd",
+          "symbol": "bbs_Wgets",
+          "note": "The FD declaration records destination, maximum characters, mode, and wait bits."
+        }
+      ],
+      "rationale": "The documented bounded string-input calls map to terminal line input.",
+      "limitations": [
+        "Editing-mode behavior and disconnect signaling require further normalization."
+      ]
     }
   ],
   "limitations": [

@@ -32,12 +32,28 @@
     },
     {
       "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "symbols": [],
+      "status": "verified",
+      "symbols": [
+        "CloseDoor"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "documented-sdk",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-      ]
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+          "symbol": "CloseDoor"
+        },
+        {
+          "archive": "DayDreamBBSDev.lha",
+          "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+          "symbol": "CloseDoor"
+        }
+      ],
+      "rationale": "DreamDoor documents CloseDoor as the normal operation that closes the active door interface and returns control to the host.",
+      "limitations": []
     },
     {
       "operation": "session.identity",

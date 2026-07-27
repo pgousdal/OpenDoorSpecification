@@ -64,7 +64,7 @@ def host_status(system: dict[str, Any], operation: str) -> dict[str, Any]:
         }
 
     mapping = matches[0]
-    return {
+    result = {
         "status": mapping["status"],
         "symbols": mapping.get("symbols", []),
         "semantic_review": mapping.get("semantic_review", "unknown"),
@@ -72,6 +72,10 @@ def host_status(system: dict[str, Any], operation: str) -> dict[str, Any]:
         "lossiness": "unknown",
         "notes": [],
     }
+    for field in ("evidence", "rationale", "limitations"):
+        if field in mapping:
+            result[field] = mapping[field]
+    return result
 
 
 def build(census_dir: Path) -> dict[str, Any]:

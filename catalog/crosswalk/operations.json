@@ -96,11 +96,25 @@
       "id": "lifecycle.disconnect",
       "hosts": {
         "abbs": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "partial",
+          "symbols": [
+            "GETCONSTAT"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ABBS320_999.lha",
+              "path": "ABBS/Docs/abbsrexx.doc",
+              "symbol": "GETCONSTAT",
+              "note": "The documented ARexx command exposes connection status."
+            }
+          ],
+          "rationale": "GETCONSTAT lets a door detect loss of the caller connection.",
+          "limitations": [
+            "The command reports connection state; the door remains responsible for terminating promptly."
           ]
         },
         "aedoor": {
@@ -159,12 +173,37 @@
           "notes": []
         },
         "ucdoor": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "verified",
+          "symbols": [
+            "cd_CarrierLost",
+            "cd_End",
+            "ERROR_CARRIER"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "wrapper-binding",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/guide/UCDoor_V1.0.guide",
+              "symbol": "cd_CarrierLost",
+              "note": "The guide documents carrier-loss detection followed by cd_End(ERROR_CARRIER)."
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/carrier.htm",
+              "symbol": "cd_End(ERROR_CARRIER)"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/demo/cd_test1.c",
+              "symbol": "ERROR_CARRIER",
+              "note": "The original demo returns the carrier error after cd_CarrierLost reports true."
+            }
+          ],
+          "rationale": "The SDK explicitly documents detecting carrier loss and ending with the carrier-loss reason.",
+          "limitations": []
         },
         "wwbbs": {
           "status": "unassessed",
@@ -212,12 +251,28 @@
           ]
         },
         "daydream": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "verified",
+          "symbols": [
+            "CloseDoor"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Doc/DreamDoor.doc",
+              "symbol": "CloseDoor"
+            },
+            {
+              "archive": "DayDreamBBSDev.lha",
+              "path": "DayDream/Developer/DreamDoor/Sas_C/include/clib/dddoor_protos.h",
+              "symbol": "CloseDoor"
+            }
+          ],
+          "rationale": "DreamDoor documents CloseDoor as the normal operation that closes the active door interface and returns control to the host.",
+          "limitations": []
         },
         "door-io": {
           "status": "unassessed",
@@ -430,11 +485,32 @@
           ]
         },
         "ucdoor": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "partial",
+          "symbols": [
+            "cd_GetNumInfo",
+            "UDC_TIMELEFT"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "wrapper-binding",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/include/ucdoor.h",
+              "symbol": "UDC_TIMELEFT",
+              "note": "The header defines selector 7 as minutes online left."
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/demo/cd_test1.c",
+              "symbol": "cd_GetNumInfo(UDC_TIMELEFT)",
+              "note": "The original demo retrieves and displays current time left."
+            }
+          ],
+          "rationale": "cd_GetNumInfo with UDC_TIMELEFT returns the remaining online time.",
+          "limitations": [
+            "UCDoor reports minutes while the canonical ODS result is seconds, so an adapter must convert units."
           ]
         },
         "wwbbs": {
@@ -566,11 +642,31 @@
           ]
         },
         "ambos": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "partial",
+          "symbols": [
+            "bbs_getc",
+            "bbs_Wgetc"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/BBS.lib.guide",
+              "symbol": "bbs_getc"
+            },
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/include/fd/BBS_library.fd",
+              "symbol": "bbs_Wgetc",
+              "note": "The FD declaration includes the WaitBits argument."
+            }
+          ],
+          "rationale": "The documented bbs.library character-input calls provide terminal key input.",
+          "limitations": [
+            "Return encoding and disconnect signaling have not been normalized against the ODS result contract."
           ]
         },
         "daydream": {
@@ -660,11 +756,32 @@
           ]
         },
         "ambos": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "partial",
+          "symbols": [
+            "bbs_gets",
+            "bbs_sgets",
+            "bbs_Wgets"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "documented-sdk",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/BBS.lib.guide",
+              "symbol": "bbs_gets"
+            },
+            {
+              "archive": "AmBoS_doc_dev.lha",
+              "path": "Dokumentation/include/fd/BBS_library.fd",
+              "symbol": "bbs_Wgets",
+              "note": "The FD declaration records destination, maximum characters, mode, and wait bits."
+            }
+          ],
+          "rationale": "The documented bounded string-input calls map to terminal line input.",
+          "limitations": [
+            "Editing-mode behavior and disconnect signaling require further normalization."
           ]
         },
         "daydream": {
@@ -707,11 +824,35 @@
           "notes": []
         },
         "ucdoor": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "partial",
+          "symbols": [
+            "cd_GetStr",
+            "cd_GetStrPrompt"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "wrapper-binding",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/guide/UCDoor_V1.0.guide",
+              "symbol": "cd_GetStr"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/cdgetstr.htm",
+              "symbol": "cd_GetStr"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/getstrpr.htm",
+              "symbol": "cd_GetStrPrompt"
+            }
+          ],
+          "rationale": "The UCDoor SDK provides string and prompted-string terminal input calls.",
+          "limitations": [
+            "The extracted evidence does not fully normalize editing behavior, maximum-length handling, or disconnect signaling."
           ]
         },
         "wwbbs": {
@@ -806,12 +947,28 @@
           "notes": []
         },
         "ucdoor": {
-          "status": "unassessed",
-          "symbols": [],
+          "status": "verified",
+          "symbols": [
+            "cd_PutStr"
+          ],
+          "semantic_review": "reviewed",
           "evidence_class": "wrapper-binding",
-          "notes": [
-            "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
-          ]
+          "lossiness": "unknown",
+          "notes": [],
+          "evidence": [
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/guide/UCDoor_V1.0.guide",
+              "symbol": "cd_PutStr"
+            },
+            {
+              "archive": "ucdoor10.lha",
+              "path": "ucdoor/html/cdputstr.htm",
+              "symbol": "cd_PutStr"
+            }
+          ],
+          "rationale": "The UCDoor SDK documents cd_PutStr as its callable terminal string-output operation.",
+          "limitations": []
         },
         "wwbbs": {
           "status": "unassessed",

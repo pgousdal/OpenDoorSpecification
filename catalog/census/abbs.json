@@ -9,7 +9,7 @@
     "preservation-abbs20-master.json"
   ],
   "entry_count": 16,
-  "mapping_count": 6,
+  "mapping_count": 7,
   "entries": [
     {
       "kind": "function",
@@ -286,6 +286,26 @@
       ],
       "status": "verified",
       "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "GETCONSTAT"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "GETCONSTAT",
+          "note": "The documented ARexx command exposes connection status."
+        }
+      ],
+      "rationale": "GETCONSTAT lets a door detect loss of the caller connection.",
+      "limitations": [
+        "The command reports connection state; the door remains responsible for terminating promptly."
+      ]
     }
   ],
   "limitations": [

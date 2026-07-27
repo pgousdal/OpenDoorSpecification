@@ -106,6 +106,47 @@
             "items": {
               "type": "string"
             }
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "archive",
+                "path"
+              ],
+              "properties": {
+                "archive": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "symbol": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "note": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
           }
         }
       }

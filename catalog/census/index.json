@@ -9,7 +9,7 @@
       "name": "ABBS ARexx",
       "evidence_class": "documented-sdk",
       "entry_count": 16,
-      "mapping_count": 6,
+      "mapping_count": 7,
       "path": "catalog/census/abbs.json"
     },
     {
@@ -25,7 +25,7 @@
       "name": "AmBoS bbs.library",
       "evidence_class": "documented-sdk",
       "entry_count": 45,
-      "mapping_count": 2,
+      "mapping_count": 4,
       "path": "catalog/census/ambos.json"
     },
     {
@@ -33,7 +33,7 @@
       "name": "DayDream DreamDoor",
       "evidence_class": "documented-sdk",
       "entry_count": 117,
-      "mapping_count": 8,
+      "mapping_count": 9,
       "path": "catalog/census/daydream.json"
     },
     {
@@ -65,7 +65,7 @@
       "name": "UCDoor compatibility wrapper",
       "evidence_class": "wrapper-binding",
       "entry_count": 0,
-      "mapping_count": 0,
+      "mapping_count": 4,
       "path": "catalog/census/ucdoor.json"
     },
     {
@@ -86,5 +86,5 @@
     }
   ],
   "entry_count": 230,
-  "mapping_count": 26
+  "mapping_count": 34
 }

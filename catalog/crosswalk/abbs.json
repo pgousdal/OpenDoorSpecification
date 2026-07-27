@@ -19,11 +19,25 @@
     },
     {
       "operation": "lifecycle.disconnect",
-      "status": "unassessed",
-      "symbols": [],
+      "status": "partial",
+      "symbols": [
+        "GETCONSTAT"
+      ],
+      "semantic_review": "reviewed",
       "evidence_class": "documented-sdk",
-      "notes": [
-        "No reviewed semantic mapping exists in the M6.0 census. This does not mean the host lacks the capability."
+      "lossiness": "unknown",
+      "notes": [],
+      "evidence": [
+        {
+          "archive": "ABBS320_999.lha",
+          "path": "ABBS/Docs/abbsrexx.doc",
+          "symbol": "GETCONSTAT",
+          "note": "The documented ARexx command exposes connection status."
+        }
+      ],
+      "rationale": "GETCONSTAT lets a door detect loss of the caller connection.",
+      "limitations": [
+        "The command reports connection state; the door remains responsible for terminating promptly."
       ]
     },
     {

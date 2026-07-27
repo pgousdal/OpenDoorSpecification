@@ -8,9 +8,120 @@
     "ucdoor10.json"
   ],
   "entry_count": 0,
-  "mapping_count": 0,
+  "mapping_count": 4,
   "entries": [],
-  "mappings": [],
+  "mappings": [
+    {
+      "operation": "terminal.write",
+      "symbols": [
+        "cd_PutStr"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_PutStr"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdputstr.htm",
+          "symbol": "cd_PutStr"
+        }
+      ],
+      "rationale": "The UCDoor SDK documents cd_PutStr as its callable terminal string-output operation.",
+      "limitations": []
+    },
+    {
+      "operation": "terminal.read_line",
+      "symbols": [
+        "cd_GetStr",
+        "cd_GetStrPrompt"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_GetStr"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/cdgetstr.htm",
+          "symbol": "cd_GetStr"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/getstrpr.htm",
+          "symbol": "cd_GetStrPrompt"
+        }
+      ],
+      "rationale": "The UCDoor SDK provides string and prompted-string terminal input calls.",
+      "limitations": [
+        "The extracted evidence does not fully normalize editing behavior, maximum-length handling, or disconnect signaling."
+      ]
+    },
+    {
+      "operation": "session.time_left",
+      "symbols": [
+        "cd_GetNumInfo",
+        "UDC_TIMELEFT"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/include/ucdoor.h",
+          "symbol": "UDC_TIMELEFT",
+          "note": "The header defines selector 7 as minutes online left."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "cd_GetNumInfo(UDC_TIMELEFT)",
+          "note": "The original demo retrieves and displays current time left."
+        }
+      ],
+      "rationale": "cd_GetNumInfo with UDC_TIMELEFT returns the remaining online time.",
+      "limitations": [
+        "UCDoor reports minutes while the canonical ODS result is seconds, so an adapter must convert units."
+      ]
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "cd_CarrierLost",
+        "cd_End",
+        "ERROR_CARRIER"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/guide/UCDoor_V1.0.guide",
+          "symbol": "cd_CarrierLost",
+          "note": "The guide documents carrier-loss detection followed by cd_End(ERROR_CARRIER)."
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/html/carrier.htm",
+          "symbol": "cd_End(ERROR_CARRIER)"
+        },
+        {
+          "archive": "ucdoor10.lha",
+          "path": "ucdoor/demo/cd_test1.c",
+          "symbol": "ERROR_CARRIER",
+          "note": "The original demo returns the carrier error after cd_CarrierLost reports true."
+        }
+      ],
+      "rationale": "The SDK explicitly documents detecting carrier loss and ending with the carrier-loss reason.",
+      "limitations": []
+    }
+  ],
   "limitations": [
     "The corpus proves existence or practical use, but a complete public callable contract has not yet been normalized."
   ]

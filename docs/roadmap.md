@@ -140,4 +140,6 @@ in M6.2.
 
 - PR1: deterministic evidence work queue, documented priority rules, CLI
   filtering, and stale-data validation.
+- PR2: first eight-cell primary-evidence batch across ABBS, AmBoS, DayDream,
+  and UCDoor; reviewed coverage increased while M6.2 remains in progress.
 - Future work: research and review queued host-operation cells.

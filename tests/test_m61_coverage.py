@@ -19,9 +19,9 @@ class M61CrosswalkCoverageTests(unittest.TestCase):
         report = build_crosswalk_coverage(ROOT)
         summary = report["summary"]
         self.assertEqual(summary["total"], 90)
-        self.assertEqual(summary["reviewed"], 26)
-        self.assertEqual(summary["verified"] + summary["partial"], 26)
-        self.assertEqual(summary["unassessed"], 64)
+        self.assertEqual(summary["reviewed"], 34)
+        self.assertEqual(summary["verified"] + summary["partial"], 34)
+        self.assertEqual(summary["unassessed"], 56)
 
     def test_dimensions(self):
         report = build_crosswalk_coverage(ROOT)
@@ -53,7 +53,7 @@ class M61CrosswalkCoverageTests(unittest.TestCase):
     def test_cli_coverage(self):
         result = self.run_cli("crosswalk", "--coverage")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("26/90", result.stdout)
+        self.assertIn("34/90", result.stdout)
 
     def test_cli_host_gaps(self):
         result = self.run_cli("crosswalk", "paragon", "--gaps")
