@@ -10,7 +10,9 @@ implementation.
 
 M6.3 is in progress. PR1 defines the language-neutral architecture for
 Compatibility Profiles, Adapter Contracts, and Capability Declarations. It
-does not add schemas, CLI validation, or runtime implementation.
+PR2 now adds the Compatibility Profile schema, source catalog, and profile
+inspection/validation CLI. Adapter Contract and Capability Declaration schemas
+remain future work.
 
 M6.2 is complete. The repository contains ODS Core 0.1, deterministic archive
 and API catalogs, reference adapters, executable conformance checks, a complete
@@ -138,8 +140,11 @@ without making ODS language- or runtime-specific:
 - a Capability Declaration states what one implementation supports, partially
   supports, or intentionally leaves unsupported.
 
-PR1 is architecture documentation only. See
+PR1 provides the architecture and PR2 provides the profile catalog and
+validation. See
 [M6.3 compatibility profile architecture](docs/m63-compatibility-profile-architecture.md).
+The [M6.3 profile schema and catalog](docs/m63-compatibility-profile-schema.md)
+documents the current machine-readable profile model.
 
 ## Generators
 

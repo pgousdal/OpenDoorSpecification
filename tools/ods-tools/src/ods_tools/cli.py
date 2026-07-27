@@ -7,6 +7,12 @@ from .coverage import build_coverage, write_coverage
 from .operations import build_operation_records, write_operation_records
 from .gaps import build_adapter_gap_report, write_adapter_gap_report
 from .profiles import build_conformance_report, write_conformance_report
+from .compatibility_profiles import (
+    format_compatibility_profile,
+    list_compatibility_profiles,
+    select_compatibility_profile,
+    validate_compatibility_profile_document,
+)
 from .simulator import load_scenario, run_scenario
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
 from .crosswalk import format_crosswalk, select_crosswalk, validate_crosswalk
@@ -95,6 +101,7 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         assert stored_completion == generated_completion, (
             "stale M6.2 completion report"
         )
+    validate_compatibility_profile_document(root)
 
     index = json.loads((root / "catalog" / "knowledge" / "operation-index.json").read_text(encoding="utf-8"))
     indexed_operations = [item["id"] for item in index["operations"]]
@@ -219,8 +226,20 @@ def main() -> int:
     gaps.add_argument("target", nargs="?", help="historical API or adapter ID")
     gaps.add_argument("--json", action="store_true", help="print machine-readable JSON")
     gaps.add_argument("--write", type=Path, help="write the report to a JSON file")
-    profiles = sub.add_parser("profiles", help="list conformance profiles or evaluate an adapter")
-    profiles.add_argument("name", nargs="?", help="profile ID or adapter ID")
+    profiles = sub.add_parser(
+        "profiles",
+        help="inspect compatibility profiles or evaluate an adapter",
+    )
+    profiles.add_argument(
+        "name",
+        nargs="?",
+        help="profile ID, adapter ID, list, show, or validate",
+    )
+    profiles.add_argument(
+        "profile_id",
+        nargs="?",
+        help="profile ID for `profiles show`",
+    )
     profiles.add_argument("--json", action="store_true", help="print machine-readable JSON")
     profiles.add_argument("--write", type=Path, help="write the conformance report to a JSON file")
     ops = sub.add_parser("operations", help="list or inspect canonical operation records")
@@ -556,6 +575,55 @@ def main() -> int:
                 print(f"{item['id']:<28} {item['kind']:<20} {summary['supported']:<9} {summary['partial']:<7} {summary['missing']}")
         return 0
     if args.command == "profiles":
+        if args.name in {"list", "show", "validate"}:
+            if args.write:
+                raise SystemExit(
+                    "--write is only supported for the conformance report"
+                )
+            if args.name == "validate":
+                if args.profile_id:
+                    raise SystemExit("profiles validate does not take a profile ID")
+                try:
+                    count = validate_compatibility_profile_document(root)
+                except (KeyError, TypeError, ValueError) as exc:
+                    raise SystemExit(f"compatibility profile validation failed: {exc}")
+                if args.json:
+                    print(json.dumps({"valid": True, "profile_count": count}, indent=2))
+                else:
+                    print(f"Compatibility profile catalog is valid: {count} profiles.")
+                return 0
+            if args.name == "show":
+                if not args.profile_id:
+                    raise SystemExit("profiles show requires a profile ID")
+                try:
+                    profile = select_compatibility_profile(root, args.profile_id)
+                except KeyError:
+                    raise SystemExit(
+                        f"unknown compatibility profile: {args.profile_id}"
+                    )
+                print(
+                    json.dumps(profile, indent=2)
+                    if args.json
+                    else format_compatibility_profile(profile)
+                )
+                return 0
+            if args.profile_id:
+                raise SystemExit("profiles list does not take a profile ID")
+            document = list_compatibility_profiles(root)
+            if args.json:
+                print(json.dumps(document, indent=2))
+            else:
+                print("compatibility profiles:")
+                for profile in document["profiles"]:
+                    print(
+                        f"  {profile['id']:<12} {profile['title']} "
+                        f"({len(profile['required_operations'])} required)"
+                    )
+            return 0
+        if args.profile_id:
+            raise SystemExit(
+                "a second positional argument requires `profiles show <profile>`"
+            )
         report = write_conformance_report(root, args.write) if args.write else build_conformance_report(root)
         if args.name:
             profile = next((item for item in report["profiles"] if item["id"] == args.name), None)

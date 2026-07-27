@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "profile_version": "0.1.0",
+  "spec_version": "0.1.0",
+  "profiles": [
+    {
+      "id": "minimal",
+      "title": "Minimal",
+      "description": "Lifecycle-safe output capability target for non-interactive or externally driven doors.",
+      "maturity": "draft",
+      "required_operations": [
+        "terminal.write",
+        "session.connection_state",
+        "lifecycle.exit",
+        "lifecycle.disconnect"
+      ],
+      "optional_operations": [],
+      "operations_outside_profile": [
+        "terminal.read_key",
+        "terminal.read_line",
+        "session.identity",
+        "session.node",
+        "session.time_left",
+        "status.set",
+        "bbs.command"
+      ],
+      "compatibility_expectations": [
+        "lifecycle-safe operation and disconnect handling",
+        "terminal output is available"
+      ],
+      "conformance_evidence_expectations": [
+        "required operations have contract-level conformance evidence",
+        "normal exit and disconnect behavior are exercised"
+      ]
+    },
+    {
+      "id": "interactive",
+      "title": "Interactive",
+      "description": "Interactive capability target with terminal input and basic caller context.",
+      "maturity": "draft",
+      "required_operations": [
+        "terminal.write",
+        "terminal.read_key",
+        "session.identity",
+        "session.node",
+        "session.connection_state",
+        "lifecycle.exit",
+        "lifecycle.disconnect"
+      ],
+      "optional_operations": [],
+      "operations_outside_profile": [
+        "terminal.read_line",
+        "session.time_left",
+        "status.set",
+        "bbs.command"
+      ],
+      "compatibility_expectations": [
+        "lifecycle-safe interactive terminal behavior",
+        "basic caller context is available"
+      ],
+      "conformance_evidence_expectations": [
+        "required operations have contract-level conformance evidence",
+        "interactive input and disconnect behavior are exercised"
+      ]
+    },
+    {
+      "id": "complete",
+      "title": "Complete",
+      "description": "Capability target requiring every current ODS Core and optional operation.",
+      "maturity": "draft",
+      "required_operations": [
+        "terminal.write",
+        "terminal.read_key",
+        "terminal.read_line",
+        "session.identity",
+        "session.node",
+        "session.time_left",
+        "session.connection_state",
+        "status.set",
+        "bbs.command",
+        "lifecycle.exit",
+        "lifecycle.disconnect"
+      ],
+      "optional_operations": [],
+      "operations_outside_profile": [],
+      "compatibility_expectations": [
+        "all current canonical operations are available",
+        "canonical lifecycle and failure semantics are preserved"
+      ],
+      "conformance_evidence_expectations": [
+        "every required operation has contract-level conformance evidence",
+        "success, failure, unsupported, and lifecycle behavior are exercised"
+      ]
+    }
+  ]
+}

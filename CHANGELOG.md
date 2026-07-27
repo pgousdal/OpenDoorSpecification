@@ -6,6 +6,9 @@
 
 - Started M6.3 with language-neutral architecture for Compatibility Profiles,
   Adapter Contracts, and Capability Declarations.
+- Added the machine-readable Compatibility Profile schema and catalog for the
+  existing `minimal`, `interactive`, and `complete` profiles, with deterministic
+  validation and profile inspection commands.
 - Refreshed repository, contributor, CLI, and milestone documentation after
   M6.2 completion.
 - Consolidated the roadmap into current, next, backlog, completed, and future

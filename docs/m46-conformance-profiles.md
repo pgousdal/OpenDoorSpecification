@@ -41,3 +41,5 @@ baseline. The [M6.3 architecture](m63-compatibility-profile-architecture.md)
 adds language-neutral concepts for optional and outside-profile operations,
 evidence expectations, adapter behavior, and implementation capability
 declarations. PR1 does not change this artifact or its CLI behavior.
+PR2 adds a separate compatibility-profile catalog without changing this
+existing conformance artifact or adapter evaluation behavior.

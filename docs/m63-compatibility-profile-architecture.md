@@ -281,36 +281,35 @@ code:
 Runtime conformance remains a separate layer that tests whether actual behavior
 matches the valid declaration and Adapter Contract.
 
-## Boundaries for later M6.3 PRs
+## PR1 boundary and later M6.3 work
 
-PR1 deliberately does not define:
+PR1 deliberately did not define:
 
-- JSON schemas or artifact locations;
-- new CLI commands or validation behavior;
+- the Compatibility Profile JSON Schema or catalog;
+- profile inspection or validation commands;
 - profile serialization or inheritance syntax;
 - language bindings or runtime APIs;
 - implementation-specific packaging;
 - new canonical operations or historical mappings.
 
-Those decisions belong to the planned M6.3 schema, CLI, example, and acceptance
-PRs.
+PR2 now defines the Compatibility Profile schema, source catalog, and profile
+inspection/validation commands. The Adapter Contract schema, Capability
+Declaration schema, runtime examples, and acceptance work remain future M6.3
+scope.
 
-## Questions for PR2
+## Questions for later M6.3 PRs
 
-The Compatibility Profile schema PR must resolve:
+Future schema and validation PRs must resolve:
 
-- the artifact path, schema identifier, and independent profile/specification
-  version fields;
-- whether every canonical operation must appear in exactly one profile set or
-  whether omitted operations are implicitly outside the profile;
-- how the current `minimal`, `interactive`, and `complete` records acquire
-  optional and outside-profile sets without breaking existing consumers;
 - whether profile extension is represented by inheritance or by fully expanded
   operation sets;
 - the controlled vocabulary for evidence requirements and compatibility
   expectations;
+- the Adapter Contract outcome and lifecycle schema;
+- the Capability Declaration representation of implementation evidence;
 - how a profile names an explicitly permitted partial limitation for an
   otherwise required operation.
 
-PR2 SHOULD prefer explicit, deterministic data over implicit defaults while
-preserving the current profile identifiers and required-operation semantics.
+Future PRs SHOULD prefer explicit, deterministic data over implicit defaults
+while preserving the current profile identifiers and required-operation
+semantics.
