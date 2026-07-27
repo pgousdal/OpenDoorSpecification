@@ -6,6 +6,7 @@ from .semantic import compare, load_mapping, load_operations
 from .coverage import build_coverage, write_coverage
 from .operations import build_operation_records, write_operation_records
 from .gaps import build_adapter_gap_report, write_adapter_gap_report
+from .profiles import build_conformance_report, write_conformance_report
 from .simulator import load_scenario, run_scenario
 
 
@@ -96,6 +97,22 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         gap_report = build_adapter_gap_report(root)
         stored_gap_report = json.loads((root / "catalog" / "knowledge" / "adapter-gap-report.json").read_text(encoding="utf-8"))
         assert stored_gap_report == gap_report, "stale adapter gap report"
+        conformance_report = build_conformance_report(root)
+        profile_ids = [item["id"] for item in conformance_report["profiles"]]
+        profile_levels = [item["level"] for item in conformance_report["profiles"]]
+        assert len(profile_ids) == len(set(profile_ids)), "duplicate conformance profile ID"
+        assert profile_levels == sorted(profile_levels), "conformance profiles must be level-ordered"
+        previous_required = set()
+        for profile in conformance_report["profiles"]:
+            required = profile["required_operations"]
+            assert len(required) == len(set(required)), f"duplicate operation in profile: {profile['id']}"
+            assert set(required).issubset(operation_ids), f"unknown operation in profile: {profile['id']}"
+            assert previous_required.issubset(required), f"non-cumulative profile: {profile['id']}"
+            previous_required = set(required)
+        for adapter in conformance_report["adapters"]:
+            assert not adapter["unknown_operations"], f"unknown adapter operations: {adapter['id']}"
+        stored_conformance = json.loads((root / "catalog" / "knowledge" / "conformance-report.json").read_text(encoding="utf-8"))
+        assert stored_conformance == conformance_report, "stale conformance report"
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
 
 
@@ -148,6 +165,10 @@ def main() -> int:
     gaps.add_argument("target", nargs="?", help="historical API or adapter ID")
     gaps.add_argument("--json", action="store_true", help="print machine-readable JSON")
     gaps.add_argument("--write", type=Path, help="write the report to a JSON file")
+    profiles = sub.add_parser("profiles", help="list conformance profiles or evaluate an adapter")
+    profiles.add_argument("name", nargs="?", help="profile ID or adapter ID")
+    profiles.add_argument("--json", action="store_true", help="print machine-readable JSON")
+    profiles.add_argument("--write", type=Path, help="write the conformance report to a JSON file")
     ops = sub.add_parser("operations", help="list or inspect canonical operation records")
     ops.add_argument("operation", nargs="?", help="operation ID to inspect")
     ops.add_argument("--json", action="store_true", help="print machine-readable JSON")
@@ -194,6 +215,39 @@ def main() -> int:
             for item in targets:
                 summary = item["summary"]
                 print(f"{item['id']:<28} {item['kind']:<20} {summary['supported']:<9} {summary['partial']:<7} {summary['missing']}")
+        return 0
+    if args.command == "profiles":
+        report = write_conformance_report(root, args.write) if args.write else build_conformance_report(root)
+        if args.name:
+            profile = next((item for item in report["profiles"] if item["id"] == args.name), None)
+            adapter = next((item for item in report["adapters"] if item["id"] == args.name), None)
+            if profile is None and adapter is None:
+                raise SystemExit(f"unknown profile or adapter: {args.name}")
+            item = profile if profile is not None else adapter
+            if args.json:
+                print(json.dumps(item, indent=2))
+            elif profile is not None:
+                print(profile["id"])
+                print(profile["summary"])
+                print(f"required operations: {len(profile['required_operations'])}")
+                for operation in profile["required_operations"]:
+                    print(f"  {operation}")
+            else:
+                print(f"{adapter['id']}: highest profile = {adapter['highest_profile'] or 'none'}")
+                for result in adapter["profiles"]:
+                    state = "PASS" if result["passed"] else "FAIL"
+                    print(f"  {result['profile']:<12} {state} ({result['supported_required_count']}/{result['required_count']})")
+                    for operation in result["missing_required_operations"]:
+                        print(f"    missing: {operation}")
+        elif args.json:
+            print(json.dumps(report, indent=2))
+        else:
+            print("profiles:")
+            for profile in report["profiles"]:
+                print(f"  {profile['id']:<12} {len(profile['required_operations'])} required — {profile['summary']}")
+            print("adapters:")
+            for adapter in report["adapters"]:
+                print(f"  {adapter['id']:<20} {adapter['highest_profile'] or 'none'}")
         return 0
     if args.command == "operations":
         result = write_operation_records(root, args.write) if args.write else build_operation_records(root)

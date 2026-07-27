@@ -90,3 +90,5 @@ Status: complete.
 - historical implementation and provenance aggregation
 - reference-adapter support status
 - strict stale-record validation
+
+- [x] M4.6 — Conformance Profiles: cumulative adapter capability levels and generated conformance report.

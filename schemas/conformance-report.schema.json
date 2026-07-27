@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/conformance-report.schema.json",
+  "title": "ODS Adapter Conformance Report",
+  "type": "object",
+  "required": ["schema_version", "spec_version", "profile_version", "profiles", "adapters", "summary"]
+}

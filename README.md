@@ -55,3 +55,14 @@ See [`docs/provenance-coverage.md`](docs/provenance-coverage.md).
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools gaps
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools gaps api:daydream
 ```
+
+## Adapter conformance profiles
+
+ODS defines cumulative `minimal`, `interactive`, and `complete` adapter profiles. Inspect them with:
+
+```bash
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools profiles
+```
+
+See [docs/m46-conformance-profiles.md](docs/m46-conformance-profiles.md).
+

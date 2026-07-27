@@ -1,5 +1,12 @@
 # Changelog
 
+## M4.6 — Conformance Profiles
+
+- Added cumulative minimal, interactive, and complete adapter profiles.
+- Added generated adapter conformance reporting and the `ods profiles` command.
+- Extended strict validation to reject invalid profiles and stale conformance output.
+- Added profile schemas, documentation, and regression tests.
+
 ## Unreleased
 
 ### Added

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "profile_version": "0.1.0",
+  "profiles": [
+    {
+      "id": "minimal",
+      "level": 1,
+      "summary": "Lifecycle-safe output adapter for non-interactive or externally driven doors.",
+      "required_operations": [
+        "terminal.write",
+        "session.connection_state",
+        "lifecycle.exit",
+        "lifecycle.disconnect"
+      ]
+    },
+    {
+      "id": "interactive",
+      "level": 2,
+      "summary": "Interactive door adapter with terminal input and basic caller context.",
+      "required_operations": [
+        "terminal.write",
+        "terminal.read_key",
+        "session.identity",
+        "session.node",
+        "session.connection_state",
+        "lifecycle.exit",
+        "lifecycle.disconnect"
+      ]
+    },
+    {
+      "id": "complete",
+      "level": 3,
+      "summary": "Complete ODS Core adapter implementing every current core and optional operation.",
+      "required_operations": [
+        "terminal.write",
+        "terminal.read_key",
+        "terminal.read_line",
+        "session.identity",
+        "session.node",
+        "session.time_left",
+        "session.connection_state",
+        "status.set",
+        "bbs.command",
+        "lifecycle.exit",
+        "lifecycle.disconnect"
+      ]
+    }
+  ],
+  "adapters": [
+    {
+      "id": "daydream",
+      "kind": "historical-adapter",
+      "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
+      "declared_operation_count": 11,
+      "unknown_operations": [],
+      "highest_profile": "complete",
+      "profiles": [
+        {
+          "profile": "minimal",
+          "passed": true,
+          "required_count": 4,
+          "supported_required_count": 4,
+          "missing_required_operations": []
+        },
+        {
+          "profile": "interactive",
+          "passed": true,
+          "required_count": 7,
+          "supported_required_count": 7,
+          "missing_required_operations": []
+        },
+        {
+          "profile": "complete",
+          "passed": true,
+          "required_count": 11,
+          "supported_required_count": 11,
+          "missing_required_operations": []
+        }
+      ]
+    },
+    {
+      "id": "host-simulator",
+      "kind": "reference",
+      "implementation": "ods_tools.adapters.host.HostAdapter",
+      "declared_operation_count": 11,
+      "unknown_operations": [],
+      "highest_profile": "complete",
+      "profiles": [
+        {
+          "profile": "minimal",
+          "passed": true,
+          "required_count": 4,
+          "supported_required_count": 4,
+          "missing_required_operations": []
+        },
+        {
+          "profile": "interactive",
+          "passed": true,
+          "required_count": 7,
+          "supported_required_count": 7,
+          "missing_required_operations": []
+        },
+        {
+          "profile": "complete",
+          "passed": true,
+          "required_count": 11,
+          "supported_required_count": 11,
+          "missing_required_operations": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "profile_count": 3,
+    "adapter_count": 2,
+    "complete_adapters": 2,
+    "nonconforming_adapters": 0
+  }
+}
