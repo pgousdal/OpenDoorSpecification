@@ -1,0 +1,205 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/adapter-contract.schema.json",
+  "title": "ODS Adapter Contract Catalog",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "spec_version",
+    "outcome_vocabulary",
+    "contracts"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "spec_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome_vocabulary": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/outcome"
+      }
+    },
+    "contracts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/contract"
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "outcome_id": {
+      "enum": [
+        "success",
+        "unsupported",
+        "invalid-request",
+        "host-failure",
+        "disconnected"
+      ]
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["id", "description"],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/outcome_id"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": [
+        "normal_completion",
+        "disconnect",
+        "carrier_loss",
+        "implementation_shutdown"
+      ],
+      "properties": {
+        "normal_completion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "disconnect": {
+          "type": "string",
+          "minLength": 1
+        },
+        "carrier_loss": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementation_shutdown": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "contract": {
+      "type": "object",
+      "required": [
+        "operation",
+        "title",
+        "description",
+        "category",
+        "normative_behavior",
+        "inputs",
+        "output",
+        "outcomes",
+        "unsupported_behavior",
+        "lifecycle",
+        "implementation_obligations",
+        "compatibility_notes"
+      ],
+      "properties": {
+        "operation": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]*\\.[a-z][a-z0-9_-]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "enum": [
+            "terminal",
+            "session",
+            "status",
+            "host-command",
+            "lifecycle"
+          ]
+        },
+        "normative_behavior": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/input"
+          }
+        },
+        "output": {
+          "type": "object",
+          "required": ["result", "description"],
+          "properties": {
+            "result": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/outcome_id"
+          }
+        },
+        "unsupported_behavior": {
+          "type": "string",
+          "minLength": 1
+        },
+        "lifecycle": {
+          "$ref": "#/$defs/lifecycle"
+        },
+        "implementation_obligations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "compatibility_notes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

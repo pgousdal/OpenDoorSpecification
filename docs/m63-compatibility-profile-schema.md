@@ -89,9 +89,9 @@ The pre-existing forms remain available for M4.6 adapter evaluation, including
 
 Profile records are normative capability targets, not declarations by a
 runtime. A future Capability Declaration will identify an implementation’s
-profile claim and operation statuses. A future Adapter Contract schema will
-define machine-readable behavioral obligations, outcomes, and lifecycle
-semantics. Neither schema is introduced by PR2.
+profile claim and operation statuses. PR3 now defines machine-readable Adapter
+Contract behavior, outcomes, and lifecycle semantics in its own catalog and
+schema. Capability Declaration schema remains future M6.3 work.
 
 Historical `verified`, `partial`, and `unassessed` mappings remain evidence
 statuses, not profile statuses. A verified mapping can support a host adapter’s

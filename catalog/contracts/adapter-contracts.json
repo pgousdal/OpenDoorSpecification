@@ -1,0 +1,384 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "outcome_vocabulary": [
+    {
+      "id": "success",
+      "description": "The canonical operation completed and its result or terminal outcome is valid."
+    },
+    {
+      "id": "unsupported",
+      "description": "The adapter does not provide the canonical operation."
+    },
+    {
+      "id": "invalid-request",
+      "description": "The canonical input violates the operation contract."
+    },
+    {
+      "id": "host-failure",
+      "description": "The host rejected or could not complete the operation."
+    },
+    {
+      "id": "disconnected",
+      "description": "The caller connection became unusable."
+    }
+  ],
+  "contracts": [
+    {
+      "operation": "terminal.write",
+      "title": "Terminal write",
+      "description": "Write the requested bytes or text to the caller terminal.",
+      "category": "terminal",
+      "normative_behavior": [
+        "The adapter SHALL write the supplied data in order to the caller terminal.",
+        "The adapter SHALL normalize the host encoding at the ODS boundary.",
+        "The adapter SHALL surface a disconnected outcome when the caller connection is unusable."
+      ],
+      "inputs": [
+        {
+          "name": "data",
+          "description": "Bytes or text to write to the caller terminal."
+        }
+      ],
+      "output": {
+        "result": "void",
+        "description": "No value is returned after a successful write."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported without fabricating terminal output.",
+      "lifecycle": {
+        "normal_completion": "The operation does not terminate the session.",
+        "disconnect": "The adapter SHALL stop the write and enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss SHALL be surfaced as disconnected when detected during the write.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be reported as a successful write."
+      },
+      "implementation_obligations": [
+        "Preserve data order and canonical text semantics.",
+        "Do not silently discard a host failure or disconnect."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "terminal.read_key",
+      "title": "Terminal key input",
+      "description": "Wait for and return one terminal input unit.",
+      "category": "terminal",
+      "normative_behavior": [
+        "The adapter SHALL wait for one input unit when the connection remains usable.",
+        "The returned key SHALL preserve the canonical input meaning rather than a host-specific code.",
+        "The adapter SHALL surface a disconnected outcome when the caller connection is unusable."
+      ],
+      "inputs": [],
+      "output": {
+        "result": "key",
+        "description": "The canonical input unit received from the caller."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported without blocking for input.",
+      "lifecycle": {
+        "normal_completion": "The operation returns one key and leaves the session active.",
+        "disconnect": "The adapter SHALL stop waiting and enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss SHALL be surfaced as disconnected rather than as a key.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be represented as input."
+      },
+      "implementation_obligations": [
+        "Do not reinterpret a disconnect or host failure as ordinary input.",
+        "Preserve the canonical distinction between a key and a line."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "terminal.read_line",
+      "title": "Terminal line input",
+      "description": "Read an edited line of terminal input.",
+      "category": "terminal",
+      "normative_behavior": [
+        "The adapter SHALL read one line subject to the supplied maximum length.",
+        "The adapter SHALL preserve the canonical text result and its editing boundary.",
+        "The adapter SHALL surface a disconnected outcome when the caller connection is unusable."
+      ],
+      "inputs": [
+        {
+          "name": "max_length",
+          "description": "Maximum canonical length accepted for the line."
+        }
+      ],
+      "output": {
+        "result": "text",
+        "description": "The edited line of caller input."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported without entering a line-input wait.",
+      "lifecycle": {
+        "normal_completion": "The operation returns one line and leaves the session active.",
+        "disconnect": "The adapter SHALL stop line input and enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss SHALL be surfaced as disconnected rather than an incomplete successful line.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be reported as line input."
+      },
+      "implementation_obligations": [
+        "Reject an invalid maximum length deterministically.",
+        "Do not silently convert disconnect into end-of-line success."
+      ],
+      "compatibility_notes": [
+        "Editing behavior is part of the host adapter contract, not a language-specific API."
+      ]
+    },
+    {
+      "operation": "session.identity",
+      "title": "Session identity",
+      "description": "Return stable caller identity fields available from the host.",
+      "category": "session",
+      "normative_behavior": [
+        "The adapter SHALL return the identity fields that the host can establish.",
+        "Opaque identifiers SHALL NOT be renumbered by the adapter."
+      ],
+      "inputs": [],
+      "output": {
+        "result": "identity",
+        "description": "Canonical caller identity fields and opaque identifiers."
+      },
+      "outcomes": ["success", "unsupported", "host-failure"],
+      "unsupported_behavior": "The adapter SHALL report unsupported when the host cannot provide the canonical identity operation.",
+      "lifecycle": {
+        "normal_completion": "The operation returns identity data without terminating the session.",
+        "disconnect": "A disconnect observed while obtaining identity SHALL enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss is not identity data and SHALL be surfaced as disconnected when observed.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be reported as identity data."
+      },
+      "implementation_obligations": [
+        "Preserve opaque user and node identifiers.",
+        "Distinguish unavailable identity from a fabricated identity value."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "session.node",
+      "title": "Session node",
+      "description": "Return the host node identifier for the door session.",
+      "category": "session",
+      "normative_behavior": [
+        "The adapter SHALL return the node identifier established for the session.",
+        "The node identifier SHALL remain opaque at the ODS boundary."
+      ],
+      "inputs": [],
+      "output": {
+        "result": "node",
+        "description": "The opaque host node identifier for this session."
+      },
+      "outcomes": ["success", "unsupported", "host-failure"],
+      "unsupported_behavior": "The adapter SHALL report unsupported when no host node identifier is available.",
+      "lifecycle": {
+        "normal_completion": "The operation returns the node identifier without terminating the session.",
+        "disconnect": "A disconnect observed while obtaining the node SHALL enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss is not a node identifier and SHALL be surfaced as disconnected when observed.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be reported as a node identifier."
+      },
+      "implementation_obligations": [
+        "Do not renumber or infer a node identifier from a host name.",
+        "Report host failure when the node cannot be established."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "session.time_left",
+      "title": "Session time left",
+      "description": "Return remaining session time in seconds when known.",
+      "category": "session",
+      "normative_behavior": [
+        "The adapter SHALL report remaining time in canonical seconds when the host provides it.",
+        "The adapter SHALL normalize host units before returning a result."
+      ],
+      "inputs": [],
+      "output": {
+        "result": "seconds",
+        "description": "Remaining session time expressed in canonical seconds."
+      },
+      "outcomes": ["success", "unsupported", "host-failure"],
+      "unsupported_behavior": "The adapter SHALL report unsupported when remaining time is not available or cannot be normalized.",
+      "lifecycle": {
+        "normal_completion": "The operation returns remaining time without terminating the session.",
+        "disconnect": "A disconnect observed while obtaining time SHALL enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss is not a time value and SHALL be surfaced as disconnected when observed.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be reported as remaining time."
+      },
+      "implementation_obligations": [
+        "Convert host units to seconds without silently changing meaning.",
+        "Do not invent remaining time when the host does not expose it."
+      ],
+      "compatibility_notes": [
+        "A host value in another unit requires an explicit normalization step."
+      ]
+    },
+    {
+      "operation": "session.connection_state",
+      "title": "Session connection state",
+      "description": "Report whether the remote caller connection remains usable.",
+      "category": "session",
+      "normative_behavior": [
+        "The adapter SHALL report the canonical connection state observed by the host.",
+        "The adapter SHALL not report a usable connection after disconnect has been observed."
+      ],
+      "inputs": [],
+      "output": {
+        "result": "connection_state",
+        "description": "The canonical state of the caller connection."
+      },
+      "outcomes": ["success", "unsupported", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported when connection state cannot be observed.",
+      "lifecycle": {
+        "normal_completion": "The operation reports state without terminating the session.",
+        "disconnect": "The disconnected state SHALL lead to lifecycle.disconnect for terminal work.",
+        "carrier_loss": "Carrier loss SHALL be represented as a disconnected connection state.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be represented as a caller connection state."
+      },
+      "implementation_obligations": [
+        "Keep the reported state consistent with terminal operation outcomes.",
+        "Do not turn an unknown observation into a connected state."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "status.set",
+      "title": "Set host-visible status",
+      "description": "Set a short host-visible activity description.",
+      "category": "status",
+      "normative_behavior": [
+        "The adapter SHALL submit the supplied activity description to the host status surface.",
+        "The adapter SHALL preserve the canonical text meaning and report host rejection."
+      ],
+      "inputs": [
+        {
+          "name": "text",
+          "description": "Short host-visible activity description."
+        }
+      ],
+      "output": {
+        "result": "void",
+        "description": "No value is returned after a successful status update."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported when the host has no canonical status surface.",
+      "lifecycle": {
+        "normal_completion": "The operation updates status without terminating the session.",
+        "disconnect": "A disconnect observed while updating status SHALL enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss SHALL be surfaced as disconnected rather than a successful status update.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be reported as a status update."
+      },
+      "implementation_obligations": [
+        "Reject invalid status text deterministically.",
+        "Distinguish host-visible activity status from account or node state."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "bbs.command",
+      "title": "Host command",
+      "description": "Request execution of a host command through an adapter-defined command namespace.",
+      "category": "host-command",
+      "normative_behavior": [
+        "The adapter SHALL submit the canonical command and arguments through its declared host command namespace.",
+        "The adapter SHALL return a canonical command result or surface the host outcome.",
+        "The adapter MUST NOT expose an undocumented command as a guaranteed canonical command."
+      ],
+      "inputs": [
+        {
+          "name": "command",
+          "description": "Canonical or declared host command identifier."
+        },
+        {
+          "name": "arguments",
+          "description": "Arguments accepted by the declared command."
+        }
+      ],
+      "output": {
+        "result": "command_result",
+        "description": "The canonical result of the host command request."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported for a command namespace or command it does not provide.",
+      "lifecycle": {
+        "normal_completion": "A successful command returns its result without implicitly terminating the session.",
+        "disconnect": "A disconnect during command execution SHALL enter lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss SHALL be surfaced as disconnected rather than command success.",
+        "implementation_shutdown": "Implementation shutdown MUST NOT be hidden as a command result."
+      },
+      "implementation_obligations": [
+        "Validate command and argument semantics before dispatch.",
+        "Keep the declared command namespace separate from undocumented host internals."
+      ],
+      "compatibility_notes": [
+        "Host command support is profile-dependent and may be outside a profile guarantee."
+      ]
+    },
+    {
+      "operation": "lifecycle.exit",
+      "title": "Normal lifecycle exit",
+      "description": "Finish normally and return control to the host.",
+      "category": "lifecycle",
+      "normative_behavior": [
+        "The adapter SHALL complete the documented normal-exit path and return control to the host.",
+        "The adapter SHALL preserve the canonical exit status when the host can represent it.",
+        "After normal exit begins, new interactive operations MUST NOT start."
+      ],
+      "inputs": [
+        {
+          "name": "status",
+          "description": "Canonical normal-completion status."
+        }
+      ],
+      "output": {
+        "result": "never",
+        "description": "Control returns to the host rather than producing a further operation result."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL report unsupported before beginning exit when normal exit cannot be performed.",
+      "lifecycle": {
+        "normal_completion": "Success returns control to the host through the normal completion path.",
+        "disconnect": "Normal exit MUST NOT hide a known disconnect; the terminal outcome is lifecycle.disconnect.",
+        "carrier_loss": "Carrier loss SHALL select lifecycle.disconnect rather than normal completion.",
+        "implementation_shutdown": "Implementation shutdown is cleanup in support of exit and is not a substitute for the canonical exit outcome."
+      },
+      "implementation_obligations": [
+        "Prevent new interactive work after exit begins.",
+        "Return control exactly through the declared normal lifecycle path."
+      ],
+      "compatibility_notes": []
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "title": "Disconnect lifecycle termination",
+      "description": "Terminate promptly after carrier loss or equivalent connection failure.",
+      "category": "lifecycle",
+      "normative_behavior": [
+        "The adapter SHALL terminate promptly after a disconnected outcome is observed.",
+        "The adapter SHALL preserve a canonical disconnect reason where one is available.",
+        "After disconnect termination begins, further blocking terminal work MUST NOT occur."
+      ],
+      "inputs": [
+        {
+          "name": "reason",
+          "description": "Canonical reason for connection loss or equivalent disconnect."
+        }
+      ],
+      "output": {
+        "result": "never",
+        "description": "Control leaves the interactive session through disconnect termination."
+      },
+      "outcomes": ["success", "unsupported", "invalid-request", "host-failure", "disconnected"],
+      "unsupported_behavior": "The adapter SHALL treat inability to perform disconnect cleanup as a host failure and MUST NOT resume interactive work.",
+      "lifecycle": {
+        "normal_completion": "Disconnect termination is not normal completion and MUST NOT be reported as lifecycle.exit.",
+        "disconnect": "The adapter SHALL enter this terminal path once a disconnect is established.",
+        "carrier_loss": "Carrier loss is a cause of disconnect and SHALL map to this path without being renamed normal exit.",
+        "implementation_shutdown": "Implementation shutdown SHALL release resources while preserving the disconnect outcome."
+      },
+      "implementation_obligations": [
+        "Stop blocking terminal work promptly.",
+        "Make cleanup safe to repeat without producing a second lifecycle outcome."
+      ],
+      "compatibility_notes": [
+        "Carrier loss, host shutdown, and adapter error may have different causes but all require explicit canonical handling."
+      ]
+    }
+  ]
+}

@@ -9,6 +9,8 @@
 - Added the machine-readable Compatibility Profile schema and catalog for the
   existing `minimal`, `interactive`, and `complete` profiles, with deterministic
   validation and profile inspection commands.
+- Added one normative Adapter Contract and a closed outcome vocabulary for
+  every canonical operation, with contract inspection and validation commands.
 - Refreshed repository, contributor, CLI, and milestone documentation after
   M6.2 completion.
 - Consolidated the roadmap into current, next, backlog, completed, and future

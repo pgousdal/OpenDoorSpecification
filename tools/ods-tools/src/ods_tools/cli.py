@@ -13,6 +13,12 @@ from .compatibility_profiles import (
     select_compatibility_profile,
     validate_compatibility_profile_document,
 )
+from .adapter_contracts import (
+    format_adapter_contract,
+    list_adapter_contracts,
+    select_adapter_contract,
+    validate_adapter_contract_document,
+)
 from .simulator import load_scenario, run_scenario
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
 from .crosswalk import format_crosswalk, select_crosswalk, validate_crosswalk
@@ -102,6 +108,7 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
             "stale M6.2 completion report"
         )
     validate_compatibility_profile_document(root)
+    validate_adapter_contract_document(root)
 
     index = json.loads((root / "catalog" / "knowledge" / "operation-index.json").read_text(encoding="utf-8"))
     indexed_operations = [item["id"] for item in index["operations"]]
@@ -242,6 +249,21 @@ def main() -> int:
     )
     profiles.add_argument("--json", action="store_true", help="print machine-readable JSON")
     profiles.add_argument("--write", type=Path, help="write the conformance report to a JSON file")
+    contracts = sub.add_parser(
+        "contracts",
+        help="inspect and validate canonical adapter contracts",
+    )
+    contracts.add_argument(
+        "action",
+        choices=["list", "show", "validate"],
+        help="list, show, or validate adapter contracts",
+    )
+    contracts.add_argument(
+        "operation",
+        nargs="?",
+        help="canonical operation ID for `contracts show`",
+    )
+    contracts.add_argument("--json", action="store_true", help="print machine-readable JSON")
     ops = sub.add_parser("operations", help="list or inspect canonical operation records")
     ops.add_argument("operation", nargs="?", help="operation ID to inspect")
     ops.add_argument("--json", action="store_true", help="print machine-readable JSON")
@@ -656,6 +678,45 @@ def main() -> int:
             for adapter in report["adapters"]:
                 print(f"  {adapter['id']:<20} {adapter['highest_profile'] or 'none'}")
         return 0
+    if args.command == "contracts":
+        if args.action == "validate":
+            if args.operation:
+                raise SystemExit("contracts validate does not take an operation ID")
+            try:
+                count = validate_adapter_contract_document(root)
+            except (KeyError, TypeError, ValueError) as exc:
+                raise SystemExit(f"adapter contract validation failed: {exc}")
+            if args.json:
+                print(json.dumps({"valid": True, "contract_count": count}, indent=2))
+            else:
+                print(f"Adapter contract catalog is valid: {count} contracts.")
+            return 0
+        if args.action == "show":
+            if not args.operation:
+                raise SystemExit("contracts show requires a canonical operation ID")
+            try:
+                contract = select_adapter_contract(root, args.operation)
+            except KeyError:
+                raise SystemExit(f"unknown adapter contract: {args.operation}")
+            print(
+                json.dumps(contract, indent=2)
+                if args.json
+                else format_adapter_contract(contract)
+            )
+            return 0
+        if args.operation:
+            raise SystemExit("contracts list does not take an operation ID")
+        document = list_adapter_contracts(root)
+        if args.json:
+            print(json.dumps(document, indent=2))
+        else:
+            print("adapter contracts:")
+            for contract in document["contracts"]:
+                print(
+                    f"  {contract['operation']:<28} "
+                    f"{contract['category']:<12} {contract['title']}"
+                )
+        return 0
     if args.command == "operations":
         result = write_operation_records(root, args.write) if args.write else build_operation_records(root)
         records = result["operations"]
@@ -694,12 +755,18 @@ def main() -> int:
         crosswalk_suffix = ""
         if (root / "catalog" / "crosswalk" / "index.json").exists():
             try:
-                hosts, operations, cells = validate_crosswalk(root)
+                hosts, crosswalk_operations, cells = validate_crosswalk(root)
             except EvidenceValidationError as exc:
                 raise SystemExit(
                     f"crosswalk evidence validation failed: {exc}"
                 )
-            crosswalk_suffix = f", {hosts} crosswalk hosts, {operations} operations, {cells} reviewed crosswalk mappings"
+            canonical_operations = len(load_operations(root)["operations"])
+            adapter_contracts = validate_adapter_contract_document(root)
+            crosswalk_suffix = (
+                f", {hosts} crosswalk hosts, {crosswalk_operations} crosswalk operations, "
+                f"{canonical_operations} canonical operations, {adapter_contracts} adapter contracts, "
+                f"{cells} reviewed crosswalk mappings"
+            )
         print(f"OK: {archives} archives, {entries} entries, {mappings} semantic mappings{suffix}{crosswalk_suffix}")
         return 0
     if args.command == "inspect":

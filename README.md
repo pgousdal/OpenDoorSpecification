@@ -8,10 +8,10 @@ implementation.
 
 ## Current status
 
-M6.3 is in progress. PR1 defines the language-neutral architecture for
-Compatibility Profiles, Adapter Contracts, and Capability Declarations. It
-PR2 now adds the Compatibility Profile schema, source catalog, and profile
-inspection/validation CLI. Adapter Contract and Capability Declaration schemas
+M6.3 is in progress. PR1 defined the language-neutral architecture for
+Compatibility Profiles, Adapter Contracts, and Capability Declarations. PR2
+added the Compatibility Profile schema and catalog. PR3 now adds the Adapter
+Contract schema and canonical contract catalog. Capability Declaration schemas
 remain future work.
 
 M6.2 is complete. The repository contains ODS Core 0.1, deterministic archive
@@ -82,6 +82,8 @@ ods coverage
 ods operations
 ods gaps
 ods profiles
+ods contracts list
+ods contracts validate
 ods conformance
 ods simulate examples/host-simulator/hello.json --transcript
 ods validate
@@ -145,6 +147,8 @@ validation. See
 [M6.3 compatibility profile architecture](docs/m63-compatibility-profile-architecture.md).
 The [M6.3 profile schema and catalog](docs/m63-compatibility-profile-schema.md)
 documents the current machine-readable profile model.
+The [M6.3 Adapter Contract schema](docs/m63-adapter-contract-schema.md)
+defines canonical operation behavior and outcomes.
 
 ## Generators
 

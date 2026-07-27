@@ -4,9 +4,10 @@
 
 M6.3 is in progress. PR1 established the language-neutral architecture for
 Compatibility Profiles, Adapter Contracts, and Capability Declarations. PR2
-adds the Compatibility Profile schema, source catalog, and validation CLI.
-Adapter Contract and Capability Declaration schemas, examples, and acceptance
-criteria remain future M6.3 work.
+added the Compatibility Profile schema, source catalog, and validation CLI.
+PR3 adds the Adapter Contract schema and canonical catalog. Capability
+Declaration schemas, examples, and acceptance criteria remain future M6.3
+work.
 
 M6.2 remains complete. Its generated research backlog is preserved for future
 evidence milestones and is not modified by M6.3 architecture work.
@@ -24,7 +25,7 @@ Planned sequence:
 - PR1: Compatibility Profile, Adapter Contract, and Capability Declaration
   architecture;
 - PR2: Compatibility Profile schema and source catalog;
-- PR3: Adapter Contract schema;
+- PR3: Adapter Contract schema and canonical catalog;
 - PR4: Capability Declaration schema;
 - PR5: CLI validation;
 - PR6: reference examples;
