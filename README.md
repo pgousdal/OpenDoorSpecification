@@ -44,6 +44,7 @@ Canonical knowledge model: [`docs/canonical-knowledge-model.md`](docs/canonical-
 ```sh
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools coverage
 PYTHONPATH=tools/ods-tools/src python3 -m ods_tools validate --strict
+PYTHONPATH=tools/ods-tools/src python3 -m ods_tools operations
 ```
 
 See [`docs/provenance-coverage.md`](docs/provenance-coverage.md).

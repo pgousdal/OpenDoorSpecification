@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "id": "terminal.read_line",
+  "definition": {
+    "id": "terminal.read_line",
+    "stability": "optional",
+    "summary": "Read an edited line of terminal input.",
+    "inputs": [
+      "max_length"
+    ],
+    "result": "text",
+    "disconnect_behavior": "must_surface"
+  },
+  "historical_implementations": [
+    {
+      "api": "abbs",
+      "symbols": [
+        "GetString"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "symbols": [
+        "Prompt"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "door-io",
+      "symbols": [
+        "DoorGetString"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.door-io.terminal-read-line.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "symbols": [
+        "command 6",
+        "mxInput"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.terminal-read-line.1"
+      ],
+      "covered": true
+    }
+  ],
+  "adapter_status": [
+    {
+      "adapter": "daydream",
+      "kind": "historical",
+      "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
+      "conformance": "host-and-c-tested",
+      "supported": true
+    },
+    {
+      "adapter": "host-simulator",
+      "kind": "reference",
+      "implementation": "ods_tools.adapters.host.HostAdapter",
+      "conformance": "unspecified",
+      "supported": true
+    }
+  ],
+  "summary": {
+    "historical_implementation_count": 4,
+    "covered_historical_implementation_count": 4,
+    "adapter_count": 2
+  }
+}

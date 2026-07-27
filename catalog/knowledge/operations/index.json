@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "operations": [
+    {
+      "id": "terminal.write",
+      "path": "catalog/knowledge/operations/terminal-write.json",
+      "historical_implementation_count": 5,
+      "adapter_count": 2
+    },
+    {
+      "id": "terminal.read_key",
+      "path": "catalog/knowledge/operations/terminal-read_key.json",
+      "historical_implementation_count": 4,
+      "adapter_count": 2
+    },
+    {
+      "id": "terminal.read_line",
+      "path": "catalog/knowledge/operations/terminal-read_line.json",
+      "historical_implementation_count": 4,
+      "adapter_count": 2
+    },
+    {
+      "id": "session.identity",
+      "path": "catalog/knowledge/operations/session-identity.json",
+      "historical_implementation_count": 3,
+      "adapter_count": 2
+    },
+    {
+      "id": "session.node",
+      "path": "catalog/knowledge/operations/session-node.json",
+      "historical_implementation_count": 0,
+      "adapter_count": 2
+    },
+    {
+      "id": "session.time_left",
+      "path": "catalog/knowledge/operations/session-time_left.json",
+      "historical_implementation_count": 2,
+      "adapter_count": 2
+    },
+    {
+      "id": "session.connection_state",
+      "path": "catalog/knowledge/operations/session-connection_state.json",
+      "historical_implementation_count": 0,
+      "adapter_count": 2
+    },
+    {
+      "id": "status.set",
+      "path": "catalog/knowledge/operations/status-set.json",
+      "historical_implementation_count": 2,
+      "adapter_count": 2
+    },
+    {
+      "id": "bbs.command",
+      "path": "catalog/knowledge/operations/bbs-command.json",
+      "historical_implementation_count": 2,
+      "adapter_count": 2
+    },
+    {
+      "id": "lifecycle.exit",
+      "path": "catalog/knowledge/operations/lifecycle-exit.json",
+      "historical_implementation_count": 1,
+      "adapter_count": 2
+    },
+    {
+      "id": "lifecycle.disconnect",
+      "path": "catalog/knowledge/operations/lifecycle-disconnect.json",
+      "historical_implementation_count": 3,
+      "adapter_count": 2
+    }
+  ]
+}

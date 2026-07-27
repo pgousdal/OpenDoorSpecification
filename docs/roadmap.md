@@ -57,3 +57,36 @@ and execute shared conformance cases against both it and the host adapter.
 ## M2.0 — DayDream adapter
 
 First host-tested historical adapter. A native Amiga backend follows in M2.1.
+
+
+## M4.0 — Architecture baseline
+
+Status: complete.
+
+- Establish the normative specification as the primary product.
+- Separate specification, toolkit, catalog, and reference implementation responsibilities.
+- Define evidence, compatibility, and migration rules.
+- Avoid disruptive path changes until compatibility entry points exist.
+
+## M4.1 — Canonical knowledge model
+
+- stable operation and structure identifiers
+- canonical provenance records
+- strict cross-reference validation
+- generated coverage and adapter-gap reports
+
+## M4.2 — Publication candidate
+
+- generated reference documentation
+- GitHub Pages publication
+- strict one-command validation
+- ODS 1.0 release-candidate checklist
+
+## M4.4 — Canonical operation records
+
+Status: complete.
+
+- one generated machine-readable record per ODS operation
+- historical implementation and provenance aggregation
+- reference-adapter support status
+- strict stale-record validation

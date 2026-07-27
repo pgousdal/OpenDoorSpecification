@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "id": "session.node",
+  "definition": {
+    "id": "session.node",
+    "stability": "core",
+    "summary": "Return the host node identifier for the door session.",
+    "inputs": [],
+    "result": "node",
+    "disconnect_behavior": "not_applicable"
+  },
+  "historical_implementations": [],
+  "adapter_status": [
+    {
+      "adapter": "daydream",
+      "kind": "historical",
+      "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
+      "conformance": "host-and-c-tested",
+      "supported": true
+    },
+    {
+      "adapter": "host-simulator",
+      "kind": "reference",
+      "implementation": "ods_tools.adapters.host.HostAdapter",
+      "conformance": "unspecified",
+      "supported": true
+    }
+  ],
+  "summary": {
+    "historical_implementation_count": 0,
+    "covered_historical_implementation_count": 0,
+    "adapter_count": 2
+  }
+}

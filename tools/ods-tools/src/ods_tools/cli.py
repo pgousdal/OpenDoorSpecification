@@ -4,6 +4,7 @@ from pathlib import Path
 from .parsers.lha import inspect
 from .semantic import compare, load_mapping, load_operations
 from .coverage import build_coverage, write_coverage
+from .operations import build_operation_records, write_operation_records
 from .simulator import load_scenario, run_scenario
 
 
@@ -84,7 +85,31 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         assert coverage["summary"]["verified_without_provenance"] == 0, "verified mappings without provenance"
         stored_coverage = json.loads((root / "catalog" / "knowledge" / "provenance-coverage.json").read_text(encoding="utf-8"))
         assert stored_coverage == coverage, "stale provenance coverage report"
+        generated_records = build_operation_records(root)
+        operation_dir = root / "catalog" / "knowledge" / "operations"
+        stored_index = json.loads((operation_dir / "index.json").read_text(encoding="utf-8"))
+        assert [item["id"] for item in stored_index["operations"]] == operation_ids, "stale operation record index"
+        for record in generated_records["operations"]:
+            path = operation_dir / (record["id"].replace(".", "-") + ".json")
+            assert json.loads(path.read_text(encoding="utf-8")) == record, f"stale operation record: {record['id']}"
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
+
+
+def _format_operation_record(record: dict) -> str:
+    lines = [record["id"], record["definition"]["summary"]]
+    lines.append(f"stability: {record['definition']['stability']}")
+    lines.append("historical implementations:")
+    if record["historical_implementations"]:
+        for item in record["historical_implementations"]:
+            evidence = ",".join(item["evidence_statuses"]) or "missing"
+            lines.append(f"  {item['api']}: {', '.join(item['symbols'])} [{item['status']}; {evidence}]")
+    else:
+        lines.append("  none")
+    lines.append("adapters:")
+    for adapter in record["adapter_status"]:
+        state = "supported" if adapter["supported"] else "unsupported"
+        lines.append(f"  {adapter['adapter']}: {state} ({adapter['conformance']})")
+    return "\n".join(lines)
 
 
 def main() -> int:
@@ -104,6 +129,10 @@ def main() -> int:
     cov = sub.add_parser("coverage", help="report provenance coverage for semantic mappings")
     cov.add_argument("--json", action="store_true", help="print the complete machine-readable report")
     cov.add_argument("--write", type=Path, help="write the report to a JSON file")
+    ops = sub.add_parser("operations", help="list or inspect canonical operation records")
+    ops.add_argument("operation", nargs="?", help="operation ID to inspect")
+    ops.add_argument("--json", action="store_true", help="print machine-readable JSON")
+    ops.add_argument("--write", type=Path, help="regenerate operation records in a directory")
     sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
     sim.add_argument("scenario", type=Path)
     sim.add_argument("--transcript", action="store_true", help="print complete JSON execution result")
@@ -123,6 +152,21 @@ def main() -> int:
             args.json.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
+    if args.command == "operations":
+        result = write_operation_records(root, args.write) if args.write else build_operation_records(root)
+        records = result["operations"]
+        if args.operation:
+            record = next((item for item in records if item["id"] == args.operation), None)
+            if record is None:
+                raise SystemExit(f"unknown operation: {args.operation}")
+            print(json.dumps(record, indent=2) if args.json else _format_operation_record(record))
+        elif args.json:
+            print(json.dumps(result, indent=2))
+        else:
+            for record in records:
+                summary = record["summary"]
+                print(f"{record['id']:<28} historical={summary['historical_implementation_count']:<2} adapters={summary['adapter_count']}")
+        return 0
     if args.command == "coverage":
         report = write_coverage(root, args.write) if args.write else build_coverage(root)
         if args.json:

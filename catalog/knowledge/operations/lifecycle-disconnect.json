@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "id": "lifecycle.disconnect",
+  "definition": {
+    "id": "lifecycle.disconnect",
+    "stability": "core",
+    "summary": "Terminate promptly after carrier loss or equivalent connection failure.",
+    "inputs": [
+      "reason"
+    ],
+    "result": "never",
+    "disconnect_behavior": "not_applicable"
+  },
+  "historical_implementations": [
+    {
+      "api": "ambos",
+      "symbols": [
+        "BBSCarrier"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional",
+      "evidence_statuses": [],
+      "provenance_ids": [],
+      "covered": false
+    },
+    {
+      "api": "daydream",
+      "symbols": [
+        "Carrier"
+      ],
+      "status": "partial",
+      "semantic_review": "provisional",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.lifecycle-disconnect.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "paragon",
+      "symbols": [
+        "command 9",
+        "carrier field"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.paragon.lifecycle-disconnect.1"
+      ],
+      "covered": true
+    }
+  ],
+  "adapter_status": [
+    {
+      "adapter": "daydream",
+      "kind": "historical",
+      "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
+      "conformance": "host-and-c-tested",
+      "supported": true
+    },
+    {
+      "adapter": "host-simulator",
+      "kind": "reference",
+      "implementation": "ods_tools.adapters.host.HostAdapter",
+      "conformance": "unspecified",
+      "supported": true
+    }
+  ],
+  "summary": {
+    "historical_implementation_count": 3,
+    "covered_historical_implementation_count": 2,
+    "adapter_count": 2
+  }
+}

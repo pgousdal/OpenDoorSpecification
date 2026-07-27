@@ -90,3 +90,10 @@
 - Added documented primary-source records for verified ABBS, AmBoS, and door_io mappings.
 - Added `ods coverage` with text, JSON, and file output.
 - Made strict validation reject verified mappings without provenance and stale coverage reports.
+
+## M4.4
+
+- Added generated canonical records for every ODS operation.
+- Combined normative definitions, historical mappings, provenance coverage, and adapter support.
+- Added `ods operations` for listing, inspection, JSON output, and regeneration.
+- Made strict validation reject stale operation records and indexes.

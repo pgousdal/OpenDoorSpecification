@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/operation-record.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "spec_version",
+    "id",
+    "definition",
+    "historical_implementations",
+    "adapter_status",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "spec_version": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"
+    },
+    "definition": {
+      "type": "object"
+    },
+    "historical_implementations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "api",
+          "symbols",
+          "status",
+          "semantic_review",
+          "evidence_statuses",
+          "provenance_ids",
+          "covered"
+        ]
+      }
+    },
+    "adapter_status": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "adapter",
+          "kind",
+          "implementation",
+          "conformance",
+          "supported"
+        ]
+      }
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "historical_implementation_count",
+        "covered_historical_implementation_count",
+        "adapter_count"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

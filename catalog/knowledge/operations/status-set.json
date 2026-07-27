@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "spec_version": "0.1.0",
+  "id": "status.set",
+  "definition": {
+    "id": "status.set",
+    "stability": "optional",
+    "summary": "Set a short host-visible activity description.",
+    "inputs": [
+      "text"
+    ],
+    "result": "void",
+    "disconnect_behavior": "not_applicable"
+  },
+  "historical_implementations": [
+    {
+      "api": "abbs",
+      "symbols": [
+        "SetStatus"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.abbs.status-set.1"
+      ],
+      "covered": true
+    },
+    {
+      "api": "daydream",
+      "symbols": [
+        "ChangeActivity"
+      ],
+      "status": "verified",
+      "semantic_review": "provisional",
+      "evidence_statuses": [
+        "documented"
+      ],
+      "provenance_ids": [
+        "prov.daydream.status-set.1"
+      ],
+      "covered": true
+    }
+  ],
+  "adapter_status": [
+    {
+      "adapter": "daydream",
+      "kind": "historical",
+      "implementation": "ods_tools.adapters.daydream.DayDreamAdapter",
+      "conformance": "host-and-c-tested",
+      "supported": true
+    },
+    {
+      "adapter": "host-simulator",
+      "kind": "reference",
+      "implementation": "ods_tools.adapters.host.HostAdapter",
+      "conformance": "unspecified",
+      "supported": true
+    }
+  ],
+  "summary": {
+    "historical_implementation_count": 2,
+    "covered_historical_implementation_count": 2,
+    "adapter_count": 2
+  }
+}
