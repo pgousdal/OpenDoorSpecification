@@ -6,7 +6,7 @@
   "source_path": "catalog/census/index.json",
   "host_count": 10,
   "operation_count": 9,
-  "mapped_cell_count": 54,
+  "mapped_cell_count": 56,
   "hosts": [
     {
       "id": "abbs",

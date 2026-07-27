@@ -21,20 +21,18 @@ from ods_tools.crosswalk_work_queue import build_crosswalk_work_queue
 
 
 BATCH = {
-    "terminal.read_key": "verified",
-    "session.identity": "verified",
-    "bbs.command": "verified",
-    "lifecycle.exit": "verified",
+    ("door-io", "lifecycle.disconnect"): "verified",
+    ("door-io", "lifecycle.exit"): "partial",
 }
-PR5_BASELINE = {
+PR6_BASELINE = {
     "coverage": {
         "total": 90,
-        "reviewed": 50,
-        "verified": 38,
+        "reviewed": 54,
+        "verified": 42,
         "partial": 12,
-        "unassessed": 40,
+        "unassessed": 36,
     },
-    "queue": {"total": 40, "high": 32, "medium": 6, "low": 2},
+    "queue": {"total": 36, "high": 29, "medium": 5, "low": 2},
 }
 
 
@@ -54,77 +52,75 @@ GENERATORS = {
 }
 
 
-class M62UCDoorEvidenceBatchTests(unittest.TestCase):
+class M62PR7EvidenceBatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.crosswalk = load_crosswalk(ROOT)
         cls.coverage = build_crosswalk_coverage(ROOT)
         cls.queue = build_crosswalk_work_queue(ROOT)
-        cls.ucdoor = {
-            row["operation"]: row
-            for row in cls.crosswalk["hosts"]["ucdoor"]["operations"]
-        }
+
+    def cell(self, host: str, operation: str) -> dict:
+        return next(
+            row
+            for row in self.crosswalk["hosts"][host]["operations"]
+            if row["operation"] == operation
+        )
 
     def test_manifest_cells_have_complete_validated_provenance(self) -> None:
-        self.assertGreaterEqual(validate_crosswalk_evidence(ROOT), 54)
-        for operation, status in BATCH.items():
-            with self.subTest(operation=operation):
-                cell = self.ucdoor[operation]
-                self.assertEqual(cell["id"], f"ucdoor:{operation}")
+        self.assertEqual(validate_crosswalk_evidence(ROOT), 56)
+        for (host, operation), status in BATCH.items():
+            with self.subTest(host=host, operation=operation):
+                cell = self.cell(host, operation)
+                self.assertEqual(cell["id"], f"{host}:{operation}")
                 self.assertEqual(cell["status"], status)
                 self.assertEqual(cell["semantic_review"], "reviewed")
                 self.assertTrue(cell["symbols"])
                 self.assertTrue(cell["evidence"])
                 self.assertTrue(cell["rationale"])
-                self.assertIn("limitations", cell)
+                if status == "partial":
+                    self.assertTrue(cell["limitations"])
 
-    def test_evidence_resolves_to_cataloged_ucdoor_archive(self) -> None:
+    def test_evidence_resolves_to_cataloged_door_io_archive(self) -> None:
         manifest = json.loads(
-            (ROOT / "catalog" / "archives" / "ucdoor10.json").read_text(
+            (ROOT / "catalog" / "archives" / "door_io12.json").read_text(
                 encoding="utf-8"
             )
         )
         self.assertEqual(
             manifest["source_sha256"],
-            "a895ce805c98a38b7c33830bd30fa71a68f8cfbe1a89863735aa3565462ef05e",
+            "a5e639b6e785d158c4c318aac087e7e47b4b4553a7609c364f5044e57a41a7a1",
         )
         paths = {entry["path"] for entry in manifest["entries"]}
-        for operation in BATCH:
-            for evidence in self.ucdoor[operation]["evidence"]:
+        for host, operation in BATCH:
+            for evidence in self.cell(host, operation)["evidence"]:
                 with self.subTest(operation=operation, evidence=evidence):
-                    self.assertEqual(evidence["archive"], "ucdoor10.lha")
+                    self.assertEqual(evidence["archive"], "door_io12.lha")
                     self.assertIn(evidence["path"], paths)
                     self.assertTrue(evidence["symbol"])
 
-    def test_batch_is_removed_from_queue_and_status_set_remains(self) -> None:
+    def test_batch_is_removed_from_queue_and_other_gaps_remain(self) -> None:
         queued = {item["id"] for item in self.queue["items"]}
-        self.assertTrue(
-            all(f"ucdoor:{operation}" not in queued for operation in BATCH)
-        )
-        self.assertIn("ucdoor:status.set", queued)
+        for host, operation in BATCH:
+            self.assertNotIn(f"{host}:{operation}", queued)
+        self.assertIn("door-io:session.identity", queued)
+        self.assertIn("door-io:session.time_left", queued)
+        self.assertIn("door-io:status.set", queued)
+        self.assertIn("door-io:bbs.command", queued)
 
-    def test_coverage_and_queue_match_the_declared_pr5_delta(self) -> None:
+    def test_coverage_and_queue_match_the_declared_pr6_delta(self) -> None:
         summary = self.coverage["summary"]
-        self.assertEqual(summary["total"], PR5_BASELINE["coverage"]["total"])
-        self.assertGreaterEqual(
-            summary["reviewed"],
-            PR5_BASELINE["coverage"]["reviewed"] + len(BATCH),
-        )
-        self.assertGreaterEqual(
-            summary["verified"],
-            PR5_BASELINE["coverage"]["verified"] + len(BATCH),
-        )
-        self.assertGreaterEqual(
-            summary["partial"], PR5_BASELINE["coverage"]["partial"]
-        )
-        self.assertLessEqual(
-            summary["unassessed"],
-            PR5_BASELINE["coverage"]["unassessed"] - len(BATCH),
-        )
+        self.assertEqual(summary["total"], PR6_BASELINE["coverage"]["total"])
+        self.assertEqual(summary["reviewed"], 56)
+        self.assertEqual(summary["verified"], 43)
+        self.assertEqual(summary["partial"], 13)
+        self.assertEqual(summary["unassessed"], 34)
         self.assertEqual(summary["reviewed"], summary["verified"] + summary["partial"])
-        self.assertLessEqual(self.queue["summary"]["total"], 36)
+        self.assertEqual(
+            self.queue["summary"],
+            {"total": 34, "high": 27, "medium": 5, "low": 2},
+        )
 
-    def test_only_ucdoor_mappings_are_new_in_this_batch(self) -> None:
+    def test_no_unrelated_reviewed_mapping_changed(self) -> None:
         earlier_batches = {
             ("abbs", "lifecycle.disconnect"),
             ("ambos", "terminal.read_key"),
@@ -150,6 +146,10 @@ class M62UCDoorEvidenceBatchTests(unittest.TestCase):
             ("fame", "bbs.command"),
             ("fame", "lifecycle.exit"),
             ("fame", "lifecycle.disconnect"),
+            ("ucdoor", "terminal.read_key"),
+            ("ucdoor", "session.identity"),
+            ("ucdoor", "bbs.command"),
+            ("ucdoor", "lifecycle.exit"),
         }
         m61_reviewed = set()
         for path in (ROOT / "catalog" / "mappings").glob("*.json"):
@@ -159,17 +159,12 @@ class M62UCDoorEvidenceBatchTests(unittest.TestCase):
                 for mapping in record["mappings"]
             )
         current_reviewed = {
-            (host_id, row["operation"])
-            for host_id, host in self.crosswalk["hosts"].items()
-            for row in host["operations"]
+            (host, row["operation"])
+            for host, record in self.crosswalk["hosts"].items()
+            for row in record["operations"]
             if row["status"] in {"verified", "partial"}
         }
-        expected = (
-            m61_reviewed
-            | earlier_batches
-            | {("ucdoor", operation) for operation in BATCH}
-        )
-        self.assertTrue(expected <= current_reviewed)
+        self.assertEqual(current_reviewed, m61_reviewed | earlier_batches | set(BATCH))
 
     def test_all_generation_is_byte_identical_and_committed(self) -> None:
         with (

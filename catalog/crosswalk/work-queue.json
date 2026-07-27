@@ -13,8 +13,8 @@
     "low"
   ],
   "summary": {
-    "total": 36,
-    "high": 29,
+    "total": 34,
+    "high": 27,
     "medium": 5,
     "low": 2
   },
@@ -147,36 +147,6 @@
       "reasons": [
         "host has documented SDK or protocol evidence",
         "operation has reviewed mappings in at least three other hosts",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "door-io:lifecycle.disconnect",
-      "host": "door-io",
-      "host_name": "door_io.library",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.disconnect",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
-        "host census or archive evidence is already cataloged"
-      ]
-    },
-    {
-      "id": "door-io:lifecycle.exit",
-      "host": "door-io",
-      "host_name": "door_io.library",
-      "host_evidence_class": "documented-sdk",
-      "operation": "lifecycle.exit",
-      "status": "unassessed",
-      "priority": "high",
-      "reasons": [
-        "host has documented SDK or protocol evidence",
-        "operation has reviewed mappings in at least three other hosts",
-        "operation is foundational for terminal, session, or lifecycle behavior",
         "host census or archive evidence is already cataloged"
       ]
     },

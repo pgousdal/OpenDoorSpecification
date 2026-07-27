@@ -150,4 +150,6 @@ in M6.2.
   guide; ambiguous node-status mutation remains unassessed.
 - PR6: four UCDoor mappings verified from the cataloged programmer guide,
   public header, and original demo; status mutation remains unassessed.
+- PR7: two Door-IO lifecycle mappings harvested from the cataloged SDK; one
+  verified and one partial, with unrelated gaps left unassessed.
 - Future work: research and review queued host-operation cells.

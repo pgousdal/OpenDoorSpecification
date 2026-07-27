@@ -7,10 +7,10 @@
     "partial": "A reviewed mapping exists, but coverage is incomplete."
   },
   "summary": {
-    "verified": 42,
-    "partial": 12,
-    "unassessed": 36,
-    "reviewed": 54,
+    "verified": 43,
+    "partial": 13,
+    "unassessed": 34,
+    "reviewed": 56,
     "total": 90
   },
   "hosts": [
@@ -82,16 +82,14 @@
       "name": "door_io.library",
       "evidence_class": "documented-sdk",
       "summary": {
-        "verified": 3,
-        "partial": 0,
-        "unassessed": 6,
-        "reviewed": 3,
+        "verified": 4,
+        "partial": 1,
+        "unassessed": 4,
+        "reviewed": 5,
         "total": 9
       },
       "unassessed_operations": [
         "bbs.command",
-        "lifecycle.disconnect",
-        "lifecycle.exit",
         "session.identity",
         "session.time_left",
         "status.set"
@@ -211,14 +209,13 @@
     {
       "id": "lifecycle.disconnect",
       "summary": {
-        "verified": 3,
+        "verified": 4,
         "partial": 4,
-        "unassessed": 3,
-        "reviewed": 7,
+        "unassessed": 2,
+        "reviewed": 8,
         "total": 10
       },
       "unassessed_hosts": [
-        "door-io",
         "wwbbs",
         "zeus"
       ]
@@ -227,15 +224,14 @@
       "id": "lifecycle.exit",
       "summary": {
         "verified": 5,
-        "partial": 0,
-        "unassessed": 5,
-        "reviewed": 5,
+        "partial": 1,
+        "unassessed": 4,
+        "reviewed": 6,
         "total": 10
       },
       "unassessed_hosts": [
         "abbs",
         "ambos",
-        "door-io",
         "wwbbs",
         "zeus"
       ]

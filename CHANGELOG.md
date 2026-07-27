@@ -186,6 +186,8 @@
   the cataloged v1.30 Door-Command Guide.
 - M6.2 PR6 host-centric UCDoor evidence batch: four verified mappings backed
   by the cataloged SDK guide, public header, HTML reference, and example.
+- M6.2 PR7 small evidence harvest: verified Door-IO carrier-loss cleanup and
+  partial normal-exit teardown from the cataloged SDK manual and headers.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.

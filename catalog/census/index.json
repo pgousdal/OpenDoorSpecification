@@ -41,7 +41,7 @@
       "name": "door_io.library",
       "evidence_class": "documented-sdk",
       "entry_count": 6,
-      "mapping_count": 3,
+      "mapping_count": 5,
       "path": "catalog/census/door-io.json"
     },
     {
@@ -86,5 +86,5 @@
     }
   ],
   "entry_count": 230,
-  "mapping_count": 54
+  "mapping_count": 56
 }

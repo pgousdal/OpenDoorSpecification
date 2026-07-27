@@ -8,7 +8,7 @@
     "door_io12.json"
   ],
   "entry_count": 6,
-  "mapping_count": 3,
+  "mapping_count": 5,
   "entries": [
     {
       "kind": "function",
@@ -171,7 +171,74 @@
       ],
       "status": "verified",
       "semantic_review": "provisional"
+    },
+    {
+      "operation": "lifecycle.disconnect",
+      "symbols": [
+        "BOX_start",
+        "carrier_lost_hook",
+        "BOX_stop",
+        "BOX_wgetchar"
+      ],
+      "status": "verified",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.doc",
+          "symbol": "carrier_lost_hook/BOX_stop",
+          "note": "The manual says the carrier-loss hook is called when the handler reports an error and should call BOX_stop and close all program resources."
+        },
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.h",
+          "symbol": "BOX_start",
+          "note": "The public header documents the carrier-loss callback parameter registered during interface initialization."
+        },
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.h",
+          "symbol": "BOX_wgetchar",
+          "note": "The single-character input API documents return code zero as carrier loss."
+        }
+      ],
+      "rationale": "Door-IO detects carrier loss and defines an immediate cleanup callback that stops the interface and releases door resources.",
+      "limitations": []
+    },
+    {
+      "operation": "lifecycle.exit",
+      "symbols": [
+        "BOX_stop"
+      ],
+      "status": "partial",
+      "semantic_review": "reviewed",
+      "evidence": [
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.doc",
+          "symbol": "BOX_stop",
+          "note": "The programmer manual requires BOX_stop when the door program quits."
+        },
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.h",
+          "symbol": "BOX_stop",
+          "note": "The public header defines BOX_stop as shutting down the interface and prohibits further interface calls afterward."
+        },
+        {
+          "archive": "door_io12.lha",
+          "path": "doorio/door_io.fd",
+          "symbol": "BOX_stop",
+          "note": "The SDK function descriptor exports BOX_stop as a no-argument library call."
+        }
+      ],
+      "rationale": "BOX_stop is the documented interface teardown required on normal door-program exit.",
+      "limitations": [
+        "The SDK does not document exit-status propagation or an explicit host control-transfer acknowledgement."
+      ]
     }
   ],
-  "limitations": []
+  "limitations": [
+    "The library exposes terminal I/O and lifecycle cleanup but no documented session, host-command, or activity-status interface."
+  ]
 }
