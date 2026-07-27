@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://opendoorspecification.org/schemas/crosswalk-work-queue.schema.json",
+  "title": "ODS Crosswalk Evidence Work Queue",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "milestone",
+    "kind",
+    "source_path",
+    "semantics",
+    "priority_order",
+    "summary",
+    "items"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "milestone": {
+      "const": "M6.2"
+    },
+    "kind": {
+      "const": "crosswalk-evidence-work-queue"
+    },
+    "source_path": {
+      "const": "catalog/crosswalk/index.json"
+    },
+    "semantics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["priority", "unassessed"],
+      "properties": {
+        "priority": {"type": "string", "minLength": 1},
+        "unassessed": {"type": "string", "minLength": 1}
+      }
+    },
+    "priority_order": {
+      "const": ["high", "medium", "low"]
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total", "high", "medium", "low"],
+      "properties": {
+        "total": {"type": "integer", "minimum": 0},
+        "high": {"type": "integer", "minimum": 0},
+        "medium": {"type": "integer", "minimum": 0},
+        "low": {"type": "integer", "minimum": 0}
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "host",
+          "host_name",
+          "host_evidence_class",
+          "operation",
+          "status",
+          "priority",
+          "reasons"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*:[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"
+          },
+          "host": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "host_name": {"type": "string", "minLength": 1},
+          "host_evidence_class": {
+            "enum": [
+              "documented-sdk",
+              "documented-protocol",
+              "wrapper-binding",
+              "observed-doors"
+            ]
+          },
+          "operation": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_-]*(\\.[a-z][a-z0-9_-]*)+$"
+          },
+          "status": {"const": "unassessed"},
+          "priority": {"enum": ["high", "medium", "low"]},
+          "reasons": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    }
+  }
+}

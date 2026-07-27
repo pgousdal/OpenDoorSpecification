@@ -11,6 +11,12 @@ from .simulator import load_scenario, run_scenario
 from .conformance import build_executable_conformance_report, write_executable_conformance_report
 from .crosswalk import format_crosswalk, select_crosswalk, validate_crosswalk
 from .crosswalk_coverage import build_crosswalk_coverage, format_crosswalk_coverage, write_crosswalk_coverage
+from .crosswalk_work_queue import (
+    PRIORITIES,
+    build_crosswalk_work_queue,
+    format_crosswalk_work_queue,
+    select_crosswalk_work_queue,
+)
 
 
 def repo_root() -> Path:
@@ -121,6 +127,12 @@ def validate(root: Path, strict: bool = False) -> tuple[int, int, int]:
         assert stored_executable == executable_report, "stale executable conformance report"
         for adapter in executable_report["adapters"]:
             assert adapter["highest_executed_profile"] == "complete", f"adapter failed executable complete profile: {adapter['id']}"
+        if (root / "catalog" / "crosswalk" / "index.json").exists():
+            generated_queue = build_crosswalk_work_queue(root)
+            queue_path = root / "catalog" / "crosswalk" / "work-queue.json"
+            assert queue_path.exists(), "missing crosswalk work queue"
+            stored_queue = json.loads(queue_path.read_text(encoding="utf-8"))
+            assert stored_queue == generated_queue, "stale crosswalk work queue"
     return len(manifests), sum(d["entry_count"] for d in manifests), mapping_count, provenance_count
 
 
@@ -203,6 +215,16 @@ def main() -> int:
         type=Path,
         help="write the complete evidence coverage report to JSON",
     )
+    crosswalk.add_argument(
+        "--work-queue",
+        action="store_true",
+        help="show prioritized unassessed cells for future research",
+    )
+    crosswalk.add_argument(
+        "--priority",
+        choices=PRIORITIES,
+        help="limit the work queue to high, medium, or low priority",
+    )
     crosswalk.add_argument("--json", action="store_true", help="print machine-readable JSON")
     crosswalk.add_argument("--all", action="store_true", help="include unassessed cells in text output")
     sim = sub.add_parser("simulate", help="run an ODS host-adapter scenario")
@@ -248,6 +270,30 @@ def main() -> int:
         print(json.dumps(result, indent=2)); return 0
     root = repo_root()
     if args.command == "crosswalk":
+        if args.priority and not args.work_queue:
+            raise SystemExit("--priority requires --work-queue")
+        if args.work_queue:
+            if args.coverage or args.gaps or args.write or args.all:
+                raise SystemExit(
+                    "--work-queue cannot be combined with "
+                    "--coverage, --gaps, --write, or --all"
+                )
+            try:
+                report = select_crosswalk_work_queue(
+                    root,
+                    target=args.target,
+                    priority=args.priority,
+                )
+            except KeyError:
+                raise SystemExit(f"unknown crosswalk work-queue target: {args.target}")
+            except ValueError as exc:
+                raise SystemExit(str(exc))
+            print(
+                json.dumps(report, indent=2, ensure_ascii=False)
+                if args.json
+                else format_crosswalk_work_queue(report)
+            )
+            return 0
         if args.coverage or args.gaps or args.write:
             report = (
                 write_crosswalk_coverage(root, args.write)

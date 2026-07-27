@@ -172,6 +172,8 @@
 
 ### Added
 
+- M6.2 PR1 deterministic crosswalk evidence work queue with explicit priority
+  reasons, CLI filtering, generation, and strict stale-data validation.
 - M6.1 deterministic API crosswalk for 10 historical hosts and 9 canonical
   operations.
 - Host and operation lookup through `ods crosswalk`.
@@ -183,3 +185,5 @@
 
 - `unassessed` is not equivalent to unsupported.
 - `partial` is not equivalent to unsupported.
+- Work-queue priority is a research-order recommendation, not a support claim
+  or support-likelihood estimate.

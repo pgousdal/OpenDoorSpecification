@@ -135,3 +135,9 @@ See `docs/m60-complete-api-census.md`.
 Delivered data model, deterministic generation, CLI lookup, validation,
 coverage reporting and milestone acceptance checks. Mapping expansion continues
 in M6.2.
+
+### M6.2 — Crosswalk evidence expansion: in progress
+
+- PR1: deterministic evidence work queue, documented priority rules, CLI
+  filtering, and stale-data validation.
+- Future work: research and review queued host-operation cells.
